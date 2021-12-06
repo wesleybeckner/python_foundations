@@ -4,10 +4,10 @@
 *	Software Topics
     *	Object Oriented Programming; Debugging
 *	Project
-    * DA1_P1: Building TicTacToe in Python
-    * DA1_P2: Object Oriented Programming in TicTacToe
-    * DA1_P3: Random TicTacToe Agents
-    * DA1_P4: Debugging TicTacToe Agents
+    * P1: Building TicTacToe in Python
+    * P2: Object Oriented Programming in TicTacToe
+    * P3: Random TicTacToe Agents
+    * P4: Debugging TicTacToe Agents
 *	Sessions
     * S1: Python and Jupyter
     * S2: Data Structures and Flow
