@@ -1,0 +1,24 @@
+site_name: Static Website
+theme:
+  name: "material"
+  palette:
+    primary: "blue"
+    accent: "indigo"
+nav:
+  - about: about.md
+  - sessions:
+      - Introduction to Python and Jupyter: S1_Python_and_Jupyter.md
+      - Data Structures and Flow Control: S2_Data_Structures_and_Flow.md
+      - Functions: S3_Functions.md
+      - Object Oriented Programming: S4_Object_Oriented_Programming.md
+      - Pandas: S5_Pandas.md
+      - Matplotlib: S6_Matplotlib.md
+      - NumPy: S7_Numpy.md
+  - project: 
+      - some experiment: project/P1_Building_TicTacToe_in_Python.md
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
