@@ -9,18 +9,18 @@
     * DA1_P3: Random TicTacToe Agents
     * DA1_P4: Debugging TicTacToe Agents
 *	Sessions
-    * DA1_S1: Introduction to Python and Jupyter Notebooks
-    * DA1_S2: Data Structures and Flow Control
-    * DA1_S3: Functions 
-    * DA1_S4: Object Oriented Programming
-    * DA1_S5: Pandas
-    * DA1_S6: Matplotlib
-    * DA1_S7: NumPy
+    * S1: Python and Jupyter
+    * S2: Data Structures and Flow
+    * S3: Functions 
+    * S4: Object Oriented Programming
+    * S5: Pandas
+    * S6: Matplotlib
+    * S7: NumPy
 *	Exercises
-    * DA1_E1: Practice with Python and Jupyter Notebooks
-    * DA1_E2: Practice with Flow Control
-    * DA1_E3: Practice with Functions and Pandas
-    * DA1_E4: Pandas
-    * DA1_E5: NumPy
+    * E1: Practice with Python and Jupyter Notebooks
+    * E2: Practice with Flow Control
+    * E3: Practice with Functions and Pandas
+    * E4: Pandas
+    * E5: NumPy
 *	Reading
     * JVDP chapters 1-4
