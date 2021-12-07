@@ -1,12 +1,12 @@
-site_name: Static Website
+site_name: Python Foundations
 theme:
   name: "material"
   palette:
     primary: "blue"
     accent: "indigo"
 nav:
-  - about: about.md
-  - sessions:
+  - About: about.md
+  - Sessions:
       - Introduction to Python and Jupyter: S1_Python_and_Jupyter.md
       - Data Structures and Flow Control: S2_Data_Structures_and_Flow.md
       - Functions: S3_Functions.md
@@ -14,8 +14,17 @@ nav:
       - Pandas: S5_Pandas.md
       - Matplotlib: S6_Matplotlib.md
       - NumPy: S7_Numpy.md
-  - project: 
-      - some experiment: project/P1_Building_TicTacToe_in_Python.md
+  - Exercises:
+      - Practice with Python and Jupyter Notebooks: exercises/E1_Python_and_Jupyter.md
+      - Practice with Flow Control: exercises/E2_Flow_Control.md
+      - Practice with Functions: exercises/E3_Functions.md
+      - Practice with Pandas: exercises/E4_Pandas.md
+      - Practice with NumPy: exercises/E5_Numpy.md
+  - Project: 
+      - Building TicTacToe in Python: project/P1_Building_TicTacToe_in_Python.md
+      - Object Oriented Programming in Python: project/P2_OOP_in_TicTacToe.md
+      - Random TicTacToe Agents: project/P3_Random_TicTacToe_Agents.md
+      - Debugging TicTacToe Agents: project/P4_Debugging_TicTacToe_Agents.md
 markdown_extensions:
   - admonition
   - codehilite:

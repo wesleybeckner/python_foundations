@@ -1,4 +1,4 @@
-conda_env := decklizer
+conda_env := static-site-generation
 notebooks := $(wildcard notebooks/*.ipynb) $(wildcard notebooks/**/*.ipynb)
 md_pages := $(patsubst notebooks/%.ipynb,docs/%.md,$(notebooks))
 

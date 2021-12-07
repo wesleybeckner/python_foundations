@@ -1,24 +1,12 @@
 <a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/Tech%20Fun%20C1%20S1%20Python%20and%20Jupyter%20Notebooks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 1, Session 1: Python and Jupyter Notebooks
+# Python Foundations, Session 1: Python and Jupyter Notebooks
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
 
-**Teaching Assistants**: Varsha Bang, Harsha Vardhan
-
-**Contact**: vbang@uw.edu, harshav@uw.edu
-
 <br>
-
----
-
-## Schedule for this week
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/wesleybeckner/technology_fundamentals/main/assets/week1.png" width=800></img>
-</p>
 
 ---
 
@@ -37,8 +25,10 @@ In this session we will cover computer coding in Python as well as navigating th
 
 A lot of us are familiar with Excel, and when we get started in Python, it may seem like a lot of what we are doing could be easily done in Excel, why make the leap?
 
+<p align="center">
 <img src="https://www.nobledesktop.com/image/pythonvsexcel.png" width=400px></img>
 <br><small>Image borrowed from nobledesktop.com</small><br>
+</p>
 
 * Simplicity
   * Excel
@@ -71,9 +61,10 @@ A lot of us are familiar with Excel, and when we get started in Python, it may s
 
 That being said, we won't only approach Python from a let's-replace-excel standpoint; we will also be approaching it from a coding standpoint: **_we write computer code to perform a set of tasks and instructions that the computer can help us accomplish_**. The real challenge and process of coding from an engineering perspective is how to codify a problem, and knowledge of what tools are available to solve it.
 
-We've worked hard on the material to try and demystify the confusion along the way, while focusing on giving learning experiences in the relevant engineering problem areas.
+I, and the TA's I have had in the past, have worked hard on this material to demystify the confusion along the way, while focusing on giving learning experiences in the relevant engineering and business problem areas.
 
 ### 1.1.1 Python vs other languages
+
 
 ![python_logo.jpg](data:image/jpeg;base64,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)
 
@@ -87,18 +78,22 @@ You'll discover the many benefits of this general purpose programming language. 
 !python --version
 ```
 
-    Python 3.7.11
+    Python 3.8.12
 
 
 
 
 *Note: this session is covering syntax for version 3.x of Python. As you continue learning Python elsewhere, please advise that Python version 2 is no longer supported, and older notebooks may be outdated as a result.*
 
+<p align="center">
 <img src="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/assets/most_wanted_description.JPG" width=400px></img>
-
+<p align="center">
 <img src="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/assets/most_wanted_results.JPG" width=400px></img>
-
+<p align="center">
 <small>source: insights.stackoverflow.com/survey/2020</small>
+</p>
+</p>
+</p>
 
 ### 1.1.2 A quick primer on Python syntax
 
@@ -109,10 +104,10 @@ Printing output to the console is as simple as running Python's built-in print()
 
 
 ```python
-print("Hello, MSTI Students")
+print("Hello, GIX Students")
 ```
 
-    Hello, MSTI Students
+    Hello, GIX Students
 
 
 Variables can be created just by typing the name you'd like, followed by the equal sign, and the value you want to assign the variable to. In this case, we'll create a variable called `some_school` and set it to the value of `"University of Washington"`:
