@@ -1,11 +1,10 @@
-<a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/Tech%20Fun%20C1%20S1%20Python%20and%20Jupyter%20Notebooks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 1: Python and Jupyter Notebooks
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
-
 <br>
 
 ---
@@ -129,7 +128,7 @@ print(some_school)
 
 A key part of coding is understanding which functions you need to use for accomplishing a task, as well as knowing when to create one of your own, which you'll learn more about later this week. For now, what you should know is that `print()` from earlier is one example of calling/executing a function that's already made available to us.
 
-#### Exercise 1: A Very Common Print Statement
+#### 🏋️ Exercise 1: A Very Common Print Statement
 
 
 
@@ -347,7 +346,7 @@ We see that python auto-determines variable datatypes for us, in many cases!
 
 > ***Python is a programming language in which variables are dynamically typed, meaning we do not need to declare the specific type of the variable when we initialize it***. Because of this feature of Python, executing `x = 21` will automatically turn this variable into an integer by default due to its value of 21. Likewise, executing `x = 21.0` instead will make `x` the float type.
 
-#### Exercise 2: Create and change some variables
+#### 🏋️ Exercise 2: Create and change some variables
 
 Start by initializing a variable named `hundred` and assign it an *integer* value of 100 in the code cell below.
 
@@ -449,7 +448,7 @@ a * b
 
 
 
-#### Exercise 3: Discover More Operators On Your Own!
+#### 🏋️ Exercise 3: Discover More Operators On Your Own!
 
 Beyond the three arithmetic operators we have just demonstrated for you, there are more in Python to discover. To start, try typing `14 / 4` in the empty code cell below:
 
@@ -465,7 +464,7 @@ Just by typing the computation and seeing the output on your own, you can quickl
 # Cell for Exercise 3
 ```
 
-#### Exercise 4: Order of Operations
+#### 🏋️ Exercise 4: Order of Operations
 
 
 
@@ -617,7 +616,7 @@ print("There should be one line printed from this cell, and should be this one."
 
 > we can toggle comments with `ctrl` + `/`
 
-#### Exercise 5: Add a comment to a line of code
+#### 🏋️ Exercise 5: Add a comment to a line of code
 
 Let's write a comment that explains the following line of code, `25 % 7`.
 
@@ -746,7 +745,7 @@ And lastly. For code blocks, we can simply hit `esc` + `a` to enter a code block
 
 Just kidding one last note... we can delete a block by holding `ctrl` + `m` + `d`
 
-#### Exercise 6: Edit A Code Cell
+#### 🏋️ Exercise 6: Edit A Code Cell
 
 So far in this session, you've been creating entirely new code cells to write and execute a few exercises. Now, let's edit an existing cell of Python code. Below, we had our ~~obligatory~~ first exercise that printed "Hello World!" as the output. However, the code below, `print("Hello World!"` causes an error, and does not output "Hello World!" as we initially expected. What do we need at the very end of the line in order for the print statement to run successfully?
 
@@ -771,7 +770,7 @@ Or by hovering your mouse over to the bottom of a cell and selecting **+ Text**:
 
 You may edit an existing text cell by just double-clicking on one and editing the code. You can also have as many text cells as you want, cells that comprise technically any word length. Depending on what purpose it needs to serve, such cells may be a description of a data pipeline, or a list of external links (like the ones you'll see at the end of this notebook). 
 
-#### Exercise 7: Write a very UW Text cell
+#### 🏋️ Exercise 7: Write a very UW Text cell
 
 Create a simple text cell that reads the official tagline of UW (hint: https://www.washington.edu/brand/brand-guide/tagline/)
 
@@ -788,7 +787,7 @@ Text cells support Markdown syntax, which is a way to render and format plain te
 
 *Markdown is a superset of HTML. Discussing HTML is beyond the scope of this session, but there are links to read more about this, later in the notebook.*
 
-#### Exercise 8: Discover some Markdown syntax
+#### 🏋️ Exercise 8: Discover some Markdown syntax
 
 Create a new text cell below with the UW official tagline like before, only this time play around with:
 
@@ -801,7 +800,7 @@ Create a new text cell below with the UW official tagline like before, only this
 
 Later in the Breakout section, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.
 
-#### Exercise 9: Always double check the type of cell you're running
+#### 🏋️ Exercise 9: Always double check the type of cell you're running
 
 
 ```python

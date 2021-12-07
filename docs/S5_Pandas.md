@@ -1,483 +1,27 @@
-<a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/Tech%20Fun%20C1%20S3%20Functions%20and%20Pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S5_Pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 1, Session 3: Functions and Pandas Introduction
+# Python Foundations, Session 5: Pandas
 
 **Instructor**: Wesley Beckner<br>
 
 **Contact**: wesleybeckner@gmail.com
 
-
-**Teaching Assitants** Varsha Bang, Harsha Vardhan
-
-**Contact** vbang@uw.edu, harshav@uw.edu
-
-
+<i>special thanks to [David Beck](https://www.cheme.washington.edu/facultyfinder/david-beck) for their contribution to this material</i>
 <br>
 
 ---
 
 <br>
 
-Today, we will discuss **_functions_** in more depth.  We've seen them previously and used them, for example the `.append()` **_function_** for lists, or the even more general `print()` function.  Here, we'll dig into how you can make your own functions to encapsulate code that you will reuse over and over.  
-
-Then we'll jump into the **Pandas** package.  Packages are collections of related functions.  These are the things we `import`. Pandas is a two dimensional data structure like a spreadsheet in Excel. In fact, we will be importing our first dataset and viewing it, with Pandas!
+Today, we will jump into the **Pandas** package.  Packages are collections of related functions.  These are the things we `import`. Pandas is a two dimensional data structure like a spreadsheet in Excel. In fact, we will be importing our first dataset and viewing it, with Pandas!
 
 <br>
 
 ---
 
-## 3.0 Review from Session on Data Structures and Flow Control
+## 5.1 Pandas
 
-In our last session, we discussed **_lists_**, **_dictionaries_**, and **_flow control_**.
-
-**_Lists_** are **_ordered collections_** of data that can be used to hold multiple pieces of information while preserving their order.  We use `[` and `]` to access elements by their indices which start with `0`.  All things that operate on **_lists_** like slices use the concept of an inclusive lower bound and an exclusive upper bound.  So, the following gets elements from the **_list_** `my_list` with index values of `0`, `1`, and `2`, but **not** `3`!
-
-```
-my_list[0:3]
-```
-
-> What other way is there of writing the same statement using **_slicing_**?  Hint, think about leaving out one of the numbers in the slice!
-
-**_Dictionaries_** are **_named_** **_collections_** of data that can be used to hold multiple pieces of information as **_values_** that are addressed by **_keys_** resulting in a **_key_** to **_value_** data structure.  They are accessed with `[` and `]` but intialized with `{` and `}`.  E.g.
-
-```
-my_dict = { 'cake' : 'Tasty!', 'toenails' : 'Gross!' }
-my_dict['cake']
-```
-
-Finally, we talked about **_flow control_** and using the concept of **_conditional execution_** to decide which code statements were executed.  Remember this figure?
-
-<img src="https://docs.oracle.com/cd/B19306_01/appdev.102/b14261/lnpls008.gif">Flow control figure</img>
-
-> What are the **_if_** statments? <br> 
-Where do **_for_** loops fit in? <br>
-
-## 3.1 Functions
-
-For loops let you repeat some code for every item in a list.  Functions are similar in that they run the same lines of code and, frequently, for new values of some variable (we call these **_parameters_**).  They are different in that functions are not limited to looping over items.
-
-Functions are a critical part of writing easy to read, reusable code.
-
-Create a function like:
-```
-def function_name (parameters):
-    """
-    optional docstring
-    """
-    function expressions
-    return [variable]
-```
-
-Here is a simple example.  It prints a string that was passed in and returns nothing.
-
-```
-def print_string(string):
-    """This prints out a string passed as the parameter."""
-    print(string)
-    return
-```
-
-
-```python
-def print_string(string):
-  """This prints out a string passed as the parameter"""
-  print(string)
-  return
-```
-
-To call the function, use:
-```
-print_string("GIX is awesome!")
-```
-
-_Note:_ The function has to be defined before you can call it!
-
-
-```python
-print_string("GIX is awesome!")
-```
-
-    GIX is awesome!
-
-
-### 3.1.1 Reserved words: def, return, and yield
-
-Notice the highlighted words in our function definition: `def` and `return` these are *reserved words* in python used to define functions. Every function definition requires these reserved words. `yield` is another reserved word that is similar to `return` but operates slightly differently. It is beyond the scope of what we are covering in this session. This tutorial from [realpython](https://realpython.com/introduction-to-python-generators/) has good information on the topic.
-
-
-```python
-# what is return doing in this function?
-def my_square(a):
-  return a ** 2
-```
-
-`return` is going to output whatever value(s) follow after the keyword `return` when we call upon our function 
-
-
-```python
-a = 2
-my_square(a)
-```
-
-
-
-
-    4
-
-
-
-I'm going to return two values...
-
-
-```python
-def my_square(a):
-  return a ** 2, a
-```
-
-and we see how the output updates accordingly
-
-
-```python
-my_square(a)
-```
-
-
-
-
-    (4, 2)
-
-
-
-We can capture these values on the output with...
-
-
-```python
-square, new_a = my_square(a)
-```
-
-
-```python
-print(square, new_a)
-```
-
-    4 2
-
-
-### 3.1.2 Global vs local variables and function parameters
-
-In a function, new variables that you create are not saved when the function returns - these are **_local_** variables.  Variables defined outside of the function can be accessed but not changed - these are **_global_** variables.
-
-let's define the following function
-
-
-```python
-def my_little_func(a):
-  b = 10
-  return a * b
-```
-
-
-```python
-my_little_func(2)
-```
-
-
-
-
-    20
-
-
-
-if I run the following...
-
-
-```python
-# b
-```
-
-Let's play with this a little further...
-
-...now let's define b outside the function and call our function with `a=5`
-
-
-```python
-# what happens here?
-b = 100
-my_little_func(5)
-```
-
-
-
-
-    50
-
-
-
-we see that b is still 100, instead of 10 as its defined within the function. This is because b inside of `my_little_func` is a *local* variable. 
-
-it doesn't matter how I define b outside the function because within the function it is set locally.
-
-... Let's do this A LITTLE MORE
-
-
-```python
-def my_new_func(a):
-  print(b)
-  return a*b
-```
-
-now if I call on my new function, because `b` is not defined locally within the function, it takes on the global value. 
-
-This is typically not happy happy fun fun behavior for us, we want to be explicit about how we define and use our variables (but there are some times when this is appropriate to do)
-
-
-```python
-b= 1e4 # side note, what did I do here????
-my_new_func(a)
-```
-
-    10000.0
-
-
-
-
-
-    20000.0
-
-
-
-#### 3.1.1.1 Function Parameters
-
-Parameters (or arguments) in Python are all passed by reference.  This means that if you modify the parameters in the function, they are modified outside of the function. (Enrichment: Exceptions, see below)
-
-See the following example:
-
-```
-def change_list(my_list):
-   """This changes a passed list into this function"""
-   my_list.append('four');
-   print('list inside the function: ', my_list)
-   return
-
-my_list = [1, 2, 3];
-print('list before the function: ', my_list)
-change_list(my_list);
-print('list after the function: ', my_list)
-```
-
-
-```python
-def change_list(my_list):
-   """This changes a passed list into this function"""
-   my_list.append('four');
-   print('list inside the function: ', my_list)
-   return
-
-my_list = [1, 2, 3];
-print('list before the function: ', my_list)
-change_list(my_list);
-print('list after the function: ', my_list)
-```
-
-    list before the function:  [1, 2, 3]
-    list inside the function:  [1, 2, 3, 'four']
-    list after the function:  [1, 2, 3, 'four']
-
-
-#### 3.1.1.2 Enrichment: Global, local, and immutables
-
-Let's go back to our former example...
-
-immutables:
-
-* integers, float, str, tuples
-
-
-```python
-b = "a string"
-b = 10
-b = 10.2
-b = (10, 2)
-b = [10, 2]
-a = 2
-
-def my_little_func(a, b):
-  if type(b) == str:
-    b += "20"
-  elif (type(b) == int) or (type(b) == float):
-    b += 10
-  elif (type(b) == tuple):
-    print("AYYY no tuple changes, Dude")
-    pass
-  elif (type(b) == list):
-    b.append('whoaaaa')
-  print(b)
-  return
-
-print(b)
-my_little_func(a, b)
-print(b)
-```
-
-    [10, 2]
-    [10, 2, 'whoaaaa']
-    [10, 2, 'whoaaaa']
-
-
-There is a way to change a global variable within a function with the **_global_** keyword.  Generally, the use of **_global_** variables is not encouraged, instead use parameters. We won't cover the global keyword here but you can [explore further](https://www.programiz.com/python-programming/global-keyword) on your own if you are interested. 
-
-
-```python
-b = 10
-a = 2
-
-def my_little_func(a):
-  global b
-  b += 20
-  print(b)
-  return 
-
-print(b)
-my_little_func(a)
-print(b)
-```
-
-    10
-    30
-    30
-
-
-#### Exercise 1: My first function
-
-Write a function that takes one parameter and returns any data structure
-
-> If you are going to return multiple objects, what data structure that we talked about can be used?  Give and example below.
-
-
-```python
-# Cell for excerise 1
-```
-
-### 3.1.3 Parameter types
-
-**Function calling:**
-
-* positional 
-    * `func(10, 20)`
-* keyword
-    * `func(a=10, b=20)` or `func(b=20, a=10)`
-
-**Function writing:**
-* default
-    * `def func(a=10, b=20)`
-
-
-
-```
-def print_name(first, last='Beckner'):
-    print(f'Your name is {first} {last}')
-    return
-```
-
-
-```python
-def print_name(first, last='Beckner'):
-    print("Your name is {} {}".format(first, last))
-    return
-```
-
-
-```python
-print_name(last='Beckner', first='Wesley')
-```
-
-    Your name is Wesley Beckner
-
-
-Play around with the above function.
-
-
-```python
-print_name('Wesley', last='the Technology Fundamentals Instructor')
-```
-
-    Your name is Wesley the Technology Fundamentals Instructor
-
-
-Functions can contain any code that you put anywhere else including:
-* `if`...`elif`...`else`
-* `for`...`while`
-* other function calls
-
-```
-def print_name_age(first, last, age):
-    print_name(first, last)
-    print('Your age is %d' % (age))
-    if age > 25 and age < 40:
-        print('You are a millenial!')
-    return
-```
-
-
-
-```python
-def print_name_age(first, last, age):
-    print_name(first, last)
-    print('Your age is %d' % (age))
-    if age > 25 and age < 40:
-        print('You are a millenial!')
-    return
-```
-
-```
-print_name_age(age=29, last='Beckner', first='Wesley')
-```
-
-
-```python
-print_name_age(age=29, last='Beckner', first='Wesley')
-```
-
-    Your name is Wesley Beckner
-    Your age is 29
-    You are a millenial!
-
-
-## 3.2 The scientific python stack
-
-In addition to Python's built-in modules like the ``math`` module we explored above, there are also many often-used third-party modules that are core tools for doing data science with Python.
-Some of the most important ones are:
-
-#### [``numpy``](http://numpy.org/): Numerical Python
-
-Numpy is short for "Numerical Python", and contains tools for efficient manipulation of arrays of data.
-If you have used other computational tools like IDL or MatLab, Numpy should feel very familiar.
-
-#### [``scipy``](http://scipy.org/): Scientific Python
-
-Scipy is short for "Scientific Python", and contains a wide range of functionality for accomplishing common scientific tasks, such as optimization/minimization, numerical integration, interpolation, and much more.
-We will not look closely at Scipy today, but we will use its functionality later in the course.
-
-#### [``pandas``](http://pandas.pydata.org/): Labeled Data Manipulation in Python
-
-Pandas is short for "Panel Data", and contains tools for doing more advanced manipulation of labeled data in Python, in particular with a columnar data structure called a *Data Frame*.
-If you've used the [R](http://rstats.org) statistical language (and in particular the so-called "Hadley Stack"), much of the functionality in Pandas should feel very familiar.
-
-#### [``matplotlib``](http://matplotlib.org): Visualization in Python
-
-Matplotlib started out as a Matlab plotting clone in Python, and has grown from there in the 15 years since its creation. It is the most popular data visualization tool currently in the Python data world (though other recent packages are starting to encroach on its monopoly).
-
-#### [``scikit-learn``](https://scikit-learn.org/stable/): Machine Learning in Python
-
-Scikit-learn is a machine learning library.
-
-It features various classification, regression, and clustering algorithms, including support vector machines, random forests, gradient boosting, k-means, and DBSCAN.
-
-The library is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
-
-## 3.3 Pandas
-
-### 3.3.1 Pandas and Scikit-Learn `load_datasets`
+### 5.1.1 Pandas and Scikit-Learn `load_datasets`
 
 We begin by loading the Panda's package.  Packages are collections of functions that share a common utility.  We've seen `import` before.  Let's use it to import Pandas and all the richness that pandas has.
 
@@ -616,7 +160,7 @@ df = pandas.DataFrame()
 df = pandas.DataFrame()
 ```
 
-#### 3.3.1.1 import ... as ... pattern
+#### 5.1.1.1 import ... as ... pattern
 
 Because we'll use it so much, we often import under a shortened name using the ``import ... as ...`` pattern:
 
@@ -629,7 +173,7 @@ import pandas as pd
 import pandas as pd
 ```
 
-### 3.3.2 Creating pandas dataframes
+### 5.1.2 Creating pandas dataframes
 
 Let's create an empty _data frame_ and put the result into a variable called `df`.  This is a popular choice for a _data frame_ variable name.
 
@@ -653,7 +197,7 @@ df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 ```
 
-#### 3.3.2.1 From excel and csv
+#### 5.1.2.1 From excel and csv
 
 Please follow this [link](https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv)
 
@@ -859,7 +403,7 @@ pd.read_excel('https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/
 
 
 
-#### 3.3.2.2 from lists
+#### 5.1.2.2 from lists
 
 
 ```python
@@ -987,7 +531,7 @@ pd.DataFrame([[1, 2, 3], [3, 4, 5], [5, 6, 7], [7, 8, 9]],
 
 
 
-#### 3.3.2.3 from dictionaries
+#### 5.1.2.3 from dictionaries
 
 
 ```python
@@ -1049,7 +593,7 @@ from_dict.to_dict()
 
 
 
-#### Exercise 2: Create a DataFrame
+#### 🏋️ Exercise 2: Create a DataFrame
 
 Create a dictionary with the following keys: `movies, songs, books`. In each key list your top 5 favorites in the cooresponding category. Then use `pd.DataFrame` to turn this into a dictionary.
 
@@ -1058,11 +602,11 @@ Create a dictionary with the following keys: `movies, songs, books`. In each key
 # Cell for Ex 2
 ```
 
-#### 3.3.2.4 on `pandas.Series`
+#### 5.1.2.4 on `pandas.Series`
 
 pandas `Series` objects will percolate in our experience here and there, however they are not so important as for us to wish to spend dedicated time on them. For now, know that they are a lower-level data collection in the pandas framework. You can think of them as an individual column or row in the pandas dataframe. For more practice with these you can refer to [this documentation]()
 
-### 3.3.3 Viewing pandas dataframes
+### 5.1.3 Viewing pandas dataframes
 
 The ``head()`` and ``tail()`` methods show us the first and last rows of the data.
 
@@ -1650,7 +1194,7 @@ df.describe()
 
 
 
-#### Exercise 3: Viewing DataFrames
+#### 🏋️ Exercise 3: Viewing DataFrames
 
 Using the dataframe you made in exercise 1, return the following attributes: the datatype stored in each column, the column names, the indices, and the shape.
 
@@ -1659,11 +1203,11 @@ Using the dataframe you made in exercise 1, return the following attributes: the
 # Cell for Ex 3
 ```
 
-### 3.3.4 Manipulating data with ``pandas``
+### 5.1.4 Manipulating data with ``pandas``
 
 Here we'll cover some key features of manipulating data with pandas
 
-#### 3.3.4.1 Selection
+#### 5.1.4.1 Selection
 
 Access columns by name using square-bracket indexing:
 
@@ -1930,7 +1474,7 @@ df.head()
 
 
 
-##### 3.3.4.1.1 `loc` and `iloc`
+##### 5.1.4.1.1 `loc` and `iloc`
 
 Pandas provides a powerful way to work with both rows and columns together, optionally using their label indices or numeric indices.
 
@@ -2064,7 +1608,7 @@ df.iloc[-5:, [3,5]]
 
 
 
-##### 3.3.4.1.2 column vs index access
+##### 5.1.4.1.2 column vs index access
 
 
 ```python
@@ -2173,7 +1717,7 @@ mydf.loc['a', 'alpha'] = 'mychange'
 
 You want to use `loc` or `iloc` when setting new values to pandas dataframes.
 
-##### Exercise 4: Selecting
+##### 🏋️ Exercise 4: Selecting
 
 select the first 10 rows of the country, genre, and year columns using `loc`. Repeat the same exercise using `iloc`
 
@@ -2182,11 +1726,11 @@ select the first 10 rows of the country, genre, and year columns using `loc`. Re
 # Cell for Ex 4
 ```
 
-#### 3.3.4.2 Filtering
+#### 5.1.4.2 Filtering
 
 filtering down your selection will be BIGLY useful in your data quests
 
-##### 3.3.4.2.1 By String
+##### 5.1.4.2.1 By String
 
 one of the first tools we'll use to filter our dataset is the `.str.contains` method. Let's take an example.
 
@@ -2700,7 +2244,7 @@ df[df['title'] == "Fight Club"]
 
 
 
-##### 3.3.4.2.2 By numerical value
+##### 5.1.4.2.2 By numerical value
 
 
 ```python
@@ -3047,7 +2591,7 @@ df[df['votes'] > 1000]
 
 
 
-##### Exercise 5: Filtering
+##### 🏋️ Exercise 5: Filtering
 
 * Filter `df` for all the movies that are longer than 2 hours
 * Filter `df` for all movies where 'day' is in the title
@@ -3057,7 +2601,7 @@ df[df['votes'] > 1000]
 # Cell for Ex 5
 ```
 
-#### 3.3.4.3 Select, filter, operation
+#### 5.1.4.3 Select, filter, operation
 
 The real power of Pandas comes in its tools for grouping and aggregating data. Here we'll look at *value counts* and the basics of *group-by* operations.
 
@@ -3409,7 +2953,7 @@ pd.value_counts(df['duration'])
 
 
 
-##### Exercise 6: `value_counts, unique, nunique`
+##### 🏋️ Exercise 6: `value_counts, unique, nunique`
 
 We can do a little data exploration with this by seeing how common different values are. Play around with these pandas methods:
 
@@ -3430,14 +2974,14 @@ Do so with 3 different columns in the dataframe
 # Cell for Exercise 6
 ```
 
-#### 3.3.4.4 Group-by Operation
+#### 5.1.4.4 Group-by Operation
 
 One of the killer features of the Pandas dataframe is the ability to do group-by operations.
 You can visualize the group-by like this (image borrowed from the [Python Data Science Handbook](http://shop.oreilly.com/product/0636920034919.do))
 
 ![image](https://swcarpentry.github.io/r-novice-gapminder/fig/12-plyr-fig1.png)
 
-#### 3.3.4.5 Summary statistics with groupby: `value_counts`,  `count`, `describe`
+#### 5.1.4.5 Summary statistics with groupby: `value_counts`,  `count`, `describe`
 
 Let's break take this in smaller steps.
 Recall our ``duration_group`` column.
@@ -4338,7 +3882,7 @@ df.groupby(['duration_group', 'country'])['metascore'].describe()
 
 
 
-##### Exercise 7: Group-by
+##### 🏋️ Exercise 7: Group-by
 
 <ol>
 <li>use <code>pd.cut</code> to perform a grouping of one or more of the dataframe columns

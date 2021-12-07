@@ -1,18 +1,9 @@
-<a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/Tech%20Fun%20C1%20S4%20Visualization%20and%20OOP.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S6_Matplotlib.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-
-```python
-
-```
-
-# Technology Fundamentals Course 1, Session 4: Visualization and OOP
+# Python Foundations, Session 6: Visualization
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
-
-**Teaching Assitants** Varsha Bang, Harsha Vardhan
-
-**Contact** vbang@uw.edu, harshav@uw.edu
 <br>
 
 ---
@@ -26,7 +17,7 @@ In this session we'll be discussing visualization strategies. And, more specific
 ---
 
 
-## 4.1 Visualization with Matplotlib
+## 6.1 Visualization with Matplotlib
 
 Lets start by importing our `matplotlib` module. 
 
@@ -43,7 +34,7 @@ where `plt` is shorthand for the `matplotlib.pyplot` library
 import matplotlib.pyplot as plt
 ```
 
-### 4.1.1 The Basics
+### 6.1.1 The Basics
 
 Matplotlib is strongly object oriented and its principal objects are the **_figure_** and the **_axes_**. But before we get into that I want us to explore the _most basic_ use case. In this basic use case, we don't declare the `figure` and `axes` objects explicitly, but rather work directly in the `pyplot` namespace.
 
@@ -71,7 +62,7 @@ plt.plot(x, y)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_6_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_5_1.png)
     
 
 
@@ -101,7 +92,7 @@ plt.ylabel('Value')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_8_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_7_1.png)
     
 
 
@@ -146,7 +137,7 @@ ax = fig.add_subplot(111)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_10_0.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_9_0.png)
     
 
 
@@ -167,7 +158,7 @@ fig, ax = plt.subplots(1, 1, figsize=(10,5))
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_12_0.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_11_0.png)
     
 
 
@@ -181,7 +172,7 @@ To recap, by convention we typically separate our plots into three components: a
 **Example:**
 > `fig, ax = plt.subplots(1, 1, figsize=(8,8))` is creating the figure (`fig`) and axes (`ax`) explicitly, and depending on whether we create 2D or 3D plots, the axes will contain 2-3 `axis`.
 
-#### Exercise 1: Adjust Figure Size
+#### 🏋️ Exercise 1: Adjust Figure Size
 
 <ol type="a">
   <li>create a <code>figure</code> and <code>axes</code> using <code>plt.subplots()</code>. adjust the figure size to be 6 inches (width) by 3 inches (height). Plot the values of the fibonacci sequence we defined earlier</li>
@@ -206,7 +197,7 @@ x = [1,2,3,4,5,6,7]
 y = [1,1,2,3,5,8,13]
 ```
 
-### 4.1.2 Manipulating Plot Attributes
+### 6.1.2 Manipulating Plot Attributes
 
 We can manipulate many parameters of a `figure`'s `axes`: `marker`, `linestyle`, and `color`, to name a few. Each of these parameters takes string values.
 
@@ -373,7 +364,7 @@ plt.title('title')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_18_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_17_1.png)
     
 
 
@@ -412,7 +403,7 @@ ax.set_ylabel('Value')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_20_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_19_1.png)
     
 
 
@@ -445,11 +436,11 @@ ax.set_ylabel('Value')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_22_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_21_1.png)
     
 
 
-#### Exercise 2: Choose Lines, Colors, and Markers
+#### 🏋️ Exercise 2: Choose Lines, Colors, and Markers
 
 <ol type="a">
   <li>Recreate the "My Random Values" plot with a variety of markers, linestyles, and colors.</li>
@@ -522,11 +513,11 @@ ax.plot(x,y4)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_24_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_23_1.png)
     
 
 
-### 4.1.3 Subplots
+### 6.1.3 Subplots
 
 Remember that `fig, ax = plt.subplots()` satement we used earlier? We're now going to use that same approach but this time, the second variable that is returned (what we call `ax` in the cell bellow) is no longer an `axes` object! Instead, it is an `array` of `axes` objects.
 
@@ -589,7 +580,7 @@ fig, ax = plt.subplots(2,2)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_29_0.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_28_0.png)
     
 
 
@@ -652,11 +643,11 @@ ax[1,1].plot(range(10), [random.random() for i in range(10)],
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_33_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_32_1.png)
     
 
 
-#### Exercise 3: Subplots
+#### 🏋️ Exercise 3: Subplots
 
 <ol type="a">
   <li>Create a 2x1 <code>figure</code> where the first <code>axes</code> is a plot of the fibonacci sequence up to the 10th sequence value and the second <code>axes</code> is a plot of 10 random integers with values between 10 and 20 (exclusive). Use different markers, colors, and lines for each plot.</li>
@@ -737,11 +728,11 @@ y2 = [round(random.random() * 8) + 11 for i in range(10)]
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_35_0.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_34_0.png)
     
 
 
-## 4.2 Visualization with Pandas
+## 6.2 Visualization with Pandas
 
 Now lets discover the power of `pandas` plots! While the objectives of the exercizes may be to make certain visualizations, throughout our experience we'll be using `pandas` tricks to create the data splices we need, so in the following is a mix of new plotting stuff, with pandas data selection/splicing stuff. 
 
@@ -1065,7 +1056,7 @@ What kind of visualizations do you think of with data like this?
 
 I tend to think of **scatter, box, and histogram** plots for numerical data and **bar or sunburst charts** for categorical data.
 
-### 4.2.1 Scatter Plots
+### 6.2.1 Scatter Plots
 
 The way to generate a plot in the fewest keystrokes is to simply call the `plot()` method within the `dataframe` object
 
@@ -1091,7 +1082,7 @@ df.plot()
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_47_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_46_1.png)
     
 
 
@@ -1117,7 +1108,7 @@ df.plot(ax=ax)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_49_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_48_1.png)
     
 
 
@@ -1143,11 +1134,11 @@ df.plot(ax=ax, ls='', marker='.', ms=2)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_51_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_50_1.png)
     
 
 
-#### Exercise 4: Scatter Plots with Pandas
+#### 🏋️ Exercise 4: Scatter Plots with Pandas
 
 Make a plot of duration vs metascore
 
@@ -1165,11 +1156,11 @@ Make a plot of duration vs metascore
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_53_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_52_1.png)
     
 
 
-### 4.2.2 Bar Plots
+### 6.2.2 Bar Plots
 
 One of the more common methods of depicting aggregate data is bar plots. We almost always see these kinds of plots used to display and compare between averages, but sometimes between singular data values as well.
 
@@ -1199,11 +1190,11 @@ df.groupby('country').filter(lambda x: x.shape[0] > 100).\
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_55_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_54_1.png)
     
 
 
-### 4.2.3 Box Plots
+### 6.2.3 Box Plots
 
 Maybe we thought it was usefull to see the feature data in the scatter plots ( we can visually scan for correlations between feature sets, check outliers, etc.) but perhaps more instructive, is a boxplot. A box plot or boxplot is a statistical method for graphically depicting aggregate data through their quartiles. It will be useful to inspect the [boxplot API](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html) to see the default behavior for representing the quartiles and outliers. 
 
@@ -1233,11 +1224,11 @@ df.groupby('country').filter((lambda x: (x.shape[0] > 100) & # filter by number 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_57_2.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_56_2.png)
     
 
 
-### 4.2.4 Histograms
+### 6.2.4 Histograms
 
 What are some other kinds of plots we can make? A good one to be aware of is the histogram. 
 
@@ -1269,7 +1260,7 @@ plt.hist(df['duration'])
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_59_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_58_1.png)
     
 
 
@@ -1287,11 +1278,11 @@ df['duration'].plot(kind='hist')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_60_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_59_1.png)
     
 
 
-### 4.2.5 Kernel Density Estimates
+### 6.2.5 Kernel Density Estimates
 
 Another useful plot type for data analysis is the kernel density estimate. You can think of this plot as exactly like a histogram, except instead of creating bins in which to accrue datapoints, you deposit a gaussian distribution around every datapoint in your dataset. By this mechanism, you avoid creating bias in your data summary as you otherwise would be when predifining bin sizes and locations in a histogram.
 
@@ -1310,11 +1301,11 @@ df['duration'].plot(kind='kde', ax=ax)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_62_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_61_1.png)
     
 
 
-#### 4.2.5.1 **Enrichment**: Skew and Tailedness
+#### 6.2.5.1 **Enrichment**: Skew and Tailedness
 
 While we're on the topic of KDEs/histograms and other statistical plots, this is a convenient time to talk about skew and tailedness or, otherwise known as kurtosis
 
@@ -1374,7 +1365,7 @@ interact(inspect_kurt_skew)
 
 
 
-### 4.2.6 Correlation Plots
+### 6.2.6 Correlation Plots
 
 Often, we'll want to quantify the strength of a relationship between input variables. We can do this by calculating correlations. 
 
@@ -1520,7 +1511,7 @@ sns.heatmap(df.corr())
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_71_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_70_1.png)
     
 
 
@@ -1548,7 +1539,7 @@ sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_72_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_71_1.png)
     
 
 
@@ -1556,9 +1547,9 @@ What do we notice?
 
 looks like reviews and votes are all pretty correlated. Surprising?
 
-## 4.3 Visualization with IpyWidgets
+## 6.3 Visualization with IpyWidgets
 
-### 4.3.1 Interact
+### 6.3.1 Interact
 
 Here we're going to introduce a very basic use case of IPython's widgets using `interact`. The `interact` method (`ipywidgets.interact`) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using IPython’s widgets.
 
@@ -1610,7 +1601,7 @@ filtdf.boxplot(column='duration', by='country')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_79_2.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_78_2.png)
     
 
 
@@ -1647,7 +1638,7 @@ my_plot()
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_82_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_81_1.png)
     
 
 
@@ -1679,7 +1670,7 @@ list(filtdf.select_dtypes('number').columns)
 
 
 
-#### Exercise 5: IpyWidgets and Figures in Functions
+#### 🏋️ Exercise 5: IpyWidgets and Figures in Functions
 
 In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time filter your dataframe for only the top 10 directors that most frequently occur in the IMDb datafile.
 
@@ -1706,289 +1697,6 @@ interact(my_plot)
 
 
 
-# Part 2: Object Oriented Programming
-
-## 5.1 Classes, Instances, Methods, and Attribtues
-
-A class is created with the reserved word `class`
-
-A class can have attributes
-
-
-```python
-# define a class
-class MyClass:
-  some_attribute = 5
-```
-
-We use the **_class blueprint_** _MyClass_ to create an **_instance_**
-
-We can now access attributes belonging to that class:
-
-
-```python
-# create instance
-instance = MyClass()
-
-# access attributes of the instance of MyClass
-instance.some_attribute
-```
-
-
-
-
-    5
-
-
-
-attributes can be changed:
-
-
-```python
-instance.some_attribute = 50
-instance.some_attribute
-```
-
-
-
-
-    50
-
-
-
-In practice we always use the `__init__()` function, which is executed when the class is being initiated. 
-
-<br>
-
-<p align=center>
-<img src="https://cdn2.bulbagarden.net/upload/thumb/2/23/Pok%C3%A9_Balls_GL.png/250px-Pok%C3%A9_Balls_GL.png"></img>
-
-
-```python
-class Pokeball:
-  def __init__(self, contains=None, type_name="poke ball"):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = 0.50 # note this attribute is not accessible upon init
-```
-
-
-```python
-# empty pokeball
-pokeball1 = Pokeball()
-
-# used pokeball of a different type
-pokeball1 = Pokeball("Pikachu", "master ball")
-```
-
-> what is the special keyword [`self`](http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html) doing?
-
-The `self` parameter is a reference to the current instance of the class and is used to access variables belonging to the class.
-
-classes can also contain methods
-
-
-```python
-import random
-
-class Pokeball:
-  def __init__(self, contains=None, type_name="poke ball"):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = 0.50 # note this attribute is not accessible upon init
-
-  # the method catch, will update self.contains, if a catch is successful
-  # it will also use self.catch_rate to set the performance of the catch
-  def catch(self, pokemon):
-    if self.contains == None:
-      if random.random() < self.catch_rate:
-        self.contains = pokemon
-        print(f"{pokemon} captured!")
-      else:
-        print(f"{pokemon} escaped!")
-        pass
-    else:
-      print("pokeball is not empty!")
-
-```
-
-
-```python
-pokeball = Pokeball()
-pokeball.catch("picachu")
-```
-
-    picachu captured!
-
-
-
-```python
-pokeball.contains
-```
-
-
-
-
-    'picachu'
-
-
-
-### Q1
-
-Create a release method for the class Pokeball:
-
-
-```python
-
-```
-
-## 5.2 Inheritance
-
-Inheritance allows you to adopt into a child class, the methods/attributes of a parent class
-
-
-
-```python
-class MasterBall(Pokeball):
-  pass
-```
-
-
-```python
-masterball = MasterBall()
-masterball.type_name
-```
-
-
-
-
-    'poke ball'
-
-
-
-HMMM we don't like that type name. let's make sure we change some of the inherited attributes!
-
-We'll do this again with the `__init__` function
-
-
-```python
-class MasterBall(Pokeball):
-  def __init__(self, contains=None, type_name="Masterball", catch_rate=0.8):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = catch_rate
-```
-
-
-```python
-masterball = MasterBall()
-masterball.type_name
-```
-
-
-
-
-    'Masterball'
-
-
-
-
-```python
-masterball.catch("charmander")
-```
-
-    charmander captured!
-
-
-We can also write this, this way:
-
-
-```python
-class MasterBall(Pokeball):
-  def __init__(self, contains=None, type_name="Masterball"):
-    Pokeball.__init__(self, contains, type_name)
-    self.catch_rate = 0.8
-```
-
-
-```python
-masterball = MasterBall()
-masterball.type_name
-```
-
-
-
-
-    'Masterball'
-
-
-
-
-```python
-masterball = MasterBall()
-masterball.catch("charmander")
-```
-
-    charmander captured!
-
-
-The keyword `super` will let us write even more succintly:
-
-
-```python
-class MasterBall(Pokeball):
-  def __init__(self, contains=None, type_name="Masterball"):
-    super().__init__(contains, type_name)
-    self.catch_rate = 0.8
-```
-
-
-```python
-masterball = MasterBall()
-masterball.catch("charmander")
-```
-
-    charmander captured!
-
-
-### Q2
-
-Write another class object called `GreatBall` that inherits the properties of `Pokeball`, has a `catch_rate` of 0.6, and `type_name` of Greatball
-
-
-```python
-# Code Cell for L2 Q2
-```
-
-## 5.3 Interacting Objects
-
-### Q3
-
-Write another class object called `Pokemon`. It has the [attributes](https://bulbapedia.bulbagarden.net/wiki/Type):
-
-* name
-* weight
-* speed
-* type
-
-Now create a class object called `FastBall`, it inherits the properties of `Pokeball` but has a new condition on `catch` method: if pokemon.speed > 100 then there is 100% chance of catch success.
-
-> what changes do you have to make to the way we've been interacting with pokeball to make this new requirement work?
-
-
-```python
-# Code Cell for L2 Q3
-```
-
-### Q4
-
-In the above task, did you have to write any code to test that your new classes worked?! We will talk about that more at a later time, but for now, wrap any testing that you did into a new function called `test_classes` in the code cell below
-
-
-```python
-# Code Cell for L2 Q4
-```
-
 
 # References
 
@@ -2001,11 +1709,11 @@ In the above task, did you have to write any code to test that your new classes 
 
 # Enrichment Topics
 
-## 4.4 Other Plot Types
+## 6.4 Other Plot Types
 
 
 
-### 4.4.1 Bar Plots (Advanced)
+### 6.4.1 Bar Plots (Advanced)
 
 Similar to how we created bar plots with pandas, we can use matplotlib to make barplots 
 ```
@@ -2039,7 +1747,7 @@ plt.ylabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_130_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_91_1.png)
     
 
 
@@ -2075,7 +1783,7 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_132_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_93_1.png)
     
 
 
@@ -2123,11 +1831,11 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_134_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_95_1.png)
     
 
 
-### 4.4.2 3D Plots
+### 6.4.2 3D Plots
 
 You can also create 3D plots in matplotlib using `ax.scatter3D`
 
@@ -2159,15 +1867,15 @@ ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_136_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_97_1.png)
     
 
 
-## 4.5 Visualization with Plotly
+## 6.5 Visualization with Plotly
 
 Another great plotting library, that is gaining in popularity (especially in enterprise settings) is plotly. As an added exercise, if you have additional time, explore some of the [plotly examples](https://plotly.com/python/) then recreate the breakout room assignment using plotly instead of matplotlib.
 
-### 4.5.1 Scatter Plot with Size and Color
+### 6.5.1 Scatter Plot with Size and Color
 
 
 ```python
@@ -2240,7 +1948,7 @@ if (outputEl) {{
 </html>
 
 
-### 4.5.2 Plotly with IpyWidgets
+### 6.5.2 Plotly with IpyWidgets
 
 
 ```python

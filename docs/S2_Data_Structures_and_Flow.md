@@ -1,15 +1,12 @@
-<a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/Tech%20Fun%20C1%20S2%20Data%20Structures%20and%20Flow%20Control.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S2_Data_Structures_and_Flow.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 1, Session 2: Lists, Dictionaries, and Flow Control
+# Python Foundations, Session 2: Lists, Dictionaries, and Flow Control
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
 
-**Teaching Assistants**: Varsha Bang, Harsha Vardhan
-
-**Contact**: vbang@uw.edu, harshav@uw.edu
-
+<i>special thanks to [David Beck](https://www.cheme.washington.edu/facultyfinder/david-beck) for their contribution to this material</i>
 <br>
 
 ---
@@ -82,7 +79,7 @@ type(pickles)
 
 Cool.  We defined a variable named pickles containing a poor estimate of $\pi$.  Now every place the word `pickles` appears, it will have the value `3.14`, at least until we change it.  
 
-#### Exercise 1: Picking variable names
+#### 🏋️ Exercise 1: Picking variable names
 
 Is `pickles` a good variable name for the value $\pi$?  If not, what would be a better name?  Is it in the **_reserved word_** list above?  Use the `code` cell below to create a new variable with your preferred name in it.
 
@@ -394,7 +391,7 @@ my_list
 
 And who doesn't love puppies? Recap... Lists are _ordered_ _collections_ of information that you can recognize by their use of `[` and `]`.  To access or _address_ elements in the list, you can use _indices_.  They start at `0` in Python.  The last element of a list has the index of the length of the list minus 1.  When _slicing_ a list, use two indices separated by `:`.  If you leave one off, it means everying up to or beyond that element.  
 
-#### Question 1: Slicing
+#### 🙋 Question 1: Slicing
 
 > Will either one of the following codes will return an error?
 
@@ -544,7 +541,7 @@ a_list[1]
 
 
 
-#### Exercise 2: accessing lists of lists
+#### 🏋️ Exercise 2: accessing lists of lists
 
 Make sure you understand why the above works.  Take a minute and play with the first and last indices.
 
@@ -563,7 +560,7 @@ Make sure you understand why the above works.  Take a minute and play with the f
 ### 2.1.2 Dictionaries
 
 _For more than just reading on a Friday night._
-Sometimes we want to _access_ elements in a _data structure_ by something other than an index.  Consider a [dictionary on the internet](dictionary.com).  You look up the word on a seach engine and go to the web page of the entry for the word.  Python has a similar concept where the index for an element in a **_collection_** is not a number, as it is in a list above, but a `key` that, may be a string like `'pickles'`.  
+Sometimes we want to _access_ elements in a _data structure_ by something other than an index.  Consider a [dictionary on the internet](https://www.dictionary.com/).  You look up the word on a seach engine and go to the web page of the entry for the word.  Python has a similar concept where the index for an element in a **_collection_** is not a number, as it is in a list above, but a `key` that, may be a string like `'pickles'`.  
 
 
 
@@ -896,7 +893,7 @@ else:
     pie : I have a recipe for that!
 
 
-#### Exercise 3.2: Writing conditionals
+#### 🏋️ Exercise 3: Writing conditionals
 
 <ol>
 <li>Write a series of two if statements, that both evaluate as true and print something
@@ -1384,7 +1381,7 @@ while True:
     hello!
 
 
-#### Question 2: While Loops
+#### 🙋 Question 2: While Loops
 
 > What happens in this cell?
 ```

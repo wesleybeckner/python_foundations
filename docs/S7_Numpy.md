@@ -1,14 +1,11 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/technology_fundamentals/blob/main/C2%20Statistics%20and%20Model%20Creation/Tech_Fun_C2_S2_Numpy_and_Debugging.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S7_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 2, Session 2: Numpy and Debugging
+# Python Foundations, Session 7: NumPy
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
-
-**Teaching Assitants**: Varsha Bang, Harsha Vardhan
-
-**Contact**: vbang@uw.edu, harshav@uw.edu
+<br>
 
 ---
 
@@ -53,9 +50,9 @@ def suppress_stdout():
             sys.stdout = old_stdout
 ```
 
-## 2.1 NumPy Arrays
+## 7.1 NumPy Arrays
 
-### 2.1.1 Creating NumPy Arrays
+### 7.1.1 Creating NumPy Arrays
 
 When we worked with lists, we saw that we could fill them with all sorts of datatypes. NumPy arrays are necessarily of one datatype:
 
@@ -132,16 +129,16 @@ np.array([1, 2, 3.14, 6, 5, 4], dtype='float32')
 
 
 
-#### 2.1.1.1 Exercise: Specify datatype
+#### 🏋️ Exercise 1: Specify datatype
 
 Create an array of 5 numbers whose datatypes are 16 bit integers. Make one of the numbers not a whole number. What happens to the number when it is stored in the 16 bit integer array?
 
 
 ```python
-# Cell for Ex 1
+# Cell for Exercise 1
 ```
 
-### 2.1.2 Creating Arrays from NumPy Methods
+### 7.1.2 Creating Arrays from NumPy Methods
 
 
 ```python
@@ -259,37 +256,37 @@ np.random.randint(5, 11, (2,2))
 
 
 
-### 2.1.3 Exercise: Creating Arrays
+### 🏋️ Exercise 2: Creating Arrays
 
 a. Create a 5x5 array of ones with datatype `int16`
 
 
 ```python
-# Cell for Ex 3.1.3 a
+# Cell for Exercise 2a
 ```
 
 b. Create an array of 10 numbers drawn from a uniform distribution between 0 and 1
 
 
 ```python
-# Cell for Ex 3.1.3 b
+# Cell for Exercise 2b
 ```
 
 c. Create an array of 10 numbers drawn from a normal distribution centered at 80 with a standard deviation of 5
 
 
 ```python
-# Cell for Ex 3.1.3 c
+# Cell for Exercise 2c
 ```
 
 d. Create an array of 10 intergers drawn from a uniform distribution between 5 and 10 inclusive
 
 
 ```python
-# Cell for Ex 3.1.3 d
+# Cell for Exercise 2d
 ```
 
-## 2.2 NumPy Array Attributes
+## 7.2 NumPy Array Attributes
 
 Common array attributes are `shape`, `size`, `nbytes`, and `itemsize`
 
@@ -366,13 +363,13 @@ my_arr.itemsize
 
 
 
-### 2.2.1 Exercise: Conditional Check on Array Attributes
+### 🏋️ Exercise 3: Conditional Check on Array Attributes
 
 write a conditional that checks that the total number of bytes of the array object `my_arr` divided by the size of each item (in bytes) is equal to the number of items in the array (_hint: we covered the attributes above_)
 
 
 ```python
-# Cell for exercise 3.2.1
+# Cell for exercise 3
 ```
 
 
@@ -382,7 +379,7 @@ write a conditional that checks that the total number of bytes of the array obje
 
 
 
-## 2.3 NumPy Array Slicing, Copying, Setting
+## 7.3 NumPy Array Slicing, Copying, Setting
 
 Array slicing operates much the same way as with python lists
 
@@ -581,7 +578,7 @@ print(my_arr)
      [9 9 5 1 1]]
 
 
-### 2.3.1 Exercise: Array Setting and Slicing
+### 🏋️ Exercise 4: Array Setting and Slicing
 
 set all the even columns of `my_arr` to 0 and all the odd columns to 1 (interpret the first column to be 1 and the last to be 5, i.e. don't index at 0 when thinking of each column as even/odd!)
 
@@ -596,7 +593,7 @@ array([[0, 1, 0, 1, 0],
 
 
 ```python
-# Cell for ex 3.3.1
+# Cell for Exercise 4
 ```
 
 
@@ -610,7 +607,7 @@ array([[0, 1, 0, 1, 0],
 
 
 
-## 2.4 NumPy Array Reshaping, Concatenation, and Splitting
+## 7.4 NumPy Array Reshaping, Concatenation, and Splitting
 
 reshaping is going to be a common task for us:
 
@@ -878,7 +875,7 @@ np.hsplit(arr, [5])
 
 
 
-### 2.4.1 Exercise: Reshaping and Concatenating
+### 🏋️ Exercise 5: Reshaping and Concatenating
 
 We'll practice a few of these methods we've learned.
 
@@ -930,7 +927,7 @@ print(arr2)
 
 
 ```python
-# cell for Ex 3.4.1
+# Cell for Exercise 5
 ```
 
 
@@ -940,18 +937,18 @@ print(arr2)
 
 
 
-## 2.5 Additional Exercises
+## 7.5 Additional Exercises
 
-### 2.5.1 Exercise: boolean Array
+### 🏋️ Exercise 6: boolean Array
 
 Create a 3x3 array of all True's (booleans)
 
 
 ```python
-# cell for 3.5.1
+# Cell for Exercise 6
 ```
 
-### 2.5.2 Exercise: Index on Conditional
+### 🏋️ Exercise 7: Index on Conditional
 
 extract all numbers divisible by 3
 
@@ -961,11 +958,11 @@ arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
 ```python
-# cell for 3.5.2
+# Cell for Exercise 7
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```
 
-### 2.5.3 `np.where`
+### 7.5.3 `np.where`
 
 There is a nifty tool, `np.where()`. The syntax works like `np.where(<where this condition is true> , <return elements from this array>, <otherwise return elements from this aray>)`
 
@@ -984,7 +981,7 @@ np.where(a<5, a, a*10)
 
 
 
-### 2.5.4 `np.argwhere`
+### 7.5.4 `np.argwhere`
 
 A similar but slightly different tool is `np.argwhere` which will return the indices of the array where the conditional is true
 
@@ -1005,17 +1002,17 @@ np.argwhere(a<5)
 
 
 
-### 2.5.5 Exercise: Edit a Copy not a View
+### 🏋️ Exercise 8: Edit a Copy not a View
 
 replace all odd numbers in `arr` with -1 without changing `arr` (return a new array using `np.where`)
 
 
 ```python
-# cell for 3.5.5
+# Cell for Exercise 8
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```
 
-### 2.5.6 Exercise: Read NumPy Documentation
+### 🏋️ Exercise 9: Read NumPy Documentation
 
 create the following array without hard coading (i.e. don't write any of the values in your coad)
 
@@ -1032,219 +1029,23 @@ Hints:
 
 
 ```python
-# cell for 3.5.6
+# Cell for Exercise 9
 a = np.array([1,2,3])
 # desired output:
 #> array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
 ```
 
-### 2.5.7 Exercise: More Slicing
+### 🏋️ Exercise 10: More Slicing
 
 swap columns 2 and 3 in `arr`
 
 
 ```python
-# cell for 3.5.7
+# Cell for Exercise 10
 arr = np.arange(9).reshape(3,3)
 ```
 
-## 2.4 Debugging 
-
-> It’s always important to check that our code is “plugged in”, i.e., that we’re actually exercising the problem that we think we are. Every programmer has spent hours chasing a bug, only to realize that they were actually calling their code on the wrong data set or with the wrong configuration parameters, or are using the wrong version of the software entirely. Mistakes like these are particularly likely to happen when we’re tired, frustrated, and up against a deadline, which is one of the reasons late-night (or overnight) coding sessions are almost never worthwhile. -[swcarpentry](https://swcarpentry.github.io/python-novice-inflammation/11-debugging/index.html)
-
-We'll now dedicated some discussion and practice to debugging python. This easy to overlook topic can save us oodles of time down the road. It's worth the investment.
-
-Borrowing from software carpentry, we'll highlight the key guidlines to debugging code:
-
-1. Know what it's supposed to do
-2. Make it fail every time
-3. Make it fail fast
-4. Change one thing at a time, for a reason
-5. Keep track of what you've done
-6. Be humble
-
-### 2.4.0 Before We Get Started
-
-We will refer to writing tests, and specifically writing _unit tests_ in this module. Don't worry too much about the specifics of _unit tests_ for now. We will have a dedicated module for that. What we do need to talk about is a specific built in function in python called the `assert` function
-
-#### 2.4.0.1 the `assert` function
-
-Let's take a simple example of the assert function. If I wanted to test that the sume of two numbers is correct
-
-
-```python
-assert sum([2, 5]) == 7, "should be 7"
-```
-
-Nothing is sent to the print out because the condition is satisfied. If we run, however:
-
-```
-assert sum([2, 4]) == 7, "should be 7"
-```
-
-we get an error message:
-
-```
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-3-d5724b127818> in <module>()
-----> 1 assert sum([2, 4]) == 7, "should be 7"
-
-AssertionError: should be 7
-```
-
-
-Now to make this a test, you will want to wrap it in a function
-
-
-```python
-def test_sum():
-    assert sum([1, 2, 3]) == 6, "Should be 6"
-
-test_sum()
-print("Everything passed")
-```
-
-    Everything passed
-
-
-And if we include a test that does not pass:
-
-```
-def test_sum():
-  assert sum([3, 3]) == 6, "Should be 6"
-
-def test_my_broken_func():
-  assert sum([1, 2]) == 5, "Should be 5"
-
-test_sum()
-test_my_broken_func()
-print("Everything passed")
-```
-
-
-
-Here our test fails, because the sum of 1 and 2 is 3 and not 5. We get a traceback that tells us the source of the error:
-
-```
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-13-8a552fbf52bd> in <module>()
-      6 
-      7 test_sum()
-----> 8 test_my_broken_func()
-      9 print("Everything passed")
-
-<ipython-input-13-8a552fbf52bd> in test_my_broken_func()
-      3 
-      4 def test_my_broken_func():
-----> 5   assert sum([1, 2]) == 5, "Should be 5"
-      6 
-      7 test_sum()
-
-AssertionError: Should be 5
-```
-
-
-
-We will worry about the intricacies of what to test for and when to test at a later time. For now, we just need to understand the assert function so we can practice debugging and writing short tests for the problems that we fix today! Ok LETS GO
-
-### 2.4.1 Know what it's supposed to do
-
-This may seem obvious, but it's easy to recognize that an error is happening without knowing what the correct answer is. This makes unit tests especially handy, they force us to know the expected outcome at least for intended use cases. Here are some tips in regard to knowing the expected outcome:
-
-* _test with simplified data_ 
-* _test a simplified case_
-* _compare to a base model_
-* _visualize_
-
-### 2.4.2 Make it fail every time
-
-It can be extraordinarily difficult to debug code that is precidated on some stochastic process. _remove stochasticity when possible_. For instance, seed your random value generators (`random.seed()`, `np.random.seed()`)
-
-### 2.4.3 Make it fail fast
-
-a corrolary to this, is narrow down the source of the error, and again this is why we write unit tests before integration tests. If it takes 20 minutes to train your neural network, and the error occurs during some post processing plotting of your loss history, obviously don't retrain the NN each time you iterate over the failure. Along the same lines, if you're debugging something in a for loop, run the loop once, or run the indented code outside of the loop with a placeholder for the iterated variable, in order to test and debug the code. 
-
-### 2.4.4 Change one thing at a time, for a reason
-
-Not much nuance here. Just like it's a good idea for us to change one aspect of our machine learning models and track the performance rather than to change multiple things at once, it's better to change one feature when debugging at a time. Changing multiple things at once creates interaction effects that can complicate the whole problem!
-
-### 2.4.5 Keep track of what you've done
-
-This is where git/GitHub come in handy. It's so incredibly easy to forget what you've done, and, a weeks or days later from the time you first encountered the bug, forget whether you fixed it, did a temp fix, and/or what you did to fix it.
-
-> my tip: if you're working in a jupyter notebook, something I do is write at the top of my notebook my TO DO items. I then strike through items I complete, and update my notes for the next time I work on the code. Similarly, I name my notebooks to reflect and categorize what they are about. Primarily I have `test_<thing>.ipynb` and `prototype_<thingy>.ipynb`
-
-
-
-### 2.4.6 Be humble
-
-Lastly, ask for help. Take breaks. _A week of hard work can sometimes save you an hour of thought._
-
-### 2.4.7 Exercise: Debug A Short Code Block
-
-Your friend is writing a function to calculate BMI. They are concerned that seemingly all the patient's values have the same BMI, despite having different heights and weights. Determine the bugs in the code then write a unit test for the function `calculate_bmi`.
-
-
-```python
-# [weight (kg), height (m)]
-patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
-
-def calculate_bmi(weight, height):
-    # kg / m ** 2 = bmi
-    return weight / (height ** 2)
-
-for patient in patients:
-    weight, height = patients[0] 
-    bmi = calculate_bmi(height, weight) 
-    print("Patient's BMI is: %f" % bmi)
-```
-
-    Patient's BMI is: 0.000367
-    Patient's BMI is: 0.000367
-    Patient's BMI is: 0.000367
-
-
-
-```python
-# [weight (kg), height (m)]
-patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
-
-def calculate_bmi(weight, height):
-    # kg / m ** 2 = bmi
-    return weight / (height ** 2)
-
-for patient in patients:
-    weight, height = patient ### not properly referencing iterated variable
-    bmi = calculate_bmi(weight, height) ### should be swapped
-    print("Patient's BMI is: %f" % bmi)
-```
-
-    Patient's BMI is: 21.604938
-    Patient's BMI is: 22.160665
-    Patient's BMI is: 51.903114
-
-
-
-```python
-def test_calculate_bmi():
-  patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
-  bmis = [21.6, 22.16, 51.9]
-
-  for patient, bmi_ in zip(patients, bmis):
-    weight, height = patient ### not properly referencing iterated variable
-    bmi = calculate_bmi(weight, height) ### should be swapped
-    assert np.abs(bmi - bmi_) < 0.1, "fail calc for {}".format(patient)
-    
-test_calculate_bmi()
-print("success!")
-```
-
-    success!
-
-
-### 2.4.8 Exercise: Debug a Class Method
+### 🏋️ Exercise 11: Debug a Class Method
 
 Your friend is developing a new pokemon game. They are excited to release but are running into some trouble! 
 

@@ -9,7 +9,7 @@ nav:
   - Sessions:
       - Introduction to Python and Jupyter: S1_Python_and_Jupyter.md
       - Data Structures and Flow Control: S2_Data_Structures_and_Flow.md
-      - Functions: S3_Functions.md
+      - Functions and Debugging: S3_Functions_and_Debugging.md
       - Object Oriented Programming: S4_Object_Oriented_Programming.md
       - Pandas: S5_Pandas.md
       - Matplotlib: S6_Matplotlib.md
