@@ -1,15 +1,10 @@
-<a href="https://colab.research.google.com/github/ronva-h/technology_fundamentals/blob/main/C1%20Fundamentals/LABS_PROJECT/Tech%20Fun%20C1%20L1%20Practice%20with%20Python%20and%20Jupyter%20Notebooks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 1, Lab 1: Practice with Python and Jupyter Notebooks
+# Python Foundations, Lab 1: Practice with Python and Jupyter Notebooks
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
-
-**Teaching Assitants** Varsha Bang, Harsha Vardhan
-
-**Contact** vbang@uw.edu, harshav@uw.edu
-
 <br>
 
 ---
@@ -25,7 +20,7 @@ This first lab assignment will be a review of what we discussed today.
 
 
 
-#### 1 Python variables
+#### 🔠 L1 Q1 Python variables
 
 In the empty code cell below, create the following four variables:
 - A string variable named `favorite_movie` that represents your favorite movie
@@ -47,7 +42,7 @@ To check if each variable is the correct data type, use the type() function expl
 
 ```
 
-#### 2 Practice with math in Python
+#### 🧮 L1 Q2 Practice with math in Python
 
 Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this function will correctly output the product of these two numbers.
 
@@ -109,7 +104,7 @@ $\frac{-(3655 * 44)}{(8 * 16)^3}$
 
 ```
 
-#### 3 Practice writing helpful comments
+#### 🤐 L1 Q3 Practice writing helpful comments
 
 Consider the following code below. No need to decipher and understand every piece but just be aware of the output when you run the code cell. Based on the output, modify the code cell by adding a code comment at the top of the cell briefly explaining what the code does. This comment can be as many lines as you'd like, and may or may not include direct references to the example print statements below.
 
@@ -129,13 +124,13 @@ print(mystery_function("RacecaR"))
     R a c e c a R
 
 
-#### 4 More Markdown
+#### ™️ L1 Q4 More Markdown
 
 Consider the vision statement of the Global Innovation Exchange: "Our mission is to build the talent that leverages emerging technologies in new and impactful ways". Type that same statement in a new text cell below, only add a `_` (underscore) at the beginning and end. What ends up happening to the format of the text as a result?
 
 In a new text cell, list all of the potential data science projects you might work on post DSE, with each one on its own separate line. Then add a `- ` at the beginning of each line; include a single space between the hyphen and the first letter in your project name! Based on the output, what can you decipher that this `- ` changes in the formatting?
 
-#### 5 Get familiar with the Python community
+#### 🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community
 
 Python has strong support from a community of avid developers and computer scientists. The Python Software Foundation (PSF) tries to maintain input and activity through their own website, [python.org](https://). Please explore their community section - https://www.python.org/community/ - and answer the following questions in a new text cell just below this one:
 - What is the name of the mailing list that the PSF manages for those who have questions about Python code?
@@ -143,14 +138,14 @@ Python has strong support from a community of avid developers and computer scien
 - According to their most recent annual report, which continent provides the highest proportion of grants to the PSF?
 - Name at least three ways that the PSF recommends you can get involved with the community.
 
-#### 6 Advanced - Understanding the switch from Python 2 to 3
+#### 🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3
 
 Inside of the following link, https://www.python.org/doc/, is an article about the Python Software Foundation's decision to end support for Python version 2, and move with support for version 3. From the article, answer the following questions in a new text cell just below this one:
 - What official date was Python 2 no longer supported?
 - What is the version number of the last supported Python 2?
 - In your own words, describe why the Python Software Foundation made the decision to stop supporting Python 2.
 
-#### 7 Advanced - Create your own Google Colab notebook!
+#### 📓 L1 Q7 Advanced - Create your own Google Colab notebook!
 
 Create your own separate Google Colab notebook with the following rules and content:
 - The file name of your notebook should be in the format ***lastname_C1S1_breakout_custom_notebook.ipynb***.
