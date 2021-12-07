@@ -20,13 +20,13 @@ In this lab we will continue to practice flow control.
 
 
 
-# ➿ L2 Q1: Print and For Loops
+## ➿ L2 Q1: Print and For Loops
 
 Create a Pyramid Using for loops
 
 
 
-## Part A
+### Part A
 
 Example output:
 
@@ -45,7 +45,7 @@ Example output:
 # Code Cell for L2 Q1 A
 ```
 
-## Part B
+### Part B
 
 Example output:
 
@@ -62,7 +62,7 @@ Example output:
 # Code Cell for L2 Q1 B
 ```
 
-## Part C
+### Part C
 
 Example output:
 
@@ -91,7 +91,7 @@ Example output:
      * * * * * * * * * 
 
 
-# 🔙 L2 Q2: Conditionals and For Loops
+## 🔙 L2 Q2: Conditionals and For Loops
 
 Complete the Fibonacci sequence up to the 10th place using any or all of the following:
 * `for` 
@@ -125,7 +125,7 @@ Value: 34
 # Cell for L2 Q2
 ```
 
-# 🧺 L2 Q3: Practice with Collections
+## 🧺 L2 Q3: Practice with Collections
 
 concatenate the following dictionaries to create a new one, if you need to refer to documentation for python dictionaries!
 
@@ -146,7 +146,7 @@ new_dect={1:10, 2:20, 3:30, 4:40, 5:50, 6:60}
 # Cell for L2 Q3
 ```
 
-# 🐝 L2 Q4 The FizzBuzz task
+## 🐝 L2 Q4 The FizzBuzz task
 
 Let's do this!  **FizzBuzz** is our first task for this session.  **FizzBuzz** is a common toy programming problem that is often used in software engineering job interviews.  Today, we are not after the _most compact_, _most clever_, or even the _most beautiful_ solution.  Your goal is to solve the problem using **_for_** and **_if_** as your primary tools.  You will likely also want to use the `%` operator.  Before we describe **FizzBuzz**, let's talk about the **moduluo** operation.
 

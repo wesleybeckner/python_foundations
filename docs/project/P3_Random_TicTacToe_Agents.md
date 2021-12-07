@@ -1,22 +1,19 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/technology_fundamentals/blob/main/C2%20Statistics%20and%20Model%20Creation/LABS_PROJECT/Tech_Fun_C1_P2_Game_AI%2C_OOP_and_Agents_PART_2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/project/P3_Random_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Technology Fundamentals Course 2, Project Part 2: Building Agents and Object Oriented Programming (Random AI Agent)
+# Python Foundations, Project Part 3: Building Agents (Random AI Agent)
 
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
-
-**Teaching Assitants**: Varsha Bang, Harsha Vardhan
-
-**Contact**: vbang@uw.edu, harshav@uw.edu
-
 <br>
 
 ---
 
 <br>
 
-In part II of our tic-tac-toe and AI journey, we're going to take all the functions we've defined so far and make them object oriented!
+In part III of our tic-tac-toe and AI journey, we're going to create NPCs for our game!
+
+We will need to pull in our OOP work from the previous project notebook. Be sure to copy your code and run those cells below before we get started on section 3
 
 <br>
 
@@ -308,7 +305,7 @@ Let's test our new module
 play_game()
 ```
 
-## 2.2 Creating an Agent
+## 3.1 Creating an Agent
 
 we'll start by creating an agent that just selects a random playing number
 
@@ -448,7 +445,7 @@ def play_game():
 play_game()
 ```
 
-## 2.3 OOP and Inheritance
+## 3.2 OOP and Inheritance
 
 We'll want to reconfigure our code a bit to allow for AI to play AI. We'll use this feature to record a bunch of games and generate some data for analysis and, eventually, machine learning training.
 
@@ -676,7 +673,7 @@ game.play_game()
 
 
 
-## 2.4 Simulating Data
+## 3.3 Simulating Data
 
 We will now want to run our game thousands of times to collect data for building our AI agents. The following code should run without any input from the user:
 

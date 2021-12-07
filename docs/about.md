@@ -10,7 +10,7 @@ The breakdown for this course is as follows:
 *	Sessions
     * S1: Python and Jupyter
     * S2: Data Structures and Flow
-    * S3: Functions 
+    * S3: Functions and Debugging
     * S4: Object Oriented Programming
     * S5: Pandas
     * S6: Matplotlib
