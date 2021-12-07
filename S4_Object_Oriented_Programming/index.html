@@ -314,6 +314,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    🏋️ Exercise 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-inheritance" class="md-nav__link">
+    4.1.2 Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2" class="md-nav__link">
+    🏋️ Exercise 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-interacting-objects" class="md-nav__link">
+    4.1.3 Interacting Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3" class="md-nav__link">
+    🏋️ Exercise 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-4" class="md-nav__link">
+    🏋️ Exercise 4
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -611,6 +653,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    🏋️ Exercise 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-inheritance" class="md-nav__link">
+    4.1.2 Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2" class="md-nav__link">
+    🏋️ Exercise 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-interacting-objects" class="md-nav__link">
+    4.1.3 Interacting Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3" class="md-nav__link">
+    🏋️ Exercise 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-4" class="md-nav__link">
+    🏋️ Exercise 4
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -672,8 +756,7 @@
 <p><br></p>
 <p align=center>
 <img src="https://cdn2.bulbagarden.net/upload/thumb/2/23/Pok%C3%A9_Balls_GL.png/250px-Pok%C3%A9_Balls_GL.png"></img>
-
-
+</p>
 
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;poke ball&quot;</span><span class="p">):</span>
@@ -682,10 +765,6 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
 </code></pre></div>
 
-
-
-
-
 <div class="codehilite"><pre><span></span><code><span class="c1"># empty pokeball</span>
 <span class="n">pokeball1</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">()</span>
 
@@ -693,16 +772,11 @@
 <span class="n">pokeball1</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">(</span><span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span> <span class="s2">&quot;master ball&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
-
-> what is the special keyword [`self`](http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html) doing?
-
-The `self` parameter is a reference to the current instance of the class and is used to access variables belonging to the class.
-
-classes can also contain methods
-
-
-
+<blockquote>
+<p>what is the special keyword <a href="http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html"><code>self</code></a> doing?</p>
+</blockquote>
+<p>The <code>self</code> parameter is a reference to the current instance of the class and is used to access variables belonging to the class.</p>
+<p>classes can also contain methods</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
@@ -725,73 +799,39 @@ classes can also contain methods
       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pokeball is not empty!&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
-
-
-
 <div class="codehilite"><pre><span></span><code><span class="n">pokeball</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">()</span>
 <span class="n">pokeball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;picachu&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
-
-    picachu captured!
-
-
-
+<div class="codehilite"><pre><span></span><code>picachu captured!
+</code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pokeball</span><span class="o">.</span><span class="n">contains</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>picachu
+</code></pre></div>
 
-
-    picachu
-
-
-### 🏋️ Exercise 1
-
-Create a release method for the class Pokeball:
-
-
-
+<h3 id="exercise-1">🏋️ Exercise 1<a class="headerlink" href="#exercise-1" title="Permanent link">&para;</a></h3>
+<p>Create a release method for the class Pokeball:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 1</span>
 </code></pre></div>
 
-
-
-### 4.1.2 Inheritance
-
-Inheritance allows you to adopt into a child class, the methods and attributes of a parent class
-
-
-
+<h3 id="412-inheritance">4.1.2 Inheritance<a class="headerlink" href="#412-inheritance" title="Permanent link">&para;</a></h3>
+<p>Inheritance allows you to adopt into a child class, the methods and attributes of a parent class</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">pass</span>
 </code></pre></div>
-
-
-
-
 
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>&#39;poke ball&#39;
+</code></pre></div>
 
-
-
-
-
-    'poke ball'
-
-
-
-HMMM we don't like that type name. let's make sure we change some of the inherited attributes!
-
-We'll do this again with the `__init__` function
-
-
-
+<p>HMMM we don't like that type name. let's make sure we change some of the inherited attributes!</p>
+<p>We'll do this again with the <code>__init__</code> function</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">,</span> <span class="n">catch_rate</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
@@ -799,135 +839,78 @@ We'll do this again with the `__init__` function
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="n">catch_rate</span>
 </code></pre></div>
 
-
-
-
-
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
-
-
-
-
-
-    'Masterball'
-
-
-
-
+<div class="codehilite"><pre><span></span><code>&#39;Masterball&#39;
+</code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;charmander&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>charmander captured!
+</code></pre></div>
 
-
-    charmander captured!
-
-
-We can also write this, this way:
-
-
-
+<p>We can also write this, this way:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">):</span>
     <span class="n">Pokeball</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.8</span>
 </code></pre></div>
 
-
-
-
-
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
-
-
-
-
-
-    'Masterball'
-
-
-
-
+<div class="codehilite"><pre><span></span><code>&#39;Masterball&#39;
+</code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;charmander&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>charmander captured!
+</code></pre></div>
 
-
-    charmander captured!
-
-
-The keyword `super` will let us write even more succintly:
-
-
-
+<p>The keyword <code>super</code> will let us write even more succintly:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.8</span>
 </code></pre></div>
 
-
-
-
-
 <div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;charmander&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>charmander captured!
+</code></pre></div>
 
-
-    charmander captured!
-
-
-### 🏋️ Exercise 2
-
-Write another class object called `GreatBall` that inherits the properties of `Pokeball`, has a `catch_rate` of 0.6, and `type_name` of Greatball
-
-
-
+<h3 id="exercise-2">🏋️ Exercise 2<a class="headerlink" href="#exercise-2" title="Permanent link">&para;</a></h3>
+<p>Write another class object called <code>GreatBall</code> that inherits the properties of <code>Pokeball</code>, has a <code>catch_rate</code> of 0.6, and <code>type_name</code> of Greatball</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 2</span>
 </code></pre></div>
 
-
-
-### 4.1.3 Interacting Objects
-
-As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire
-
-### 🏋️ Exercise 3
-
-Write another class object called `Pokemon`. It has the [attributes](https://bulbapedia.bulbagarden.net/wiki/Type):
-
-* name
-* weight
-* speed
-* type
-
-Now create a class object called `FastBall`, it inherits the properties of `Pokeball` but has a new condition on `catch` method: if pokemon.speed > 100 then there is 100% chance of catch success.
-
-> what changes do you have to make to the way we've been interacting with pokeball to make this new requirement work?
-
-
-
+<h3 id="413-interacting-objects">4.1.3 Interacting Objects<a class="headerlink" href="#413-interacting-objects" title="Permanent link">&para;</a></h3>
+<p>As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire</p>
+<h3 id="exercise-3">🏋️ Exercise 3<a class="headerlink" href="#exercise-3" title="Permanent link">&para;</a></h3>
+<p>Write another class object called <code>Pokemon</code>. It has the <a href="https://bulbapedia.bulbagarden.net/wiki/Type">attributes</a>:</p>
+<ul>
+<li>name</li>
+<li>weight</li>
+<li>speed</li>
+<li>type</li>
+</ul>
+<p>Now create a class object called <code>FastBall</code>, it inherits the properties of <code>Pokeball</code> but has a new condition on <code>catch</code> method: if pokemon.speed &gt; 100 then there is 100% chance of catch success.</p>
+<blockquote>
+<p>what changes do you have to make to the way we've been interacting with pokeball to make this new requirement work?</p>
+</blockquote>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 3</span>
 </code></pre></div>
 
-
-
-### 🏋️ Exercise 4
-
-In the above task, did you have to write any code to test that your new classes worked?! We will talk about that more at a later time, but for now, wrap any testing that you did into a new function called `test_classes` in the code cell below
-
-
-
+<h3 id="exercise-4">🏋️ Exercise 4<a class="headerlink" href="#exercise-4" title="Permanent link">&para;</a></h3>
+<p>In the above task, did you have to write any code to test that your new classes worked?! We will talk about that more at a later time, but for now, wrap any testing that you did into a new function called <code>test_classes</code> in the code cell below</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 4</span>
 </code></pre></div>
 
