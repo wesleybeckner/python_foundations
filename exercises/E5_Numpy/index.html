@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../../extra.css">
     
+      <link rel="stylesheet" href="../../styles.css">
+    
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -757,102 +759,104 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E5_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-lab-5-practice-with-numpy">Python Foundations, Lab 5: Practice with Numpy</h1>
+<h1 id="python-foundations-lab-5-practice-with-numpy">Python Foundations, Lab 5: Practice with Numpy<a class="headerlink" href="#python-foundations-lab-5-practice-with-numpy" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
-<p><strong>Contact</strong>: wesleybeckner@gmail.com</p>
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
 <p><br></p>
 <hr />
 <p><br></p>
 <p>In this lab we will continue to practice with numpy</p>
 <p><br></p>
 <hr />
-<pre><code class="language-python">import pandas as pd
-import numpy as np
-</code></pre>
-<h2 id="l5-q1">🧮 L5 Q1</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+<h2 id="l5-q1">🧮 L5 Q1<a class="headerlink" href="#l5-q1" title="Permanent link">&para;</a></h2>
 <p>Create a 3x3 array of all True's (booleans)</p>
-<pre><code class="language-python"># cell for Q1
-</code></pre>
-<h2 id="l5-q2">🧮 L5 Q2</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># cell for Q1</span>
+</code></pre></div>
+<h2 id="l5-q2">🧮 L5 Q2<a class="headerlink" href="#l5-q2" title="Permanent link">&para;</a></h2>
 <p>extract all numbers divisible by 3</p>
-<pre><code>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
-<pre><code class="language-python"># cell for Q2
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># cell for Q2</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</code></pre></div>
 <p>There is a nifty tool, <code>np.where()</code>. The syntax works like <code>np.where(&lt;where this condition is true&gt; , &lt;return elements from this array&gt;, &lt;otherwise return elements from this aray&gt;)</code></p>
-<pre><code class="language-python"># Ex
-a = np.arange(10)
-np.where(a&lt;5, a, a*10)
-</code></pre>
-<pre><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Ex</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
+</code></pre></div>
+
 <p>A similar but slightly different tool is <code>np.argwhere</code> which will return the indices of the array where the conditional is true</p>
-<pre><code class="language-python"># Ex
-np.argwhere(a&lt;5)
-</code></pre>
-<pre><code>array([[0],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Ex</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0],
        [1],
        [2],
        [3],
        [4]])
-</code></pre>
-<h2 id="l5-q3">🧮 L5 Q3</h2>
+</code></pre></div>
+
+<h2 id="l5-q3">🧮 L5 Q3<a class="headerlink" href="#l5-q3" title="Permanent link">&para;</a></h2>
 <p>replace all odd numbers in <code>arr</code> without changing <code>arr</code> (return a new array using <code>np.where</code>)</p>
-<pre><code class="language-python"># cell for Q3
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
-<h2 id="l5-q4">🧮 L5 Q4</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># cell for Q3</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="l5-q4">🧮 L5 Q4<a class="headerlink" href="#l5-q4" title="Permanent link">&para;</a></h2>
 <p>create the following array without hard coading (i.e. don't write any of the values in your coad)</p>
-<pre><code>a = np.array([1,2,3])`
-# desired output:
-#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>a = np.array([1,2,3])`
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a># desired output:
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+</code></pre></div>
 <p>Hints:</p>
 <ul>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html">repeat</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html">tile</a></li>
 </ul>
-<pre><code class="language-python"># cell for Q4
-a = np.array([1,2,3])
-# desired output:
-#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-</code></pre>
-<h2 id="l5-q5">🧮 L5 Q5</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># cell for Q4</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># desired output:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1">#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])</span>
+</code></pre></div>
+<h2 id="l5-q5">🧮 L5 Q5<a class="headerlink" href="#l5-q5" title="Permanent link">&para;</a></h2>
 <p>get indices where elements in <code>a</code> and <code>b</code> match.</p>
-<pre><code class="language-python"># cell for Q5
-a = np.array([1,2,3,2,3,4,3,4,5,6])
-b = np.array([7,2,10,2,7,4,9,4,9,8])
-</code></pre>
-<h2 id="l5-q6">🧮 L5 Q6</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># cell for Q5</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="l5-q6">🧮 L5 Q6<a class="headerlink" href="#l5-q6" title="Permanent link">&para;</a></h2>
 <p>grab numbers between 5 and 10 in <code>b</code></p>
-<pre><code class="language-python"># cell for Q6
-b = np.array([7,2,10,2,7,4,9,4,9,8])
-</code></pre>
-<h2 id="l5-q7">🧮 L5 Q7</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># cell for Q6</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="l5-q7">🧮 L5 Q7<a class="headerlink" href="#l5-q7" title="Permanent link">&para;</a></h2>
 <p>swap columns 2 and 3 in <code>arr</code></p>
-<pre><code class="language-python"># cell for Q7
-arr = np.arange(9).reshape(3,3)
-</code></pre>
-<h2 id="l5-q8">🧮 L5 Q8</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># cell for Q7</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="l5-q8">🧮 L5 Q8<a class="headerlink" href="#l5-q8" title="Permanent link">&para;</a></h2>
 <p>compute the mean, median, and standard deviation of <code>sepallength</code></p>
-<pre><code class="language-python"># cell for Q8
-url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-iris = np.genfromtxt(url, delimiter=',', dtype='object')
-sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])
-</code></pre>
-<h2 id="l5-q9">🧮 L5 Q9</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># cell for Q8</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">sepallength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="l5-q9">🧮 L5 Q9<a class="headerlink" href="#l5-q9" title="Permanent link">&para;</a></h2>
 <p>normalize sepallength so that all values occur between 0 and 1</p>
 <p>(<em>hint: (observation - min / (max - min))</em>)</p>
-<pre><code class="language-python"># cell for Q9
-</code></pre>
-<h2 id="l5-q10">🧮 L5 Q10</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># cell for Q9</span>
+</code></pre></div>
+<h2 id="l5-q10">🧮 L5 Q10<a class="headerlink" href="#l5-q10" title="Permanent link">&para;</a></h2>
 <p>calculate the 95 percentile score of <code>sepallength</code> using <code>np.percentile</code></p>
-<pre><code class="language-python"># cell for Q10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># cell for Q10</span>
+</code></pre></div>
 <p>Complete additional exercises if you wish at <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">machinelearningplus</a></p>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>
+</code></pre></div>
 
               
             </article>

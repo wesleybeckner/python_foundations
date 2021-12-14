@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../extra.css">
     
+      <link rel="stylesheet" href="../styles.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1189,16 +1191,16 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-session-1-python-and-jupyter-notebooks">Python Foundations, Session 1: Python and Jupyter Notebooks</h1>
+<h1 id="python-foundations-session-1-python-and-jupyter-notebooks">Python Foundations, Session 1: Python and Jupyter Notebooks<a class="headerlink" href="#python-foundations-session-1-python-and-jupyter-notebooks" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
-<p><strong>Contact</strong>: wesleybeckner@gmail.com
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
 <p>In this session we will cover computer coding in Python as well as navigating the Jupyter Notebook environment (what we are reading from at this moment). </p>
 <p><br></p>
 <hr />
-<h2 id="11-lets-talk-about-python">1.1 Let's talk about Python</h2>
+<h2 id="11-lets-talk-about-python">1.1 Let's talk about Python<a class="headerlink" href="#11-lets-talk-about-python" title="Permanent link">&para;</a></h2>
 <p>A lot of us are familiar with Excel, and when we get started in Python, it may seem like a lot of what we are doing could be easily done in Excel, why make the leap?</p>
 <p align="center">
 <img src="https://www.nobledesktop.com/image/pythonvsexcel.png" width=400px></img>
@@ -1252,15 +1254,16 @@
 <p><strong><em>Side Note: The scripting language of Excel is VBA, this won first place (80% of developers who use this language stated) for most dread language!! in stack overflow's 2020 developer survey</em></strong></p>
 <p>That being said, we won't only approach Python from a let's-replace-excel standpoint; we will also be approaching it from a coding standpoint: <strong><em>we write computer code to perform a set of tasks and instructions that the computer can help us accomplish</em></strong>. The real challenge and process of coding from an engineering perspective is how to codify a problem, and knowledge of what tools are available to solve it.</p>
 <p>I, and the TA's I have had in the past, have worked hard on this material to demystify the confusion along the way, while focusing on giving learning experiences in the relevant engineering and business problem areas.</p>
-<h3 id="111-python-vs-other-languages">1.1.1 Python vs other languages</h3>
+<h3 id="111-python-vs-other-languages">1.1.1 Python vs other languages<a class="headerlink" href="#111-python-vs-other-languages" title="Permanent link">&para;</a></h3>
 <p><img alt="python_logo.jpg" src="data:image/jpeg;base64,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" /></p>
 <p>Our goal is to not only give an introduction to Python, but also to demonstrate general coding concepts. For these next few sections, we'll be executing various lines of code right here in this interactive, Google Colab notebook. If you're wondering how this is possible and how this all works, don't worry; we'll get to the intricacies of interactive notebooks later!</p>
 <p>You'll discover the many benefits of this general purpose programming language. In particular, <strong><em>The syntax for Python is understandable to read and easy to learn</em></strong>, compared to the syntax of other languages that requires more of a background of underlying computer science - languages such as Java, C, and C++. In this course, you'll discover that Python is especially ideal for working with scientific data. Topics such as data science, machine learning, and data visualization will be covered later on this week - all while continuing to utilize Python.</p>
-<pre><code class="language-python"># We will talk about what this cell is doing in a moment!
-!python --version
-</code></pre>
-<pre><code>Python 3.8.12
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># We will talk about what this cell is doing in a moment!</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Python 3.8.12
+</code></pre></div>
+
 <p><em>Note: this session is covering syntax for version 3.x of Python. As you continue learning Python elsewhere, please advise that Python version 2 is no longer supported, and older notebooks may be outdated as a result.</em></p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/assets/most_wanted_description.JPG" width=400px></img>
@@ -1272,45 +1275,48 @@
 </p>
 </p>
 
-<h3 id="112-a-quick-primer-on-python-syntax">1.1.2 A quick primer on Python syntax</h3>
+<h3 id="112-a-quick-primer-on-python-syntax">1.1.2 A quick primer on Python syntax<a class="headerlink" href="#112-a-quick-primer-on-python-syntax" title="Permanent link">&para;</a></h3>
 <p>Python's simple, concise syntax allows for faster prototyping of code than other languages such as Java and C++. (However, that does not mean that Python has faster runtime execution than the others!)</p>
 <p>Printing output to the console is as simple as running Python's built-in print() function. To execute a code cell (we'll talk more about this later!), you can either click on the Play button next to the cell, or use the keyboard shortcut <em>CTRL</em>+<em>ENTER</em> (<em>CMD (⌘)</em>+<em>ENTER</em> on a macOS).</p>
-<pre><code class="language-python">print(&quot;Hello, GIX Students&quot;)
-</code></pre>
-<pre><code>Hello, GIX Students
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, GIX Students&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Hello, GIX Students
+</code></pre></div>
+
 <p>Variables can be created just by typing the name you'd like, followed by the equal sign, and the value you want to assign the variable to. In this case, we'll create a variable called <code>some_school</code> and set it to the value of <code>"University of Washington"</code>:</p>
-<pre><code class="language-python">some_school = &quot;University of Washington&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">some_school</span> <span class="o">=</span> <span class="s2">&quot;University of Washington&quot;</span>
+</code></pre></div>
 <p>You may then use created variables elsewhere. For example, we can output the value set for <code>some_school</code> by inputting the variable name into Python's <code>print()</code> function:</p>
-<pre><code class="language-python">print(some_school)
-</code></pre>
-<pre><code>University of Washington
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">some_school</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>University of Washington
+</code></pre></div>
+
 <p>A key part of coding is understanding which functions you need to use for accomplishing a task, as well as knowing when to create one of your own, which you'll learn more about later this week. For now, what you should know is that <code>print()</code> from earlier is one example of calling/executing a function that's already made available to us.</p>
-<h4 id="exercise-1-a-very-common-print-statement">🏋️ Exercise 1: A Very Common Print Statement</h4>
+<h4 id="exercise-1-a-very-common-print-statement">🏋️ Exercise 1: A Very Common Print Statement<a class="headerlink" href="#exercise-1-a-very-common-print-statement" title="Permanent link">&para;</a></h4>
 <p>Now that you've stepped through our quick primer on Python, for our first coding exercise, try printing hello world! to the screen. Then run the code cell either from the Play button or the keyboard shortcut from earlier to see the output.</p>
 <blockquote>
 <p>You may have noticed me making new coding blocks without touching my mouse. You can do this by pressing <code>esc</code> then <code>a</code> or <code>esc</code> then <code>b</code> (for above/below) to create a new cell block where your cursor is. Try this as well</p>
 </blockquote>
-<pre><code class="language-python"># Cell for Exercise 1
-</code></pre>
-<h3 id="113-what-are-variables">1.1.3 What are variables?</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Cell for Exercise 1</span>
+</code></pre></div>
+<h3 id="113-what-are-variables">1.1.3 What are variables?<a class="headerlink" href="#113-what-are-variables" title="Permanent link">&para;</a></h3>
 <p><strong><em>To have values that our computer can store in memory, we use variables</em></strong>. How else can we store information for later analysis and later reference? That's where variables come in, and is an essential part of programming!</p>
 <p>Here's a basic example of assigning a variable, using '='. Let's call this variable <code>x</code> and assign it an integer value (we'll get to integers in just a bit!) of 25:</p>
-<pre><code class="language-python">x = 25
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+</code></pre></div>
 <p>Let's create another variable called <code>city_name</code> and assign it the word <code>"Seattle"</code>:</p>
-<pre><code class="language-python">city_name = &quot;Seattle&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">city_name</span> <span class="o">=</span> <span class="s2">&quot;Seattle&quot;</span>
+</code></pre></div>
 <p>And when we need to use this value again, we retrieve that variable by referring to it by the variable name we gave it when first assigned. The <code>x</code> variable we created earlier can now be used later, and as many times as we'd like. Existing variables can also be modified. Let's change the value of <code>x</code>, after printing its initial value:</p>
-<pre><code class="language-python">print(x)
-x = 150
-print(x)
-</code></pre>
-<pre><code>25
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">150</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>25
 150
-</code></pre>
+</code></pre></div>
+
 <p><strong>A few more notes on storing data as variables...</strong></p>
 <p>Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory for that value. You can identify the location in memory using names. Rules:</p>
 <ul>
@@ -1322,7 +1328,7 @@ print(x)
 <li>If you want to have more than one word in the name, the convention is to use underscore "_" in the name.</li>
 <li>there was a time when camelCase was also acceptable</li>
 </ul>
-<h4 id="1131-variable-types">1.1.3.1 Variable types</h4>
+<h4 id="1131-variable-types">1.1.3.1 Variable types<a class="headerlink" href="#1131-variable-types" title="Permanent link">&para;</a></h4>
 <p>For your reference...</p>
 <p><strong>Data Types</strong>
 1.   Numbers
@@ -1337,191 +1343,213 @@ print(x)
 <p>Let's explore some common variable data types in Python. The first type to discuss is a <strong>string</strong>, which we've already seen before when we initialized <code>city_name</code>. Strings in Python are simply a collection of characters wrapped around quotes, and a string can represent any kind of info depending on how it's used, such as a person's name, a city name (like we just demonstrated), or a complete sentence. Here are some examples of string variables in Python below.</p>
 <p><strong>... we can also use single or double quotes</strong></p>
 <p><strong>... and triple quotes open whole blocks of string content</strong></p>
-<pre><code class="language-python">'''
-here's a stirng block
- with triple singles
-'''
-</code></pre>
-<pre><code>"\nhere's a stirng block\n with triple singles\n"
-</code></pre>
-<pre><code class="language-python">'single quotes'
-</code></pre>
-<pre><code>'single quotes'
-</code></pre>
-<pre><code class="language-python">&quot;double quotes&quot;
-</code></pre>
-<pre><code>'double quotes'
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="sd">here&#39;s a stirng block</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="sd"> with triple singles</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&quot;\nhere&#39;s a stirng block\n with triple singles\n&quot;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="s1">&#39;single quotes&#39;</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&#39;single quotes&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="s2">&quot;double quotes&quot;</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&#39;double quotes&#39;
+</code></pre></div>
+
 <p>you have to use double quotes here...</p>
-<pre><code class="language-python">&quot;here's one with a single quote inside&quot;
-</code></pre>
-<pre><code>"here's one with a single quote inside"
-</code></pre>
-<pre><code class="language-python">&quot;&quot;&quot;
-heres 
-a block with 
-double triples
-&quot;&quot;&quot;
-</code></pre>
-<pre><code>'\nheres \na block with \ndouble triples\n'
-</code></pre>
-<pre><code class="language-python">type(&quot;heres a string... I think?!@?!?!&quot;)
-</code></pre>
-<pre><code>str
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="s2">&quot;here&#39;s one with a single quote inside&quot;</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&quot;here&#39;s one with a single quote inside&quot;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="sd">heres </span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="sd">a block with </span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="sd">double triples</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&#39;\nheres \na block with \ndouble triples\n&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;heres a string... I think?!@?!?!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>str
+</code></pre></div>
+
 <p>The other variable types we'll discuss for now are <strong>integers</strong> and <strong>floats</strong>. Consider the Integer type as data that can represent any positive whole number or negative whole number. Recall the <code>x</code> variable we assigned to 25 and then 150 earlier? That variable would be considered an integer in Python. Here are some other quick examples of Python integer variables.</p>
-<pre><code class="language-python">some_int = 5
-numbers_of_breakfasts_for_hobbits = 2
-</code></pre>
-<pre><code class="language-python"># notice the usefulness of tab complete for long variable names!
-type(numbers_of_breakfasts_for_hobbits)
-</code></pre>
-<pre><code>int
-</code></pre>
-<pre><code class="language-python">print(&quot;what about second breakfast???&quot;)
-</code></pre>
-<pre><code>what about second breakfast???
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">some_int</span> <span class="o">=</span> <span class="mi">5</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">numbers_of_breakfasts_for_hobbits</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># notice the usefulness of tab complete for long variable names!</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nb">type</span><span class="p">(</span><span class="n">numbers_of_breakfasts_for_hobbits</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>int
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;what about second breakfast???&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>what about second breakfast???
+</code></pre></div>
+
 <p>A float in Python is considered any number with decimal point values. This is the main difference between a float and integer. For floats, some examples below show an arbitrary number of decimal places after the decimal point, and ones where a value less than 1 (such as one representing a percentage value) don't require specifying a <code>0</code> left of the decimal point.</p>
-<pre><code class="language-python"># what do we notice is different here?
-y = 21.0
-half = 0.5
-data_generated_by_deathstar = 2.08 #exabytes/year
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># what do we notice is different here?</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mf">21.0</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">half</span> <span class="o">=</span> <span class="mf">0.5</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="n">data_generated_by_deathstar</span> <span class="o">=</span> <span class="mf">2.08</span> <span class="c1">#exabytes/year</span>
+</code></pre></div>
 <p><small><a href="#https://en.wikipedia.org/wiki/Technology_in_Star_Wars#Computers_and_other_artificial_intelligence">star wars source</a></small></p>
-<pre><code class="language-python"># let's try something...
-print(type(21.0))
-print(type(21))
-</code></pre>
-<pre><code>&lt;class 'float'&gt;
-&lt;class 'int'&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># let&#39;s try something...</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">21.0</span><span class="p">))</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">21</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;float&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+</code></pre></div>
+
 <p>We see that python auto-determines variable datatypes for us, in many cases!</p>
 <blockquote>
 <p><strong><em>Python is a programming language in which variables are dynamically typed, meaning we do not need to declare the specific type of the variable when we initialize it</em></strong>. Because of this feature of Python, executing <code>x = 21</code> will automatically turn this variable into an integer by default due to its value of 21. Likewise, executing <code>x = 21.0</code> instead will make <code>x</code> the float type.</p>
 </blockquote>
-<h4 id="exercise-2-create-and-change-some-variables">🏋️ Exercise 2: Create and change some variables</h4>
+<h4 id="exercise-2-create-and-change-some-variables">🏋️ Exercise 2: Create and change some variables<a class="headerlink" href="#exercise-2-create-and-change-some-variables" title="Permanent link">&para;</a></h4>
 <p>Start by initializing a variable named <code>hundred</code> and assign it an <em>integer</em> value of 100 in the code cell below.</p>
 <p>THEN</p>
 <p>print the type of the stored variable</p>
-<pre><code class="language-python"># Cell for Exercise 2
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Cell for Exercise 2</span>
+</code></pre></div>
 <p>Now create another variable called <code>largest_computer_in_the_galaxy</code> and assign it the string value of <code>"Deep Thought"</code> in the code cell below.</p>
 <p>THEN</p>
 <p>print the stored variable</p>
-<pre><code class="language-python"># Cell for Exercise 2
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Cell for Exercise 2</span>
+</code></pre></div>
 <p>There are many more variable types to explore in Python, both ones built-in to Python and ones created by open-source libraries. The later sessions will cover more of these types, such as lists and DataFrames in session 2.</p>
-<h3 id="114-math-with-python-the-moment-ive-been-waiting-for">1.1.4 Math with Python (the moment I've been waiting for...)</h3>
-<h4 id="1141-basic-operators">1.1.4.1 Basic operators</h4>
+<h3 id="114-math-with-python-the-moment-ive-been-waiting-for">1.1.4 Math with Python (the moment I've been waiting for...)<a class="headerlink" href="#114-math-with-python-the-moment-ive-been-waiting-for" title="Permanent link">&para;</a></h3>
+<h4 id="1141-basic-operators">1.1.4.1 Basic operators<a class="headerlink" href="#1141-basic-operators" title="Permanent link">&para;</a></h4>
 <p>Python allows users to performing mathematical operations fairly easily. As many tutorials will explain, you can use Python just like a calculator! The most basic operation, adding 1 with 1, is as follows, using the plus sign (<code>+</code>) for addition:</p>
-<pre><code class="language-python">1 + 1
-</code></pre>
-<pre><code>2
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2
+</code></pre></div>
+
 <p>Subtraction is done with the minus sign in Python (<code>-</code>) and also works as expected here:</p>
-<pre><code class="language-python">45 - 32
-</code></pre>
-<pre><code>13
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="mi">45</span> <span class="o">-</span> <span class="mi">32</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>13
+</code></pre></div>
+
 <p>Multiplication is performed by the asterisk sign (<code>*</code>) in Python:</p>
-<pre><code class="language-python">12 * 90
-</code></pre>
-<pre><code>1080
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="mi">12</span> <span class="o">*</span> <span class="mi">90</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>1080
+</code></pre></div>
+
 <p>You may combine as many arithmetic operators in one line as you need:</p>
-<pre><code class="language-python">8 + 5 * 14 - 7 + 14 * 3 - 10
-</code></pre>
-<pre><code>103
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="mi">8</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">14</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">10</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>103
+</code></pre></div>
+
 <p>And based on the data type, you can peform the same mathematical operations for variables. Suppose <code>a = 12</code> and <code>b = 24</code> are already defined, we can multiply the two variables together by simply referring to their names and using Python's multiplication operator: <code>a * b</code>.</p>
-<pre><code class="language-python">a = 12
-b = 24
-a * b
-</code></pre>
-<pre><code>288
-</code></pre>
-<h4 id="exercise-3-discover-more-operators-on-your-own">🏋️ Exercise 3: Discover More Operators On Your Own!</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">24</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>288
+</code></pre></div>
+
+<h4 id="exercise-3-discover-more-operators-on-your-own">🏋️ Exercise 3: Discover More Operators On Your Own!<a class="headerlink" href="#exercise-3-discover-more-operators-on-your-own" title="Permanent link">&para;</a></h4>
 <p>Beyond the three arithmetic operators we have just demonstrated for you, there are more in Python to discover. To start, try typing <code>14 / 4</code> in the empty code cell below:</p>
-<pre><code class="language-python"># Cell for Exercise 3
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># Cell for Exercise 3</span>
+</code></pre></div>
 <p>Just by typing the computation and seeing the output on your own, you can quickly recognize that <code>/</code> is a division operator. Now try <code>14 % 4</code> in the empty code below. From the output, can you guess what the <code>%</code> sign in Python accomplishes here?</p>
-<pre><code class="language-python"># Cell for Exercise 3
-</code></pre>
-<h4 id="exercise-4-order-of-operations">🏋️ Exercise 4: Order of Operations</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1"># Cell for Exercise 3</span>
+</code></pre></div>
+<h4 id="exercise-4-order-of-operations">🏋️ Exercise 4: Order of Operations<a class="headerlink" href="#exercise-4-order-of-operations" title="Permanent link">&para;</a></h4>
 <p>Be aware that order or operations apply for programming as well, and Python is no exception. Python follows operator precedence, specifically <strong>PEMDAS</strong> - any operations in parentheses (<strong>P</strong>) take precedence, followed by exponents (<strong>E</strong>), multiplication (<strong>M</strong>) &amp; division (<strong>D</strong>), and then addition (<strong>A</strong>) &amp; subtraction (<strong>S</strong>). Run the following code:</p>
-<pre><code class="language-python">4 * 3 + 4
-</code></pre>
-<pre><code>16
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>16
+</code></pre></div>
+
 <p>While that was straightforward, let's modify it to wrap parentheses around <code>3 + 4</code>. When you execute the code cell below, what output do you receive now?</p>
-<pre><code class="language-python">4 * (3 + 4)
-</code></pre>
-<pre><code>28
-</code></pre>
-<h4 id="1142-enrichment-the-difference-between-5-50-and-5">1.1.4.2 <strong>Enrichment</strong>: The difference between 5, 5.0, and "5"</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>28
+</code></pre></div>
+
+<h4 id="1142-enrichment-the-difference-between-5-50-and-5">1.1.4.2 <strong>Enrichment</strong>: The difference between 5, 5.0, and "5"<a class="headerlink" href="#1142-enrichment-the-difference-between-5-50-and-5" title="Permanent link">&para;</a></h4>
 <p>While more complex computations are possible beyond the basics that we just covered, you should first understand how mixing variable types can lead to errors and unexpected output. Consider two variables, <code>num1 = 5</code> and <code>num2 = 5.0</code>. From what you learned in section 1.1.3, <code>num1</code> represents an integer, while <code>num2</code> represents a float.</p>
-<pre><code class="language-python">num1 = 5
-num2 = 5.0
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="n">num1</span> <span class="o">=</span> <span class="mi">5</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="n">num2</span> <span class="o">=</span> <span class="mf">5.0</span>
+</code></pre></div>
 <p>For this example, what happens when we add <code>num1</code> and <code>num2</code> together in Python, as in, run the code <code>num1 + num2</code>?</p>
-<pre><code class="language-python">num1 + num2
-</code></pre>
-<pre><code>10.0
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>10.0
+</code></pre></div>
+
 <p>As you see from the output of that operation, the result is 10.0, which is a float. <strong><em>What this means is that for any operation that uses a float type in Python, the default type of the result will also be a float</em></strong>. In this example, mixing an integer (<code>num1</code>) and float (<code>num2</code>) together by addition resulted in 10.0 and not 10, even if the sum is a whole number. Although mixing the two data types did not cause a runtime error, you should recognize this behavior in the near future, when such computations result in output that you may not expect - and possibly lead you to some functionality that causes an error elsewhere.</p>
 <p>Finally, let's discuss a third variable, called <code>num3</code>, and let's assign it a value of <code>"5"</code>.</p>
-<pre><code class="language-python">num3 = &quot;5&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="n">num3</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span>
+</code></pre></div>
 <p>If we try adding <code>num1</code> with <code>num3</code>, or 5 + "5", what is our output now from the code <code>num1 + num3</code>?</p>
-<pre><code class="language-python"># num1 + num3
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="c1"># num1 + num3</span>
+</code></pre></div>
 <p>The output is neither a 10 or a 10.0 - instead, we receive a TypeError. <strong><em>Python does not allow you to perform mathematical operations with an integer and string together</em></strong>. Because <code>num1</code> is an integer, and <code>num3</code> is a string type - given the double quotes around 5 - adding the two together in Python results in this TypeError, even if the string represents a numeric character.</p>
 <p>The same goes for combining floats with strings: is our output from the code <code>num2</code> (float) and <code>num3</code> (string) any different?</p>
-<pre><code class="language-python"># num2 + num3
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="c1"># num2 + num3</span>
+</code></pre></div>
 <p>Nope! Same TypeError results here. One workaround/solution for this is converting(type casting) the <code>num3</code> string variable into either a float or a integer, using Python's built-in <code>float()</code> and <code>int()</code> functions respectively. Let's try adding <code>num1</code> and <code>num3</code> again, only this time using <code>int()</code> to convert <code>num3</code> into an integer type, running the full line of code as <code>num1 + int(num3)</code>.</p>
-<pre><code class="language-python">num1 + int(num3)
-</code></pre>
-<pre><code>10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="n">num1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>10
+</code></pre></div>
+
 <p>This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail tomorrow! - just be aware that this example only works because the string represented by <code>num3</code> was a valid convertible string ("5") to begin with. In other words, if <code>num3</code> was "Five" instead of "5", we would not be able to execute <code>int(num3)</code> without getting an error.</p>
-<pre><code class="language-python"># num3 = &quot;Five&quot;
-# int(num3)
-</code></pre>
-<h3 id="115-code-comments-with">1.1.5 Code comments with '#'</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="c1"># num3 = &quot;Five&quot;</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="c1"># int(num3)</span>
+</code></pre></div>
+<h3 id="115-code-comments-with">1.1.5 Code comments with '#'<a class="headerlink" href="#115-code-comments-with" title="Permanent link">&para;</a></h3>
 <p>Comments are notes in your code, and can serve many purposes, such as:
 - Describing the functionality of some code 
 - A reminder to fix an existing issue
 - Clarify details of some code for yourself and/or others</p>
 <p><strong><em>You can create a comment by using '#', and when the Python interpreter sees this syntax, it doesn't run that as code and recognizes it as a comment instead</em></strong>. For example, for a mathematical operation, let's add a comment at the end of the line to describe what this performs:</p>
-<pre><code class="language-python">2 + 5  # Adds 2 to 5, so we get 7
-</code></pre>
-<pre><code>7
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span>  <span class="c1"># Adds 2 to 5, so we get 7</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>7
+</code></pre></div>
+
 <p>In this case, the <code># Adds 2 to 5, so we get 7</code> part of the previous line of code was a comment appended to the end of the Python code, <code>2 + 5</code>. By adding that '#' character, Python knows everything after that character is a comment. Additionally, you can write comments on their own line(s) of code: </p>
-<pre><code class="language-python"># Adds 2 to 5, so we get 7
-2 + 5
-</code></pre>
-<pre><code>7
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="c1"># Adds 2 to 5, so we get 7</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>7
+</code></pre></div>
+
 <p>You may use this syntax for code that you may not want to execute, but still save for future reference or revision. To do this, you can simply add '#' at the very beginning of the line you wish to comment. In the following example, I've turned the first line of the code in this cell into a comment so it won't run:</p>
-<pre><code class="language-python"># print(&quot;I commented out this line of code so you won't see this statement printed&quot;)
-print(&quot;There should be one line printed from this cell, and should be this one.&quot;)
-</code></pre>
-<pre><code>There should be one line printed from this cell, and should be this one.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="c1"># print(&quot;I commented out this line of code so you won&#39;t see this statement printed&quot;)</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There should be one line printed from this cell, and should be this one.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>There should be one line printed from this cell, and should be this one.
+</code></pre></div>
+
 <blockquote>
 <p>we can toggle comments with <code>ctrl</code> + <code>/</code></p>
 </blockquote>
-<h4 id="exercise-5-add-a-comment-to-a-line-of-code">🏋️ Exercise 5: Add a comment to a line of code</h4>
+<h4 id="exercise-5-add-a-comment-to-a-line-of-code">🏋️ Exercise 5: Add a comment to a line of code<a class="headerlink" href="#exercise-5-add-a-comment-to-a-line-of-code" title="Permanent link">&para;</a></h4>
 <p>Let's write a comment that explains the following line of code, <code>25 % 7</code>.</p>
-<pre><code class="language-python">25 % 7
-</code></pre>
-<pre><code>4
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="mi">25</span> <span class="o">%</span> <span class="mi">7</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>4
+</code></pre></div>
+
 <p>Comments in your code are optional, but are recommended to help better inform readers of your code. Building a habit of writing comments may even help you understand and better explain your own code too!  </p>
-<h3 id="116-where-can-you-run-python">1.1.6 Where can you run Python?</h3>
+<h3 id="116-where-can-you-run-python">1.1.6 Where can you run Python?<a class="headerlink" href="#116-where-can-you-run-python" title="Permanent link">&para;</a></h3>
 <p>Because of its flexibility as a programming language, Python can be utilized in many different ways. Here are just a few:</p>
 <ul>
 <li>Line by line in a Python interpreter in a command line Terminal window</li>
@@ -1536,40 +1564,42 @@ print(&quot;There should be one line printed from this cell, and should be this 
 </ul>
 <p>You don't need to understand every example that was just listed. Instead, the point is for us to recognize how ubiquitous Python has become. We're about to focus on the last two items on this list in the very next section!</p>
 <p>There's much more to learn with Python! So far, we've only introduced a small fraction of <em>what's possible</em> with this language and, more generally speaking, coding.</p>
-<h2 id="12-executing-python-and-runtime-environments">1.2 Executing Python and runtime environments</h2>
-<h3 id="121-using-interactive-notebooks">1.2.1 Using interactive notebooks</h3>
+<h2 id="12-executing-python-and-runtime-environments">1.2 Executing Python and runtime environments<a class="headerlink" href="#12-executing-python-and-runtime-environments" title="Permanent link">&para;</a></h2>
+<h3 id="121-using-interactive-notebooks">1.2.1 Using interactive notebooks<a class="headerlink" href="#121-using-interactive-notebooks" title="Permanent link">&para;</a></h3>
 <p>After just having discussed the many ways you can deploy and develop Python, we'll focus on the one way that will be used for our sessions this week: interactive Python notebooks. Such notebooks - like the one you're viewing right now - are self-contained collections of interactive cells that can be modified and presented like a scientific notebook. <strong><em>By allowing us to combine code with formattable text, images, and interactive data visualizations, this gives us a great way to share and collaborate with others on our work.</em></strong></p>
 <p>We'll next explore the proper interactive Python notebook type that you'll get quite familiar with during this series: Jupyter Notebooks.</p>
-<h3 id="122-jupyter-notebooks">1.2.2 Jupyter Notebooks</h3>
+<h3 id="122-jupyter-notebooks">1.2.2 Jupyter Notebooks<a class="headerlink" href="#122-jupyter-notebooks" title="Permanent link">&para;</a></h3>
 <p>Jupyter Notebooks is based on IPython, or Interactive Python. In fact, Jupyter notebooks were formerly known as IPython notebooks. Discussing the underlying IPython kernel which powers these notebooks is beyond the scope of this session; however, it's important to, at least, recognize where the <em>.ipynb</em> filename extension comes from.</p>
 <p>With Jupyter Notebooks, we can utilize the Python language right in a single self-contained environment of code, such as initializing and managing <strong>variables</strong>:</p>
-<pre><code class="language-python">var1 = &quot;A&quot;
-var2 = &quot;B&quot;
-var3 = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
-type(var3)
-</code></pre>
-<pre><code>list
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="n">var1</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="n">var2</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="n">var3</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="nb">type</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>list
+</code></pre></div>
+
 <p>We can also write <strong>functions</strong> that can be used later on in a notebook:</p>
-<pre><code class="language-python"># we were using built-in functions before.
-# but we can also define our own!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="c1"># we were using built-in functions before.</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="c1"># but we can also define our own!</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6"></a>
+<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">some_function</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>0.3402777777777778
+</code></pre></div>
 
-def some_function(x, y):
-    return x**2/y**2
-
-print(some_function(7,12))
-</code></pre>
-<pre><code>0.3402777777777778
-</code></pre>
 <p>Visualizations - such as scatterplots, heatmaps, and charts - can also be generated directly inside of a Jupyter notebook as a cell output, and can be saved as a separate image file. This also makes notebooks useful to generate both visual representations of data and interactive reports on that same data. We'll be covering visualizations in Session 4.</p>
-<pre><code class="language-python">from sklearn.datasets import make_blobs
-import matplotlib.pyplot as plt
-
-x, y = make_blobs(n_samples=500, n_features = 3, centers=3)
-plt.scatter(x[:,0], x[:, 1], marker='o', c=y, s=10)
-plt.title(&quot;Example visualization&quot;)
-plt.show()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a>
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Example visualization&quot;</span><span class="p">)</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><img alt="png" src="../S1_Python_and_Jupyter_files/S1_Python_and_Jupyter_107_0.png" /></p>
 <p>We certainly recognize that much of the code you have just seen may be unfamiliar to you, but these are all simply previews of what we'll be covering for this week! Here are some examples of how Jupyter Notebooks can be utilized:</p>
 <ul>
@@ -1577,34 +1607,34 @@ plt.show()
 <li>Data visualizations</li>
 <li>Interactive dashboards</li>
 </ul>
-<h3 id="123-code-cells-vs-markdown-cells">1.2.3 Code cells vs markdown cells</h3>
+<h3 id="123-code-cells-vs-markdown-cells">1.2.3 Code cells vs markdown cells<a class="headerlink" href="#123-code-cells-vs-markdown-cells" title="Permanent link">&para;</a></h3>
 <p>There are two main types of generated cells in Jupyter notebooks: code cells and markdown cells. You've seen both at this point. Right now, you're looking a markdown cell that's been created already by a different user. Think of a cell as just a single entity of your larger work inside of a notebook. Let's start with taking a look at code cells.</p>
-<h4 id="1231-code-cells">1.2.3.1 Code cells</h4>
+<h4 id="1231-code-cells">1.2.3.1 Code cells<a class="headerlink" href="#1231-code-cells" title="Permanent link">&para;</a></h4>
 <p>For writing and executing Python in a notebook, we use code cells. It may sound almost too self-explanatory, and you've already tried out code cells in the exercises from 1.1. To add a new code cell, you can either go to the <strong>Insert</strong> menu and selecting <strong>Code cell</strong>:</p>
 <p><img alt="Screen Shot 2020-11-29 at 5.08.58 PM.png" src="data:image/png;base64,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" /></p>
 <p>Or by hovering your mouse over to the bottom of a cell and select <strong>+ Code</strong>:</p>
 <p><img alt="Screen Shot 2020-11-29 at 5.08.27 PM.png" src="data:image/png;base64,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" /></p>
 <p>And lastly. For code blocks, we can simply hit <code>esc</code> + <code>a</code> to enter a code block above or <code>esc</code> + <code>b</code> to enter a code block below.</p>
 <p>Just kidding one last note... we can delete a block by holding <code>ctrl</code> + <code>m</code> + <code>d</code></p>
-<h4 id="exercise-6-edit-a-code-cell">🏋️ Exercise 6: Edit A Code Cell</h4>
-<p>So far in this session, you've been creating entirely new code cells to write and execute a few exercises. Now, let's edit an existing cell of Python code. Below, we had our ~~obligatory~~ first exercise that printed "Hello World!" as the output. However, the code below, <code>print("Hello World!"</code> causes an error, and does not output "Hello World!" as we initially expected. What do we need at the very end of the line in order for the print statement to run successfully?</p>
+<h4 id="exercise-6-edit-a-code-cell">🏋️ Exercise 6: Edit A Code Cell<a class="headerlink" href="#exercise-6-edit-a-code-cell" title="Permanent link">&para;</a></h4>
+<p>So far in this session, you've been creating entirely new code cells to write and execute a few exercises. Now, let's edit an existing cell of Python code. Below, we had our <del>obligatory</del> first exercise that printed "Hello World!" as the output. However, the code below, <code>print("Hello World!"</code> causes an error, and does not output "Hello World!" as we initially expected. What do we need at the very end of the line in order for the print statement to run successfully?</p>
 <p>Note: I also want you to uncomment the following cell block! (how do we do that?)</p>
-<pre><code class="language-python"># print(&quot;Hello World!&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="c1"># print(&quot;Hello World!&quot;</span>
+</code></pre></div>
 <p>Code cells exemplify one possible benefit of running your code in a notebook rather than in a single Python script (.py) file; you can create separate code cells and execute each portion your code separately and as needed. That also means being able to troubleshoot certain lines of code without having to rerun your entire work every time. </p>
-<h4 id="1232-markdowntext-cells">1.2.3.2 Markdown/Text cells</h4>
+<h4 id="1232-markdowntext-cells">1.2.3.2 Markdown/Text cells<a class="headerlink" href="#1232-markdowntext-cells" title="Permanent link">&para;</a></h4>
 <p>As the name suggests, a text cell is meant for information and instructions, rather than executing code for assigning variables, importing datasets, or generating plots. One benefit of adding text cells is to help explain code or functionality to viewers of a notebook. You can add a text cell either by going to the <strong>Insert</strong> menu and selecting <strong>Text cell</strong>:</p>
 <p><img alt="Screen Shot 2020-11-29 at 5.08.58 PM.png" src="data:image/png;base64,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" /></p>
 <p>Or by hovering your mouse over to the bottom of a cell and selecting <strong>+ Text</strong>:</p>
 <p><img alt="Screen Shot 2020-11-29 at 5.08.27 PM.png" src="data:image/png;base64,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" /></p>
 <p>You may edit an existing text cell by just double-clicking on one and editing the code. You can also have as many text cells as you want, cells that comprise technically any word length. Depending on what purpose it needs to serve, such cells may be a description of a data pipeline, or a list of external links (like the ones you'll see at the end of this notebook). </p>
-<h4 id="exercise-7-write-a-very-uw-text-cell">🏋️ Exercise 7: Write a very UW Text cell</h4>
-<p>Create a simple text cell that reads the official tagline of UW (hint: https://www.washington.edu/brand/brand-guide/tagline/)</p>
+<h4 id="exercise-7-write-a-very-uw-text-cell">🏋️ Exercise 7: Write a very UW Text cell<a class="headerlink" href="#exercise-7-write-a-very-uw-text-cell" title="Permanent link">&para;</a></h4>
+<p>Create a simple text cell that reads the official tagline of UW (hint: <a href="https://www.washington.edu/brand/brand-guide/tagline/">https://www.washington.edu/brand/brand-guide/tagline/</a>)</p>
 <p><i>text cell for exercise 7</i></p>
-<h4 id="1233-markdown-for-text-cells">1.2.3.3 Markdown for text cells</h4>
+<h4 id="1233-markdown-for-text-cells">1.2.3.3 Markdown for text cells<a class="headerlink" href="#1233-markdown-for-text-cells" title="Permanent link">&para;</a></h4>
 <p>Text cells support Markdown syntax, which is a way to render and format plain text, in addition to giving us more control to structure this text beyond just visually. Markdown is optional and enables you to transform and annotate text within a webpage or here in a Jupyter notebook. <strong><em>For text cells, using Markdown improves readability, as a set of formatting conventions that's easy to learn and write</em></strong>.</p>
 <p><em>Markdown is a superset of HTML. Discussing HTML is beyond the scope of this session, but there are links to read more about this, later in the notebook.</em></p>
-<h4 id="exercise-8-discover-some-markdown-syntax">🏋️ Exercise 8: Discover some Markdown syntax</h4>
+<h4 id="exercise-8-discover-some-markdown-syntax">🏋️ Exercise 8: Discover some Markdown syntax<a class="headerlink" href="#exercise-8-discover-some-markdown-syntax" title="Permanent link">&para;</a></h4>
 <p>Create a new text cell below with the UW official tagline like before, only this time play around with:</p>
 <ul>
 <li><code>#####</code> at the beginning of the first line (hit enter after)</li>
@@ -1614,12 +1644,12 @@ plt.show()
 </ul>
 <p><em>text cell for exercise 8</em></p>
 <p>Later in the Breakout section, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.</p>
-<h4 id="exercise-9-always-double-check-the-type-of-cell-youre-running">🏋️ Exercise 9: Always double check the type of cell you're running</h4>
-<pre><code class="language-python"># It can be easy to mistakenly write something in a code cell, when you actually
-# wanted a text cell instead. For example... what happens when you hit the Play
-# button on this particular cell?
-</code></pre>
-<h3 id="124-other-details-on-jupyter-notebooks">1.2.4 Other details on Jupyter Notebooks</h3>
+<h4 id="exercise-9-always-double-check-the-type-of-cell-youre-running">🏋️ Exercise 9: Always double check the type of cell you're running<a class="headerlink" href="#exercise-9-always-double-check-the-type-of-cell-youre-running" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="c1"># It can be easy to mistakenly write something in a code cell, when you actually</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="c1"># wanted a text cell instead. For example... what happens when you hit the Play</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="c1"># button on this particular cell?</span>
+</code></pre></div>
+<h3 id="124-other-details-on-jupyter-notebooks">1.2.4 Other details on Jupyter Notebooks<a class="headerlink" href="#124-other-details-on-jupyter-notebooks" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Jupyter Notebooks (.ipynb) don't just work with web browsers<ul>
 <li>There are IDEs such as <strong><a href="https://code.visualstudio.com">Visual Studio Code</a></strong> that have extensions which allow you to create and these .ipynb files right on the editor.</li>
@@ -1630,7 +1660,7 @@ plt.show()
 <li>we are doing this with our Jupyter Hub!</li>
 <li><a href="https://github.com/wesleybeckner/ds_for_engineers">link to GitHub</a></li>
 </ul>
-<h3 id="125-so-what-does-this-have-to-do-with-jupyter-hub">1.2.5 ...So what does this have to do with Jupyter Hub?</h3>
+<h3 id="125-so-what-does-this-have-to-do-with-jupyter-hub">1.2.5 ...So what does this have to do with Jupyter Hub?<a class="headerlink" href="#125-so-what-does-this-have-to-do-with-jupyter-hub" title="Permanent link">&para;</a></h3>
 <p><strong><a href="https://jupyter.org/hub">Jupyter Hub</a></strong> is based on Jupyter Notebook. Both the notebook platform and the development machine are hosted on the cloud provided by UW IT - no need to install Python or external libraries locally on your computer! </p>
 <p>We'll be using Jupyter Hub for these courses. That includes all exercises and projects. </p>
 <p>Jupyter Hub comes with <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html">pre-configured images</a> with Python libraries pre-installed. We are on the tensor-flow image of Jupyter Hub. You've seen examples of these used already! Some of the most popular scientific libraries include:
@@ -1641,9 +1671,9 @@ plt.show()
 - TensorFlow
 - Matplotlib</p>
 <p>To view the full list of installed packages, run the following command:</p>
-<pre><code class="language-python">!pip freeze
-</code></pre>
-<pre><code>absl-py==0.12.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="err">!</span><span class="n">pip</span> <span class="n">freeze</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>absl-py==0.12.0
 alabaster==0.7.12
 albumentations==0.1.12
 altair==4.1.0
@@ -2021,25 +2051,26 @@ xlwt==1.3.0
 yellowbrick==0.9.1
 zict==2.0.0
 zipp==3.4.1
-</code></pre>
+</code></pre></div>
+
 <p><em>Note: the exclamation point syntax seen at the beginning of <code>!pip freeze</code> is for running Terminal/Shell commands directly within Jupyter notebooks. Terminal commands are outside of the scope of this session.</em></p>
-<h2 id="13-resources-further-reading">1.3 Resources &amp; Further Reading</h2>
+<h2 id="13-resources-further-reading">1.3 Resources &amp; Further Reading<a class="headerlink" href="#13-resources-further-reading" title="Permanent link">&para;</a></h2>
 <p>This section serves as a reference for many other resources to learn more about what was introduced here. </p>
-<h3 id="python-vs-excel">Python vs Excel</h3>
+<h3 id="python-vs-excel">Python vs Excel<a class="headerlink" href="#python-vs-excel" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://www.nobledesktop.com/learn/python/python-vs-excel">Python vs Excel</a></li>
 </ul>
-<h3 id="python">Python</h3>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://www.python.org">Official Python site - Python.org</a></li>
 <li><a href="https://docs.python.org/3/">Latest Python Language Reference/Documentation</a></li>
 <li><a href="https://docs.python.org/3/tutorial/index.html">Official Python 3 Tutorial from the Python Software Foundation</a></li>
-<li><a href="https://nostarch.com/pythoncrashcourse2e"><em>Python Crash Course</em>, 2nd Edition by Eric Matthes</a></li>
+<li><a href="https://nostarch.com/pythoncrashcourse2e"><em>Python Crash Course</em>, 2<sup>nd</sup> Edition by Eric Matthes</a></li>
 <li><a href="https://www.pythonfromtheverybeginning.com"><em>Python From The Very Beginning</em> by John Whitington</a></li>
 <li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/?utm_source=devfreebooks&amp;utm_medium=medium&amp;utm_campaign=DevFreeBooks"><em>Python Data Science Handbook</em> by Jake VanderPlas (Free!)</a></li>
 <li><a href="https://github.com/UWDIRECT/UWDIRECT.github.io/blob/master/Wi20_content/SEDS/L2.Simple_Breakout.ipynb">Simple Math in Python Notebook Excercises from UW DIRECT</a></li>
 </ul>
-<h3 id="arithmetic-operators-in-python">Arithmetic Operators in Python</h3>
+<h3 id="arithmetic-operators-in-python">Arithmetic Operators in Python<a class="headerlink" href="#arithmetic-operators-in-python" title="Permanent link">&para;</a></h3>
 <p>Below is a reference table for many of the arithmetic operators you can use with Python, some of which we've already went over:</p>
 <table>
 <thead>
@@ -2095,13 +2126,13 @@ zipp==3.4.1
 </tr>
 </tbody>
 </table>
-<h3 id="jupyter-notebook">Jupyter Notebook</h3>
+<h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://jupyter.org">Project Jupyter - Official Jupyter Website</a></li>
 <li><a href="https://jupyter-notebook.readthedocs.io/en/stable/"><em>Read The Docs</em> - Jupyter Notebook User Documentation by the Official Jupyter Team</a></li>
 <li><a href="https://jupyterbook.org/intro.html"><em>Jupyter Book</em> - Online open source book</a></li>
 </ul>
-<h3 id="markdown">Markdown</h3>
+<h3 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">Google Colab Guide on Markdown</a></li>
 <li><a href="https://www.markdownguide.org">Markdown Guide (From Technical Writer Mark Cone)</a></li>

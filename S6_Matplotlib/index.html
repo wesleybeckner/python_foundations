@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../extra.css">
     
+      <link rel="stylesheet" href="../styles.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -991,91 +993,93 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S6_Matplotlib.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-session-6-visualization">Python Foundations, Session 6: Visualization</h1>
+<h1 id="python-foundations-session-6-visualization">Python Foundations, Session 6: Visualization<a class="headerlink" href="#python-foundations-session-6-visualization" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
-<p><strong>Contact</strong>: wesleybeckner@gmail.com
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
 <p>In this session we'll be discussing visualization strategies. And, more specifically, how we can manipulate our <code>pandas dataframes</code> to give us the visualizations we desire. Before we get there, however, we're going to start by introducing a python module called Matplotlib.</p>
 <p><br></p>
 <hr />
-<h2 id="61-visualization-with-matplotlib">6.1 Visualization with Matplotlib</h2>
+<h2 id="61-visualization-with-matplotlib">6.1 Visualization with Matplotlib<a class="headerlink" href="#61-visualization-with-matplotlib" title="Permanent link">&para;</a></h2>
 <p>Lets start by importing our <code>matplotlib</code> module. </p>
 <p>Pyplot is a module of Matplotlib that provides functions to add plot elements like text, lines, and images. typically we import this module like so</p>
-<pre><code>import matplotlib.pyplot as plt
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>import matplotlib.pyplot as plt
+</code></pre></div>
 <p>where <code>plt</code> is shorthand for the <code>matplotlib.pyplot</code> library</p>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-</code></pre>
-<h3 id="611-the-basics">6.1.1 The Basics</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</code></pre></div>
+<h3 id="611-the-basics">6.1.1 The Basics<a class="headerlink" href="#611-the-basics" title="Permanent link">&para;</a></h3>
 <p>Matplotlib is strongly object oriented and its principal objects are the <strong><em>figure</em></strong> and the <strong><em>axes</em></strong>. But before we get into that I want us to explore the <em>most basic</em> use case. In this basic use case, we don't declare the <code>figure</code> and <code>axes</code> objects explicitly, but rather work directly in the <code>pyplot</code> namespace.</p>
 <p>I'm going to create a list of x and y values and plot them with <code>pyplot</code></p>
-<pre><code>x = [1,2,3,4,5,6,7]
-y = [1,1,2,3,5,8,13]
-plt.plot(x,y)
-</code></pre>
-<pre><code class="language-python">x = [1,2,3,4,5,6,7]
-y = [1,1,2,3,5,8,13]
-plt.plot(x, y)
-</code></pre>
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fcd31e36250&gt;]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>x = [1,2,3,4,5,6,7]
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>y = [1,1,2,3,5,8,13]
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>plt.plot(x,y)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7fcd31e36250&gt;]
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_5_1.png" /></p>
 <p>We can label the axes of our figure using the <code>xlabel</code> and <code>ylabel</code> attributes, and label our title using the <code>title</code> attribute.</p>
-<pre><code>plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
-plt.title('The Fibonacci Sequence')
-plt.xlabel('Order in Sequence')
-plt.ylabel('Value')
-</code></pre>
-<pre><code class="language-python">plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
-plt.title('The Fibonacci Sequence')
-plt.xlabel('Order in Sequence')
-plt.ylabel('Value')
-</code></pre>
-<pre><code>Text(0, 0.5, 'Value')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>plt.title(&#39;The Fibonacci Sequence&#39;)
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>plt.xlabel(&#39;Order in Sequence&#39;)
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>plt.ylabel(&#39;Value&#39;)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;The Fibonacci Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Order in Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0, 0.5, &#39;Value&#39;)
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_7_1.png" /></p>
 <blockquote>
 <p>What do we think about the out-of-the-box formatting of <code>pyplot</code>? What are some things we can do to make it better? Could we make it bigger? Perhaps different dimensions? Does anyone recognize that default line color?</p>
 </blockquote>
 <p>Before we make any changes, let's become acquianted with the more appropriate way to work in <code>matplotlib.pyplot</code>. In this formality, we explicitly create our <code>figure</code> and <code>axes</code> objects.</p>
-<pre><code># This is one way to do it...
-# plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
-
-# but we can also do it this way, concretely declaring the figure, axes
-# objects directly
-
-# We declare the figure
-fig = plt.figure()
-
-# and then add axes 
-ax = fig.add_subplot(111)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># This is one way to do it...
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a># plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a># but we can also do it this way, concretely declaring the figure, axes
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a># objects directly
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a># We declare the figure
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>fig = plt.figure()
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a># and then add axes 
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>ax = fig.add_subplot(111)
+</code></pre></div>
 <p>You can think of the <code>figure</code> as a canvas, where you specify dimensions and possibly unifying attributes of its contents, like, background color, border, etc. You use the canvas, the <code>figure</code>, to containerize your other objects, primarily your <code>axes</code>, and to save its contents with <code>savefig</code>.</p>
 <p>You can think of an <code>axes</code> as the actual graphs or plots themselves. And when we declare these objects, we have access to all the methods of <code>matplotlib.pyplot</code> (e.g. <code>.plot</code>, <code>.scatter</code>, <code>.hist</code> etc.) You can place many of these <code>axes</code> into the <code>figure</code> container in a variety of ways.</p>
 <p>The last component of a <code>pyplot</code> figure are the <code>axis</code>, the graphical axis we typically think of.</p>
-<pre><code class="language-python"># This is one way to do it...
-# plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
-
-# but we can also do it this way, concretely declaring the figure, axes
-# objects directly
-
-# We declare the figure
-fig = plt.figure()
-
-# and then add axes 
-ax = fig.add_subplot(111)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># This is one way to do it...</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="c1"># plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># but we can also do it this way, concretely declaring the figure, axes</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1"># objects directly</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># We declare the figure</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="c1"># and then add axes </span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+</code></pre></div>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_9_0.png" /></p>
 <p><code>plt.subplots</code> returns a <code>figure</code> and <code>axes</code> object(s) together:</p>
-<pre><code>### We can also do it in 1 line
-fig, ax = plt.subplots(1, 1, figsize=(8,8))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>### We can also do it in 1 line
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>fig, ax = plt.subplots(1, 1, figsize=(8,8))
+</code></pre></div>
 <p>and we'll go ahead and adjust the figure size with the parameter <code>figsize</code> and set it equal to a tuple containing the <code>x</code> and <code>y</code> dimensions of the figure in inches.</p>
-<pre><code class="language-python">### We can also do it in 1 line
-fig, ax = plt.subplots(1, 1, figsize=(10,5))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">### We can also do it in 1 line</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_11_0.png" /></p>
 <p>To recap, by convention we typically separate our plots into three components: a Figure, its Axes, and their Axis:</p>
 <ul>
@@ -1088,7 +1092,7 @@ fig, ax = plt.subplots(1, 1, figsize=(10,5))
 <blockquote>
 <p><code>fig, ax = plt.subplots(1, 1, figsize=(8,8))</code> is creating the figure (<code>fig</code>) and axes (<code>ax</code>) explicitly, and depending on whether we create 2D or 3D plots, the axes will contain 2-3 <code>axis</code>.</p>
 </blockquote>
-<h4 id="exercise-1-adjust-figure-size">🏋️ Exercise 1: Adjust Figure Size</h4>
+<h4 id="exercise-1-adjust-figure-size">🏋️ Exercise 1: Adjust Figure Size<a class="headerlink" href="#exercise-1-adjust-figure-size" title="Permanent link">&para;</a></h4>
 <ol type="a">
   <li>create a <code>figure</code> and <code>axes</code> using <code>plt.subplots()</code>. adjust the figure size to be 6 inches (width) by 3 inches (height). Plot the values of the fibonacci sequence we defined earlier</li>
   <li>(Bonus) Repeat, this time inverting the y-values using list splicing</li>
@@ -1099,184 +1103,189 @@ fig, ax = plt.subplots(1, 1, figsize=(10,5))
 * <code>plt.subplots()</code>
 * <code>ax.plot()</code>
 * slicing <code>[::]</code></p>
-<pre><code>x = [1,2,3,4,5,6,7]
-y = [1,1,2,3,5,8,13]
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 1
-x = [1,2,3,4,5,6,7]
-y = [1,1,2,3,5,8,13]
-</code></pre>
-<h3 id="612-manipulating-plot-attributes">6.1.2 Manipulating Plot Attributes</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>x = [1,2,3,4,5,6,7]
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>y = [1,1,2,3,5,8,13]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Cell for Exercise 1</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="612-manipulating-plot-attributes">6.1.2 Manipulating Plot Attributes<a class="headerlink" href="#612-manipulating-plot-attributes" title="Permanent link">&para;</a></h3>
 <p>We can manipulate many parameters of a <code>figure</code>'s <code>axes</code>: <code>marker</code>, <code>linestyle</code>, and <code>color</code>, to name a few. Each of these parameters takes string values.</p>
-<pre><code>fig, ax = plt.subplots(1,1, figsize=(5,5))
-ax.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='^', linestyle='--', 
-         color='tab:blue')
-ax.plot([1,2,3,4,5,6,7],[0,3,8,6,5,4,1], marker='.', linestyle='-.', 
-         color='#59A41F')
-ax.set_title('My Random Values')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>fig, ax = plt.subplots(1,1, figsize=(5,5))
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>ax.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker=&#39;^&#39;, linestyle=&#39;--&#39;, 
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>         color=&#39;tab:blue&#39;)
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>ax.plot([1,2,3,4,5,6,7],[0,3,8,6,5,4,1], marker=&#39;.&#39;, linestyle=&#39;-.&#39;, 
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>         color=&#39;#59A41F&#39;)
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>ax.set_title(&#39;My Random Values&#39;)
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>ax.set_xlabel(&#39;Order in Sequence&#39;)
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>ax.set_ylabel(&#39;Value&#39;)
+</code></pre></div>
 <p>List of marker styles</p>
-<pre><code>{'': 'nothing',
- ' ': 'nothing',
- '*': 'star',
- '+': 'plus',
- ',': 'pixel',
- '.': 'point',
- 0: 'tickleft',
- '1': 'tri_down',
- 1: 'tickright',
- 10: 'caretupbase',
- 11: 'caretdownbase',
- '2': 'tri_up',
- 2: 'tickup',
- '3': 'tri_left',
- 3: 'tickdown',
- '4': 'tri_right',
- 4: 'caretleft',
- 5: 'caretright',
- 6: 'caretup',
- 7: 'caretdown',
- '8': 'octagon',
- 8: 'caretleftbase',
- 9: 'caretrightbase',
- '&lt;': 'triangle_left',
- '&gt;': 'triangle_right',
- 'D': 'diamond',
- 'H': 'hexagon2',
- 'None': 'nothing',
- None: 'nothing',
- 'P': 'plus_filled',
- 'X': 'x_filled',
- '^': 'triangle_up',
- '_': 'hline',
- 'd': 'thin_diamond',
- 'h': 'hexagon1',
- 'o': 'circle',
- 'p': 'pentagon',
- 's': 'square',
- 'v': 'triangle_down',
- 'x': 'x',
- '|': 'vline'}
- ```
-
-List of line styles
-
-</code></pre>
-<p>{'': '_draw_nothing',
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>{&#39;&#39;: &#39;nothing&#39;,
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a> &#39; &#39;: &#39;nothing&#39;,
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a> &#39;*&#39;: &#39;star&#39;,
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a> &#39;+&#39;: &#39;plus&#39;,
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a> &#39;,&#39;: &#39;pixel&#39;,
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a> &#39;.&#39;: &#39;point&#39;,
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a> 0: &#39;tickleft&#39;,
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a> &#39;1&#39;: &#39;tri_down&#39;,
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a> 1: &#39;tickright&#39;,
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a> 10: &#39;caretupbase&#39;,
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a> 11: &#39;caretdownbase&#39;,
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a> &#39;2&#39;: &#39;tri_up&#39;,
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a> 2: &#39;tickup&#39;,
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a> &#39;3&#39;: &#39;tri_left&#39;,
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a> 3: &#39;tickdown&#39;,
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a> &#39;4&#39;: &#39;tri_right&#39;,
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a> 4: &#39;caretleft&#39;,
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a> 5: &#39;caretright&#39;,
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a> 6: &#39;caretup&#39;,
+<a id="__codelineno-13-20" name="__codelineno-13-20"></a> 7: &#39;caretdown&#39;,
+<a id="__codelineno-13-21" name="__codelineno-13-21"></a> &#39;8&#39;: &#39;octagon&#39;,
+<a id="__codelineno-13-22" name="__codelineno-13-22"></a> 8: &#39;caretleftbase&#39;,
+<a id="__codelineno-13-23" name="__codelineno-13-23"></a> 9: &#39;caretrightbase&#39;,
+<a id="__codelineno-13-24" name="__codelineno-13-24"></a> &#39;&lt;&#39;: &#39;triangle_left&#39;,
+<a id="__codelineno-13-25" name="__codelineno-13-25"></a> &#39;&gt;&#39;: &#39;triangle_right&#39;,
+<a id="__codelineno-13-26" name="__codelineno-13-26"></a> &#39;D&#39;: &#39;diamond&#39;,
+<a id="__codelineno-13-27" name="__codelineno-13-27"></a> &#39;H&#39;: &#39;hexagon2&#39;,
+<a id="__codelineno-13-28" name="__codelineno-13-28"></a> &#39;None&#39;: &#39;nothing&#39;,
+<a id="__codelineno-13-29" name="__codelineno-13-29"></a> None: &#39;nothing&#39;,
+<a id="__codelineno-13-30" name="__codelineno-13-30"></a> &#39;P&#39;: &#39;plus_filled&#39;,
+<a id="__codelineno-13-31" name="__codelineno-13-31"></a> &#39;X&#39;: &#39;x_filled&#39;,
+<a id="__codelineno-13-32" name="__codelineno-13-32"></a> &#39;^&#39;: &#39;triangle_up&#39;,
+<a id="__codelineno-13-33" name="__codelineno-13-33"></a> &#39;_&#39;: &#39;hline&#39;,
+<a id="__codelineno-13-34" name="__codelineno-13-34"></a> &#39;d&#39;: &#39;thin_diamond&#39;,
+<a id="__codelineno-13-35" name="__codelineno-13-35"></a> &#39;h&#39;: &#39;hexagon1&#39;,
+<a id="__codelineno-13-36" name="__codelineno-13-36"></a> &#39;o&#39;: &#39;circle&#39;,
+<a id="__codelineno-13-37" name="__codelineno-13-37"></a> &#39;p&#39;: &#39;pentagon&#39;,
+<a id="__codelineno-13-38" name="__codelineno-13-38"></a> &#39;s&#39;: &#39;square&#39;,
+<a id="__codelineno-13-39" name="__codelineno-13-39"></a> &#39;v&#39;: &#39;triangle_down&#39;,
+<a id="__codelineno-13-40" name="__codelineno-13-40"></a> &#39;x&#39;: &#39;x&#39;,
+<a id="__codelineno-13-41" name="__codelineno-13-41"></a> &#39;|&#39;: &#39;vline&#39;}
+<a id="__codelineno-13-42" name="__codelineno-13-42"></a> ```
+<a id="__codelineno-13-43" name="__codelineno-13-43"></a>
+<a id="__codelineno-13-44" name="__codelineno-13-44"></a>List of line styles
+</code></pre></div>
+{'': '_draw_nothing',
  ' ': '_draw_nothing',
  '-': '_draw_solid',
  '--': '_draw_dashed',
  '-.': '_draw_dash_dot',
  ':': '_draw_dotted',
  'None': '_draw_nothing'}
- ```</p>
-<p>List of base colors</p>
-<p><code>{'b': (0, 0, 1),
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>List of base colors
+</code></pre></div>
+ {'b': (0, 0, 1),
  'c': (0, 0.75, 0.75),
  'g': (0, 0.5, 0),
  'k': (0, 0, 0),
  'm': (0.75, 0, 0.75),
  'r': (1, 0, 0),
  'w': (1, 1, 1),
- 'y': (0.75, 0.75, 0)}</code></p>
+ 'y': (0.75, 0.75, 0)}
+ ```</p>
 <p>list access</p>
-<pre><code>import matplotlib as mp
-mp.markers.MarkerStyle.markers
-mp.lines.lineStyles
-mp.colors.BASE_COLORS
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>import matplotlib as mp
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>mp.markers.MarkerStyle.markers
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>mp.lines.lineStyles
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>mp.colors.BASE_COLORS
+</code></pre></div>
 <p>Taking these long lists of available parameters, I'm going to play around with a few and see how they appear in our plot.</p>
-<pre><code class="language-python">import matplotlib as mp
-mp.markers.MarkerStyle.markers
-# mp.lines.lineStyles
-# mp.colors.BASE_COLORS
-</code></pre>
-<pre><code>{'': 'nothing',
- ' ': 'nothing',
- '*': 'star',
- '+': 'plus',
- ',': 'pixel',
- '.': 'point',
- 0: 'tickleft',
- '1': 'tri_down',
- 1: 'tickright',
- 10: 'caretupbase',
- 11: 'caretdownbase',
- '2': 'tri_up',
- 2: 'tickup',
- '3': 'tri_left',
- 3: 'tickdown',
- '4': 'tri_right',
- 4: 'caretleft',
- 5: 'caretright',
- 6: 'caretup',
- 7: 'caretdown',
- '8': 'octagon',
- 8: 'caretleftbase',
- 9: 'caretrightbase',
- '&lt;': 'triangle_left',
- '&gt;': 'triangle_right',
- 'D': 'diamond',
- 'H': 'hexagon2',
- 'None': 'nothing',
- None: 'nothing',
- 'P': 'plus_filled',
- 'X': 'x_filled',
- '^': 'triangle_up',
- '_': 'hline',
- 'd': 'thin_diamond',
- 'h': 'hexagon1',
- 'o': 'circle',
- 'p': 'pentagon',
- 's': 'square',
- 'v': 'triangle_down',
- 'x': 'x',
- '|': 'vline'}
-</code></pre>
-<pre><code class="language-python">plt.plot([1,2,3], [4,5,6])
-plt.title('title')
-</code></pre>
-<pre><code>Text(0.5, 1.0, 'title')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mp</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">mp</span><span class="o">.</span><span class="n">markers</span><span class="o">.</span><span class="n">MarkerStyle</span><span class="o">.</span><span class="n">markers</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="c1"># mp.lines.lineStyles</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1"># mp.colors.BASE_COLORS</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>{&#39;&#39;: &#39;nothing&#39;,
+ &#39; &#39;: &#39;nothing&#39;,
+ &#39;*&#39;: &#39;star&#39;,
+ &#39;+&#39;: &#39;plus&#39;,
+ &#39;,&#39;: &#39;pixel&#39;,
+ &#39;.&#39;: &#39;point&#39;,
+ 0: &#39;tickleft&#39;,
+ &#39;1&#39;: &#39;tri_down&#39;,
+ 1: &#39;tickright&#39;,
+ 10: &#39;caretupbase&#39;,
+ 11: &#39;caretdownbase&#39;,
+ &#39;2&#39;: &#39;tri_up&#39;,
+ 2: &#39;tickup&#39;,
+ &#39;3&#39;: &#39;tri_left&#39;,
+ 3: &#39;tickdown&#39;,
+ &#39;4&#39;: &#39;tri_right&#39;,
+ 4: &#39;caretleft&#39;,
+ 5: &#39;caretright&#39;,
+ 6: &#39;caretup&#39;,
+ 7: &#39;caretdown&#39;,
+ &#39;8&#39;: &#39;octagon&#39;,
+ 8: &#39;caretleftbase&#39;,
+ 9: &#39;caretrightbase&#39;,
+ &#39;&lt;&#39;: &#39;triangle_left&#39;,
+ &#39;&gt;&#39;: &#39;triangle_right&#39;,
+ &#39;D&#39;: &#39;diamond&#39;,
+ &#39;H&#39;: &#39;hexagon2&#39;,
+ &#39;None&#39;: &#39;nothing&#39;,
+ None: &#39;nothing&#39;,
+ &#39;P&#39;: &#39;plus_filled&#39;,
+ &#39;X&#39;: &#39;x_filled&#39;,
+ &#39;^&#39;: &#39;triangle_up&#39;,
+ &#39;_&#39;: &#39;hline&#39;,
+ &#39;d&#39;: &#39;thin_diamond&#39;,
+ &#39;h&#39;: &#39;hexagon1&#39;,
+ &#39;o&#39;: &#39;circle&#39;,
+ &#39;p&#39;: &#39;pentagon&#39;,
+ &#39;s&#39;: &#39;square&#39;,
+ &#39;v&#39;: &#39;triangle_down&#39;,
+ &#39;x&#39;: &#39;x&#39;,
+ &#39;|&#39;: &#39;vline&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0.5, 1.0, &#39;title&#39;)
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_17_1.png" /></p>
-<pre><code class="language-python">ax.title
-</code></pre>
-<pre><code>Text(0.5, 1.0, '')
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1,1, figsize=(5,5))
-ax.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], 
-        marker='s', 
-        linestyle=':', 
-        color='tab:blue')
-ax.plot([1,2,3,4,5,6,7],[0,3,8,6,5,4,1], marker='.', 
-        linestyle='-.', color='#3E1515')
-ax.set_title('My Random Values')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-</code></pre>
-<pre><code>Text(0, 0.5, 'Value')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">ax</span><span class="o">.</span><span class="n">title</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0.5, 1.0, &#39;&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span> 
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>        <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a>        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> 
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a>        <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3E1515&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;My Random Values&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Order in Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0, 0.5, &#39;Value&#39;)
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_19_1.png" /></p>
 <p>If we want to make a <em>scatter plot</em> without any lines at all, we set the <code>linestyle</code> to an empty string</p>
-<pre><code>fig, ax = plt.subplots(1,1, figsize=(5,5))
-plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='*', linestyle='', color='tab:green')
-ax.set_title('The Fibonacci Sequence')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1,1, figsize=(5,5))
-plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='h', linestyle='', ms=10,
-         color='tab:green')
-ax.set_title('The Fibonacci Sequence')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-</code></pre>
-<pre><code>Text(0, 0.5, 'Value')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>fig, ax = plt.subplots(1,1, figsize=(5,5))
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker=&#39;*&#39;, linestyle=&#39;&#39;, color=&#39;tab:green&#39;)
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>ax.set_title(&#39;The Fibonacci Sequence&#39;)
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a>ax.set_xlabel(&#39;Order in Sequence&#39;)
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>ax.set_ylabel(&#39;Value&#39;)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Fibonacci Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Order in Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0, 0.5, &#39;Value&#39;)
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_21_1.png" /></p>
-<h4 id="exercise-2-choose-lines-colors-and-markers">🏋️ Exercise 2: Choose Lines, Colors, and Markers</h4>
+<h4 id="exercise-2-choose-lines-colors-and-markers">🏋️ Exercise 2: Choose Lines, Colors, and Markers<a class="headerlink" href="#exercise-2-choose-lines-colors-and-markers" title="Permanent link">&para;</a></h4>
 <ol type="a">
   <li>Recreate the "My Random Values" plot with a variety of markers, linestyles, and colors.</li>
   <li>(Bonus) Can you set the markers and lines to colors belonging to the Tableau 20? Try it with and without the hex values!</li>
@@ -1287,244 +1296,252 @@ ax.set_ylabel('Value')
 * <code>linestyle=''</code>
 * <code>color=''</code></p>
 <p><img src="https://jrnold.github.io/ggthemes/reference/tableau_color_pal-2.png" width=800></p>
-<pre><code># Cell for Exercise 2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a># Cell for Exercise 2
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>### DO NOT CHANGE BELOW ###
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>x = [1,2,3,4,5,6,7]
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a>y1 = [1,1,2,3,5,8,13]
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a>y2 = [0,3,8,6,5,4,1]
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a>y3 = [10,15,12,9,3,2,1]
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a>y4 = [2,4,2,1,2,4,5]
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a>fig, ax = plt.subplots(1,1, figsize=(5,5))
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a>ax.set_title(&#39;My Random Values&#39;)
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a>ax.set_xlabel(&#39;Order in Sequence&#39;)
+<a id="__codelineno-22-12" name="__codelineno-22-12"></a>ax.set_ylabel(&#39;Value&#39;)
+<a id="__codelineno-22-13" name="__codelineno-22-13"></a>### END OF DO NOT CHANGE ###
+<a id="__codelineno-22-14" name="__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15"></a>### change these lines w/ marker, linestyle, color attributes
+<a id="__codelineno-22-16" name="__codelineno-22-16"></a>ax.plot(x,y1)
+<a id="__codelineno-22-17" name="__codelineno-22-17"></a>ax.plot(x,y2)
+<a id="__codelineno-22-18" name="__codelineno-22-18"></a>ax.plot(x,y3)
+<a id="__codelineno-22-19" name="__codelineno-22-19"></a>ax.plot(x,y4)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="c1"># Cell for Exercise 2</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="c1">### DO NOT CHANGE BELOW ###</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">]</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="n">y3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="n">y4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;My Random Values&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Order in Sequence&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="c1">### END OF DO NOT CHANGE ###</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="c1">### change these lines w/ marker, linestyle, color attributes</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">)</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y4</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7fcd316d14d0&gt;]
+</code></pre></div>
 
-### DO NOT CHANGE BELOW ###
-x = [1,2,3,4,5,6,7]
-y1 = [1,1,2,3,5,8,13]
-y2 = [0,3,8,6,5,4,1]
-y3 = [10,15,12,9,3,2,1]
-y4 = [2,4,2,1,2,4,5]
-fig, ax = plt.subplots(1,1, figsize=(5,5))
-ax.set_title('My Random Values')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-### END OF DO NOT CHANGE ###
-
-### change these lines w/ marker, linestyle, color attributes
-ax.plot(x,y1)
-ax.plot(x,y2)
-ax.plot(x,y3)
-ax.plot(x,y4)
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 2
-
-### DO NOT CHANGE BELOW ###
-x = [1,2,3,4,5,6,7]
-y1 = [1,1,2,3,5,8,13]
-y2 = [0,3,8,6,5,4,1]
-y3 = [10,15,12,9,3,2,1]
-y4 = [2,4,2,1,2,4,5]
-fig, ax = plt.subplots(1,1, figsize=(5,5))
-ax.set_title('My Random Values')
-ax.set_xlabel('Order in Sequence')
-ax.set_ylabel('Value')
-### END OF DO NOT CHANGE ###
-
-### change these lines w/ marker, linestyle, color attributes
-ax.plot(x,y1)
-ax.plot(x,y2)
-ax.plot(x,y3)
-ax.plot(x,y4)
-</code></pre>
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fcd316d14d0&gt;]
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_23_1.png" /></p>
-<h3 id="613-subplots">6.1.3 Subplots</h3>
+<h3 id="613-subplots">6.1.3 Subplots<a class="headerlink" href="#613-subplots" title="Permanent link">&para;</a></h3>
 <p>Remember that <code>fig, ax = plt.subplots()</code> satement we used earlier? We're now going to use that same approach but this time, the second variable that is returned (what we call <code>ax</code> in the cell bellow) is no longer an <code>axes</code> object! Instead, it is an <code>array</code> of <code>axes</code> objects.</p>
 <p>I'm also going to introduce another module, <strong><em>random</em></strong>, to generate some random values</p>
-<pre><code>import random
-fig, ax = plt.subplots(2, 2, figsize=(10,10))
-ax[0,1].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:orange')
-ax[1,0].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:green')
-ax[1,1].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:red')
-ax[0,0].plot(range(10), [random.random() for i in range(10)],
-             c='tab:blue')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>import random
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>fig, ax = plt.subplots(2, 2, figsize=(10,10))
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>ax[0,1].plot(range(10), [random.random() for i in range(10)], 
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a>             c=&#39;tab:orange&#39;)
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a>ax[1,0].plot(range(10), [random.random() for i in range(10)], 
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a>             c=&#39;tab:green&#39;)
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a>ax[1,1].plot(range(10), [random.random() for i in range(10)], 
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a>             c=&#39;tab:red&#39;)
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a>ax[0,0].plot(range(10), [random.random() for i in range(10)],
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a>             c=&#39;tab:blue&#39;)
+</code></pre></div>
 <p><strong><em>quick note:</em></strong> In the above cell we use something called <strong><em>list comprehension</em></strong> to quickly populate a list of objects (in this case those objects are floats). We won't dive too deeply into that now, but you can think of list comprehension as a more concise way of writing a <code>for()</code> loop. In future cases where list comprehension appears in this notebook I will include code snipets of the corresponding for loop.</p>
-<pre><code>import random
-
-# this list comprehension
-print([random.random() for i in range(10)])
-
-# produces the same output as this for loop
-ls = []
-for i in range(10):
-  ls.append(random.random())
-print(ls)
-</code></pre>
-<pre><code class="language-python">import random
-random.seed(42)
-
-# this list comprehension
-print([random.random() for i in range(10)])
-
-random.seed(42)
-# produces the same output as this for loop
-ls = []
-for i in range(10):
-  ls.append(random.random())
-print(ls)
-</code></pre>
-<pre><code>[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124, 0.6766994874229113, 0.8921795677048454, 0.08693883262941615, 0.4219218196852704, 0.029797219438070344]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>import random
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a># this list comprehension
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>print([random.random() for i in range(10)])
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a># produces the same output as this for loop
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a>ls = []
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a>for i in range(10):
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a>  ls.append(random.random())
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a>print(ls)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="c1"># this list comprehension</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="nb">print</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="c1"># produces the same output as this for loop</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11"></a>  <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124, 0.6766994874229113, 0.8921795677048454, 0.08693883262941615, 0.4219218196852704, 0.029797219438070344]
 [0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124, 0.6766994874229113, 0.8921795677048454, 0.08693883262941615, 0.4219218196852704, 0.029797219438070344]
-</code></pre>
+</code></pre></div>
+
 <p>The second thing we'll need to talk about is the grid of the ax object</p>
-<pre><code class="language-python">fig, ax = plt.subplots(2,2)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_28_0.png" /></p>
-<pre><code class="language-python">ax.shape
-</code></pre>
-<pre><code>(2, 2)
-</code></pre>
-<pre><code class="language-python">ax
-</code></pre>
-<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fcd316f9210&gt;,
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="n">ax</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>(2, 2)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="n">ax</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fcd316f9210&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fcd316490d0&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fcd315fb710&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fcd315b0d50&gt;]],
       dtype=object)
-</code></pre>
+</code></pre></div>
+
 <p>This is exactly like accessing a matrix:</p>
 <p><code>matrix[row,column] = element</code></p>
 <p>we have the pandas equivalent:</p>
 <p><code>df.iloc[0,1] = element</code></p>
-<pre><code class="language-python">import random
-fig, ax = plt.subplots(2, 2, figsize=(10,10))
-ax[0,0].plot(range(10), [random.random() for i in range(10)],
-             c='tab:blue')
-ax[0,1].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:orange')
-ax[1,0].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:green')
-ax[1,1].plot(range(10), [random.random() for i in range(10)], 
-             c='tab:red')
-</code></pre>
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fcd313e3a50&gt;]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a>             <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span> 
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a>             <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span> 
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a>             <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span> 
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a>             <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7fcd313e3a50&gt;]
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_32_1.png" /></p>
-<h4 id="exercise-3-subplots">🏋️ Exercise 3: Subplots</h4>
+<h4 id="exercise-3-subplots">🏋️ Exercise 3: Subplots<a class="headerlink" href="#exercise-3-subplots" title="Permanent link">&para;</a></h4>
 <ol type="a">
   <li>Create a 2x1 <code>figure</code> where the first <code>axes</code> is a plot of the fibonacci sequence up to the 10th sequence value and the second <code>axes</code> is a plot of 10 random integers with values between 10 and 20 (exclusive). Use different markers, colors, and lines for each plot.</li>
   <li>Since the focus of this tutorial is on visualization, I'll go ahead and provide my own code for generating random integers between 10 and 20 (exclusive). If you have extra time, prove to yourself that this code works!</li>
 <li>(remember docstrings are your friend!)</li>
 </ol>
 
-<pre><code>import random
-[round(random.random() * 8) + 11 for i in range(10)]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>import random
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>[round(random.random() * 8) + 11 for i in range(10)]
+</code></pre></div>
 <hr />
-<pre><code># Cell for Exercise 3
-
-### DO NOT CHANGE ###
-
-import random
-
-# create the fig, ax objects
-fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-
-# generate x, y1, and y2
-x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-y1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-y2 = [round(random.random() * 8) + 11 for i in range(10)]
-
-### END OF DO NOT CHANGE ###
-
-# Note: no skeleton code here is given for the figure, I want you to write this 
-# code out yourself. Here is pseudo-code to get you started:
-
-# plot the left axes, set the title and axes labels
-# title: Fibonacci Sequence; xlabel: x values; ylabel: y values
-
-### YOUR CODE HERE ###
-
-# plot the right axes, set the title and axes labels
-# title: My Random Values; xlabel: x values; ylabel: y values
-
-### YOUR CODE HERE ###
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 3
-
-### DO NOT CHANGE ###
-
-import random
-
-# create the fig, ax objects
-fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-
-# generate x, y1, and y2
-x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-y1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-y2 = [round(random.random() * 8) + 11 for i in range(10)]
-
-### END OF DO NOT CHANGE ###
-
-# Note: no skeleton code here is given for the figure, I want you to write this 
-# code out yourself. Here is pseudo-code to get you started:
-
-# plot the left axes, set the title and axes labels
-# title: Fibonacci Sequence; xlabel: x values; ylabel: y values
-
-### YOUR CODE HERE ###
-
-# plot the right axes, set the title and axes labels
-# title: My Random Values; xlabel: x values; ylabel: y values
-
-### YOUR CODE HERE ###
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a># Cell for Exercise 3
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a>### DO NOT CHANGE ###
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a>import random
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a>
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a># create the fig, ax objects
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a>fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a>
+<a id="__codelineno-32-10" name="__codelineno-32-10"></a># generate x, y1, and y2
+<a id="__codelineno-32-11" name="__codelineno-32-11"></a>x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+<a id="__codelineno-32-12" name="__codelineno-32-12"></a>y1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+<a id="__codelineno-32-13" name="__codelineno-32-13"></a>y2 = [round(random.random() * 8) + 11 for i in range(10)]
+<a id="__codelineno-32-14" name="__codelineno-32-14"></a>
+<a id="__codelineno-32-15" name="__codelineno-32-15"></a>### END OF DO NOT CHANGE ###
+<a id="__codelineno-32-16" name="__codelineno-32-16"></a>
+<a id="__codelineno-32-17" name="__codelineno-32-17"></a># Note: no skeleton code here is given for the figure, I want you to write this 
+<a id="__codelineno-32-18" name="__codelineno-32-18"></a># code out yourself. Here is pseudo-code to get you started:
+<a id="__codelineno-32-19" name="__codelineno-32-19"></a>
+<a id="__codelineno-32-20" name="__codelineno-32-20"></a># plot the left axes, set the title and axes labels
+<a id="__codelineno-32-21" name="__codelineno-32-21"></a># title: Fibonacci Sequence; xlabel: x values; ylabel: y values
+<a id="__codelineno-32-22" name="__codelineno-32-22"></a>
+<a id="__codelineno-32-23" name="__codelineno-32-23"></a>### YOUR CODE HERE ###
+<a id="__codelineno-32-24" name="__codelineno-32-24"></a>
+<a id="__codelineno-32-25" name="__codelineno-32-25"></a># plot the right axes, set the title and axes labels
+<a id="__codelineno-32-26" name="__codelineno-32-26"></a># title: My Random Values; xlabel: x values; ylabel: y values
+<a id="__codelineno-32-27" name="__codelineno-32-27"></a>
+<a id="__codelineno-32-28" name="__codelineno-32-28"></a>### YOUR CODE HERE ###
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="c1"># Cell for Exercise 3</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="c1">### DO NOT CHANGE ###</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6"></a>
+<a id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="c1"># create the fig, ax objects</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9"></a>
+<a id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="c1"># generate x, y1, and y2</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">11</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14"></a>
+<a id="__codelineno-33-15" name="__codelineno-33-15"></a><span class="c1">### END OF DO NOT CHANGE ###</span>
+<a id="__codelineno-33-16" name="__codelineno-33-16"></a>
+<a id="__codelineno-33-17" name="__codelineno-33-17"></a><span class="c1"># Note: no skeleton code here is given for the figure, I want you to write this </span>
+<a id="__codelineno-33-18" name="__codelineno-33-18"></a><span class="c1"># code out yourself. Here is pseudo-code to get you started:</span>
+<a id="__codelineno-33-19" name="__codelineno-33-19"></a>
+<a id="__codelineno-33-20" name="__codelineno-33-20"></a><span class="c1"># plot the left axes, set the title and axes labels</span>
+<a id="__codelineno-33-21" name="__codelineno-33-21"></a><span class="c1"># title: Fibonacci Sequence; xlabel: x values; ylabel: y values</span>
+<a id="__codelineno-33-22" name="__codelineno-33-22"></a>
+<a id="__codelineno-33-23" name="__codelineno-33-23"></a><span class="c1">### YOUR CODE HERE ###</span>
+<a id="__codelineno-33-24" name="__codelineno-33-24"></a>
+<a id="__codelineno-33-25" name="__codelineno-33-25"></a><span class="c1"># plot the right axes, set the title and axes labels</span>
+<a id="__codelineno-33-26" name="__codelineno-33-26"></a><span class="c1"># title: My Random Values; xlabel: x values; ylabel: y values</span>
+<a id="__codelineno-33-27" name="__codelineno-33-27"></a>
+<a id="__codelineno-33-28" name="__codelineno-33-28"></a><span class="c1">### YOUR CODE HERE ###</span>
+</code></pre></div>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_34_0.png" /></p>
-<h2 id="62-visualization-with-pandas">6.2 Visualization with Pandas</h2>
+<h2 id="62-visualization-with-pandas">6.2 Visualization with Pandas<a class="headerlink" href="#62-visualization-with-pandas" title="Permanent link">&para;</a></h2>
 <p>Now lets discover the power of <code>pandas</code> plots! While the objectives of the exercizes may be to make certain visualizations, throughout our experience we'll be using <code>pandas</code> tricks to create the data splices we need, so in the following is a mix of new plotting stuff, with pandas data selection/splicing stuff. </p>
 <p>We're also going to import a new module called <code>seaborn</code>. It is another plotting library based off <code>matplotlib</code>. We're going to use it to pull some stylistic features.</p>
-<pre><code>import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.datasets import load_boston
-</code></pre>
-<pre><code class="language-python">import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from ipywidgets import interact
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>import pandas as pd
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a>import matplotlib.pyplot as plt
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a>import seaborn as sns
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a>from sklearn.datasets import load_boston
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+</code></pre></div>
 <p>The following few cells should look familiar from last tutorial session, we're going to use some essential <code>pandas</code> methods to get a general sense of what our dataset looks like</p>
 <blockquote>
 <p>There are many ways to construct a dataframe, as an exercise, you might think of otherways to perform that task here.</p>
 </blockquote>
-<pre><code>df = pd.read_csv(&quot;https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/wine_quality/winequalityN.csv&quot;)
-df.describe()
-</code></pre>
-<pre><code class="language-python"># In your subsequent time with pandas you'll discover that there are a host of
-# ways to populate a dataframe. In the following, I can create a dataframe
-# simply by using read_csv because the data is formated in a way that 
-# pandas can easily intuit.
-
-df = pd.read_csv(&quot;https://raw.githubusercontent.com/wesleybeckner/&quot;\
-  &quot;technology_explorers/main/assets/imdb_movies.csv&quot;)
-</code></pre>
-<pre><code>/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2718: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>df = pd.read_csv(&quot;https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/wine_quality/winequalityN.csv&quot;)
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a>df.describe()
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="c1"># In your subsequent time with pandas you&#39;ll discover that there are a host of</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="c1"># ways to populate a dataframe. In the following, I can create a dataframe</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="c1"># simply by using read_csv because the data is formated in a way that </span>
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="c1"># pandas can easily intuit.</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5"></a>
+<a id="__codelineno-37-6" name="__codelineno-37-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/wesleybeckner/&quot;</span>\
+<a id="__codelineno-37-7" name="__codelineno-37-7"></a>  <span class="s2">&quot;technology_explorers/main/assets/imdb_movies.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2718: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
   interactivity=interactivity, compiler=compiler, result=result)
-</code></pre>
-<pre><code class="language-python"># we check the shape of our data to see if its as we expect 
-df.shape
-</code></pre>
-<pre><code>(85855, 22)
-</code></pre>
-<pre><code class="language-python"># we check the column names
-df.columns
-</code></pre>
-<pre><code>Index(['imdb_title_id', 'title', 'original_title', 'year', 'date_published',
-       'genre', 'duration', 'country', 'language', 'director', 'writer',
-       'production_company', 'actors', 'description', 'avg_vote', 'votes',
-       'budget', 'usa_gross_income', 'worlwide_gross_income', 'metascore',
-       'reviews_from_users', 'reviews_from_critics'],
-      dtype='object')
-</code></pre>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="c1"># we check the shape of our data to see if its as we expect </span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>(85855, 22)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="c1"># we check the column names</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Index([&#39;imdb_title_id&#39;, &#39;title&#39;, &#39;original_title&#39;, &#39;year&#39;, &#39;date_published&#39;,
+       &#39;genre&#39;, &#39;duration&#39;, &#39;country&#39;, &#39;language&#39;, &#39;director&#39;, &#39;writer&#39;,
+       &#39;production_company&#39;, &#39;actors&#39;, &#39;description&#39;, &#39;avg_vote&#39;, &#39;votes&#39;,
+       &#39;budget&#39;, &#39;usa_gross_income&#39;, &#39;worlwide_gross_income&#39;, &#39;metascore&#39;,
+       &#39;reviews_from_users&#39;, &#39;reviews_from_critics&#39;],
+      dtype=&#39;object&#39;)
+</code></pre></div>
+
 <p>Lets start by looking at basic description of our data. This gives us a sense of what visualizations we can employ to begin understanding our dataset.</p>
-<pre><code class="language-python">df.describe()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1628,8 +1645,8 @@ df.columns
 </table>
 </div>
 
-<pre><code class="language-python">df.loc[:, df.dtypes == object].describe()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="nb">object</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1750,74 +1767,79 @@ df.columns
 <p>The first thing we notice is that all the data is numerical that we can pull standard statistical information from (mean, std, max, etc.)</p>
 <p>What kind of visualizations do you think of with data like this?</p>
 <p>I tend to think of <strong>scatter, box, and histogram</strong> plots for numerical data and <strong>bar or sunburst charts</strong> for categorical data.</p>
-<h3 id="621-scatter-plots">6.2.1 Scatter Plots</h3>
+<h3 id="621-scatter-plots">6.2.1 Scatter Plots<a class="headerlink" href="#621-scatter-plots" title="Permanent link">&para;</a></h3>
 <p>The way to generate a plot in the fewest keystrokes is to simply call the <code>plot()</code> method within the <code>dataframe</code> object</p>
-<pre><code>df.plot()
-</code></pre>
-<pre><code class="language-python"># the simplest plot we can make is the following so let's start here. 
-# We can generate a figure simply by using the plot() method of our dataframe
-# object.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a>df.plot()
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="c1"># the simplest plot we can make is the following so let&#39;s start here. </span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="c1"># We can generate a figure simply by using the plot() method of our dataframe</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="c1"># object.</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a>
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd186a5390&gt;
+</code></pre></div>
 
-df.plot()
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd186a5390&gt;
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_46_1.png" /></p>
 <p>This gives us a raw view of the data, but here I'd like to introduce some standard plotting steps: recall the <code>fig</code>, <code>ax</code> format we used previously.</p>
-<pre><code>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(ax=ax)
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(ax=ax)
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd1dad9950&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a>df.plot(ax=ax)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd1dad9950&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_48_1.png" /></p>
 <p>To make this into a scatter plot, we set the linestyle (or ls) to an empty string, and select a marker type.</p>
-<pre><code>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(ax=ax, linestyle='', marker='.')
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(ax=ax, ls='', marker='.', ms=2)
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd1856f350&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
+<a id="__codelineno-46-2" name="__codelineno-46-2"></a>df.plot(ax=ax, linestyle=&#39;&#39;, marker=&#39;.&#39;)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2"></a><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd1856f350&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_50_1.png" /></p>
-<h4 id="exercise-4-scatter-plots-with-pandas">🏋️ Exercise 4: Scatter Plots with Pandas</h4>
+<h4 id="exercise-4-scatter-plots-with-pandas">🏋️ Exercise 4: Scatter Plots with Pandas<a class="headerlink" href="#exercise-4-scatter-plots-with-pandas" title="Permanent link">&para;</a></h4>
 <p>Make a plot of duration vs metascore</p>
-<pre><code class="language-python"># Cell for Exercise 4
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd18498ad0&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="c1"># Cell for Exercise 4</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd18498ad0&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_52_1.png" /></p>
-<h3 id="622-bar-plots">6.2.2 Bar Plots</h3>
+<h3 id="622-bar-plots">6.2.2 Bar Plots<a class="headerlink" href="#622-bar-plots" title="Permanent link">&para;</a></h3>
 <p>One of the more common methods of depicting aggregate data is bar plots. We almost always see these kinds of plots used to display and compare between averages, but sometimes between singular data values as well.</p>
-<pre><code>fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a>fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
+<a id="__codelineno-49-2" name="__codelineno-49-2"></a>
+<a id="__codelineno-49-3" name="__codelineno-49-3"></a>df.groupby(&#39;country&#39;).filter(lambda x: x.shape[0] &gt; 100).\
+<a id="__codelineno-49-4" name="__codelineno-49-4"></a>   groupby(&#39;country&#39;)[&#39;duration&#39;].mean().sort_values()\
+<a id="__codelineno-49-5" name="__codelineno-49-5"></a>   [-20:].plot(kind=&#39;barh&#39;, ax=ax)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">7.5</span><span class="p">))</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a>
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span>\
+<a id="__codelineno-50-4" name="__codelineno-50-4"></a>   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>\
+<a id="__codelineno-50-5" name="__codelineno-50-5"></a>   <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd08681210&gt;
+</code></pre></div>
 
-df.groupby('country').filter(lambda x: x.shape[0] &gt; 100).\
-   groupby('country')['duration'].mean().sort_values()\
-   [-20:].plot(kind='barh', ax=ax)
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
-
-df.groupby('country').filter(lambda x: x.shape[0] &gt; 100).\
-   groupby('country')['duration'].mean().sort_values()\
-   [-20:].plot(kind='barh', ax=ax)
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd08681210&gt;
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_54_1.png" /></p>
-<h3 id="623-box-plots">6.2.3 Box Plots</h3>
+<h3 id="623-box-plots">6.2.3 Box Plots<a class="headerlink" href="#623-box-plots" title="Permanent link">&para;</a></h3>
 <p>Maybe we thought it was usefull to see the feature data in the scatter plots ( we can visually scan for correlations between feature sets, check outliers, etc.) but perhaps more instructive, is a boxplot. A box plot or boxplot is a statistical method for graphically depicting aggregate data through their quartiles. It will be useful to inspect the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html">boxplot API</a> to see the default behavior for representing the quartiles and outliers. </p>
-<pre><code>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(kind='box', ax=ax)
-</code></pre>
-<pre><code class="language-python">fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
-df.groupby('country').filter((lambda x: (x.shape[0] &gt; 100) &amp; # filter by number of datapoints
-                              (x['duration'].mean() &lt; 100)) # filter by average movie time
-                         ).boxplot(by='country', column='duration', rot=90, ax=ax)
-</code></pre>
-<pre><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a>fig, ax = plt.subplots(1, 1, figsize = (10, 5))
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a>df.plot(kind=&#39;box&#39;, ax=ax)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">7.5</span><span class="p">))</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span> <span class="c1"># filter by number of datapoints</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3"></a>                              <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">))</span> <span class="c1"># filter by average movie time</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4"></a>                         <span class="p">)</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
   return array(a, dtype, copy=False, order=order)
 
 
@@ -1825,85 +1847,90 @@ df.groupby('country').filter((lambda x: (x.shape[0] &gt; 100) &amp; # filter by 
 
 
 &lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd04c5d9d0&gt;
-</code></pre>
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_56_2.png" /></p>
-<h3 id="624-histograms">6.2.4 Histograms</h3>
+<h3 id="624-histograms">6.2.4 Histograms<a class="headerlink" href="#624-histograms" title="Permanent link">&para;</a></h3>
 <p>What are some other kinds of plots we can make? A good one to be aware of is the histogram. </p>
-<pre><code>plt.title('Demo Hist')
-plt.xlabel('Duration')
-plt.ylabel('Frequency')
-plt.hist(df['duration'])
-</code></pre>
-<pre><code class="language-python">plt.title('Demo Hist')
-plt.xlabel('Duration')
-plt.ylabel('Frequency')
-plt.hist(df['duration'])
-</code></pre>
-<pre><code>(array([7.2368e+04, 1.3197e+04, 2.2800e+02, 4.0000e+01, 1.1000e+01,
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a>plt.title(&#39;Demo Hist&#39;)
+<a id="__codelineno-53-2" name="__codelineno-53-2"></a>plt.xlabel(&#39;Duration&#39;)
+<a id="__codelineno-53-3" name="__codelineno-53-3"></a>plt.ylabel(&#39;Frequency&#39;)
+<a id="__codelineno-53-4" name="__codelineno-53-4"></a>plt.hist(df[&#39;duration&#39;])
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Demo Hist&#39;</span><span class="p">)</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Duration&#39;</span><span class="p">)</span>
+<a id="__codelineno-54-3" name="__codelineno-54-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>(array([7.2368e+04, 1.3197e+04, 2.2800e+02, 4.0000e+01, 1.1000e+01,
         4.0000e+00, 4.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]),
  array([ 41. , 117.7, 194.4, 271.1, 347.8, 424.5, 501.2, 577.9, 654.6,
         731.3, 808. ]),
  &lt;a list of 10 Patch objects&gt;)
-</code></pre>
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_58_1.png" /></p>
-<pre><code class="language-python">df['duration'].plot(kind='hist')
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd0471d210&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd0471d210&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_59_1.png" /></p>
-<h3 id="625-kernel-density-estimates">6.2.5 Kernel Density Estimates</h3>
+<h3 id="625-kernel-density-estimates">6.2.5 Kernel Density Estimates<a class="headerlink" href="#625-kernel-density-estimates" title="Permanent link">&para;</a></h3>
 <p>Another useful plot type for data analysis is the kernel density estimate. You can think of this plot as exactly like a histogram, except instead of creating bins in which to accrue datapoints, you deposit a gaussian distribution around every datapoint in your dataset. By this mechanism, you avoid creating bias in your data summary as you otherwise would be when predifining bin sizes and locations in a histogram.</p>
-<pre><code class="language-python">fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df['duration'].plot(kind='kde', ax=ax)
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd046ac7d0&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2"></a><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd046ac7d0&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_61_1.png" /></p>
-<h4 id="6251-enrichment-skew-and-tailedness">6.2.5.1 <strong>Enrichment</strong>: Skew and Tailedness</h4>
+<h4 id="6251-enrichment-skew-and-tailedness">6.2.5.1 <strong>Enrichment</strong>: Skew and Tailedness<a class="headerlink" href="#6251-enrichment-skew-and-tailedness" title="Permanent link">&para;</a></h4>
 <p>While we're on the topic of KDEs/histograms and other statistical plots, this is a convenient time to talk about skew and tailedness or, otherwise known as kurtosis</p>
 <ul>
 <li><code>df.skew()</code> indicates the skewdness of the data</li>
 <li><code>df.kurtosis()</code> indicates the tailedness of the data</li>
 </ul>
-<pre><code class="language-python"># from scipy.stats import skewnorm
-from ipywidgets import FloatSlider
-</code></pre>
-<pre><code class="language-python">slider = FloatSlider(
-    value=0.5,
-    min=0.5,
-    max=5,
-    step=0.5,
-    description='Shape:',
-    disabled=False,
-    continuous_update=False,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.1f'
-)
-</code></pre>
-<pre><code class="language-python">import numpy as np
-def inspect_kurt_skew(a=slider):
-  # theres another hyperparameter, lambda for the center
-  # of weibull. the shape parameter is sometimes called
-  # a, or k
-  fig, ax = plt.subplots(1, 1, figsize=(5,5))
-  s = np.random.weibull(a, 1000)
-  statdf = pd.DataFrame(s)
-  statdf[0].plot(kind='kde', ax=ax)
-  print(&quot;skew: {:.2f}&quot;.format(statdf[0].skew()))
-  print(&quot;kurtosis: {:.2f}&quot;.format(statdf[0].kurt()))
-</code></pre>
-<pre><code class="language-python">interact(inspect_kurt_skew)
-</code></pre>
-<pre><code>interactive(children=(FloatSlider(value=0.5, continuous_update=False, description='Shape:', max=5.0, min=0.5, …
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="c1"># from scipy.stats import skewnorm</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2"></a><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">FloatSlider</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="n">slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2"></a>    <span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3"></a>    <span class="nb">min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4"></a>    <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5"></a>    <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Shape:&#39;</span><span class="p">,</span>
+<a id="__codelineno-58-7" name="__codelineno-58-7"></a>    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-58-8" name="__codelineno-58-8"></a>    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-58-9" name="__codelineno-58-9"></a>    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+<a id="__codelineno-58-10" name="__codelineno-58-10"></a>    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-58-11" name="__codelineno-58-11"></a>    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.1f&#39;</span>
+<a id="__codelineno-58-12" name="__codelineno-58-12"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2"></a><span class="k">def</span> <span class="nf">inspect_kurt_skew</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">slider</span><span class="p">):</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3"></a>  <span class="c1"># theres another hyperparameter, lambda for the center</span>
+<a id="__codelineno-59-4" name="__codelineno-59-4"></a>  <span class="c1"># of weibull. the shape parameter is sometimes called</span>
+<a id="__codelineno-59-5" name="__codelineno-59-5"></a>  <span class="c1"># a, or k</span>
+<a id="__codelineno-59-6" name="__codelineno-59-6"></a>  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-59-7" name="__codelineno-59-7"></a>  <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">weibull</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<a id="__codelineno-59-8" name="__codelineno-59-8"></a>  <span class="n">statdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-59-9" name="__codelineno-59-9"></a>  <span class="n">statdf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<a id="__codelineno-59-10" name="__codelineno-59-10"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;skew: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">statdf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()))</span>
+<a id="__codelineno-59-11" name="__codelineno-59-11"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kurtosis: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">statdf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="n">interact</span><span class="p">(</span><span class="n">inspect_kurt_skew</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>interactive(children=(FloatSlider(value=0.5, continuous_update=False, description=&#39;Shape:&#39;, max=5.0, min=0.5, …
 
 
 
 
 
 &lt;function __main__.inspect_kurt_skew&gt;
-</code></pre>
-<h3 id="626-correlation-plots">6.2.6 Correlation Plots</h3>
+</code></pre></div>
+
+<h3 id="626-correlation-plots">6.2.6 Correlation Plots<a class="headerlink" href="#626-correlation-plots" title="Permanent link">&para;</a></h3>
 <p>Often, we'll want to quantify the strength of a relationship between input variables. We can do this by calculating correlations. </p>
 <p>We won't go into great detail here about how Pearson's correlation is calculated, but the StatQuest videos on this subject are here for reference (and are really good... if you can stomach Starmer's
  humor)</p>
@@ -1915,8 +1942,8 @@ def inspect_kurt_skew(a=slider):
 <p>We can get the <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">pearson's correlation</a> between all the input features using the <code>dataframe.corr()</code> method.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/400px-Correlation_examples2.svg.png" /></p>
 <p>Fig: pearson's correlation value and corresponding scatter plot of feature-x and feature-y</p>
-<pre><code class="language-python">df.corr()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2004,64 +2031,66 @@ def inspect_kurt_skew(a=slider):
 
 <p>So we have this raw table of pearsons correlations between each of our input features, how do we and how should we turn this into a plot?</p>
 <p>Typically we'd use a heat map on an feature vs feature grid to view this kind of data. In the following I'm going to use some <code>numpy</code> methods you may not have seen before. Links to the documentation for these methods are at the end of the notebook.</p>
-<pre><code>import numpy as np
-fig, ax = plt.subplots(1, 1, figsize = (10,10))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a>import numpy as np
+<a id="__codelineno-62-2" name="__codelineno-62-2"></a>fig, ax = plt.subplots(1, 1, figsize = (10,10))
+<a id="__codelineno-62-3" name="__codelineno-62-3"></a>
+<a id="__codelineno-62-4" name="__codelineno-62-4"></a># create a mask to white-out the upper triangle
+<a id="__codelineno-62-5" name="__codelineno-62-5"></a>mask = np.triu(np.ones_like(df.corr(), dtype=bool))
+<a id="__codelineno-62-6" name="__codelineno-62-6"></a>
+<a id="__codelineno-62-7" name="__codelineno-62-7"></a># we&#39;ll want a divergent colormap for this so our eye
+<a id="__codelineno-62-8" name="__codelineno-62-8"></a># is not attracted to the values close to 0
+<a id="__codelineno-62-9" name="__codelineno-62-9"></a>cmap = sns.diverging_palette(230, 20, as_cmap=True)
+<a id="__codelineno-62-10" name="__codelineno-62-10"></a>
+<a id="__codelineno-62-11" name="__codelineno-62-11"></a>sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd023a6a10&gt;
+</code></pre></div>
 
-# create a mask to white-out the upper triangle
-mask = np.triu(np.ones_like(df.corr(), dtype=bool))
-
-# we'll want a divergent colormap for this so our eye
-# is not attracted to the values close to 0
-cmap = sns.diverging_palette(230, 20, as_cmap=True)
-
-sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
-</code></pre>
-<pre><code class="language-python">sns.heatmap(df.corr())
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd023a6a10&gt;
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_70_1.png" /></p>
-<pre><code class="language-python">import numpy as np
-fig, ax = plt.subplots(1, 1, figsize = (10,10))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-64-3" name="__codelineno-64-3"></a>
+<a id="__codelineno-64-4" name="__codelineno-64-4"></a><span class="c1"># create a mask to white-out the upper triangle</span>
+<a id="__codelineno-64-5" name="__codelineno-64-5"></a><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+<a id="__codelineno-64-6" name="__codelineno-64-6"></a>
+<a id="__codelineno-64-7" name="__codelineno-64-7"></a><span class="c1"># we&#39;ll want a divergent colormap for this so our eye</span>
+<a id="__codelineno-64-8" name="__codelineno-64-8"></a><span class="c1"># is not attracted to the values close to 0</span>
+<a id="__codelineno-64-9" name="__codelineno-64-9"></a><span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-64-10" name="__codelineno-64-10"></a>
+<a id="__codelineno-64-11" name="__codelineno-64-11"></a><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd0239fc90&gt;
+</code></pre></div>
 
-# create a mask to white-out the upper triangle
-mask = np.triu(np.ones_like(df.corr(), dtype=bool))
-
-# we'll want a divergent colormap for this so our eye
-# is not attracted to the values close to 0
-cmap = sns.diverging_palette(230, 20, as_cmap=True)
-
-sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
-</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd0239fc90&gt;
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_71_1.png" /></p>
 <p>What do we notice?</p>
 <p>looks like reviews and votes are all pretty correlated. Surprising?</p>
-<h2 id="63-visualization-with-ipywidgets">6.3 Visualization with IpyWidgets</h2>
-<h3 id="631-interact">6.3.1 Interact</h3>
+<h2 id="63-visualization-with-ipywidgets">6.3 Visualization with IpyWidgets<a class="headerlink" href="#63-visualization-with-ipywidgets" title="Permanent link">&para;</a></h2>
+<h3 id="631-interact">6.3.1 Interact<a class="headerlink" href="#631-interact" title="Permanent link">&para;</a></h3>
 <p>Here we're going to introduce a very basic use case of IPython's widgets using <code>interact</code>. The <code>interact</code> method (<code>ipywidgets.interact</code>) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using IPython’s widgets.</p>
-<pre><code>from ipywidgets import interact
-def my_plot(col=filtdf.select_dtypes('number').columns):
-  fig, ax = plt.subplots(1,1,figsize=(10,5))
-  filtdf.boxplot(column=col, by='country', ax=ax)
-
-interact(my_plot)
-</code></pre>
-<pre><code class="language-python">def my_plot(col=filtdf.select_dtypes('number').columns):
-  fig, ax = plt.subplots(1,1,figsize=(10,5))
-  filtdf.boxplot(column=col, by='country', ax=ax)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1"></a>from ipywidgets import interact
+<a id="__codelineno-65-2" name="__codelineno-65-2"></a>def my_plot(col=filtdf.select_dtypes(&#39;number&#39;).columns):
+<a id="__codelineno-65-3" name="__codelineno-65-3"></a>  fig, ax = plt.subplots(1,1,figsize=(10,5))
+<a id="__codelineno-65-4" name="__codelineno-65-4"></a>  filtdf.boxplot(column=col, by=&#39;country&#39;, ax=ax)
+<a id="__codelineno-65-5" name="__codelineno-65-5"></a>
+<a id="__codelineno-65-6" name="__codelineno-65-6"></a>interact(my_plot)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1"></a><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">filtdf</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+<a id="__codelineno-66-2" name="__codelineno-66-2"></a>  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-66-3" name="__codelineno-66-3"></a>  <span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</code></pre></div>
 <p>After defining our function that returns our plot, and defining input parameters for the fields we would like to interact with, we call our function with <code>interact</code></p>
-<pre><code>interact(my_plot)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a>interact(my_plot)
+</code></pre></div>
 <p>Let's say we want to look at information from the IMDb data based on country. Because there are so many countries in the database, let's filter it down to only the top 5 countries. How could we do this using <code>value_counts</code>? Let's try this below</p>
-<pre><code class="language-python">top_5_countries = df['country'].value_counts()[:5].keys() # get list of top 5 countries
-filtdf = df.loc[df['country'].isin(top_5_countries)] # only select rows whose country is in the list
-</code></pre>
-<pre><code class="language-python">filtdf.boxplot(column='duration', by='country')
-</code></pre>
-<pre><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1"></a><span class="n">top_5_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># get list of top 5 countries</span>
+<a id="__codelineno-68-2" name="__codelineno-68-2"></a><span class="n">filtdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_5_countries</span><span class="p">)]</span> <span class="c1"># only select rows whose country is in the list</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
   return array(a, dtype, copy=False, order=order)
 
 
@@ -2069,62 +2098,67 @@ filtdf = df.loc[df['country'].isin(top_5_countries)] # only select rows whose co
 
 
 &lt;matplotlib.axes._subplots.AxesSubplot at 0x7fccddd7dc90&gt;
-</code></pre>
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_78_2.png" /></p>
-<pre><code class="language-python">interact(my_plot)
-</code></pre>
-<pre><code>interactive(children=(Dropdown(description='col', options=('duration', 'avg_vote', 'votes', 'metascore', 'revi…
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1"></a><span class="n">interact</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>interactive(children=(Dropdown(description=&#39;col&#39;, options=(&#39;duration&#39;, &#39;avg_vote&#39;, &#39;votes&#39;, &#39;metascore&#39;, &#39;revi…
 
 
 
 
 
 &lt;function __main__.my_plot&gt;
-</code></pre>
-<p>Let's break this down. Normally, I would just set my y-variable to a value, so that when I call my function, my figure is generated with the corresponding data field:</p>
-<pre><code class="language-python">def my_plot(col='duration'):
-  fig, ax = plt.subplots(1,1,figsize=(10,5))
-  filtdf.boxplot(column=col, by='country', ax=ax)
+</code></pre></div>
 
-my_plot()
-</code></pre>
-<pre><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+<p>Let's break this down. Normally, I would just set my y-variable to a value, so that when I call my function, my figure is generated with the corresponding data field:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1"></a><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">):</span>
+<a id="__codelineno-71-2" name="__codelineno-71-2"></a>  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-71-3" name="__codelineno-71-3"></a>  <span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<a id="__codelineno-71-4" name="__codelineno-71-4"></a>
+<a id="__codelineno-71-5" name="__codelineno-71-5"></a><span class="n">my_plot</span><span class="p">()</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
   return array(a, dtype, copy=False, order=order)
-</code></pre>
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_81_1.png" /></p>
 <p>Instead, we want to give <code>interact()</code> a list of values for the user to select from, this is the difference between a regular function, and one we might feed into interact.</p>
-<pre><code>y = ['duration',
- 'avg_vote',
- 'votes',
- 'metascore',
- 'reviews_from_users',
- 'reviews_from_critics']
-</code></pre>
-<pre><code class="language-python">list(filtdf.select_dtypes('number').columns)
-</code></pre>
-<pre><code>['duration',
- 'avg_vote',
- 'votes',
- 'metascore',
- 'reviews_from_users',
- 'reviews_from_critics']
-</code></pre>
-<h4 id="exercise-5-ipywidgets-and-figures-in-functions">🏋️ Exercise 5: IpyWidgets and Figures in Functions</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a>y = [&#39;duration&#39;,
+<a id="__codelineno-72-2" name="__codelineno-72-2"></a> &#39;avg_vote&#39;,
+<a id="__codelineno-72-3" name="__codelineno-72-3"></a> &#39;votes&#39;,
+<a id="__codelineno-72-4" name="__codelineno-72-4"></a> &#39;metascore&#39;,
+<a id="__codelineno-72-5" name="__codelineno-72-5"></a> &#39;reviews_from_users&#39;,
+<a id="__codelineno-72-6" name="__codelineno-72-6"></a> &#39;reviews_from_critics&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1"></a><span class="nb">list</span><span class="p">(</span><span class="n">filtdf</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[&#39;duration&#39;,
+ &#39;avg_vote&#39;,
+ &#39;votes&#39;,
+ &#39;metascore&#39;,
+ &#39;reviews_from_users&#39;,
+ &#39;reviews_from_critics&#39;]
+</code></pre></div>
+
+<h4 id="exercise-5-ipywidgets-and-figures-in-functions">🏋️ Exercise 5: IpyWidgets and Figures in Functions<a class="headerlink" href="#exercise-5-ipywidgets-and-figures-in-functions" title="Permanent link">&para;</a></h4>
 <p>In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time filter your dataframe for only the top 10 directors that most frequently occur in the IMDb datafile.</p>
 <p>When you build the interactive plot, grouby director this time instead of country.</p>
-<pre><code class="language-python"># Code block for Exercise 5
-</code></pre>
-<pre><code class="language-python">interact(my_plot)
-</code></pre>
-<pre><code>interactive(children=(Dropdown(description='col', options=('duration', 'avg_vote', 'votes', 'metascore', 'revi…
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a><span class="c1"># Code block for Exercise 5</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a><span class="n">interact</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>interactive(children=(Dropdown(description=&#39;col&#39;, options=(&#39;duration&#39;, &#39;avg_vote&#39;, &#39;votes&#39;, &#39;metascore&#39;, &#39;revi…
 
 
 
 
 
 &lt;function __main__.my_plot&gt;
-</code></pre>
-<h1 id="references">References</h1>
+</code></pre></div>
+
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.triu.html"><code>numpy.triu</code></a> </li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html"><code>numpy.ones_like</code></a></li>
@@ -2132,111 +2166,115 @@ my_plot()
 <li><a href="https://youtu.be/xZ_z8KWkhXE?t=822">StatQuest: Correlation</a></li>
 <li><a href="https://www.youtube.com/watch?v=qtaqvPAeEJY&amp;ab_channel=StatQuestwithJoshStarmer">StatQuest: Covariance</a></li>
 </ul>
-<h1 id="enrichment-topics">Enrichment Topics</h1>
-<h2 id="64-other-plot-types">6.4 Other Plot Types</h2>
-<h3 id="641-bar-plots-advanced">6.4.1 Bar Plots (Advanced)</h3>
-<p>Similar to how we created bar plots with pandas, we can use matplotlib to make barplots </p>
-<pre><code>pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
+<h1 id="enrichment-topics">Enrichment Topics<a class="headerlink" href="#enrichment-topics" title="Permanent link">&para;</a></h1>
+<h2 id="64-other-plot-types">6.4 Other Plot Types<a class="headerlink" href="#64-other-plot-types" title="Permanent link">&para;</a></h2>
+<h3 id="641-bar-plots-advanced">6.4.1 Bar Plots (Advanced)<a class="headerlink" href="#641-bar-plots-advanced" title="Permanent link">&para;</a></h3>
+<p>Similar to how we created bar plots with pandas, we can use matplotlib to make barplots 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
+<a id="__codelineno-76-2" name="__codelineno-76-2"></a>hp = [10, 12, 8, 16]
+<a id="__codelineno-76-3" name="__codelineno-76-3"></a>
+<a id="__codelineno-76-4" name="__codelineno-76-4"></a>plt.bar(pokemon, hp, color=&#39;tab:blue&#39;)
+<a id="__codelineno-76-5" name="__codelineno-76-5"></a>plt.title(&#39;Pokemon HP&#39;)
+<a id="__codelineno-76-6" name="__codelineno-76-6"></a>plt.xlabel(&#39;Pokemon&#39;)
+<a id="__codelineno-76-7" name="__codelineno-76-7"></a>plt.ylabel(&#39;HP&#39;)
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1"></a><span class="n">pokemon</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charmander&#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Squirtle&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">]</span>
+<a id="__codelineno-77-2" name="__codelineno-77-2"></a><span class="n">hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<a id="__codelineno-77-3" name="__codelineno-77-3"></a>
+<a id="__codelineno-77-4" name="__codelineno-77-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<a id="__codelineno-77-5" name="__codelineno-77-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pokemon HP&#39;</span><span class="p">)</span>
+<a id="__codelineno-77-6" name="__codelineno-77-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pokemon&#39;</span><span class="p">)</span>
+<a id="__codelineno-77-7" name="__codelineno-77-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0, 0.5, &#39;HP&#39;)
+</code></pre></div>
 
-plt.bar(pokemon, hp, color='tab:blue')
-plt.title('Pokemon HP')
-plt.xlabel('Pokemon')
-plt.ylabel('HP')
-</code></pre>
-<pre><code class="language-python">pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
-
-plt.bar(pokemon, hp, color='tab:blue')
-plt.title('Pokemon HP')
-plt.xlabel('Pokemon')
-plt.ylabel('HP')
-</code></pre>
-<pre><code>Text(0, 0.5, 'HP')
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_91_1.png" /></p>
 <p>Doing the same but with horizontally oriented bars</p>
-<pre><code>pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
+<a id="__codelineno-78-2" name="__codelineno-78-2"></a>hp = [10, 12, 8, 16]
+<a id="__codelineno-78-3" name="__codelineno-78-3"></a>
+<a id="__codelineno-78-4" name="__codelineno-78-4"></a>plt.barh(pokemon, hp, color=&#39;tab:blue&#39;)
+<a id="__codelineno-78-5" name="__codelineno-78-5"></a>plt.title(&#39;Pokemon HP&#39;)
+<a id="__codelineno-78-6" name="__codelineno-78-6"></a>plt.ylabel(&#39;Pokemon&#39;)
+<a id="__codelineno-78-7" name="__codelineno-78-7"></a>plt.xlabel(&#39;HP&#39;)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1"></a><span class="n">pokemon</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charmander&#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Squirtle&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">]</span>
+<a id="__codelineno-79-2" name="__codelineno-79-2"></a><span class="n">hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<a id="__codelineno-79-3" name="__codelineno-79-3"></a>
+<a id="__codelineno-79-4" name="__codelineno-79-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<a id="__codelineno-79-5" name="__codelineno-79-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pokemon HP&#39;</span><span class="p">)</span>
+<a id="__codelineno-79-6" name="__codelineno-79-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pokemon&#39;</span><span class="p">)</span>
+<a id="__codelineno-79-7" name="__codelineno-79-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0.5, 0, &#39;HP&#39;)
+</code></pre></div>
 
-plt.barh(pokemon, hp, color='tab:blue')
-plt.title('Pokemon HP')
-plt.ylabel('Pokemon')
-plt.xlabel('HP')
-</code></pre>
-<pre><code class="language-python">pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
-
-plt.barh(pokemon, hp, color='tab:blue')
-plt.title('Pokemon HP')
-plt.ylabel('Pokemon')
-plt.xlabel('HP')
-</code></pre>
-<pre><code>Text(0.5, 0, 'HP')
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_93_1.png" /></p>
 <p>We can also add error bars</p>
-<pre><code>pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
-variance = [i * random.random()*.25 for i in hp]
-
-plt.barh(pokemon, hp, xerr=variance, color='tab:blue')
-plt.title('Pokemon HP')
-plt.ylabel('Pokemon')
-plt.xlabel('HP')
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
+<a id="__codelineno-80-2" name="__codelineno-80-2"></a>hp = [10, 12, 8, 16]
+<a id="__codelineno-80-3" name="__codelineno-80-3"></a>variance = [i * random.random()*.25 for i in hp]
+<a id="__codelineno-80-4" name="__codelineno-80-4"></a>
+<a id="__codelineno-80-5" name="__codelineno-80-5"></a>plt.barh(pokemon, hp, xerr=variance, color=&#39;tab:blue&#39;)
+<a id="__codelineno-80-6" name="__codelineno-80-6"></a>plt.title(&#39;Pokemon HP&#39;)
+<a id="__codelineno-80-7" name="__codelineno-80-7"></a>plt.ylabel(&#39;Pokemon&#39;)
+<a id="__codelineno-80-8" name="__codelineno-80-8"></a>plt.xlabel(&#39;HP&#39;)
+</code></pre></div>
 <p>for loop version of list comprehension</p>
-<pre><code>hp = [10, 12, 8, 16]
-variance = []
-for i in hp:
-  variance.append(i * random.random()*.25)
-print(variance)
-</code></pre>
-<pre><code class="language-python">pokemon = ['Charmander', 'Pikachu', 'Squirtle', 'Bulbasaur']
-hp = [10, 12, 8, 16]
-variance = [i * random.random()*.25 for i in hp]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1"></a>hp = [10, 12, 8, 16]
+<a id="__codelineno-81-2" name="__codelineno-81-2"></a>variance = []
+<a id="__codelineno-81-3" name="__codelineno-81-3"></a>for i in hp:
+<a id="__codelineno-81-4" name="__codelineno-81-4"></a>  variance.append(i * random.random()*.25)
+<a id="__codelineno-81-5" name="__codelineno-81-5"></a>print(variance)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1"></a><span class="n">pokemon</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charmander&#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Squirtle&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">]</span>
+<a id="__codelineno-82-2" name="__codelineno-82-2"></a><span class="n">hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<a id="__codelineno-82-3" name="__codelineno-82-3"></a><span class="n">variance</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">.25</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">hp</span><span class="p">]</span>
+<a id="__codelineno-82-4" name="__codelineno-82-4"></a>
+<a id="__codelineno-82-5" name="__codelineno-82-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">variance</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<a id="__codelineno-82-6" name="__codelineno-82-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pokemon HP&#39;</span><span class="p">)</span>
+<a id="__codelineno-82-7" name="__codelineno-82-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pokemon&#39;</span><span class="p">)</span>
+<a id="__codelineno-82-8" name="__codelineno-82-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Text(0.5, 0, &#39;HP&#39;)
+</code></pre></div>
 
-plt.barh(pokemon, hp, xerr=variance, color='tab:blue')
-plt.title('Pokemon HP')
-plt.ylabel('Pokemon')
-plt.xlabel('HP')
-</code></pre>
-<pre><code>Text(0.5, 0, 'HP')
-</code></pre>
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_95_1.png" /></p>
-<h3 id="642-3d-plots">6.4.2 3D Plots</h3>
+<h3 id="642-3d-plots">6.4.2 3D Plots<a class="headerlink" href="#642-3d-plots" title="Permanent link">&para;</a></h3>
 <p>You can also create 3D plots in matplotlib using <code>ax.scatter3D</code></p>
-<pre><code>ax = plt.axes(projection='3d')
-ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
-</code></pre>
-<p>for loop version of list comprehension:</p>
-<pre><code>ls = []
-for i in range(10):
-  ls.append(i*random.random()*.25)
-print(ls)
-</code></pre>
-<pre><code class="language-python">ax = plt.axes(projection='3d')
-ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
-</code></pre>
-<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fdf86d241d0&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a>ax = plt.axes(projection=&#39;3d&#39;)
+<a id="__codelineno-83-2" name="__codelineno-83-2"></a>ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
+</code></pre></div>
+<p>for loop version of list comprehension:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a>ls = []
+<a id="__codelineno-84-2" name="__codelineno-84-2"></a>for i in range(10):
+<a id="__codelineno-84-3" name="__codelineno-84-3"></a>  ls.append(i*random.random()*.25)
+<a id="__codelineno-84-4" name="__codelineno-84-4"></a>print(ls)
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<a id="__codelineno-85-2" name="__codelineno-85-2"></a><span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),[</span><span class="n">i</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">.25</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fdf86d241d0&gt;
+</code></pre></div>
+
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_97_1.png" /></p>
-<h2 id="65-visualization-with-plotly">6.5 Visualization with Plotly</h2>
+<h2 id="65-visualization-with-plotly">6.5 Visualization with Plotly<a class="headerlink" href="#65-visualization-with-plotly" title="Permanent link">&para;</a></h2>
 <p>Another great plotting library, that is gaining in popularity (especially in enterprise settings) is plotly. As an added exercise, if you have additional time, explore some of the <a href="https://plotly.com/python/">plotly examples</a> then recreate the breakout room assignment using plotly instead of matplotlib.</p>
-<h3 id="651-scatter-plot-with-size-and-color">6.5.1 Scatter Plot with Size and Color</h3>
-<pre><code class="language-python">import plotly.express as px
-</code></pre>
-<pre><code class="language-python">x = 'quality'
-y = 'alcohol'
-color = 'quality'
-size = 'alcohol'
-corr = df.corr()
-pearson = corr[x][y]
-fig = px.scatter(df, x=x, y=y, color=color, size=size,
-                title='{} vs {} ({:.2f} corr)'.format(x, y, pearson),
-                width=800, height=800)
-fig.show()
-</code></pre>
+<h3 id="651-scatter-plot-with-size-and-color">6.5.1 Scatter Plot with Size and Color<a class="headerlink" href="#651-scatter-plot-with-size-and-color" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;quality&#39;</span>
+<a id="__codelineno-87-2" name="__codelineno-87-2"></a><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;alcohol&#39;</span>
+<a id="__codelineno-87-3" name="__codelineno-87-3"></a><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;quality&#39;</span>
+<a id="__codelineno-87-4" name="__codelineno-87-4"></a><span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;alcohol&#39;</span>
+<a id="__codelineno-87-5" name="__codelineno-87-5"></a><span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<a id="__codelineno-87-6" name="__codelineno-87-6"></a><span class="n">pearson</span> <span class="o">=</span> <span class="n">corr</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+<a id="__codelineno-87-7" name="__codelineno-87-7"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span>
+<a id="__codelineno-87-8" name="__codelineno-87-8"></a>                <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> vs </span><span class="si">{}</span><span class="s1"> (</span><span class="si">{:.2f}</span><span class="s1"> corr)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pearson</span><span class="p">),</span>
+<a id="__codelineno-87-9" name="__codelineno-87-9"></a>                <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<a id="__codelineno-87-10" name="__codelineno-87-10"></a><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><html>
 <head><meta charset="utf-8" /></head></p>
 <body>
@@ -2286,26 +2324,27 @@ if (outputEl) {{
         </div>
 </body>
 <p></html></p>
-<h3 id="652-plotly-with-ipywidgets">6.5.2 Plotly with IpyWidgets</h3>
-<pre><code class="language-python">def my_plot(x=df.columns, y=df.columns, color=df.columns, size=df.columns):
-  corr = df.corr()
-  pearson = corr[x][y]
-  fig = px.scatter(df, x=x, y=y, color=color, size=size,
-                  title='{} vs {} ({:.2f} corr)'.format(x, y, pearson),
-                  width=800, height=800)
-  fig.show()
-interact(my_plot)
-</code></pre>
-<pre><code>interactive(children=(Dropdown(description='x', options=('type', 'fixed acidity', 'volatile acidity', 'citric …
+<h3 id="652-plotly-with-ipywidgets">6.5.2 Plotly with IpyWidgets<a class="headerlink" href="#652-plotly-with-ipywidgets" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1"></a><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+<a id="__codelineno-88-2" name="__codelineno-88-2"></a>  <span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<a id="__codelineno-88-3" name="__codelineno-88-3"></a>  <span class="n">pearson</span> <span class="o">=</span> <span class="n">corr</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+<a id="__codelineno-88-4" name="__codelineno-88-4"></a>  <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span>
+<a id="__codelineno-88-5" name="__codelineno-88-5"></a>                  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> vs </span><span class="si">{}</span><span class="s1"> (</span><span class="si">{:.2f}</span><span class="s1"> corr)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pearson</span><span class="p">),</span>
+<a id="__codelineno-88-6" name="__codelineno-88-6"></a>                  <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<a id="__codelineno-88-7" name="__codelineno-88-7"></a>  <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-88-8" name="__codelineno-88-8"></a><span class="n">interact</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>interactive(children=(Dropdown(description=&#39;x&#39;, options=(&#39;type&#39;, &#39;fixed acidity&#39;, &#39;volatile acidity&#39;, &#39;citric …
 
 
 
 
 
 &lt;function __main__.my_plot&gt;
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1"></a>
+</code></pre></div>
 
               
             </article>

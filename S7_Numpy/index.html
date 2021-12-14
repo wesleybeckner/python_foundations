@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../extra.css">
     
+      <link rel="stylesheet" href="../styles.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -997,342 +999,378 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S7_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-session-7-numpy">Python Foundations, Session 7: NumPy</h1>
+<h1 id="python-foundations-session-7-numpy">Python Foundations, Session 7: NumPy<a class="headerlink" href="#python-foundations-session-7-numpy" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
-<p><strong>Contact</strong>: wesleybeckner@gmail.com
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
 <p>Today, we will jump into the <strong>Numpy</strong> package.  </p>
-<h4 id="numpy-numerical-python"><a href="http://numpy.org/"><code>numpy</code></a>: Numerical Python</h4>
+<h4 id="numpy-numerical-python"><a href="http://numpy.org/"><code>numpy</code></a>: Numerical Python<a class="headerlink" href="#numpy-numerical-python" title="Permanent link">&para;</a></h4>
 <p>Numpy is short for "Numerical Python", and contains tools for efficient manipulation of arrays of data.
 If you have used other computational tools like IDL or MatLab, Numpy should feel very familiar.</p>
 <p><br></p>
 <hr />
-<h2 id="import-libraries">Import Libraries</h2>
-<pre><code class="language-python"># for numpy section
-import numpy as np
-np.random.seed(42)
-</code></pre>
-<pre><code class="language-python"># for debugging section
-import random
-from contextlib import contextmanager
-import sys, os
-
-@contextmanager
-def suppress_stdout():
-    with open(os.devnull, &quot;w&quot;) as devnull:
-        old_stdout = sys.stdout
-        sys.stdout = devnull
-        try:  
-            yield
-        finally:
-            sys.stdout = old_stdout
-</code></pre>
-<h2 id="71-numpy-arrays">7.1 NumPy Arrays</h2>
-<h3 id="711-creating-numpy-arrays">7.1.1 Creating NumPy Arrays</h3>
+<h2 id="import-libraries">Import Libraries<a class="headerlink" href="#import-libraries" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># for numpy section</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># for debugging section</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nd">@contextmanager</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">def</span> <span class="nf">suppress_stdout</span><span class="p">():</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">devnull</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="n">old_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">devnull</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="k">try</span><span class="p">:</span>  
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>            <span class="k">yield</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">old_stdout</span>
+</code></pre></div>
+<h2 id="71-numpy-arrays">7.1 NumPy Arrays<a class="headerlink" href="#71-numpy-arrays" title="Permanent link">&para;</a></h2>
+<h3 id="711-creating-numpy-arrays">7.1.1 Creating NumPy Arrays<a class="headerlink" href="#711-creating-numpy-arrays" title="Permanent link">&para;</a></h3>
 <p>When we worked with lists, we saw that we could fill them with all sorts of datatypes. NumPy arrays are necessarily of one datatype:</p>
-<pre><code class="language-python"># these will all be ints
-np.array([1, 2, 3, 6, 5, 4])
-</code></pre>
-<pre><code>array([1, 2, 3, 6, 5, 4])
-</code></pre>
-<pre><code class="language-python"># these will all be floats
-np.array([1, 2, 3.14, 6, 5, 4])
-</code></pre>
-<pre><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ])
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># these will all be ints</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 6, 5, 4])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># these will all be floats</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ])
+</code></pre></div>
+
 <p>We can check the data types in the standard way:</p>
-<pre><code class="language-python">arr = np.array([1, 2, 3, 6, 5, 4])
-for i in arr:
-  print(type(i))
-</code></pre>
-<pre><code>&lt;class 'numpy.int64'&gt;
-&lt;class 'numpy.int64'&gt;
-&lt;class 'numpy.int64'&gt;
-&lt;class 'numpy.int64'&gt;
-&lt;class 'numpy.int64'&gt;
-&lt;class 'numpy.int64'&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+</code></pre></div>
+
 <p>We see that all types are <em>upcast</em> to the most complext object in the array. For instance, because 3.14 is a float, all the other numbers in the array will be a float:</p>
-<pre><code class="language-python">for i in np.array([1, 2, 3.14, 6, 5, 4]):
-  print(type(i))
-</code></pre>
-<pre><code>&lt;class 'numpy.float64'&gt;
-&lt;class 'numpy.float64'&gt;
-&lt;class 'numpy.float64'&gt;
-&lt;class 'numpy.float64'&gt;
-&lt;class 'numpy.float64'&gt;
-&lt;class 'numpy.float64'&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+</code></pre></div>
+
 <p>We can also specify the datatypes in the array:</p>
-<pre><code class="language-python">np.array([1, 2, 3.14, 6, 5, 4], dtype='float32')
-</code></pre>
-<pre><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ], dtype=float32)
-</code></pre>
-<h4 id="exercise-1-specify-datatype">🏋️ Exercise 1: Specify datatype</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ], dtype=float32)
+</code></pre></div>
+
+<h4 id="exercise-1-specify-datatype">🏋️ Exercise 1: Specify datatype<a class="headerlink" href="#exercise-1-specify-datatype" title="Permanent link">&para;</a></h4>
 <p>Create an array of 5 numbers whose datatypes are 16 bit integers. Make one of the numbers not a whole number. What happens to the number when it is stored in the 16 bit integer array?</p>
-<pre><code class="language-python"># Cell for Exercise 1
-</code></pre>
-<h3 id="712-creating-arrays-from-numpy-methods">7.1.2 Creating Arrays from NumPy Methods</h3>
-<pre><code class="language-python"># create an array of 10 zeros
-# how can we specify the datatype?
-np.zeros(10)
-</code></pre>
-<pre><code>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
-</code></pre>
-<pre><code class="language-python"># create an array of 10 1's
-np.ones(10)
-</code></pre>
-<pre><code>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
-</code></pre>
-<pre><code class="language-python"># fill an array of the following dimensions
-# with value 42
-np.full((2,3), 42)
-</code></pre>
-<pre><code>array([[42, 42, 42],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Cell for Exercise 1</span>
+</code></pre></div>
+<h3 id="712-creating-arrays-from-numpy-methods">7.1.2 Creating Arrays from NumPy Methods<a class="headerlink" href="#712-creating-arrays-from-numpy-methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># create an array of 10 zeros</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># how can we specify the datatype?</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># create an array of 10 1&#39;s</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># fill an array of the following dimensions</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1"># with value 42</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="mi">42</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[42, 42, 42],
        [42, 42, 42]])
-</code></pre>
-<pre><code class="language-python"># arange from start (inc) to stop (exc)
-# integers with step size
-np.arange(1, 10, 2)
-</code></pre>
-<pre><code>array([1, 3, 5, 7, 9])
-</code></pre>
-<pre><code class="language-python"># create an array of numbers that divides
-# the space between start and stop (inc, inc)
-# with X equally spaced intervals
-np.linspace(0, 10, 5)
-</code></pre>
-<pre><code>array([ 0. ,  2.5,  5. ,  7.5, 10. ])
-</code></pre>
-<pre><code class="language-python"># create an array of values drawn from a 
-# uniform distribution
-np.random.random(5)
-</code></pre>
-<pre><code>array([0.37454012, 0.95071431, 0.73199394, 0.59865848, 0.15601864])
-</code></pre>
-<pre><code class="language-python"># create an array of values from a normal distribution
-np.random.normal(loc=0, scale=1, size=(5,5))
-</code></pre>
-<pre><code>array([[ 0.61764085,  1.2170708 ,  0.22628827,  0.84740143,  0.17483301],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># arange from start (inc) to stop (exc)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="c1"># integers with step size</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1, 3, 5, 7, 9])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># create an array of numbers that divides</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="c1"># the space between start and stop (inc, inc)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="c1"># with X equally spaced intervals</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([ 0. ,  2.5,  5. ,  7.5, 10. ])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># create an array of values drawn from a </span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="c1"># uniform distribution</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([0.37454012, 0.95071431, 0.73199394, 0.59865848, 0.15601864])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># create an array of values from a normal distribution</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[ 0.61764085,  1.2170708 ,  0.22628827,  0.84740143,  0.17483301],
        [-1.21685489,  1.04934739,  1.32510566,  0.73450106, -0.95449726],
        [-0.75117942, -1.13042805,  0.76997736,  1.26838952,  0.42448624],
        [ 0.94053558, -0.86764109,  0.14586185, -1.36987106, -0.77178075],
        [ 0.87867355, -0.23959451,  1.20938197,  0.53796   ,  2.73442216]])
-</code></pre>
-<pre><code class="language-python"># create an array of random integers between 5 and 10 with shape 2x2
-np.random.randint(5, 11, (2,2))
-</code></pre>
-<pre><code>array([[5, 9],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># create an array of random integers between 5 and 10 with shape 2x2</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[5, 9],
        [8, 9]])
-</code></pre>
-<h3 id="exercise-2-creating-arrays">🏋️ Exercise 2: Creating Arrays</h3>
+</code></pre></div>
+
+<h3 id="exercise-2-creating-arrays">🏋️ Exercise 2: Creating Arrays<a class="headerlink" href="#exercise-2-creating-arrays" title="Permanent link">&para;</a></h3>
 <p>a. Create a 5x5 array of ones with datatype <code>int16</code></p>
-<pre><code class="language-python"># Cell for Exercise 2a
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Cell for Exercise 2a</span>
+</code></pre></div>
 <p>b. Create an array of 10 numbers drawn from a uniform distribution between 0 and 1</p>
-<pre><code class="language-python"># Cell for Exercise 2b
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Cell for Exercise 2b</span>
+</code></pre></div>
 <p>c. Create an array of 10 numbers drawn from a normal distribution centered at 80 with a standard deviation of 5</p>
-<pre><code class="language-python"># Cell for Exercise 2c
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Cell for Exercise 2c</span>
+</code></pre></div>
 <p>d. Create an array of 10 intergers drawn from a uniform distribution between 5 and 10 inclusive</p>
-<pre><code class="language-python"># Cell for Exercise 2d
-</code></pre>
-<h2 id="72-numpy-array-attributes">7.2 NumPy Array Attributes</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Cell for Exercise 2d</span>
+</code></pre></div>
+<h2 id="72-numpy-array-attributes">7.2 NumPy Array Attributes<a class="headerlink" href="#72-numpy-array-attributes" title="Permanent link">&para;</a></h2>
 <p>Common array attributes are <code>shape</code>, <code>size</code>, <code>nbytes</code>, and <code>itemsize</code></p>
-<pre><code class="language-python">my_arr = np.random.randint(low=5, high=10, size=(5,5))
-print(my_arr)
-</code></pre>
-<pre><code>[[7 8 7 5 5]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">my_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[[7 8 7 5 5]
  [8 8 9 9 7]
  [8 5 9 9 5]
  [9 7 8 5 8]
  [9 9 5 7 6]]
-</code></pre>
-<pre><code class="language-python">my_arr.shape
-</code></pre>
-<pre><code>(5, 5)
-</code></pre>
-<pre><code class="language-python">my_arr.dtype
-</code></pre>
-<pre><code>dtype('int64')
-</code></pre>
-<pre><code class="language-python">my_arr.size
-</code></pre>
-<pre><code>25
-</code></pre>
-<pre><code class="language-python">my_arr.nbytes
-</code></pre>
-<pre><code>200
-</code></pre>
-<pre><code class="language-python">my_arr.itemsize
-</code></pre>
-<pre><code>8
-</code></pre>
-<h3 id="exercise-3-conditional-check-on-array-attributes">🏋️ Exercise 3: Conditional Check on Array Attributes</h3>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="n">my_arr</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>(5, 5)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">my_arr</span><span class="o">.</span><span class="n">dtype</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>dtype(&#39;int64&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">my_arr</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>25
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">my_arr</span><span class="o">.</span><span class="n">nbytes</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>200
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">my_arr</span><span class="o">.</span><span class="n">itemsize</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>8
+</code></pre></div>
+
+<h3 id="exercise-3-conditional-check-on-array-attributes">🏋️ Exercise 3: Conditional Check on Array Attributes<a class="headerlink" href="#exercise-3-conditional-check-on-array-attributes" title="Permanent link">&para;</a></h3>
 <p>write a conditional that checks that the total number of bytes of the array object <code>my_arr</code> divided by the size of each item (in bytes) is equal to the number of items in the array (<em>hint: we covered the attributes above</em>)</p>
-<pre><code class="language-python"># Cell for exercise 3
-</code></pre>
-<pre><code>True
-</code></pre>
-<h2 id="73-numpy-array-slicing-copying-setting">7.3 NumPy Array Slicing, Copying, Setting</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># Cell for exercise 3</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>True
+</code></pre></div>
+
+<h2 id="73-numpy-array-slicing-copying-setting">7.3 NumPy Array Slicing, Copying, Setting<a class="headerlink" href="#73-numpy-array-slicing-copying-setting" title="Permanent link">&para;</a></h2>
 <p>Array slicing operates much the same way as with python lists</p>
-<pre><code class="language-python">my_arr
-</code></pre>
-<pre><code>array([[7, 8, 7, 5, 5],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">my_arr</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[7, 8, 7, 5, 5],
        [8, 8, 9, 9, 7],
        [8, 5, 9, 9, 5],
        [9, 7, 8, 5, 8],
        [9, 9, 5, 7, 6]])
-</code></pre>
-<pre><code class="language-python"># grab the first row
-my_arr[0]
-</code></pre>
-<pre><code>array([7, 8, 7, 5, 5])
-</code></pre>
-<pre><code class="language-python"># grab the first element of the first row
+</code></pre></div>
 
-# instead of this
-print(my_arr[0][0])
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="c1"># grab the first row</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([7, 8, 7, 5, 5])
+</code></pre></div>
 
-# we do this
-print(my_arr[0, 0])
-</code></pre>
-<pre><code>9
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1"># grab the first element of the first row</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="c1"># instead of this</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="c1"># we do this</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>9
 9
-</code></pre>
+</code></pre></div>
+
 <p>We can time these...</p>
-<pre><code class="language-python">%%timeit
-my_arr[0][0]
-</code></pre>
-<pre><code>The slowest run took 38.40 times longer than the fastest. This could mean that an intermediate result is being cached.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="o">%%</span><span class="n">timeit</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>The slowest run took 38.40 times longer than the fastest. This could mean that an intermediate result is being cached.
 1000000 loops, best of 5: 381 ns per loop
-</code></pre>
-<pre><code class="language-python">%%timeit
-my_arr[0, 0]
-</code></pre>
-<pre><code>The slowest run took 60.67 times longer than the fastest. This could mean that an intermediate result is being cached.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="o">%%</span><span class="n">timeit</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>The slowest run took 60.67 times longer than the fastest. This could mean that an intermediate result is being cached.
 10000000 loops, best of 5: 170 ns per loop
-</code></pre>
+</code></pre></div>
+
 <p>We can use the same slicing notation as with lists</p>
 <p><code>my_arr[start:stop:step]</code></p>
 <p>for n-dimensional arrays</p>
 <p><code>my_arr[1-start:1-stop:1-step, 2-start:2-stop:2-step, ... n-start:n-stop:n-step]</code></p>
-<pre><code class="language-python"># with arrays, we simply separate each dimension with a comma
-my_arr[:2, :2]
-</code></pre>
-<pre><code>array([[7, 8],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="c1"># with arrays, we simply separate each dimension with a comma</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="n">my_arr</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[7, 8],
        [8, 8]])
-</code></pre>
+</code></pre></div>
+
 <p>Slices are views not copies. This means we can set slices of arrays to new values, and the original object will change:</p>
-<pre><code class="language-python">my_arr[:2, :2] = 0
-my_arr
-</code></pre>
-<pre><code>array([[0, 0, 7, 5, 5],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="n">my_arr</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="n">my_arr</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0, 0, 7, 5, 5],
        [0, 0, 9, 9, 7],
        [8, 5, 9, 9, 5],
        [9, 7, 8, 5, 8],
        [9, 9, 5, 7, 6]])
-</code></pre>
-<pre><code class="language-python">my_arr[-2:, -2:] = 1
-my_arr
-</code></pre>
-<pre><code>array([[0, 0, 7, 5, 5],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="n">my_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="n">my_arr</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0, 0, 7, 5, 5],
        [0, 0, 9, 9, 7],
        [8, 5, 9, 9, 5],
        [9, 7, 8, 1, 1],
        [9, 9, 5, 1, 1]])
-</code></pre>
+</code></pre></div>
+
 <p>Step through an array slice</p>
-<pre><code class="language-python"># remember that we can use steps in slicing
-my_arr[:, ::2] # the last number after :: is the step size
-</code></pre>
-<pre><code>array([[0, 7, 5],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="c1"># remember that we can use steps in slicing</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="n">my_arr</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># the last number after :: is the step size</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0, 7, 5],
        [0, 9, 7],
        [8, 9, 5],
        [9, 8, 1],
        [9, 5, 1]])
-</code></pre>
+</code></pre></div>
+
 <p>We can use negative step sizes the way we do with lists. A negative step size reverses the order of start and stop, so it is a convenient way to reverse the order of one or more dimensions of an array</p>
-<pre><code class="language-python"># reverse the rows
-my_arr[::-1]
-</code></pre>
-<pre><code>array([[9, 9, 5, 1, 1],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="c1"># reverse the rows</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="n">my_arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[9, 9, 5, 1, 1],
        [9, 7, 8, 1, 1],
        [8, 5, 9, 9, 5],
        [0, 0, 9, 9, 7],
        [0, 0, 7, 5, 5]])
-</code></pre>
-<pre><code class="language-python"># reverse the columns
-my_arr[:, ::-1]
-</code></pre>
-<pre><code>array([[5, 5, 7, 0, 0],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="c1"># reverse the columns</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="n">my_arr</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[5, 5, 7, 0, 0],
        [7, 9, 9, 0, 0],
        [5, 9, 9, 5, 8],
        [1, 1, 8, 7, 9],
        [1, 1, 5, 9, 9]])
-</code></pre>
+</code></pre></div>
+
 <p>Sometimes we want to create a copy of an array, despite the default slicing behavior. We can do this with the <code>.copy()</code> method</p>
-<pre><code class="language-python">new_arr = my_arr.copy()
-new_arr[:,:] = 0
-print(my_arr)
-</code></pre>
-<pre><code>[[0 0 7 5 5]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="n">new_arr</span> <span class="o">=</span> <span class="n">my_arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="n">new_arr</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[[0 0 7 5 5]
  [0 0 9 9 7]
  [8 5 9 9 5]
  [9 7 8 1 1]
  [9 9 5 1 1]]
-</code></pre>
-<h3 id="exercise-4-array-setting-and-slicing">🏋️ Exercise 4: Array Setting and Slicing</h3>
+</code></pre></div>
+
+<h3 id="exercise-4-array-setting-and-slicing">🏋️ Exercise 4: Array Setting and Slicing<a class="headerlink" href="#exercise-4-array-setting-and-slicing" title="Permanent link">&para;</a></h3>
 <p>set all the even columns of <code>my_arr</code> to 0 and all the odd columns to 1 (interpret the first column to be 1 and the last to be 5, i.e. don't index at 0 when thinking of each column as even/odd!)</p>
-<p>Example Output:</p>
-<pre><code>array([[0, 1, 0, 1, 0],
+<p>Example Output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a>array([[0, 1, 0, 1, 0],
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a>       [0, 1, 0, 1, 0],
+<a id="__codelineno-39-3" name="__codelineno-39-3"></a>       [0, 1, 0, 1, 0],
+<a id="__codelineno-39-4" name="__codelineno-39-4"></a>       [0, 1, 0, 1, 0],
+<a id="__codelineno-39-5" name="__codelineno-39-5"></a>       [0, 1, 0, 1, 0]])
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="c1"># Cell for Exercise 4</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0, 1, 0, 1, 0],
        [0, 1, 0, 1, 0],
        [0, 1, 0, 1, 0],
        [0, 1, 0, 1, 0],
        [0, 1, 0, 1, 0]])
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 4
-</code></pre>
-<pre><code>array([[0, 1, 0, 1, 0],
-       [0, 1, 0, 1, 0],
-       [0, 1, 0, 1, 0],
-       [0, 1, 0, 1, 0],
-       [0, 1, 0, 1, 0]])
-</code></pre>
-<h2 id="74-numpy-array-reshaping-concatenation-and-splitting">7.4 NumPy Array Reshaping, Concatenation, and Splitting</h2>
+</code></pre></div>
+
+<h2 id="74-numpy-array-reshaping-concatenation-and-splitting">7.4 NumPy Array Reshaping, Concatenation, and Splitting<a class="headerlink" href="#74-numpy-array-reshaping-concatenation-and-splitting" title="Permanent link">&para;</a></h2>
 <p>reshaping is going to be a common task for us:</p>
-<pre><code class="language-python">arr = np.arange(9)
-arr
-</code></pre>
-<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
-</code></pre>
-<pre><code class="language-python"># reshape into a 3x3 array
-arr.reshape(3,3) # rows then columns
-</code></pre>
-<pre><code>array([[0, 1, 2],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="n">arr</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="c1"># reshape into a 3x3 array</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># rows then columns</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0, 1, 2],
        [3, 4, 5],
        [6, 7, 8]])
-</code></pre>
+</code></pre></div>
+
 <p>The reshaped dimensions have to be evenly divisible into the total number of elements:</p>
 <p><em><code>-1</code> will infer the proper dimension based on the other dimensions provided and the total number of elements</em></p>
-<pre><code class="language-python"># arr.reshape(4,2) # throws and error
-arr = np.arange(12)
-arr.reshape(4,3) 
-</code></pre>
-<pre><code>array([[ 0,  1,  2],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="c1"># arr.reshape(4,2) # throws and error</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[ 0,  1,  2],
        [ 3,  4,  5],
        [ 6,  7,  8],
        [ 9, 10, 11]])
-</code></pre>
+</code></pre></div>
+
 <p>A common manipulation in numpy is to convert a 1 dimensional array into a 2 dimensional array. You will see this frequently when working with test/train datasets in machine learning.</p>
-<pre><code class="language-python">arr = np.arange(9)
-# reshape into 2 dimensions
-arr.reshape(-1,1)
-</code></pre>
-<pre><code>array([[0],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="c1"># reshape into 2 dimensions</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0],
        [1],
        [2],
        [3],
@@ -1341,58 +1379,66 @@ arr.reshape(-1,1)
        [6],
        [7],
        [8]])
-</code></pre>
-<pre><code class="language-python"># back to one dimension
-arr.reshape(9)
-</code></pre>
-<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
-</code></pre>
-<p>We can also concatenate arrays</p>
-<pre><code class="language-python">arr1 = np.array([1, 2, 3])
-arr2 = np.array([4, 5, 6])
-print(arr1, arr2)
-</code></pre>
-<pre><code>[1 2 3] [4 5 6]
-</code></pre>
-<pre><code class="language-python"># now a single array
-np.concatenate((arr1, arr2))
-</code></pre>
-<pre><code>array([1, 2, 3, 4, 5, 6])
-</code></pre>
-<p><code>vstack</code> or vertical stack will place the two arrays on top of eachother:</p>
-<pre><code class="language-python">np.vstack((arr1,arr2))
-</code></pre>
-<pre><code>array([[1, 2, 3],
-       [4, 5, 6]])
-</code></pre>
-<p><code>hstack</code> will place them side by side</p>
-<pre><code class="language-python">np.hstack((arr1,arr2))
-</code></pre>
-<pre><code>array([1, 2, 3, 4, 5, 6])
-</code></pre>
-<pre><code class="language-python">arr1 = np.array([[1, 2, 3],[7,8,9]])
-arr2 = np.array([4, 5, 6])
-print(arr1)
-print(arr2)
+</code></pre></div>
 
-print(arr1.shape)
-</code></pre>
-<pre><code>[[1 2 3]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="c1"># back to one dimension</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+</code></pre></div>
+
+<p>We can also concatenate arrays</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[1 2 3] [4 5 6]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="c1"># now a single array</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2"></a><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 4, 5, 6])
+</code></pre></div>
+
+<p><code>vstack</code> or vertical stack will place the two arrays on top of eachother:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span><span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre></div>
+
+<p><code>hstack</code> will place them side by side</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span><span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 4, 5, 6])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<a id="__codelineno-50-5" name="__codelineno-50-5"></a>
+<a id="__codelineno-50-6" name="__codelineno-50-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[[1 2 3]
  [7 8 9]]
 [4 5 6]
 (2, 3)
-</code></pre>
-<pre><code class="language-python">np.vstack((arr1, arr2))
-</code></pre>
-<pre><code>array([[1, 2, 3],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[1, 2, 3],
        [7, 8, 9],
        [4, 5, 6]])
-</code></pre>
+</code></pre></div>
+
 <p>Lastly, we can also split arrays. We give the indices where the split should be performed</p>
-<pre><code class="language-python">arr = np.random.randint(5, 11, (10,10))
-arr
-</code></pre>
-<pre><code>array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="n">arr</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
        [ 6,  6,  6,  5,  5,  5,  7, 10,  9,  6],
        [ 6,  7,  6,  5,  9,  8,  6,  5,  8,  9],
        [ 8,  5, 10, 10,  8,  7,  8,  6,  6, 10],
@@ -1402,12 +1448,13 @@ arr
        [ 9,  6,  8,  6, 10,  7,  5,  7,  8,  6],
        [ 6,  9,  6,  9, 10,  5,  8,  9,  5,  6],
        [ 6,  5,  6, 10, 10,  5,  9,  9,  5,  9]])
-</code></pre>
-<pre><code class="language-python">a, b = np.split(arr, [5])
-print(a)
-print(b)
-</code></pre>
-<pre><code>[[ 8  9  7  7 10  8  6  6  9 10]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-53-3" name="__codelineno-53-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[[ 8  9  7  7 10  8  6  6  9 10]
  [ 5  9 10  8  8  8  8  8 10 10]
  [ 7  6  8  5 10  5  5  5  7 10]
  [ 5  8  9  5  7 10  7  5 10  9]
@@ -1417,10 +1464,11 @@ print(b)
  [ 7 10  6  9  8  6 10  8  7  7]
  [ 5 10  9  8  6 10 10  7  5  5]
  [ 8  7 10  9  7  8  8  7  8  7]]
-</code></pre>
-<pre><code class="language-python">np.vsplit(arr, [2,4,6,8])
-</code></pre>
-<pre><code>[array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
         [ 6,  6,  6,  5,  5,  5,  7, 10,  9,  6]]),
  array([[ 6,  7,  6,  5,  9,  8,  6,  5,  8,  9],
         [ 8,  5, 10, 10,  8,  7,  8,  6,  6, 10]]),
@@ -1430,10 +1478,11 @@ print(b)
         [ 9,  6,  8,  6, 10,  7,  5,  7,  8,  6]]),
  array([[ 6,  9,  6,  9, 10,  5,  8,  9,  5,  6],
         [ 6,  5,  6, 10, 10,  5,  9,  9,  5,  9]])]
-</code></pre>
-<pre><code class="language-python">np.hsplit(arr, [5])
-</code></pre>
-<pre><code>[array([[ 5,  6, 10,  6,  7],
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[array([[ 5,  6, 10,  6,  7],
         [ 6,  6,  6,  5,  5],
         [ 6,  7,  6,  5,  9],
         [ 8,  5, 10, 10,  8],
@@ -1452,8 +1501,9 @@ print(b)
         [ 7,  5,  7,  8,  6],
         [ 5,  8,  9,  5,  6],
         [ 5,  9,  9,  5,  9]])]
-</code></pre>
-<h3 id="exercise-5-reshaping-and-concatenating">🏋️ Exercise 5: Reshaping and Concatenating</h3>
+</code></pre></div>
+
+<h3 id="exercise-5-reshaping-and-concatenating">🏋️ Exercise 5: Reshaping and Concatenating<a class="headerlink" href="#exercise-5-reshaping-and-concatenating" title="Permanent link">&para;</a></h3>
 <p>We'll practice a few of these methods we've learned.</p>
 <ol>
 <li>make <code>arr2</code> match the shape of <code>arr1</code> using <code>reshape</code></li>
@@ -1462,20 +1512,20 @@ print(b)
 <li>return the sum of <code>arr</code> using <code>arr.sum()</code></li>
 </ol>
 <p>starting code:</p>
-<pre><code>np.random.seed(42)
-arr1 = np.random.randint(5, 11, (5,10))
-arr2 = np.random.randint(5, 11, (10,5))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a>np.random.seed(42)
+<a id="__codelineno-56-2" name="__codelineno-56-2"></a>arr1 = np.random.randint(5, 11, (5,10))
+<a id="__codelineno-56-3" name="__codelineno-56-3"></a>arr2 = np.random.randint(5, 11, (10,5))
+</code></pre></div>
 <p>expected output:</p>
-<pre><code>374
-</code></pre>
-<pre><code class="language-python">np.random.seed(42)
-arr1 = np.random.randint(5, 11, (5,10))
-arr2 = np.random.randint(5, 11, (10,5))
-print(arr1,end='\n\n')
-print(arr2)
-</code></pre>
-<pre><code>[[ 8  9  7  9  9  6  7  7  7  9]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a>374
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[[ 8  9  7  9  9  6  7  7  7  9]
  [ 8  7 10  9  6  8 10 10  6  8]
  [ 9  5  8  6 10  9  8  5  5  7]
  [ 7  6  8  8 10 10 10  7  8  8]
@@ -1491,232 +1541,235 @@ print(arr2)
  [ 8  5 10  9  9]
  [ 6  9  6  5  8]
  [ 8  8  9  5  9]]
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 5
-</code></pre>
-<pre><code>374
-</code></pre>
-<h2 id="75-additional-exercises">7.5 Additional Exercises</h2>
-<h3 id="exercise-6-boolean-array">🏋️ Exercise 6: boolean Array</h3>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="c1"># Cell for Exercise 5</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>374
+</code></pre></div>
+
+<h2 id="75-additional-exercises">7.5 Additional Exercises<a class="headerlink" href="#75-additional-exercises" title="Permanent link">&para;</a></h2>
+<h3 id="exercise-6-boolean-array">🏋️ Exercise 6: boolean Array<a class="headerlink" href="#exercise-6-boolean-array" title="Permanent link">&para;</a></h3>
 <p>Create a 3x3 array of all True's (booleans)</p>
-<pre><code class="language-python"># Cell for Exercise 6
-</code></pre>
-<h3 id="exercise-7-index-on-conditional">🏋️ Exercise 7: Index on Conditional</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="c1"># Cell for Exercise 6</span>
+</code></pre></div>
+<h3 id="exercise-7-index-on-conditional">🏋️ Exercise 7: Index on Conditional<a class="headerlink" href="#exercise-7-index-on-conditional" title="Permanent link">&para;</a></h3>
 <p>extract all numbers divisible by 3</p>
-<pre><code>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
-<pre><code class="language-python"># Cell for Exercise 7
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
-<h3 id="753-npwhere">7.5.3 <code>np.where</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="c1"># Cell for Exercise 7</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="753-npwhere">7.5.3 <code>np.where</code><a class="headerlink" href="#753-npwhere" title="Permanent link">&para;</a></h3>
 <p>There is a nifty tool, <code>np.where()</code>. The syntax works like <code>np.where(&lt;where this condition is true&gt; , &lt;return elements from this array&gt;, &lt;otherwise return elements from this aray&gt;)</code></p>
-<pre><code class="language-python"># Example
-a = np.arange(10)
-np.where(a&lt;5, a, a*10)
-</code></pre>
-<pre><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
-</code></pre>
-<h3 id="754-npargwhere">7.5.4 <code>np.argwhere</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a><span class="c1"># Example</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-63-3" name="__codelineno-63-3"></a><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
+</code></pre></div>
+
+<h3 id="754-npargwhere">7.5.4 <code>np.argwhere</code><a class="headerlink" href="#754-npargwhere" title="Permanent link">&para;</a></h3>
 <p>A similar but slightly different tool is <code>np.argwhere</code> which will return the indices of the array where the conditional is true</p>
-<pre><code class="language-python"># Example
-np.argwhere(a&lt;5)
-</code></pre>
-<pre><code>array([[0],
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="c1"># Example</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2"></a><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>array([[0],
        [1],
        [2],
        [3],
        [4]])
-</code></pre>
-<h3 id="exercise-8-edit-a-copy-not-a-view">🏋️ Exercise 8: Edit a Copy not a View</h3>
+</code></pre></div>
+
+<h3 id="exercise-8-edit-a-copy-not-a-view">🏋️ Exercise 8: Edit a Copy not a View<a class="headerlink" href="#exercise-8-edit-a-copy-not-a-view" title="Permanent link">&para;</a></h3>
 <p>replace all odd numbers in <code>arr</code> with -1 without changing <code>arr</code> (return a new array using <code>np.where</code>)</p>
-<pre><code class="language-python"># Cell for Exercise 8
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre>
-<h3 id="exercise-9-read-numpy-documentation">🏋️ Exercise 9: Read NumPy Documentation</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1"></a><span class="c1"># Cell for Exercise 8</span>
+<a id="__codelineno-65-2" name="__codelineno-65-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="exercise-9-read-numpy-documentation">🏋️ Exercise 9: Read NumPy Documentation<a class="headerlink" href="#exercise-9-read-numpy-documentation" title="Permanent link">&para;</a></h3>
 <p>create the following array without hard coading (i.e. don't write any of the values in your coad)</p>
-<pre><code>a = np.array([1,2,3])`
-# desired output:
-#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1"></a>a = np.array([1,2,3])`
+<a id="__codelineno-66-2" name="__codelineno-66-2"></a># desired output:
+<a id="__codelineno-66-3" name="__codelineno-66-3"></a>#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+</code></pre></div>
 <p>Hints:</p>
 <ul>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html">repeat</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html">tile</a></li>
 </ul>
-<pre><code class="language-python"># Cell for Exercise 9
-a = np.array([1,2,3])
-# desired output:
-#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-</code></pre>
-<h3 id="exercise-10-more-slicing">🏋️ Exercise 10: More Slicing</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a><span class="c1"># Cell for Exercise 9</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3"></a><span class="c1"># desired output:</span>
+<a id="__codelineno-67-4" name="__codelineno-67-4"></a><span class="c1">#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])</span>
+</code></pre></div>
+<h3 id="exercise-10-more-slicing">🏋️ Exercise 10: More Slicing<a class="headerlink" href="#exercise-10-more-slicing" title="Permanent link">&para;</a></h3>
 <p>swap columns 2 and 3 in <code>arr</code></p>
-<pre><code class="language-python"># Cell for Exercise 10
-arr = np.arange(9).reshape(3,3)
-</code></pre>
-<h3 id="exercise-11-debug-a-class-method">🏋️ Exercise 11: Debug a Class Method</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1"></a><span class="c1"># Cell for Exercise 10</span>
+<a id="__codelineno-68-2" name="__codelineno-68-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="exercise-11-debug-a-class-method">🏋️ Exercise 11: Debug a Class Method<a class="headerlink" href="#exercise-11-debug-a-class-method" title="Permanent link">&para;</a></h3>
 <p>Your friend is developing a new pokemon game. They are excited to release but are running into some trouble! </p>
-<pre><code class="language-python">class Pokeball:
-  def __init__(self, contains=None, type_name=&quot;poke ball&quot;):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = 0.50 # note this attribute is not accessible upon init
-
-  # the method catch, will update self.contains, if a catch is successful
-  # it will also use self.catch_rate to set the performance of the catch
-  def catch(self, pokemon):
-    if self.contains == None:
-      if random.random() &lt; self.catch_rate:
-        self.contains = pokemon
-        print(f&quot;{pokemon} captured!&quot;)
-      else:
-        print(f&quot;{pokemon} escaped!&quot;)
-        pass
-    else:
-      print(&quot;pokeball is not empty!&quot;)
-
-  def release(self):
-    if self.contains == None:
-      print(&quot;Pokeball is already empty&quot;)
-    else:
-      print(self.contains, &quot;has been released&quot;)
-      self.contains = None
-
-
-class Pokemon():
-  def __init__(self, name, weight, speed, type_):
-    self.name = name
-    self.weight = weight
-    self.speed = speed
-    self.type_ = type_
-
-class FastBall(Pokeball):
-  def __init__(self, contains=None, type_name=&quot;Fastball&quot;):
-    Pokeball.__init__(self, contains, type_name)
-    self.catch_rate = 0.6
-
-  def catch_fast(self, pokemon):
-    if pokemon.speed &gt; 100:
-      if self.contains == None:
-        self.contains = pokemon
-        print(pokemon.name, &quot;has been captured&quot;)
-      else:
-        print(&quot;Pokeball is not empty&quot;)
-    else:
-      self.catch(pokemon)
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
+<a id="__codelineno-69-2" name="__codelineno-69-2"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;poke ball&quot;</span><span class="p">):</span>
+<a id="__codelineno-69-3" name="__codelineno-69-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
+<a id="__codelineno-69-4" name="__codelineno-69-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
+<a id="__codelineno-69-5" name="__codelineno-69-5"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
+<a id="__codelineno-69-6" name="__codelineno-69-6"></a>
+<a id="__codelineno-69-7" name="__codelineno-69-7"></a>  <span class="c1"># the method catch, will update self.contains, if a catch is successful</span>
+<a id="__codelineno-69-8" name="__codelineno-69-8"></a>  <span class="c1"># it will also use self.catch_rate to set the performance of the catch</span>
+<a id="__codelineno-69-9" name="__codelineno-69-9"></a>  <span class="k">def</span> <span class="nf">catch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">):</span>
+<a id="__codelineno-69-10" name="__codelineno-69-10"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-69-11" name="__codelineno-69-11"></a>      <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span><span class="p">:</span>
+<a id="__codelineno-69-12" name="__codelineno-69-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">pokemon</span>
+<a id="__codelineno-69-13" name="__codelineno-69-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> captured!&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-14" name="__codelineno-69-14"></a>      <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-69-15" name="__codelineno-69-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> escaped!&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-16" name="__codelineno-69-16"></a>        <span class="k">pass</span>
+<a id="__codelineno-69-17" name="__codelineno-69-17"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-69-18" name="__codelineno-69-18"></a>      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pokeball is not empty!&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-19" name="__codelineno-69-19"></a>
+<a id="__codelineno-69-20" name="__codelineno-69-20"></a>  <span class="k">def</span> <span class="nf">release</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-69-21" name="__codelineno-69-21"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-69-22" name="__codelineno-69-22"></a>      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pokeball is already empty&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-23" name="__codelineno-69-23"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-69-24" name="__codelineno-69-24"></a>      <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contains</span><span class="p">,</span> <span class="s2">&quot;has been released&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-25" name="__codelineno-69-25"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-69-26" name="__codelineno-69-26"></a>
+<a id="__codelineno-69-27" name="__codelineno-69-27"></a>
+<a id="__codelineno-69-28" name="__codelineno-69-28"></a><span class="k">class</span> <span class="nc">Pokemon</span><span class="p">():</span>
+<a id="__codelineno-69-29" name="__codelineno-69-29"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">type_</span><span class="p">):</span>
+<a id="__codelineno-69-30" name="__codelineno-69-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<a id="__codelineno-69-31" name="__codelineno-69-31"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+<a id="__codelineno-69-32" name="__codelineno-69-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+<a id="__codelineno-69-33" name="__codelineno-69-33"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">type_</span> <span class="o">=</span> <span class="n">type_</span>
+<a id="__codelineno-69-34" name="__codelineno-69-34"></a>
+<a id="__codelineno-69-35" name="__codelineno-69-35"></a><span class="k">class</span> <span class="nc">FastBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+<a id="__codelineno-69-36" name="__codelineno-69-36"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Fastball&quot;</span><span class="p">):</span>
+<a id="__codelineno-69-37" name="__codelineno-69-37"></a>    <span class="n">Pokeball</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
+<a id="__codelineno-69-38" name="__codelineno-69-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.6</span>
+<a id="__codelineno-69-39" name="__codelineno-69-39"></a>
+<a id="__codelineno-69-40" name="__codelineno-69-40"></a>  <span class="k">def</span> <span class="nf">catch_fast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">):</span>
+<a id="__codelineno-69-41" name="__codelineno-69-41"></a>    <span class="k">if</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+<a id="__codelineno-69-42" name="__codelineno-69-42"></a>      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-69-43" name="__codelineno-69-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">pokemon</span>
+<a id="__codelineno-69-44" name="__codelineno-69-44"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;has been captured&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-45" name="__codelineno-69-45"></a>      <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-69-46" name="__codelineno-69-46"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pokeball is not empty&quot;</span><span class="p">)</span>
+<a id="__codelineno-69-47" name="__codelineno-69-47"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-69-48" name="__codelineno-69-48"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="n">pokemon</span><span class="p">)</span>
+</code></pre></div>
 <p>They're concerned that the object <code>FastBall</code> doesn't return the pokemon's name when executing <code>print(fast.contains)</code> when they know the pokeball contains a pokemon. Help them find the bug, then write the following unit tests:</p>
 <ol>
 <li>showing that the pokeball updates properly with the name of the pokemon after it makes a capture of a pokemon with a speed &gt; 100</li>
 <li>showing that the <code>catch_rate</code> of 0.6 is resulting in a 60% catch rate for pokemon with speeds &lt; 100</li>
 </ol>
-<pre><code class="language-python"># Your friend shows you this code 
-fast = FastBall()
-
-mewtwo = Pokemon(name='Mewtwo', 
-                 weight=18,
-                 speed=110, 
-                 type_='Psychic')
-
-print(fast.contains)
-
-fast.catch_fast(mewtwo)
-
-# this is the line they are concerned about
-# why does this not return MewTwo?
-print(fast.contains)
-
-fast.catch_fast(mewtwo)
-</code></pre>
-<pre><code>None
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1"></a><span class="c1"># Your friend shows you this code </span>
+<a id="__codelineno-70-2" name="__codelineno-70-2"></a><span class="n">fast</span> <span class="o">=</span> <span class="n">FastBall</span><span class="p">()</span>
+<a id="__codelineno-70-3" name="__codelineno-70-3"></a>
+<a id="__codelineno-70-4" name="__codelineno-70-4"></a><span class="n">mewtwo</span> <span class="o">=</span> <span class="n">Pokemon</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mewtwo&#39;</span><span class="p">,</span> 
+<a id="__codelineno-70-5" name="__codelineno-70-5"></a>                 <span class="n">weight</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
+<a id="__codelineno-70-6" name="__codelineno-70-6"></a>                 <span class="n">speed</span><span class="o">=</span><span class="mi">110</span><span class="p">,</span> 
+<a id="__codelineno-70-7" name="__codelineno-70-7"></a>                 <span class="n">type_</span><span class="o">=</span><span class="s1">&#39;Psychic&#39;</span><span class="p">)</span>
+<a id="__codelineno-70-8" name="__codelineno-70-8"></a>
+<a id="__codelineno-70-9" name="__codelineno-70-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">fast</span><span class="o">.</span><span class="n">contains</span><span class="p">)</span>
+<a id="__codelineno-70-10" name="__codelineno-70-10"></a>
+<a id="__codelineno-70-11" name="__codelineno-70-11"></a><span class="n">fast</span><span class="o">.</span><span class="n">catch_fast</span><span class="p">(</span><span class="n">mewtwo</span><span class="p">)</span>
+<a id="__codelineno-70-12" name="__codelineno-70-12"></a>
+<a id="__codelineno-70-13" name="__codelineno-70-13"></a><span class="c1"># this is the line they are concerned about</span>
+<a id="__codelineno-70-14" name="__codelineno-70-14"></a><span class="c1"># why does this not return MewTwo?</span>
+<a id="__codelineno-70-15" name="__codelineno-70-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">fast</span><span class="o">.</span><span class="n">contains</span><span class="p">)</span>
+<a id="__codelineno-70-16" name="__codelineno-70-16"></a>
+<a id="__codelineno-70-17" name="__codelineno-70-17"></a><span class="n">fast</span><span class="o">.</span><span class="n">catch_fast</span><span class="p">(</span><span class="n">mewtwo</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>None
 Mewtwo has been captured
 &lt;__main__.Pokemon object at 0x7fd4bfe612d0&gt;
 Pokeball is not empty
-</code></pre>
-<h1 id="part-2-optional-use-a-test-runner">Part 2 (Optional): Use a Test Runner</h1>
+</code></pre></div>
+
+<h1 id="part-2-optional-use-a-test-runner">Part 2 (Optional): Use a Test Runner<a class="headerlink" href="#part-2-optional-use-a-test-runner" title="Permanent link">&para;</a></h1>
 <p>Create the following files:</p>
 <ul>
 <li><code>pokemon.py</code></li>
 <li><code>test_pokemon.py</code></li>
 </ul>
 <p>paste the following into <code>pokemon.py</code>:</p>
-<pre><code>import random
-import numpy as np
-
-class Pokeball:
-  def __init__(self, contains=None, type_name=&quot;poke ball&quot;):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = 0.50 # note this attribute is not accessible upon init
-
-  # the method catch, will update self.contains, if a catch is successful
-  # it will also use self.catch_rate to set the performance of the catch
-  def catch(self, pokemon):
-    if self.contains == None:
-      if random.random() &lt; self.catch_rate:
-        self.contains = pokemon
-        print(f&quot;{pokemon} captured!&quot;)
-      else:
-        print(f&quot;{pokemon} escaped!&quot;)
-        pass
-    else:
-      print(&quot;pokeball is not empty!&quot;)
-
-  def release(self):
-    if self.contains == None:
-      print(&quot;Pokeball is already empty&quot;)
-    else:
-      print(self.contains, &quot;has been released&quot;)
-      self.contains = None
-
-
-class Pokemon():
-  def __init__(self, name, weight, speed, type_):
-    self.name = name
-    self.weight = weight
-    self.speed = speed
-    self.type_ = type_
-
-class FastBall(Pokeball):
-  def __init__(self, contains=None, type_name=&quot;Fastball&quot;):
-    Pokeball.__init__(self, contains, type_name)
-    self.catch_rate = 0.6
-
-  def catch_fast(self, pokemon):
-    if pokemon.speed &gt; 100:
-      if self.contains == None:
-        self.contains = pokemon
-        print(pokemon.name, &quot;has been captured&quot;)
-      else:
-        print(&quot;Pokeball is not empty&quot;)
-    else:
-      self.catch(pokemon)
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1"></a>import random
+<a id="__codelineno-71-2" name="__codelineno-71-2"></a>import numpy as np
+<a id="__codelineno-71-3" name="__codelineno-71-3"></a>
+<a id="__codelineno-71-4" name="__codelineno-71-4"></a>class Pokeball:
+<a id="__codelineno-71-5" name="__codelineno-71-5"></a>  def __init__(self, contains=None, type_name=&quot;poke ball&quot;):
+<a id="__codelineno-71-6" name="__codelineno-71-6"></a>    self.contains = contains
+<a id="__codelineno-71-7" name="__codelineno-71-7"></a>    self.type_name = type_name
+<a id="__codelineno-71-8" name="__codelineno-71-8"></a>    self.catch_rate = 0.50 # note this attribute is not accessible upon init
+<a id="__codelineno-71-9" name="__codelineno-71-9"></a>
+<a id="__codelineno-71-10" name="__codelineno-71-10"></a>  # the method catch, will update self.contains, if a catch is successful
+<a id="__codelineno-71-11" name="__codelineno-71-11"></a>  # it will also use self.catch_rate to set the performance of the catch
+<a id="__codelineno-71-12" name="__codelineno-71-12"></a>  def catch(self, pokemon):
+<a id="__codelineno-71-13" name="__codelineno-71-13"></a>    if self.contains == None:
+<a id="__codelineno-71-14" name="__codelineno-71-14"></a>      if random.random() &lt; self.catch_rate:
+<a id="__codelineno-71-15" name="__codelineno-71-15"></a>        self.contains = pokemon
+<a id="__codelineno-71-16" name="__codelineno-71-16"></a>        print(f&quot;{pokemon} captured!&quot;)
+<a id="__codelineno-71-17" name="__codelineno-71-17"></a>      else:
+<a id="__codelineno-71-18" name="__codelineno-71-18"></a>        print(f&quot;{pokemon} escaped!&quot;)
+<a id="__codelineno-71-19" name="__codelineno-71-19"></a>        pass
+<a id="__codelineno-71-20" name="__codelineno-71-20"></a>    else:
+<a id="__codelineno-71-21" name="__codelineno-71-21"></a>      print(&quot;pokeball is not empty!&quot;)
+<a id="__codelineno-71-22" name="__codelineno-71-22"></a>
+<a id="__codelineno-71-23" name="__codelineno-71-23"></a>  def release(self):
+<a id="__codelineno-71-24" name="__codelineno-71-24"></a>    if self.contains == None:
+<a id="__codelineno-71-25" name="__codelineno-71-25"></a>      print(&quot;Pokeball is already empty&quot;)
+<a id="__codelineno-71-26" name="__codelineno-71-26"></a>    else:
+<a id="__codelineno-71-27" name="__codelineno-71-27"></a>      print(self.contains, &quot;has been released&quot;)
+<a id="__codelineno-71-28" name="__codelineno-71-28"></a>      self.contains = None
+<a id="__codelineno-71-29" name="__codelineno-71-29"></a>
+<a id="__codelineno-71-30" name="__codelineno-71-30"></a>
+<a id="__codelineno-71-31" name="__codelineno-71-31"></a>class Pokemon():
+<a id="__codelineno-71-32" name="__codelineno-71-32"></a>  def __init__(self, name, weight, speed, type_):
+<a id="__codelineno-71-33" name="__codelineno-71-33"></a>    self.name = name
+<a id="__codelineno-71-34" name="__codelineno-71-34"></a>    self.weight = weight
+<a id="__codelineno-71-35" name="__codelineno-71-35"></a>    self.speed = speed
+<a id="__codelineno-71-36" name="__codelineno-71-36"></a>    self.type_ = type_
+<a id="__codelineno-71-37" name="__codelineno-71-37"></a>
+<a id="__codelineno-71-38" name="__codelineno-71-38"></a>class FastBall(Pokeball):
+<a id="__codelineno-71-39" name="__codelineno-71-39"></a>  def __init__(self, contains=None, type_name=&quot;Fastball&quot;):
+<a id="__codelineno-71-40" name="__codelineno-71-40"></a>    Pokeball.__init__(self, contains, type_name)
+<a id="__codelineno-71-41" name="__codelineno-71-41"></a>    self.catch_rate = 0.6
+<a id="__codelineno-71-42" name="__codelineno-71-42"></a>
+<a id="__codelineno-71-43" name="__codelineno-71-43"></a>  def catch_fast(self, pokemon):
+<a id="__codelineno-71-44" name="__codelineno-71-44"></a>    if pokemon.speed &gt; 100:
+<a id="__codelineno-71-45" name="__codelineno-71-45"></a>      if self.contains == None:
+<a id="__codelineno-71-46" name="__codelineno-71-46"></a>        self.contains = pokemon
+<a id="__codelineno-71-47" name="__codelineno-71-47"></a>        print(pokemon.name, &quot;has been captured&quot;)
+<a id="__codelineno-71-48" name="__codelineno-71-48"></a>      else:
+<a id="__codelineno-71-49" name="__codelineno-71-49"></a>        print(&quot;Pokeball is not empty&quot;)
+<a id="__codelineno-71-50" name="__codelineno-71-50"></a>    else:
+<a id="__codelineno-71-51" name="__codelineno-71-51"></a>      self.catch(pokemon)
+</code></pre></div>
 <p>in <code>test_pokemon.py</code> paste any unit tests you've written along with the imports at the top of the file (be sure to import any other libraries you used in your unit tests as well)</p>
-<pre><code>from pokemon import *
-import random
-import numpy as np
-
-### YOUR UNIT TESTS HERE ###
-def test_&lt;name_of_your_test&gt;():
-  # ....
-  assert &lt;your assert statement&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a>from pokemon import *
+<a id="__codelineno-72-2" name="__codelineno-72-2"></a>import random
+<a id="__codelineno-72-3" name="__codelineno-72-3"></a>import numpy as np
+<a id="__codelineno-72-4" name="__codelineno-72-4"></a>
+<a id="__codelineno-72-5" name="__codelineno-72-5"></a>### YOUR UNIT TESTS HERE ###
+<a id="__codelineno-72-6" name="__codelineno-72-6"></a>def test_&lt;name_of_your_test&gt;():
+<a id="__codelineno-72-7" name="__codelineno-72-7"></a>  # ....
+<a id="__codelineno-72-8" name="__codelineno-72-8"></a>  assert &lt;your assert statement&gt;
+</code></pre></div>
 <p>make sure <code>pokemon.py</code> and <code>test_pokemon.py</code> are in the same directory then run the command</p>
-<pre><code>pytest
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1"></a>pytest
+</code></pre></div>
 <p>from the command line. You should get a readout like the following</p>
-<pre><code>================================================= test session starts ==================================================
-platform linux -- Python 3.8.1, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
-rootdir: /mnt/c/Users/wesley/Documents/apps/temp_c3_l2
-plugins: dash-1.20.0, anyio-2.2.0
-collected 1 item
-
-test_pokemon.py .                                                                                                [100%]
-
-================================================== 1 passed in 0.06s ===================================================
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a>================================================= test session starts ==================================================
+<a id="__codelineno-74-2" name="__codelineno-74-2"></a>platform linux -- Python 3.8.1, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
+<a id="__codelineno-74-3" name="__codelineno-74-3"></a>rootdir: /mnt/c/Users/wesley/Documents/apps/temp_c3_l2
+<a id="__codelineno-74-4" name="__codelineno-74-4"></a>plugins: dash-1.20.0, anyio-2.2.0
+<a id="__codelineno-74-5" name="__codelineno-74-5"></a>collected 1 item
+<a id="__codelineno-74-6" name="__codelineno-74-6"></a>
+<a id="__codelineno-74-7" name="__codelineno-74-7"></a>test_pokemon.py .                                                                                                [100%]
+<a id="__codelineno-74-8" name="__codelineno-74-8"></a>
+<a id="__codelineno-74-9" name="__codelineno-74-9"></a>================================================== 1 passed in 0.06s ===================================================
+</code></pre></div>
 
               
             </article>

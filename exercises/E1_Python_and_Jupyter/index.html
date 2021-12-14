@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../../extra.css">
     
+      <link rel="stylesheet" href="../../styles.css">
+    
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -715,95 +717,99 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-lab-1-practice-with-python-and-jupyter-notebooks">Python Foundations, Lab 1: Practice with Python and Jupyter Notebooks</h1>
+<h1 id="python-foundations-lab-1-practice-with-python-and-jupyter-notebooks">Python Foundations, Lab 1: Practice with Python and Jupyter Notebooks<a class="headerlink" href="#python-foundations-lab-1-practice-with-python-and-jupyter-notebooks" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
-<p><strong>Contact</strong>: wesleybeckner@gmail.com
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
 <p>This first lab assignment will be a review of what we discussed today.</p>
 <p><br></p>
 <hr />
-<h4 id="l1-q1-python-variables">🔠 L1 Q1 Python variables</h4>
+<h4 id="l1-q1-python-variables">🔠 L1 Q1 Python variables<a class="headerlink" href="#l1-q1-python-variables" title="Permanent link">&para;</a></h4>
 <p>In the empty code cell below, create the following four variables:
 - A string variable named <code>favorite_movie</code> that represents your favorite movie
 - A string variable named <code>national_chain</code> that represents your favorite fast food restaurant
 - An integer variable named <code>streaming_video_hours</code> that represents the whole number of hours you watch any streaming video service (ex. Netflix, Hulu, Disney+) per week.
 - A float variable named <code>headphone_cost</code> that represents the most money you had to pay, in dollar-cent amount (0.00), for headphones. Do not include a '$' symbol.</p>
 <p>Then after they are declared, print each one using the print() function explained in section 1.1.2.</p>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+</code></pre></div>
 <p>To check if each variable is the correct data type, use the type() function explained from section 1.1.3, in the empty code cell below. For example, <code>type(favorite_movie)</code> should return the output <code>&lt;class 'str'&gt;</code>, which indicates the string type.</p>
-<pre><code class="language-python">
-</code></pre>
-<h4 id="l1-q2-practice-with-math-in-python">🧮 L1 Q2 Practice with math in Python</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
+</code></pre></div>
+<h4 id="l1-q2-practice-with-math-in-python">🧮 L1 Q2 Practice with math in Python<a class="headerlink" href="#l1-q2-practice-with-math-in-python" title="Permanent link">&para;</a></h4>
 <p>Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this function will correctly output the product of these two numbers.</p>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>
+</code></pre></div>
 <p>Consider the operation written in Python: <code>27 / 3 + 6</code>. Write the same syntax in the empty cell below, and modify it to include parentheses in the right location so that the result/answer of the math is 3.0, rather than 15.0.</p>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>
+</code></pre></div>
 <p>Let's learn more operators beyond the ones we covered earlier. Write the line of code <code>3 ** 2</code> in the cell below. From the output, what do you think the double asterisks (<code>**</code>) operator represents in Python?</p>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>
+</code></pre></div>
 <p>Write the line of code <code>28 / 3</code> below. Then just below the line in the same cell, write the code <code>28 // 3</code>. Compare the differences in output between the two. Can you decipher what <code>//</code> means in Python?</p>
-<pre><code class="language-python">
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+</code></pre></div>
 <p>Now for more complicated mathematical operations! </p>
 <p>Try to write the Python equivalent of the following:</p>
-<p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{14 + 28}{28 - 14}</div>
 <script type="math/tex; mode=display">\frac{14 + 28}{28 - 14}</script>
-</p>
-<pre><code class="language-python">
-</code></pre>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
+</code></pre></div>
 <p>Now try this one:</p>
-<p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{15 + 984}{-(217+4)}</div>
 <script type="math/tex; mode=display">\frac{15 + 984}{-(217+4)}</script>
-</p>
-<pre><code class="language-python">
-</code></pre>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>
+</code></pre></div>
 <p>And finally, write the Python equivalent for this:</p>
-<p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{-(3655 * 44)}{(8 * 16)^3}</div>
 <script type="math/tex; mode=display">\frac{-(3655 * 44)}{(8 * 16)^3}</script>
-</p>
-<pre><code class="language-python">
-</code></pre>
-<h4 id="l1-q3-practice-writing-helpful-comments">🤐 L1 Q3 Practice writing helpful comments</h4>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>
+</code></pre></div>
+<h4 id="l1-q3-practice-writing-helpful-comments">🤐 L1 Q3 Practice writing helpful comments<a class="headerlink" href="#l1-q3-practice-writing-helpful-comments" title="Permanent link">&para;</a></h4>
 <p>Consider the following code below. No need to decipher and understand every piece but just be aware of the output when you run the code cell. Based on the output, modify the code cell by adding a code comment at the top of the cell briefly explaining what the code does. This comment can be as many lines as you'd like, and may or may not include direct references to the example print statements below.</p>
-<pre><code class="language-python">def mystery_function(x):
-    y = list(x)
-    return &quot; &quot;.join(y[::-1])
-
-print(mystery_function(&quot;UniversityOfWashington&quot;))
-print(mystery_function(&quot;AvocadoToast&quot;))
-print(mystery_function(&quot;RacecaR&quot;))
-</code></pre>
-<pre><code>n o t g n i h s a W f O y t i s r e v i n U
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">def</span> <span class="nf">mystery_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;UniversityOfWashington&quot;</span><span class="p">))</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;AvocadoToast&quot;</span><span class="p">))</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;RacecaR&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>n o t g n i h s a W f O y t i s r e v i n U
 t s a o T o d a c o v A
 R a c e c a R
-</code></pre>
-<h4 id="tm-l1-q4-more-markdown">™️ L1 Q4 More Markdown</h4>
+</code></pre></div>
+
+<h4 id="tm-l1-q4-more-markdown">™️ L1 Q4 More Markdown<a class="headerlink" href="#tm-l1-q4-more-markdown" title="Permanent link">&para;</a></h4>
 <p>Consider the vision statement of the Global Innovation Exchange: "Our mission is to build the talent that leverages emerging technologies in new and impactful ways". Type that same statement in a new text cell below, only add a <code>_</code> (underscore) at the beginning and end. What ends up happening to the format of the text as a result?</p>
 <p>In a new text cell, list all of the potential data science projects you might work on post DSE, with each one on its own separate line. Then add a <code>-</code> at the beginning of each line; include a single space between the hyphen and the first letter in your project name! Based on the output, what can you decipher that this <code>-</code> changes in the formatting?</p>
-<h4 id="l1-q5-get-familiar-with-the-python-community">🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community</h4>
-<p>Python has strong support from a community of avid developers and computer scientists. The Python Software Foundation (PSF) tries to maintain input and activity through their own website, <a href="https://">python.org</a>. Please explore their community section - https://www.python.org/community/ - and answer the following questions in a new text cell just below this one:
+<h4 id="l1-q5-get-familiar-with-the-python-community">🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community<a class="headerlink" href="#l1-q5-get-familiar-with-the-python-community" title="Permanent link">&para;</a></h4>
+<p>Python has strong support from a community of avid developers and computer scientists. The Python Software Foundation (PSF) tries to maintain input and activity through their own website, <a href="https://">python.org</a>. Please explore their community section - <a href="https://www.python.org/community/">https://www.python.org/community/</a> - and answer the following questions in a new text cell just below this one:
 - What is the name of the mailing list that the PSF manages for those who have questions about Python code?
 - In your own words, what is the goal of their Community Survey?
 - According to their most recent annual report, which continent provides the highest proportion of grants to the PSF?
 - Name at least three ways that the PSF recommends you can get involved with the community.</p>
-<h4 id="l1-q6-advanced-understanding-the-switch-from-python-2-to-3">🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3</h4>
-<p>Inside of the following link, https://www.python.org/doc/, is an article about the Python Software Foundation's decision to end support for Python version 2, and move with support for version 3. From the article, answer the following questions in a new text cell just below this one:
+<h4 id="l1-q6-advanced-understanding-the-switch-from-python-2-to-3">🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3<a class="headerlink" href="#l1-q6-advanced-understanding-the-switch-from-python-2-to-3" title="Permanent link">&para;</a></h4>
+<p>Inside of the following link, <a href="https://www.python.org/doc/">https://www.python.org/doc/</a>, is an article about the Python Software Foundation's decision to end support for Python version 2, and move with support for version 3. From the article, answer the following questions in a new text cell just below this one:
 - What official date was Python 2 no longer supported?
 - What is the version number of the last supported Python 2?
 - In your own words, describe why the Python Software Foundation made the decision to stop supporting Python 2.</p>
-<h4 id="l1-q7-advanced-create-your-own-google-colab-notebook">📓 L1 Q7 Advanced - Create your own Google Colab notebook!</h4>
+<h4 id="l1-q7-advanced-create-your-own-google-colab-notebook">📓 L1 Q7 Advanced - Create your own Google Colab notebook!<a class="headerlink" href="#l1-q7-advanced-create-your-own-google-colab-notebook" title="Permanent link">&para;</a></h4>
 <p>Create your own separate Google Colab notebook with the following rules and content:
 - The file name of your notebook should be in the format <strong><em>lastname_C1S1_breakout_custom_notebook.ipynb</em></strong>.
 - Include a header (of any size) that lists your first name and last name, followed by "<strong>Technology Explorers</strong>".
 - Create a short paragraph bio of yourself in a text cell.
-- Include/embed an image of the Python logo, which can be found here: https://www.python.org/community/logos/.
+- Include/embed an image of the Python logo, which can be found here: <a href="https://www.python.org/community/logos/">https://www.python.org/community/logos/</a>.
 - Create a code cell with just the line of code: <code>import this</code>
 - Take your favorite line from that output and past it in a text cell below, both bolding and italicizing it</p>
 
