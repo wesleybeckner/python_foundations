@@ -77,9 +77,11 @@ Write the line of code `28 / 3` below. Then just below the line in the same cell
 
 ```
 
-Now for more complicated mathematical operations! Try to write the Python equivalent of the following:
+Now for more complicated mathematical operations! 
 
-$\frac{14 + 28}{28 - 14}$
+Try to write the Python equivalent of the following:
+
+$$\frac{14 + 28}{28 - 14}$$
 
 
 ```python
@@ -88,7 +90,7 @@ $\frac{14 + 28}{28 - 14}$
 
 Now try this one:
 
-$\frac{15 + 984}{-(217+4)}$
+$$\frac{15 + 984}{-(217+4)}$$
 
 
 ```python
@@ -97,7 +99,7 @@ $\frac{15 + 984}{-(217+4)}$
 
 And finally, write the Python equivalent for this:
 
-$\frac{-(3655 * 44)}{(8 * 16)^3}$
+$$\frac{-(3655 * 44)}{(8 * 16)^3}$$
 
 
 ```python
