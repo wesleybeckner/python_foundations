@@ -20,11 +20,11 @@ In this lab we will continue to practice writing functions
 
 
 
-# ✍🏽 L3 Q1: Basic Function Writing
+## ✍🏽 L3 Q1: Basic Function Writing
 
 
 
-## Part A
+### Part A
 
 Write a Python function to find the Max of three numbers
 
@@ -35,7 +35,7 @@ Write a Python function to find the Max of three numbers
 # Code Cell for L3 Q1 A
 ```
 
-## Part B
+### Part B
 
 Write a Python function to multiply all the numbers in a list
 
@@ -51,7 +51,7 @@ Expected Output : -336
 # Code Cell for L3 Q1 B
 ```
 
-## Part C
+### Part C
 
 Write a Python program to reverse a string
 
@@ -67,7 +67,7 @@ Expected Output : "dcba4321"
 # Code Cell for L3 Q1 C
 ```
 
-# ❄️ L2 Q2: Finding Unique Elements
+## ❄️ L3 Q2: Finding Unique Elements
 
 Write a Python function that takes a list and returns a new list with unique elements of the first list
 
@@ -82,7 +82,7 @@ Unique List : [1, 2, 3, 4, 5]
 # Cell for L3 Q2
 ```
 
-# ❗ L3 Q3: Computing Factorials
+## ❗ L3 Q3: Computing Factorials
 
 Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument
 
@@ -98,7 +98,7 @@ Output: 24
 # Cell for L3 Q3
 ```
 
-# Practicing our hand at functions by implementing recursion
+## Practicing our hand at functions by implementing recursion
 
 We will practice the last exercise we did yesterday, this time using what we've learned about functions to write a _recursive function_
 
@@ -147,7 +147,7 @@ In the above, we have on lines 5 and 6, what we call the _baseline_ solution. It
 
 This problem is intended to be a fun way to wrap our heads around functions... don't stress. If you want to see a further breakdown of the factorial problem, check out [this link](https://www.programiz.com/python-programming/recursion)
 
-# 🛺 L3 Q4: Recursive Functions
+## 🛺 L3 Q4: Recursive Functions
 
 Using recursion, complete the Fibonacci sequence up to the 10th place using recursion and any or all of the following:
 * `if` `elif` `else`
@@ -176,5 +176,5 @@ Value: 34
 
 
 ```python
-# Cell for L2 Q3
+# Cell for L3 Q4
 ```
