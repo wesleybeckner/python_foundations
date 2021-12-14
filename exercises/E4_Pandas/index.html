@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -38,7 +38,9 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -191,6 +193,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         About
       </a>
@@ -209,18 +226,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_3">
           Sessions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Sessions" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Sessions
         </label>
@@ -343,18 +360,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_4">
           Exercises
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Exercises" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Exercises
         </label>
@@ -551,18 +568,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Project" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Project
         </label>
@@ -740,7 +757,7 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E4_Pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-lab-4-practice-with-pandas">Python Foundations, Lab 4: Practice with Pandas<a class="headerlink" href="#python-foundations-lab-4-practice-with-pandas" title="Permanent link">&para;</a></h1>
+<h1 id="python-foundations-lab-4-practice-with-pandas">Python Foundations, Lab 4: Practice with Pandas</h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: wesleybeckner@gmail.com<br></p>
 <hr />
@@ -748,72 +765,61 @@
 <p>In this lab we will continue to practice manipulating pandas DataFrames.</p>
 <p><br></p>
 <hr />
-<h2 id="l3-q1">🐼 L3 Q1<a class="headerlink" href="#l3-q1" title="Permanent link">&para;</a></h2>
+<h2 id="l3-q1">🐼 L3 Q1</h2>
 <p>Convert the two series into the columns of a DataFrame</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcedfghijklmnopqrstuvwxyz&#39;</span><span class="p">))</span>
-<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="p">))</span>
-</code></pre></div>
-
-<h2 id="l3-q2">🐼 L3 Q2<a class="headerlink" href="#l3-q2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">ser1 = pd.Series(list('abcedfghijklmnopqrstuvwxyz'))
+ser2 = pd.Series(np.arange(26))
+</code></pre>
+<h2 id="l3-q2">🐼 L3 Q2</h2>
 <p>Conver the series into a DataFrame with 7 rows and 5 columns</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
-</code></pre></div>
-
-<h2 id="l3-q3">🐼 L3 Q3<a class="headerlink" href="#l3-q3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">ser = pd.Series(np.random.randint(1, 10, 35))
+</code></pre>
+<h2 id="l3-q3">🐼 L3 Q3</h2>
 <p>Compute the difference of differences between consecutive numbers in a series using <code>ser.diff()</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
-</code></pre></div>
-
-<h2 id="l3-q4">🐼 L3 Q4<a class="headerlink" href="#l3-q4" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">ser = pd.Series([1, 3, 6, 10, 15, 21, 27, 35])
+</code></pre>
+<h2 id="l3-q4">🐼 L3 Q4</h2>
 <p>Convert a series of dates to <code>datetime</code> format using <code>pd.to_datetime()</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;01 Jan 2010&#39;</span><span class="p">,</span> <span class="s1">&#39;02-02-2011&#39;</span><span class="p">,</span> <span class="s1">&#39;20120303&#39;</span><span class="p">,</span> <span class="s1">&#39;2013/04/04&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-05&#39;</span><span class="p">,</span> <span class="s1">&#39;2015-06-06T12:20&#39;</span><span class="p">])</span>
-</code></pre></div>
-
-<h2 id="l3-q5">🐼 L3 Q5<a class="headerlink" href="#l3-q5" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">ser = pd.Series(['01 Jan 2010', '02-02-2011', '20120303', '2013/04/04', '2014-05-05', '2015-06-06T12:20'])
+</code></pre>
+<h2 id="l3-q5">🐼 L3 Q5</h2>
 <p>Compute the mean of weights grouped by fruit</p>
-<div class="codehilite"><pre><span></span><code><span class="n">fruit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot&#39;</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">weights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-[&#39;banana&#39;, &#39;banana&#39;, &#39;banana&#39;, &#39;carrot&#39;, &#39;carrot&#39;, &#39;carrot&#39;, &#39;carrot&#39;, &#39;carrot&#39;, &#39;banana&#39;, &#39;banana&#39;]
-</code></pre></div>
-
-<h2 id="l3-q6">🐼 L3 Q6<a class="headerlink" href="#l3-q6" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">fruit = pd.Series(np.random.choice(['apple', 'banana', 'carrot'], 10))
+weights = pd.Series(np.linspace(1, 10, 10))
+print(weights.tolist())
+print(fruit.tolist())
+</code></pre>
+<pre><code>[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+['banana', 'banana', 'banana', 'carrot', 'carrot', 'carrot', 'carrot', 'carrot', 'banana', 'banana']
+</code></pre>
+<h2 id="l3-q6">🐼 L3 Q6</h2>
 <p>Compute the euclidian distance between vectors p and q (pythagorean theorem)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-<span class="n">q</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</code></pre></div>
-
-<h2 id="l3-q7">🐼 L3 Q7<a class="headerlink" href="#l3-q7" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">p = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+q = pd.Series([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+</code></pre>
+<h2 id="l3-q7">🐼 L3 Q7</h2>
 <p>Fill in missing values for dates with the previous dates' value using <code>ser.bfill()</code> or <code>ser.ffill()</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-01-03&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-01-06&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-01-08&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>2000-01-01     1.0
+<pre><code class="language-python">ser = pd.Series([1,10,3,np.nan], index=pd.to_datetime(['2000-01-01', '2000-01-03', '2000-01-06', '2000-01-08']))
+print(ser)
+</code></pre>
+<pre><code>2000-01-01     1.0
 2000-01-03    10.0
 2000-01-06     3.0
 2000-01-08     NaN
 dtype: float64
-</code></pre></div>
-
-<h2 id="l3-q8">🐼 L3 Q8<a class="headerlink" href="#l3-q8" title="Permanent link">&para;</a></h2>
+</code></pre>
+<h2 id="l3-q8">🐼 L3 Q8</h2>
 <p>Check if there are missing values in a dataframe using <code>.isnull()</code>, <code>.values</code>, and <code>.any()</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="l3-q9">🐼 L3 Q9<a class="headerlink" href="#l3-q9" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">df = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv')
+</code></pre>
+<h2 id="l3-q9">🐼 L3 Q9</h2>
 <p>Grab the first column and return it as a DataFrame rather than as a series</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">))</span>
-</code></pre></div>
-
-<h2 id="l3-q10">🐼 L3 Q10<a class="headerlink" href="#l3-q10" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">df = pd.DataFrame(np.arange(20).reshape(-1, 5), columns=list('abcde'))
+</code></pre>
+<h2 id="l3-q10">🐼 L3 Q10</h2>
 <p>In <code>df</code>, interchange columns 'a' and 'c'.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">))</span>
-</code></pre></div>
+<pre><code class="language-python">df = pd.DataFrame(np.arange(20).reshape(-1, 5), columns=list('abcde'))
+</code></pre>
 
               
             </article>
@@ -879,10 +885,12 @@ dtype: float64
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>

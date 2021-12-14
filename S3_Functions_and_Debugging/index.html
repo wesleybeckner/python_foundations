@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.23b6d78a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -38,7 +38,9 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -191,6 +193,21 @@
   
   
     <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
         About
       </a>
@@ -211,18 +228,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_3">
           Sessions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Sessions" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Sessions
         </label>
@@ -594,18 +611,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_4">
           Exercises
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Exercises" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Exercises
         </label>
@@ -698,18 +715,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Project" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Project
         </label>
@@ -1034,7 +1051,7 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S3_Functions_and_Debugging.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-session-3-functions-and-debugging">Python Foundations, Session 3: Functions and Debugging<a class="headerlink" href="#python-foundations-session-3-functions-and-debugging" title="Permanent link">&para;</a></h1>
+<h1 id="python-foundations-session-3-functions-and-debugging">Python Foundations, Session 3: Functions and Debugging</h1>
 <p><strong>Instructor</strong>: Wesley Beckner<br></p>
 <p><strong>Contact</strong>: wesleybeckner@gmail.com</p>
 <p><i>special thanks to <a href="https://www.cheme.washington.edu/facultyfinder/david-beck">David Beck</a> for their contribution to this material</i>
@@ -1044,248 +1061,214 @@
 <p>Today, we will discuss <strong><em>functions</em></strong> in more depth.  We've seen them previously and used them, for example the <code>.append()</code> <strong><em>function</em></strong> for lists, or the even more general <code>print()</code> function.  Here, we'll dig into how you can make your own functions to encapsulate code that you will reuse over and over.  </p>
 <p><br></p>
 <hr />
-<h2 id="30-review-from-session-on-data-structures-and-flow-control">3.0 Review from Session on Data Structures and Flow Control<a class="headerlink" href="#30-review-from-session-on-data-structures-and-flow-control" title="Permanent link">&para;</a></h2>
+<h2 id="30-review-from-session-on-data-structures-and-flow-control">3.0 Review from Session on Data Structures and Flow Control</h2>
 <p>In our last session, we discussed <strong><em>lists</em></strong>, <strong><em>dictionaries</em></strong>, and <strong><em>flow control</em></strong>.</p>
 <p><strong><em>Lists</em></strong> are <strong><em>ordered collections</em></strong> of data that can be used to hold multiple pieces of information while preserving their order.  We use <code>[</code> and <code>]</code> to access elements by their indices which start with <code>0</code>.  All things that operate on <strong><em>lists</em></strong> like slices use the concept of an inclusive lower bound and an exclusive upper bound.  So, the following gets elements from the <strong><em>list</em></strong> <code>my_list</code> with index values of <code>0</code>, <code>1</code>, and <code>2</code>, but <strong>not</strong> <code>3</code>!</p>
-<div class="codehilite"><pre><span></span><code>my_list[0:3]
-</code></pre></div>
-
-<h4 id="question-1-slicing">🙋 Question 1: Slicing<a class="headerlink" href="#question-1-slicing" title="Permanent link">&para;</a></h4>
+<pre><code>my_list[0:3]
+</code></pre>
+<h4 id="question-1-slicing">🙋 Question 1: Slicing</h4>
 <blockquote>
 <p>What other way is there of writing the same statement using <strong><em>slicing</em></strong>?  Hint, think about leaving out one of the numbers in the slice!</p>
 </blockquote>
 <p><strong><em>Dictionaries</em></strong> are <strong><em>named</em></strong> <strong><em>collections</em></strong> of data that can be used to hold multiple pieces of information as <strong><em>values</em></strong> that are addressed by <strong><em>keys</em></strong> resulting in a <strong><em>key</em></strong> to <strong><em>value</em></strong> data structure.  They are accessed with <code>[</code> and <code>]</code> but intialized with <code>{</code> and <code>}</code>.  E.g.</p>
-<div class="codehilite"><pre><span></span><code>my_dict = { &#39;cake&#39; : &#39;Tasty!&#39;, &#39;toenails&#39; : &#39;Gross!&#39; }
-my_dict[&#39;cake&#39;]
-</code></pre></div>
-
+<pre><code>my_dict = { 'cake' : 'Tasty!', 'toenails' : 'Gross!' }
+my_dict['cake']
+</code></pre>
 <p>Finally, we talked about <strong><em>flow control</em></strong> and using the concept of <strong><em>conditional execution</em></strong> to decide which code statements were executed.  Remember this figure?</p>
 <p><img src="https://docs.oracle.com/cd/B19306_01/appdev.102/b14261/lnpls008.gif">Flow control figure</img></p>
 <blockquote>
 <p>What are the <strong><em>if</em></strong> statments? <br> 
 Where do <strong><em>for</em></strong> loops fit in? <br></p>
 </blockquote>
-<h2 id="31-functions">3.1 Functions<a class="headerlink" href="#31-functions" title="Permanent link">&para;</a></h2>
+<h2 id="31-functions">3.1 Functions</h2>
 <p>For loops let you repeat some code for every item in a list.  Functions are similar in that they run the same lines of code and, frequently, for new values of some variable (we call these <strong><em>parameters</em></strong>).  They are different in that functions are not limited to looping over items.</p>
 <p>Functions are a critical part of writing easy to read, reusable code.</p>
 <p>Create a function like:</p>
-<div class="codehilite"><pre><span></span><code>def function_name (parameters):
+<pre><code>def function_name (parameters):
     &quot;&quot;&quot;
     optional docstring
     &quot;&quot;&quot;
     function expressions
     return [variable]
-</code></pre></div>
-
+</code></pre>
 <p>Here is a simple example.  It prints a string that was passed in and returns nothing.</p>
-<div class="codehilite"><pre><span></span><code>def print_string(string):
+<pre><code>def print_string(string):
     &quot;&quot;&quot;This prints out a string passed as the parameter.&quot;&quot;&quot;
     print(string)
     return
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;This prints out a string passed as the parameter&quot;&quot;&quot;</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-  <span class="k">return</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">def print_string(string):
+  &quot;&quot;&quot;This prints out a string passed as the parameter&quot;&quot;&quot;
+  print(string)
+  return
+</code></pre>
 <p>To call the function, use:</p>
-<div class="codehilite"><pre><span></span><code>print_string(&quot;GIX is awesome!&quot;)
-</code></pre></div>
-
+<pre><code>print_string(&quot;GIX is awesome!&quot;)
+</code></pre>
 <p><em>Note:</em> The function has to be defined before you can call it!</p>
-<div class="codehilite"><pre><span></span><code><span class="n">print_string</span><span class="p">(</span><span class="s2">&quot;GIX is awesome!&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>GIX is awesome!
-</code></pre></div>
-
-<h3 id="311-reserved-words-def-return-and-yield">3.1.1 Reserved words: def, return, and yield<a class="headerlink" href="#311-reserved-words-def-return-and-yield" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">print_string(&quot;GIX is awesome!&quot;)
+</code></pre>
+<pre><code>GIX is awesome!
+</code></pre>
+<h3 id="311-reserved-words-def-return-and-yield">3.1.1 Reserved words: def, return, and yield</h3>
 <p>Notice the highlighted words in our function definition: <code>def</code> and <code>return</code> these are <em>reserved words</em> in python used to define functions. Every function definition requires these reserved words. <code>yield</code> is another reserved word that is similar to <code>return</code> but operates slightly differently. It is beyond the scope of what we are covering in this session. This tutorial from <a href="https://realpython.com/introduction-to-python-generators/">realpython</a> has good information on the topic.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># what is return doing in this function?</span>
-<span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
-</code></pre></div>
-
+<pre><code class="language-python"># what is return doing in this function?
+def my_square(a):
+  return a ** 2
+</code></pre>
 <p><code>return</code> is going to output whatever value(s) follow after the keyword <code>return</code> when we call upon our function </p>
-<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>4
-</code></pre></div>
-
+<pre><code class="language-python">a = 2
+my_square(a)
+</code></pre>
+<pre><code>4
+</code></pre>
 <p>I'm going to return two values...</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span>
-</code></pre></div>
-
+<pre><code class="language-python">def my_square(a):
+  return a ** 2, a
+</code></pre>
 <p>and we see how the output updates accordingly</p>
-<div class="codehilite"><pre><span></span><code><span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>(4, 2)
-</code></pre></div>
-
+<pre><code class="language-python">my_square(a)
+</code></pre>
+<pre><code>(4, 2)
+</code></pre>
 <p>We can capture these values on the output with...</p>
-<div class="codehilite"><pre><span></span><code><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span> <span class="o">=</span> <span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>4 2
-</code></pre></div>
-
-<h3 id="312-global-vs-local-variables-and-function-parameters">3.1.2 Global vs local variables and function parameters<a class="headerlink" href="#312-global-vs-local-variables-and-function-parameters" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">square, new_a = my_square(a)
+</code></pre>
+<pre><code class="language-python">print(square, new_a)
+</code></pre>
+<pre><code>4 2
+</code></pre>
+<h3 id="312-global-vs-local-variables-and-function-parameters">3.1.2 Global vs local variables and function parameters</h3>
 <p>In a function, new variables that you create are not saved when the function returns - these are <strong><em>local</em></strong> variables.  Variables defined outside of the function can be accessed but not changed - these are <strong><em>global</em></strong> variables.</p>
 <p>let's define the following function</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">my_little_func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>20
-</code></pre></div>
-
+<pre><code class="language-python">def my_little_func(a):
+  b = 10
+  return a * b
+</code></pre>
+<pre><code class="language-python">my_little_func(2)
+</code></pre>
+<pre><code>20
+</code></pre>
 <p>if I run the following...</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># b</span>
-</code></pre></div>
-
+<pre><code class="language-python"># b
+</code></pre>
 <p>Let's play with this a little further...</p>
 <p>...now let's define b outside the function and call our function with <code>a=5</code></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># what happens here?</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">my_little_func</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>50
-</code></pre></div>
-
+<pre><code class="language-python"># what happens here?
+b = 100
+my_little_func(5)
+</code></pre>
+<pre><code>50
+</code></pre>
 <p>we see that b is still 100, instead of 10 as its defined within the function. This is because b inside of <code>my_little_func</code> is a <em>local</em> variable. </p>
 <p>it doesn't matter how I define b outside the function because within the function it is set locally.</p>
 <p>... Let's do this A LITTLE MORE</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
-</code></pre></div>
-
+<pre><code class="language-python">def my_new_func(a):
+  print(b)
+  return a*b
+</code></pre>
 <p>now if I call on my new function, because <code>b</code> is not defined locally within the function, it takes on the global value. </p>
 <p>This is typically not happy happy fun fun behavior for us, we want to be explicit about how we define and use our variables (but there are some times when this is appropriate to do)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">b</span><span class="o">=</span> <span class="mf">1e4</span> <span class="c1"># side note, what did I do here????</span>
-<span class="n">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>10000.0
+<pre><code class="language-python">b= 1e4 # side note, what did I do here????
+my_new_func(a)
+</code></pre>
+<pre><code>10000.0
 
 
 
 
 
 20000.0
-</code></pre></div>
-
-<h4 id="3111-function-parameters">3.1.1.1 Function Parameters<a class="headerlink" href="#3111-function-parameters" title="Permanent link">&para;</a></h4>
+</code></pre>
+<h4 id="3111-function-parameters">3.1.1.1 Function Parameters</h4>
 <p>Parameters (or arguments) in Python are all passed by reference.  This means that if you modify the parameters in the function, they are modified outside of the function. (Enrichment: Exceptions, see below)</p>
 <p>See the following example:</p>
-<div class="codehilite"><pre><span></span><code>def change_list(my_list):
+<pre><code>def change_list(my_list):
    &quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;
-   my_list.append(&#39;four&#39;);
-   print(&#39;list inside the function: &#39;, my_list)
+   my_list.append('four');
+   print('list inside the function: ', my_list)
    return
 
 my_list = [1, 2, 3];
-print(&#39;list before the function: &#39;, my_list)
+print('list before the function: ', my_list)
 change_list(my_list);
-print(&#39;list after the function: &#39;, my_list)
-</code></pre></div>
+print('list after the function: ', my_list)
+</code></pre>
+<pre><code class="language-python">def change_list(my_list):
+   &quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;
+   my_list.append('four');
+   print('list inside the function: ', my_list)
+   return
 
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
-   <span class="sd">&quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;</span>
-   <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;four&#39;</span><span class="p">);</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list inside the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-   <span class="k">return</span>
-
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list before the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-<span class="n">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">);</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list after the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>list before the function:  [1, 2, 3]
-list inside the function:  [1, 2, 3, &#39;four&#39;]
-list after the function:  [1, 2, 3, &#39;four&#39;]
-</code></pre></div>
-
-<h4 id="3112-enrichment-global-local-and-immutables">3.1.1.2 Enrichment: Global, local, and immutables<a class="headerlink" href="#3112-enrichment-global-local-and-immutables" title="Permanent link">&para;</a></h4>
+my_list = [1, 2, 3];
+print('list before the function: ', my_list)
+change_list(my_list);
+print('list after the function: ', my_list)
+</code></pre>
+<pre><code>list before the function:  [1, 2, 3]
+list inside the function:  [1, 2, 3, 'four']
+list after the function:  [1, 2, 3, 'four']
+</code></pre>
+<h4 id="3112-enrichment-global-local-and-immutables">3.1.1.2 Enrichment: Global, local, and immutables</h4>
 <p>Let's go back to our former example...</p>
 <p>immutables:</p>
 <ul>
 <li>integers, float, str, tuples</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">10.2</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<pre><code class="language-python">b = &quot;a string&quot;
+b = 10
+b = 10.2
+b = (10, 2)
+b = [10, 2]
+a = 2
 
-<span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-  <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">b</span> <span class="o">+=</span> <span class="s2">&quot;20&quot;</span>
-  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">+=</span> <span class="mi">10</span>
-  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AYYY no tuple changes, Dude&quot;</span><span class="p">)</span>
-    <span class="k">pass</span>
-  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">):</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;whoaaaa&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-  <span class="k">return</span>
+def my_little_func(a, b):
+  if type(b) == str:
+    b += &quot;20&quot;
+  elif (type(b) == int) or (type(b) == float):
+    b += 10
+  elif (type(b) == tuple):
+    print(&quot;AYYY no tuple changes, Dude&quot;)
+    pass
+  elif (type(b) == list):
+    b.append('whoaaaa')
+  print(b)
+  return
 
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>[10, 2]
-[10, 2, &#39;whoaaaa&#39;]
-[10, 2, &#39;whoaaaa&#39;]
-</code></pre></div>
-
+print(b)
+my_little_func(a, b)
+print(b)
+</code></pre>
+<pre><code>[10, 2]
+[10, 2, 'whoaaaa']
+[10, 2, 'whoaaaa']
+</code></pre>
 <p>There is a way to change a global variable within a function with the <strong><em>global</em></strong> keyword.  Generally, the use of <strong><em>global</em></strong> variables is not encouraged, instead use parameters. We won't cover the global keyword here but you can <a href="https://www.programiz.com/python-programming/global-keyword">explore further</a> on your own if you are interested. </p>
-<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<pre><code class="language-python">b = 10
+a = 2
 
-<span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">global</span> <span class="n">b</span>
-  <span class="n">b</span> <span class="o">+=</span> <span class="mi">20</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-  <span class="k">return</span> 
+def my_little_func(a):
+  global b
+  b += 20
+  print(b)
+  return 
 
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>10
+print(b)
+my_little_func(a)
+print(b)
+</code></pre>
+<pre><code>10
 30
 30
-</code></pre></div>
-
-<h4 id="exercise-1-my-first-function">🏋️ Exercise 1: My first function<a class="headerlink" href="#exercise-1-my-first-function" title="Permanent link">&para;</a></h4>
+</code></pre>
+<h4 id="exercise-1-my-first-function">🏋️ Exercise 1: My first function</h4>
 <p>Write a function that takes one parameter and returns any data structure</p>
 <blockquote>
 <p>If you are going to return multiple objects, what data structure that we talked about can be used?  Give and example below.</p>
 </blockquote>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for excerise 1</span>
-</code></pre></div>
-
-<h3 id="313-parameter-types">3.1.3 Parameter types<a class="headerlink" href="#313-parameter-types" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># Cell for excerise 1
+</code></pre>
+<h3 id="313-parameter-types">3.1.3 Parameter types</h3>
 <p><strong>Function calling:</strong></p>
 <ul>
 <li>positional <ul>
@@ -1300,79 +1283,68 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 <p><strong>Function writing:</strong>
 * default
     * <code>def func(a=10, b=20)</code></p>
-<div class="codehilite"><pre><span></span><code>def print_name(first, last=&#39;Beckner&#39;):
-    print(f&#39;Your name is {first} {last}&#39;)
+<pre><code>def print_name(first, last='Beckner'):
+    print(f'Your name is {first} {last}')
     return
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your name is </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">))</span>
-    <span class="k">return</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">def print_name(first, last='Beckner'):
+    print(&quot;Your name is {} {}&quot;.format(first, last))
+    return
+</code></pre>
+<pre><code class="language-python">print_name(last='Beckner', first='Wesley')
+</code></pre>
+<pre><code>Your name is Wesley Beckner
+</code></pre>
 <p>Play around with the above function.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="s1">&#39;Wesley&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;the Python Foundations Instructor&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Your name is Wesley the Python Foundations Instructor
-</code></pre></div>
-
+<pre><code class="language-python">print_name('Wesley', last='the Python Foundations Instructor')
+</code></pre>
+<pre><code>Your name is Wesley the Python Foundations Instructor
+</code></pre>
 <p>Functions can contain any code that you put anywhere else including:
 * <code>if</code>...<code>elif</code>...<code>else</code>
 * <code>for</code>...<code>while</code>
 * other function calls</p>
-<div class="codehilite"><pre><span></span><code>def print_name_age(first, last, age):
+<pre><code>def print_name_age(first, last, age):
     print_name(first, last)
-    print(&#39;Your age is %d&#39; % (age))
+    print('Your age is %d' % (age))
     if age &gt; 25 and age &lt; 40:
-        print(&#39;You are a millenial!&#39;)
+        print('You are a millenial!')
     return
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_name_age</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-    <span class="n">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">age</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are a millenial!&#39;</span><span class="p">)</span>
-    <span class="k">return</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>print_name_age(age=29, last=&#39;Beckner&#39;, first=&#39;Wesley&#39;)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">print_name_age</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
+</code></pre>
+<pre><code class="language-python">def print_name_age(first, last, age):
+    print_name(first, last)
+    print('Your age is %d' % (age))
+    if age &gt; 25 and age &lt; 40:
+        print('You are a millenial!')
+    return
+</code></pre>
+<pre><code>print_name_age(age=29, last='Beckner', first='Wesley')
+</code></pre>
+<pre><code class="language-python">print_name_age(age=29, last='Beckner', first='Wesley')
+</code></pre>
+<pre><code>Your name is Wesley Beckner
 Your age is 29
 You are a millenial!
-</code></pre></div>
-
-<h2 id="32-the-scientific-python-stack">3.2 The scientific python stack<a class="headerlink" href="#32-the-scientific-python-stack" title="Permanent link">&para;</a></h2>
+</code></pre>
+<h2 id="32-the-scientific-python-stack">3.2 The scientific python stack</h2>
 <p>In addition to Python's built-in modules like the <code>math</code> module we explored above, there are also many often-used third-party modules that are core tools for doing data science with Python.
 Some of the most important ones are:</p>
-<h4 id="numpy-numerical-python"><a href="http://numpy.org/"><code>numpy</code></a>: Numerical Python<a class="headerlink" href="#numpy-numerical-python" title="Permanent link">&para;</a></h4>
+<h4 id="numpy-numerical-python"><a href="http://numpy.org/"><code>numpy</code></a>: Numerical Python</h4>
 <p>Numpy is short for "Numerical Python", and contains tools for efficient manipulation of arrays of data.
 If you have used other computational tools like IDL or MatLab, Numpy should feel very familiar.</p>
-<h4 id="scipy-scientific-python"><a href="http://scipy.org/"><code>scipy</code></a>: Scientific Python<a class="headerlink" href="#scipy-scientific-python" title="Permanent link">&para;</a></h4>
+<h4 id="scipy-scientific-python"><a href="http://scipy.org/"><code>scipy</code></a>: Scientific Python</h4>
 <p>Scipy is short for "Scientific Python", and contains a wide range of functionality for accomplishing common scientific tasks, such as optimization/minimization, numerical integration, interpolation, and much more.
 We will not look closely at Scipy today, but we will use its functionality later in the course.</p>
-<h4 id="pandas-labeled-data-manipulation-in-python"><a href="http://pandas.pydata.org/"><code>pandas</code></a>: Labeled Data Manipulation in Python<a class="headerlink" href="#pandas-labeled-data-manipulation-in-python" title="Permanent link">&para;</a></h4>
+<h4 id="pandas-labeled-data-manipulation-in-python"><a href="http://pandas.pydata.org/"><code>pandas</code></a>: Labeled Data Manipulation in Python</h4>
 <p>Pandas is short for "Panel Data", and contains tools for doing more advanced manipulation of labeled data in Python, in particular with a columnar data structure called a <em>Data Frame</em>.
 If you've used the <a href="http://rstats.org">R</a> statistical language (and in particular the so-called "Hadley Stack"), much of the functionality in Pandas should feel very familiar.</p>
-<h4 id="matplotlib-visualization-in-python"><a href="http://matplotlib.org"><code>matplotlib</code></a>: Visualization in Python<a class="headerlink" href="#matplotlib-visualization-in-python" title="Permanent link">&para;</a></h4>
+<h4 id="matplotlib-visualization-in-python"><a href="http://matplotlib.org"><code>matplotlib</code></a>: Visualization in Python</h4>
 <p>Matplotlib started out as a Matlab plotting clone in Python, and has grown from there in the 15 years since its creation. It is the most popular data visualization tool currently in the Python data world (though other recent packages are starting to encroach on its monopoly).</p>
-<h4 id="scikit-learn-machine-learning-in-python"><a href="https://scikit-learn.org/stable/"><code>scikit-learn</code></a>: Machine Learning in Python<a class="headerlink" href="#scikit-learn-machine-learning-in-python" title="Permanent link">&para;</a></h4>
+<h4 id="scikit-learn-machine-learning-in-python"><a href="https://scikit-learn.org/stable/"><code>scikit-learn</code></a>: Machine Learning in Python</h4>
 <p>Scikit-learn is a machine learning library.</p>
 <p>It features various classification, regression, and clustering algorithms, including support vector machines, random forests, gradient boosting, k-means, and DBSCAN.</p>
 <p>The library is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.</p>
-<h2 id="33-debugging">3.3 Debugging<a class="headerlink" href="#33-debugging" title="Permanent link">&para;</a></h2>
+<h2 id="33-debugging">3.3 Debugging</h2>
 <blockquote>
 <p>It’s always important to check that our code is “plugged in”, i.e., that we’re actually exercising the problem that we think we are. Every programmer has spent hours chasing a bug, only to realize that they were actually calling their code on the wrong data set or with the wrong configuration parameters, or are using the wrong version of the software entirely. Mistakes like these are particularly likely to happen when we’re tired, frustrated, and up against a deadline, which is one of the reasons late-night (or overnight) coding sessions are almost never worthwhile. -<a href="https://swcarpentry.github.io/python-novice-inflammation/11-debugging/index.html">swcarpentry</a></p>
 </blockquote>
@@ -1386,39 +1358,34 @@ If you've used the <a href="http://rstats.org">R</a> statistical language (and i
 <li>Keep track of what you've done</li>
 <li>Be humble</li>
 </ol>
-<h3 id="330-before-we-get-started">3.3.0 Before We Get Started<a class="headerlink" href="#330-before-we-get-started" title="Permanent link">&para;</a></h3>
+<h3 id="330-before-we-get-started">3.3.0 Before We Get Started</h3>
 <p>We will refer to writing tests, and specifically writing <em>unit tests</em> in this module. Don't worry too much about the specifics of <em>unit tests</em> for now. We will have a dedicated module for that. What we do need to talk about is a specific built in function in python called the <code>assert</code> function</p>
-<h4 id="3301-the-assert-function">3.3.0.1 the <code>assert</code> function<a class="headerlink" href="#3301-the-assert-function" title="Permanent link">&para;</a></h4>
+<h4 id="3301-the-assert-function">3.3.0.1 the <code>assert</code> function</h4>
 <p>Let's take a simple example of the assert function. If I wanted to test that the sume of two numbers is correct</p>
-<div class="codehilite"><pre><span></span><code><span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;should be 7&quot;</span>
-</code></pre></div>
-
+<pre><code class="language-python">assert sum([2, 5]) == 7, &quot;should be 7&quot;
+</code></pre>
 <p>Nothing is sent to the print out because the condition is satisfied. If we run, however:</p>
-<div class="codehilite"><pre><span></span><code>assert sum([2, 4]) == 7, &quot;should be 7&quot;
-</code></pre></div>
-
+<pre><code>assert sum([2, 4]) == 7, &quot;should be 7&quot;
+</code></pre>
 <p>we get an error message:</p>
-<div class="codehilite"><pre><span></span><code>---------------------------------------------------------------------------
+<pre><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-3-d5724b127818&gt; in &lt;module&gt;()
 ----&gt; 1 assert sum([2, 4]) == 7, &quot;should be 7&quot;
 
 AssertionError: should be 7
-</code></pre></div>
-
+</code></pre>
 <p>Now to make this a test, you will want to wrap it in a function</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">test_sum</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Should be 6&quot;</span>
+<pre><code class="language-python">def test_sum():
+    assert sum([1, 2, 3]) == 6, &quot;Should be 6&quot;
 
-<span class="n">test_sum</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everything passed&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Everything passed
-</code></pre></div>
-
+test_sum()
+print(&quot;Everything passed&quot;)
+</code></pre>
+<pre><code>Everything passed
+</code></pre>
 <p>And if we include a test that does not pass:</p>
-<div class="codehilite"><pre><span></span><code>def test_sum():
+<pre><code>def test_sum():
   assert sum([3, 3]) == 6, &quot;Should be 6&quot;
 
 def test_my_broken_func():
@@ -1427,10 +1394,9 @@ def test_my_broken_func():
 test_sum()
 test_my_broken_func()
 print(&quot;Everything passed&quot;)
-</code></pre></div>
-
+</code></pre>
 <p>Here our test fails, because the sum of 1 and 2 is 3 and not 5. We get a traceback that tells us the source of the error:</p>
-<div class="codehilite"><pre><span></span><code>---------------------------------------------------------------------------
+<pre><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-13-8a552fbf52bd&gt; in &lt;module&gt;()
       6 
@@ -1446,10 +1412,9 @@ AssertionError                            Traceback (most recent call last)
       7 test_sum()
 
 AssertionError: Should be 5
-</code></pre></div>
-
+</code></pre>
 <p>We will worry about the intricacies of what to test for and when to test at a later time. For now, we just need to understand the assert function so we can practice debugging and writing short tests for the problems that we fix today! Ok LETS GO</p>
-<h3 id="331-know-what-its-supposed-to-do">3.3.1 Know what it's supposed to do<a class="headerlink" href="#331-know-what-its-supposed-to-do" title="Permanent link">&para;</a></h3>
+<h3 id="331-know-what-its-supposed-to-do">3.3.1 Know what it's supposed to do</h3>
 <p>This may seem obvious, but it's easy to recognize that an error is happening without knowing what the correct answer is. This makes unit tests especially handy, they force us to know the expected outcome at least for intended use cases. Here are some tips in regard to knowing the expected outcome:</p>
 <ul>
 <li><em>test with simplified data</em> </li>
@@ -1457,72 +1422,67 @@ AssertionError: Should be 5
 <li><em>compare to a base model</em></li>
 <li><em>visualize</em></li>
 </ul>
-<h3 id="332-make-it-fail-every-time">3.3.2 Make it fail every time<a class="headerlink" href="#332-make-it-fail-every-time" title="Permanent link">&para;</a></h3>
+<h3 id="332-make-it-fail-every-time">3.3.2 Make it fail every time</h3>
 <p>It can be extraordinarily difficult to debug code that is precidated on some stochastic process. <em>remove stochasticity when possible</em>. For instance, seed your random value generators (<code>random.seed()</code>, <code>np.random.seed()</code>)</p>
-<h3 id="333-make-it-fail-fast">3.3.3 Make it fail fast<a class="headerlink" href="#333-make-it-fail-fast" title="Permanent link">&para;</a></h3>
+<h3 id="333-make-it-fail-fast">3.3.3 Make it fail fast</h3>
 <p>a corrolary to this, is narrow down the source of the error, and again this is why we write unit tests before integration tests. If it takes 20 minutes to train your neural network, and the error occurs during some post processing plotting of your loss history, obviously don't retrain the NN each time you iterate over the failure. Along the same lines, if you're debugging something in a for loop, run the loop once, or run the indented code outside of the loop with a placeholder for the iterated variable, in order to test and debug the code. </p>
-<h3 id="334-change-one-thing-at-a-time-for-a-reason">3.3.4 Change one thing at a time, for a reason<a class="headerlink" href="#334-change-one-thing-at-a-time-for-a-reason" title="Permanent link">&para;</a></h3>
+<h3 id="334-change-one-thing-at-a-time-for-a-reason">3.3.4 Change one thing at a time, for a reason</h3>
 <p>Not much nuance here. Just like it's a good idea for us to change one aspect of our machine learning models and track the performance rather than to change multiple things at once, it's better to change one feature when debugging at a time. Changing multiple things at once creates interaction effects that can complicate the whole problem!</p>
-<h3 id="335-keep-track-of-what-youve-done">3.3.5 Keep track of what you've done<a class="headerlink" href="#335-keep-track-of-what-youve-done" title="Permanent link">&para;</a></h3>
+<h3 id="335-keep-track-of-what-youve-done">3.3.5 Keep track of what you've done</h3>
 <p>This is where git/GitHub come in handy. It's so incredibly easy to forget what you've done, and, a weeks or days later from the time you first encountered the bug, forget whether you fixed it, did a temp fix, and/or what you did to fix it.</p>
 <blockquote>
 <p>my tip: if you're working in a jupyter notebook, something I do is write at the top of my notebook my TO DO items. I then strike through items I complete, and update my notes for the next time I work on the code. Similarly, I name my notebooks to reflect and categorize what they are about. Primarily I have <code>test_&lt;thing&gt;.ipynb</code> and <code>prototype_&lt;thingy&gt;.ipynb</code></p>
 </blockquote>
-<h3 id="336-be-humble">3.3.6 Be humble<a class="headerlink" href="#336-be-humble" title="Permanent link">&para;</a></h3>
+<h3 id="336-be-humble">3.3.6 Be humble</h3>
 <p>Lastly, ask for help. Take breaks. <em>A week of hard work can sometimes save you an hour of thought.</em></p>
-<h4 id="exercise-2-debug-a-short-code-block">🏋️ Exercise 2: Debug A Short Code Block<a class="headerlink" href="#exercise-2-debug-a-short-code-block" title="Permanent link">&para;</a></h4>
+<h4 id="exercise-2-debug-a-short-code-block">🏋️ Exercise 2: Debug A Short Code Block</h4>
 <p>Your friend is writing a function to calculate BMI. They are concerned that seemingly all the patient's values have the same BMI, despite having different heights and weights. Determine the bugs in the code then write a unit test for the function <code>calculate_bmi</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># [weight (kg), height (m)]</span>
-<span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
+<pre><code class="language-python"># [weight (kg), height (m)]
+patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
 
-<span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-    <span class="c1"># kg / m ** 2 = bmi</span>
-    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+def calculate_bmi(weight, height):
+    # kg / m ** 2 = bmi
+    return weight / (height ** 2)
 
-<span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
-</code></pre></div>
+for patient in patients:
+    weight, height = patients[0] 
+    bmi = calculate_bmi(height, weight) 
+    print(&quot;Patient's BMI is: %f&quot; % bmi)
+</code></pre>
+<pre><code>Patient's BMI is: 0.000367
+Patient's BMI is: 0.000367
+Patient's BMI is: 0.000367
+</code></pre>
+<pre><code class="language-python"># [weight (kg), height (m)]
+patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
 
-<div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 0.000367
-Patient&#39;s BMI is: 0.000367
-Patient&#39;s BMI is: 0.000367
-</code></pre></div>
+def calculate_bmi(weight, height):
+    # kg / m ** 2 = bmi
+    return weight / (height ** 2)
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># [weight (kg), height (m)]</span>
-<span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
+for patient in patients:
+    weight, height = patient ### not properly referencing iterated variable
+    bmi = calculate_bmi(weight, height) ### should be swapped
+    print(&quot;Patient's BMI is: %f&quot; % bmi)
+</code></pre>
+<pre><code>Patient's BMI is: 21.604938
+Patient's BMI is: 22.160665
+Patient's BMI is: 51.903114
+</code></pre>
+<pre><code class="language-python">def test_calculate_bmi():
+  patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
+  bmis = [21.6, 22.16, 51.9]
 
-<span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-    <span class="c1"># kg / m ** 2 = bmi</span>
-    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+  for patient, bmi_ in zip(patients, bmis):
+    weight, height = patient ### not properly referencing iterated variable
+    bmi = calculate_bmi(weight, height) ### should be swapped
+    assert np.abs(bmi - bmi_) &lt; 0.1, &quot;fail calc for {}&quot;.format(patient)
 
-<span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 21.604938
-Patient&#39;s BMI is: 22.160665
-Patient&#39;s BMI is: 51.903114
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">test_calculate_bmi</span><span class="p">():</span>
-  <span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
-  <span class="n">bmis</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">,</span> <span class="mf">22.16</span><span class="p">,</span> <span class="mf">51.9</span><span class="p">]</span>
-
-  <span class="k">for</span> <span class="n">patient</span><span class="p">,</span> <span class="n">bmi_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">bmis</span><span class="p">):</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
-    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bmi</span> <span class="o">-</span> <span class="n">bmi_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;fail calc for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
-
-<span class="n">test_calculate_bmi</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success!&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>success!
-</code></pre></div>
+test_calculate_bmi()
+print(&quot;success!&quot;)
+</code></pre>
+<pre><code>success!
+</code></pre>
 
               
             </article>
@@ -1588,10 +1548,12 @@ Patient&#39;s BMI is: 51.903114
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>

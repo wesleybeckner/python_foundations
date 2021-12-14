@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -38,7 +38,9 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -191,6 +193,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         About
       </a>
@@ -209,18 +226,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_3">
           Sessions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Sessions" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Sessions
         </label>
@@ -341,18 +358,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_4">
           Exercises
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Exercises" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Exercises
         </label>
@@ -447,18 +464,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Project" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Project
         </label>
@@ -694,7 +711,7 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/project/P4_Debugging_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-project-part-4-debugging">Python Foundations, Project Part 4: Debugging<a class="headerlink" href="#python-foundations-project-part-4-debugging" title="Permanent link">&para;</a></h1>
+<h1 id="python-foundations-project-part-4-debugging">Python Foundations, Project Part 4: Debugging</h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: wesleybeckner@gmail.com
 <br></p>
@@ -704,180 +721,178 @@
 <p><br></p>
 <hr />
 <p><a name='x.0'></a></p>
-<h2 id="40-preparing-environment-and-importing-data">4.0 Preparing Environment and Importing Data<a class="headerlink" href="#40-preparing-environment-and-importing-data" title="Permanent link">&para;</a></h2>
+<h2 id="40-preparing-environment-and-importing-data">4.0 Preparing Environment and Importing Data</h2>
 <p><a href="#top">back to top</a></p>
 <p><a name='x.0.1'></a></p>
-<h3 id="401-import-packages">4.0.1 Import Packages<a class="headerlink" href="#401-import-packages" title="Permanent link">&para;</a></h3>
+<h3 id="401-import-packages">4.0.1 Import Packages</h3>
 <p><a href="#top">back to top</a></p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<pre><code class="language-python">import random
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-<span class="k">class</span> <span class="nc">TicTacToe</span><span class="p">:</span>
-  <span class="c1"># can preset winner and starting player</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">winner</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">start_player</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span> 
-    <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="n">winner</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="n">start_player</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">win_patterns</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
-                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
-                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+class TicTacToe:
+  # can preset winner and starting player
+  def __init__(self, winner='', start_player=''): 
+    self.winner = winner
+    self.start_player = start_player
+    self.board = {1: ' ',
+         2: ' ',
+         3: ' ',
+         4: ' ',
+         5: ' ',
+         6: ' ',
+         7: ' ',
+         8: ' ',
+         9: ' ',}
+    self.win_patterns = [[1,2,3], [4,5,6], [7,8,9],
+                [1,4,7], [2,5,8], [3,6,9],
+                [1,5,9], [7,5,3]]
 
-  <span class="c1"># the other functions are now passed self</span>
-  <span class="k">def</span> <span class="nf">visualize_board</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span>
-      <span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-      <span class="p">)</span>
+  # the other functions are now passed self
+  def visualize_board(self):
+    print(
+      &quot;|{}|{}|{}|\n|{}|{}|{}|\n|{}|{}|{}|\n&quot;.format(*self.board.values())
+      )
 
-  <span class="k">def</span> <span class="nf">check_winning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">win_patterns</span><span class="p">:</span>
-      <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">]</span> 
-      <span class="k">if</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span> <span class="c1"># we update the winner status</span>
-        <span class="k">return</span> <span class="s2">&quot;&#39;X&#39; Won!&quot;</span>
-      <span class="k">elif</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
-        <span class="k">return</span> <span class="s2">&quot;&#39;O&#39; Won!&quot;</span>
-    <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+  def check_winning(self):
+    for pattern in self.win_patterns:
+      values = [self.board[i] for i in pattern] 
+      if values == ['X', 'X', 'X']:
+        self.winner = 'X' # we update the winner status
+        return &quot;'X' Won!&quot;
+      elif values == ['O', 'O', 'O']:
+        self.winner = 'O'
+        return &quot;'O' Won!&quot;
+    return ''
 
-  <span class="k">def</span> <span class="nf">check_stalemate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;Stalemate&#39;</span>
-      <span class="k">return</span> <span class="s2">&quot;It&#39;s a stalemate!&quot;</span>
+  def check_stalemate(self):
+    if ' ' not in self.board.values():
+      self.winner = 'Stalemate'
+      return &quot;It's a stalemate!&quot;
 
-<span class="k">class</span> <span class="nc">GameEngine</span><span class="p">(</span><span class="n">TicTacToe</span><span class="p">):</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">):</span>
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="n">setup</span>
+class GameEngine(TicTacToe):
+  def __init__(self, setup='auto'):
+    super().__init__()
+    self.setup = setup
 
-  <span class="k">def</span> <span class="nf">setup_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  def setup_game(self):
 
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;user&#39;</span><span class="p">:</span>
-      <span class="n">players</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Players? (type 0, 1, or 2)&quot;</span><span class="p">))</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                    <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">}}</span>
-      <span class="k">if</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">first</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;who will go first? (X, (AI), or O (Player))&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                        <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">}}</span>
-        <span class="k">else</span><span class="p">:</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                        <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">}}</span>
+    if self.setup == 'user':
+      players = int(input(&quot;How many Players? (type 0, 1, or 2)&quot;))
+      self.player_meta = {'first': {'label': 'X',
+                                    'type': 'ai'}, 
+                    'second': {'label': 'O',
+                                    'type': 'human'}}
+      if players == 1:
+        first = input(&quot;who will go first? (X, (AI), or O (Player))&quot;)
+        if first == 'O':
+          self.player_meta = {'second': {'label': 'X',
+                                    'type': 'ai'}, 
+                        'first': {'label': 'O',
+                                    'type': 'human'}}
+        else:
+          self.player_meta = {'first': {'label': 'X',
+                                    'type': 'ai'}, 
+                        'second': {'label': 'O',
+                                    'type': 'human'}}
 
-      <span class="k">elif</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                        <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>                                
-        <span class="k">else</span><span class="p">:</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                        <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>
+      elif players == 0:
+        first = random.choice(['X', 'O'])
+        if first == 'O':
+          self.player_meta = {'second': {'label': 'X',
+                                    'type': 'ai'}, 
+                        'first': {'label': 'O',
+                                    'type': 'ai'}}                                
+        else:
+          self.player_meta = {'first': {'label': 'X',
+                                    'type': 'ai'}, 
+                        'second': {'label': 'O',
+                                    'type': 'ai'}}
 
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
-      <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
-      <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                      <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>                                
-      <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-                      <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>
+    elif self.setup == 'auto':
+      first = random.choice(['X', 'O'])
+      if first == 'O':
+        self.start_player = 'O'
+        self.player_meta = {'second': {'label': 'X',
+                                  'type': 'ai'}, 
+                      'first': {'label': 'O',
+                                  'type': 'ai'}}                                
+      else:
+        self.start_player = 'X'
+        self.player_meta = {'first': {'label': 'X',
+                                  'type': 'ai'}, 
+                      'second': {'label': 'O',
+                                  'type': 'ai'}}
 
-  <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-      <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">]:</span>  
-        <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-        <span class="n">player_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-        <span class="n">player_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+  def play_game(self):
+    while True:
+      for player in ['first', 'second']:  
+        self.visualize_board()
+        player_label = self.player_meta[player]['label']
+        player_type = self.player_meta[player]['type']
 
-        <span class="k">if</span> <span class="n">player_type</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
-          <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_label</span><span class="p">))</span>
-          <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
-          <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
-            <span class="k">break</span>
+        if player_type == 'human':
+          move = input(&quot;{}, what's your move?&quot;.format(player_label))
+          # we're going to allow the user to quit the game from the input line
+          if move in ['q', 'quit']:
+            self.winner = 'F'
+            print('quiting the game')
+            break
 
-          <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
-          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-              <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
-                          <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
-              <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
-              <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-                <span class="k">continue</span>
-              <span class="k">else</span><span class="p">:</span>
-                <span class="k">break</span>
+          move = int(move)
+          if self.board[move] != ' ':
+            while True:
+              move = input(&quot;{}, that position is already taken! &quot;\
+                          &quot;What's your move?&quot;.format(player))  
+              move = int(move)            
+              if self.board[move] != ' ':
+                continue
+              else:
+                break
 
-        <span class="k">else</span><span class="p">:</span>
-          <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">move</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-              <span class="k">continue</span>
-              <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-              <span class="k">break</span>
+        else:
+          while True:
+            move = random.randint(1,9)
+            if self.board[move] != ' ':
+              continue
+              print('test')
+            else:
+              break
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_label</span>
+        self.board[move] = player_label
 
-        <span class="c1"># the winner varaible will now be check within the board object</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
+        # the winner varaible will now be check within the board object
+        self.check_winning()
+        self.check_stalemate()
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-          <span class="k">continue</span>
+        if self.winner == '':
+          continue
 
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;Stalemate&#39;</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">())</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-          <span class="k">break</span>
+        elif self.winner == 'Stalemate':
+          print(self.check_stalemate())
+          self.visualize_board()
+          break
 
-        <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-          <span class="k">break</span>
-      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span>
-</code></pre></div>
-
+        else:
+          print(self.check_winning())
+          self.visualize_board()
+          break
+      if self.winner != '':
+        return self
+</code></pre>
 <p><a name='x.0.1'></a></p>
-<h3 id="402-load-dataset">4.0.2 Load Dataset<a class="headerlink" href="#402-load-dataset" title="Permanent link">&para;</a></h3>
+<h3 id="402-load-dataset">4.0.2 Load Dataset</h3>
 <p><a href="#top">back to top</a></p>
-<h2 id="41-its-a-bug">4.1 It's a Bug!<a class="headerlink" href="#41-its-a-bug" title="Permanent link">&para;</a></h2>
+<h2 id="41-its-a-bug">4.1 It's a Bug!</h2>
 <p>Your friend is developing this tictactoe game in python, and they notice something peculiar; the game engine doesn't correctly identify a winning move if it's the last game square to be played, rather, it counts it as a tie! Help your friend debug their code!</p>
-<h3 id="411-make-the-error-repeatable">4.1.1 Make the error repeatable<a class="headerlink" href="#411-make-the-error-repeatable" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="c1">#here to make this operate in the same way everytime</span>
-<span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
-<span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>| | | |
+<h3 id="411-make-the-error-repeatable">4.1.1 Make the error repeatable</h3>
+<pre><code class="language-python">random.seed(12) #here to make this operate in the same way everytime
+game = GameEngine(setup='auto')
+game.setup_game()
+game.play_game()
+</code></pre>
+<pre><code>| | | |
 | | | |
 | | | |
 
@@ -913,7 +928,7 @@
 |X|O|O|
 |O|O|X|
 
-It&#39;s a stalemate!
+It's a stalemate!
 |X|O|X|
 |X|O|O|
 |O|O|X|
@@ -924,15 +939,13 @@ It&#39;s a stalemate!
 
 
 &lt;__main__.GameEngine at 0x7fecf3833590&gt;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># use random.seed(1) here to make this operate in the same way everytime</span>
-<span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
-<span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>| | | |
+</code></pre>
+<pre><code class="language-python"># use random.seed(1) here to make this operate in the same way everytime
+game = GameEngine(setup='auto')
+game.setup_game()
+game.play_game()
+</code></pre>
+<pre><code>| | | |
 | | | |
 | | | |
 
@@ -968,7 +981,7 @@ It&#39;s a stalemate!
 |X|O|O|
 |O|O|X|
 
-It&#39;s a stalemate!
+It's a stalemate!
 |X|O|X|
 |X|O|O|
 |O|O|X|
@@ -979,44 +992,33 @@ It&#39;s a stalemate!
 
 
 &lt;__main__.GameEngine at 0x7ff5a010e6d0&gt;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">game</span><span class="o">.</span><span class="n">winner</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&#39;O&#39;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">game</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&quot;It&#39;s a stalemate!&quot;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">game</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&quot;&#39;O&#39; Won!&quot;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">game</span><span class="o">.</span><span class="n">winner</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&#39;O&#39;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1">############################################################</span>
-<span class="c1">### COPY ALL OF THE FIRST CELL HERE AND MAKE YOUR EDITS ####</span>
-<span class="c1">############################################################</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
-<span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>| | | |
+</code></pre>
+<pre><code class="language-python">game.winner
+</code></pre>
+<pre><code>'O'
+</code></pre>
+<pre><code class="language-python">game.check_stalemate()
+</code></pre>
+<pre><code>"It's a stalemate!"
+</code></pre>
+<pre><code class="language-python">game.check_winning()
+</code></pre>
+<pre><code>"'O' Won!"
+</code></pre>
+<pre><code class="language-python">game.winner
+</code></pre>
+<pre><code>'O'
+</code></pre>
+<pre><code class="language-python">############################################################
+### COPY ALL OF THE FIRST CELL HERE AND MAKE YOUR EDITS ####
+############################################################
+</code></pre>
+<pre><code class="language-python">random.seed(12)
+game = GameEngine(setup='auto')
+game.setup_game()
+game.play_game()
+</code></pre>
+<pre><code>| | | |
 | | | |
 | | | |
 
@@ -1052,7 +1054,7 @@ It&#39;s a stalemate!
 |X|O|O|
 |O|O|X|
 
-&#39;O&#39; Won!
+'O' Won!
 |X|O|X|
 |X|O|O|
 |O|O|X|
@@ -1063,10 +1065,9 @@ It&#39;s a stalemate!
 
 
 &lt;__main__.GameEngine at 0x7ff59a34d910&gt;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>
-</code></pre></div>
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
               
             </article>
@@ -1117,10 +1118,12 @@ It&#39;s a stalemate!
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>

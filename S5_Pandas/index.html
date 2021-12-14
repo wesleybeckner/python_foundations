@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.23b6d78a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -38,7 +38,9 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -191,6 +193,21 @@
   
   
     <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
         About
       </a>
@@ -211,18 +228,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_3">
           Sessions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Sessions" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Sessions
         </label>
@@ -606,18 +623,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_4">
           Exercises
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Exercises" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Exercises
         </label>
@@ -710,18 +727,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Project" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Project
         </label>
@@ -1058,7 +1075,7 @@
                 
 
 <p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S5_Pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-session-5-pandas">Python Foundations, Session 5: Pandas<a class="headerlink" href="#python-foundations-session-5-pandas" title="Permanent link">&para;</a></h1>
+<h1 id="python-foundations-session-5-pandas">Python Foundations, Session 5: Pandas</h1>
 <p><strong>Instructor</strong>: Wesley Beckner<br></p>
 <p><strong>Contact</strong>: wesleybeckner@gmail.com</p>
 <p><i>special thanks to <a href="https://www.cheme.washington.edu/facultyfinder/david-beck">David Beck</a> for their contribution to this material</i>
@@ -1068,29 +1085,25 @@
 <p>Today, we will jump into the <strong>Pandas</strong> package.  Packages are collections of related functions.  These are the things we <code>import</code>. Pandas is a two dimensional data structure like a spreadsheet in Excel. In fact, we will be importing our first dataset and viewing it, with Pandas!</p>
 <p><br></p>
 <hr />
-<h2 id="51-pandas">5.1 Pandas<a class="headerlink" href="#51-pandas" title="Permanent link">&para;</a></h2>
-<h3 id="511-pandas-and-scikit-learn-load_datasets">5.1.1 Pandas and Scikit-Learn <code>load_datasets</code><a class="headerlink" href="#511-pandas-and-scikit-learn-load_datasets" title="Permanent link">&para;</a></h3>
+<h2 id="51-pandas">5.1 Pandas</h2>
+<h3 id="511-pandas-and-scikit-learn-load_datasets">5.1.1 Pandas and Scikit-Learn <code>load_datasets</code></h3>
 <p>We begin by loading the Panda's package.  Packages are collections of functions that share a common utility.  We've seen <code>import</code> before.  Let's use it to import Pandas and all the richness that pandas has.</p>
 <p>We'll also use a very useful feature of the scikit-learn toolkit, the <code>load_datasets</code> module. We will do some very rudimentary tasks with this dataset, just to demonstrate the utility of <code>load_datasets</code>, then we will switch over to a more relevant dataset for our purposes.</p>
-<div class="codehilite"><pre><span></span><code>import pandas
+<pre><code>import pandas
 from sklearn.datasets import load_wine
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_wine</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">import pandas
+from sklearn.datasets import load_wine
+</code></pre>
 <p>We import a function <code>load_wine</code> that loads a simple data set we can play with called the Wine recognition dataset from the 1980s.</p>
 <p>You can read more about that dataset <a href="https://archive.ics.uci.edu/ml/datasets/Wine">here</a></p>
-<div class="codehilite"><pre><span></span><code>dataset = load_wine()
+<pre><code>dataset = load_wine()
 print(dataset.DESCR)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_wine</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>.. _wine_dataset:
+</code></pre>
+<pre><code class="language-python">dataset = load_wine()
+print(dataset.DESCR)
+</code></pre>
+<pre><code>.. _wine_dataset:
 
 Wine recognition dataset
 ------------------------
@@ -1181,55 +1194,43 @@ School of Information and Computer Science.
   (All results using the leave-one-out technique)
 
   (2) S. Aeberhard, D. Coomans and O. de Vel, 
-  &quot;THE CLASSIFICATION PERFORMANCE OF RDA&quot; 
+  "THE CLASSIFICATION PERFORMANCE OF RDA" 
   Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of 
   Mathematics and Statistics, James Cook University of North Queensland. 
   (Also submitted to Journal of Chemometrics).
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>df = pandas.DataFrame()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-</code></pre></div>
-
-<h4 id="5111-import-as-pattern">5.1.1.1 import ... as ... pattern<a class="headerlink" href="#5111-import-as-pattern" title="Permanent link">&para;</a></h4>
+</code></pre>
+<pre><code>df = pandas.DataFrame()
+</code></pre>
+<pre><code class="language-python">df = pandas.DataFrame()
+</code></pre>
+<h4 id="5111-import-as-pattern">5.1.1.1 import ... as ... pattern</h4>
 <p>Because we'll use it so much, we often import under a shortened name using the <code>import ... as ...</code> pattern:</p>
-<div class="codehilite"><pre><span></span><code>import pandas as pd
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</code></pre></div>
-
-<h3 id="512-creating-pandas-dataframes">5.1.2 Creating pandas dataframes<a class="headerlink" href="#512-creating-pandas-dataframes" title="Permanent link">&para;</a></h3>
+<pre><code>import pandas as pd
+</code></pre>
+<pre><code class="language-python">import pandas as pd
+</code></pre>
+<h3 id="512-creating-pandas-dataframes">5.1.2 Creating pandas dataframes</h3>
 <p>Let's create an empty <em>data frame</em> and put the result into a variable called <code>df</code>.  This is a popular choice for a <em>data frame</em> variable name.</p>
-<div class="codehilite"><pre><span></span><code>df = pd.DataFrame()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code>df = pd.DataFrame()
+</code></pre>
+<pre><code class="language-python">df = pd.DataFrame()
+</code></pre>
 <p>Let's open the Wine dataset as a pandas data frame.  Notice we change the value of the <code>df</code> variable to point to a new data frame.</p>
-<div class="codehilite"><pre><span></span><code>df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-</code></pre></div>
-
-<h4 id="5121-from-excel-and-csv">5.1.2.1 From excel and csv<a class="headerlink" href="#5121-from-excel-and-csv" title="Permanent link">&para;</a></h4>
+<pre><code>df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+</code></pre>
+<pre><code class="language-python">df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+</code></pre>
+<h4 id="5121-from-excel-and-csv">5.1.2.1 From excel and csv</h4>
 <p>Please follow this <a href="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv">link</a></p>
 <p>This is what we call a csv or comma separated value file. We have a method reading these directly into pandas:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/wesleybeckner/technology_explorers/main/assets/imdb_movies.csv&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2718: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
+<pre><code class="language-python">df = pd.read_csv('https://raw.githubusercontent.com/wesleybeckner/technology_explorers/main/assets/imdb_movies.csv')
+</code></pre>
+<pre><code>/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2718: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
   interactivity=interactivity, compiler=compiler, result=result)
-</code></pre></div>
-
+</code></pre>
 <p>We can do this in a similar way with excel files. </p>
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.xlsx&#39;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">pd.read_excel('https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.xlsx')
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1409,11 +1410,10 @@ School of Information and Computer Science.
 <p>2506 rows × 10 columns</p>
 </div>
 
-<h4 id="5122-from-lists">5.1.2.2 from lists<a class="headerlink" href="#5122-from-lists" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
-</code></pre></div>
-
+<h4 id="5122-from-lists">5.1.2.2 from lists</h4>
+<pre><code class="language-python">my_list = [[1, 2, 3], [3, 4, 5], [5, 6, 7], [7, 8, 9]]
+pd.DataFrame(my_list)
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1466,10 +1466,9 @@ School of Information and Computer Science.
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]],</span>
-                   <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python">pd.DataFrame([[1, 2, 3], [3, 4, 5], [5, 6, 7], [7, 8, 9]],
+                   index=['a', 'b', 'c', 'd'], columns=['x', 'y', 'z'])
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1522,11 +1521,10 @@ School of Information and Computer Science.
 </table>
 </div>
 
-<h4 id="5123-from-dictionaries">5.1.2.3 from dictionaries<a class="headerlink" href="#5123-from-dictionaries" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">from_dict</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;airplane&#39;</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bannana&#39;</span><span class="p">,</span> <span class="s1">&#39;bubbles&#39;</span><span class="p">]})</span>
-<span class="n">from_dict</span>
-</code></pre></div>
-
+<h4 id="5123-from-dictionaries">5.1.2.3 from dictionaries</h4>
+<pre><code class="language-python">from_dict = pd.DataFrame({'A': ['apple', 'airplane'], 'B': ['bannana', 'bubbles']})
+from_dict
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1564,28 +1562,23 @@ School of Information and Computer Science.
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">from_dict</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>{&#39;A&#39;: {0: &#39;apple&#39;, 1: &#39;airplane&#39;}, &#39;B&#39;: {0: &#39;bannana&#39;, 1: &#39;bubbles&#39;}}
-</code></pre></div>
-
-<h4 id="exercise-2-create-a-dataframe">🏋️ Exercise 2: Create a DataFrame<a class="headerlink" href="#exercise-2-create-a-dataframe" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python">from_dict.to_dict()
+</code></pre>
+<pre><code>{'A': {0: 'apple', 1: 'airplane'}, 'B': {0: 'bannana', 1: 'bubbles'}}
+</code></pre>
+<h4 id="exercise-2-create-a-dataframe">🏋️ Exercise 2: Create a DataFrame</h4>
 <p>Create a dictionary with the following keys: <code>movies, songs, books</code>. In each key list your top 5 favorites in the cooresponding category. Then use <code>pd.DataFrame</code> to turn this into a dictionary.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Ex 2</span>
-</code></pre></div>
-
-<h4 id="5124-on-pandasseries">5.1.2.4 on <code>pandas.Series</code><a class="headerlink" href="#5124-on-pandasseries" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python"># Cell for Ex 2
+</code></pre>
+<h4 id="5124-on-pandasseries">5.1.2.4 on <code>pandas.Series</code></h4>
 <p>pandas <code>Series</code> objects will percolate in our experience here and there, however they are not so important as for us to wish to spend dedicated time on them. For now, know that they are a lower-level data collection in the pandas framework. You can think of them as an individual column or row in the pandas dataframe. For more practice with these you can refer to <a href="">this documentation</a></p>
-<h3 id="513-viewing-pandas-dataframes">5.1.3 Viewing pandas dataframes<a class="headerlink" href="#513-viewing-pandas-dataframes" title="Permanent link">&para;</a></h3>
+<h3 id="513-viewing-pandas-dataframes">5.1.3 Viewing pandas dataframes</h3>
 <p>The <code>head()</code> and <code>tail()</code> methods show us the first and last rows of the data.</p>
-<div class="codehilite"><pre><span></span><code>df.head()
+<pre><code>df.head()
 df.tail()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">df.head()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1758,9 +1751,8 @@ df.tail()
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">df.tail()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1934,49 +1926,38 @@ df.tail()
 </div>
 
 <p>The <code>shape</code> attribute shows us the number of elements:</p>
-<div class="codehilite"><pre><span></span><code>df.shape
-</code></pre></div>
-
+<pre><code>df.shape
+</code></pre>
 <p>Note it doesn't have the <code>()</code> because it isn't a <strong><em>function</em></strong> - it is an <strong><em>attribute</em></strong> or variable attached to the <code>df</code> object.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>(85855, 22)
-</code></pre></div>
-
+<pre><code class="language-python">df.shape
+</code></pre>
+<pre><code>(85855, 22)
+</code></pre>
 <p>The <code>columns</code> attribute gives us the column names</p>
-<div class="codehilite"><pre><span></span><code>df.columns
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Index([&#39;imdb_title_id&#39;, &#39;title&#39;, &#39;original_title&#39;, &#39;year&#39;, &#39;date_published&#39;,
-       &#39;genre&#39;, &#39;duration&#39;, &#39;country&#39;, &#39;language&#39;, &#39;director&#39;, &#39;writer&#39;,
-       &#39;production_company&#39;, &#39;actors&#39;, &#39;description&#39;, &#39;avg_vote&#39;, &#39;votes&#39;,
-       &#39;budget&#39;, &#39;usa_gross_income&#39;, &#39;worlwide_gross_income&#39;, &#39;metascore&#39;,
-       &#39;reviews_from_users&#39;, &#39;reviews_from_critics&#39;],
-      dtype=&#39;object&#39;)
-</code></pre></div>
-
+<pre><code>df.columns
+</code></pre>
+<pre><code class="language-python">df.columns
+</code></pre>
+<pre><code>Index(['imdb_title_id', 'title', 'original_title', 'year', 'date_published',
+       'genre', 'duration', 'country', 'language', 'director', 'writer',
+       'production_company', 'actors', 'description', 'avg_vote', 'votes',
+       'budget', 'usa_gross_income', 'worlwide_gross_income', 'metascore',
+       'reviews_from_users', 'reviews_from_critics'],
+      dtype='object')
+</code></pre>
 <p>The <code>index</code> attribute gives us the index names</p>
-<div class="codehilite"><pre><span></span><code>df.index
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">index</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>RangeIndex(start=0, stop=85855, step=1)
-</code></pre></div>
-
+<pre><code>df.index
+</code></pre>
+<pre><code class="language-python">df.index
+</code></pre>
+<pre><code>RangeIndex(start=0, stop=85855, step=1)
+</code></pre>
 <p>The <code>dtypes</code> attribute gives the data types of each column, remember the data type <em><em>floating point</em></em>*?:</p>
-<div class="codehilite"><pre><span></span><code>df.dtypes
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>imdb_title_id             object
+<pre><code>df.dtypes
+</code></pre>
+<pre><code class="language-python">df.dtypes
+</code></pre>
+<pre><code>imdb_title_id             object
 title                     object
 original_title            object
 year                      object
@@ -1999,11 +1980,9 @@ metascore                float64
 reviews_from_users       float64
 reviews_from_critics     float64
 dtype: object
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">df.describe()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2107,22 +2086,19 @@ dtype: object
 </table>
 </div>
 
-<h4 id="exercise-3-viewing-dataframes">🏋️ Exercise 3: Viewing DataFrames<a class="headerlink" href="#exercise-3-viewing-dataframes" title="Permanent link">&para;</a></h4>
+<h4 id="exercise-3-viewing-dataframes">🏋️ Exercise 3: Viewing DataFrames</h4>
 <p>Using the dataframe you made in exercise 1, return the following attributes: the datatype stored in each column, the column names, the indices, and the shape.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Ex 3</span>
-</code></pre></div>
-
-<h3 id="514-manipulating-data-with-pandas">5.1.4 Manipulating data with <code>pandas</code><a class="headerlink" href="#514-manipulating-data-with-pandas" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># Cell for Ex 3
+</code></pre>
+<h3 id="514-manipulating-data-with-pandas">5.1.4 Manipulating data with <code>pandas</code></h3>
 <p>Here we'll cover some key features of manipulating data with pandas</p>
-<h4 id="5141-selection">5.1.4.1 Selection<a class="headerlink" href="#5141-selection" title="Permanent link">&para;</a></h4>
+<h4 id="5141-selection">5.1.4.1 Selection</h4>
 <p>Access columns by name using square-bracket indexing:</p>
-<div class="codehilite"><pre><span></span><code>df[&#39;duration&#39;]
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>0         45
+<pre><code>df['duration']
+</code></pre>
+<pre><code class="language-python">df['duration']
+</code></pre>
+<pre><code>0         45
 1         70
 2         53
 3        100
@@ -2134,16 +2110,13 @@ dtype: object
 85853     98
 85854     74
 Name: duration, Length: 85855, dtype: int64
-</code></pre></div>
-
+</code></pre>
 <p>Mathematical operations on columns happen <em>element-wise</em>:</p>
-<div class="codehilite"><pre><span></span><code>df[&#39;duration&#39;] / 60
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">60</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>0        0.750000
+<pre><code>df['duration'] / 60
+</code></pre>
+<pre><code class="language-python">df['duration'] / 60
+</code></pre>
+<pre><code>0        0.750000
 1        1.166667
 2        0.883333
 3        1.666667
@@ -2155,23 +2128,18 @@ Name: duration, Length: 85855, dtype: int64
 85853    1.633333
 85854    1.233333
 Name: duration, Length: 85855, dtype: float64
-</code></pre></div>
-
+</code></pre>
 <p>Columns can be created (or overwritten) with the assignment operator.
 Let's create a column with duration in hours.</p>
-<div class="codehilite"><pre><span></span><code>df[&#39;duration (hours)&#39;] = df[&#39;duration&#39;] / 60
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration (hours)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">60</span>
-</code></pre></div>
-
+<pre><code>df['duration (hours)'] = df['duration'] / 60
+</code></pre>
+<pre><code class="language-python">df['duration (hours)'] = df['duration'] / 60
+</code></pre>
 <p>Let's use the <code>.head()</code> <strong><em>function</em></strong> to see our new data!</p>
-<div class="codehilite"><pre><span></span><code>df.head()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code>df.head()
+</code></pre>
+<pre><code class="language-python">df.head()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2350,7 +2318,7 @@ Let's create a column with duration in hours.</p>
 </table>
 </div>
 
-<h5 id="51411-loc-and-iloc">5.1.4.1.1 <code>loc</code> and <code>iloc</code><a class="headerlink" href="#51411-loc-and-iloc" title="Permanent link">&para;</a></h5>
+<h5 id="51411-loc-and-iloc">5.1.4.1.1 <code>loc</code> and <code>iloc</code></h5>
 <p>Pandas provides a powerful way to work with both rows and columns together, optionally using their label indices or numeric indices.</p>
 <ul>
 <li>
@@ -2363,15 +2331,12 @@ Purely label-location based indexer for selection by label (but may also be used
 Purely integer-location based indexing for selection by position (but may also be used with a boolean array).</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&#39;title&#39;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]]</span>
-</code></pre></div>
-
+<pre><code class="language-python">df.columns[1]
+</code></pre>
+<pre><code>'title'
+</code></pre>
+<pre><code class="language-python">df.loc[:5:2, [df.columns[1]]]
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2410,9 +2375,8 @@ Purely integer-location based indexing for selection by position (but may also b
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
-</code></pre></div>
-
+<pre><code class="language-python">df.iloc[-5:, [3,5]]
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2465,11 +2429,10 @@ Purely integer-location based indexing for selection by position (but may also b
 </table>
 </div>
 
-<h5 id="51412-column-vs-index-access">5.1.4.1.2 column vs index access<a class="headerlink" href="#51412-column-vs-index-access" title="Permanent link">&para;</a></h5>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>0     45
+<h5 id="51412-column-vs-index-access">5.1.4.1.2 column vs index access</h5>
+<pre><code class="language-python">df['duration'][0:10]
+</code></pre>
+<pre><code>0     45
 1     70
 2     53
 3    100
@@ -2480,18 +2443,15 @@ Purely integer-location based indexing for selection by position (but may also b
 8    120
 9     55
 Name: duration, dtype: int64
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># df[0][&#39;duration&#39;] # will return an error</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span><span class="o">*</span><span class="mi">4</span>
-<span class="n">mydf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> 
-                    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">],</span> 
-                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">])</span>
-<span class="n">mydf</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python"># df[0]['duration'] # will return an error
+</code></pre>
+<pre><code class="language-python">my_list = [[10, 20, 30]]*4
+mydf = pd.DataFrame(my_list, 
+                    index=['a','b','c','d'], 
+                    columns=['alpha', 'beta', 'gamma'])
+mydf
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2544,41 +2504,35 @@ Name: duration, dtype: int64
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">mydf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mychange&#39;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># using this you will get a setting</span>
-<span class="c1"># with copy warning (depending on your pandas warning settings)</span>
-<span class="c1"># mydf[&#39;alpha&#39;][&#39;a&#39;] = &#39;newchange&#39;</span>
-</code></pre></div>
-
+<pre><code class="language-python">mydf.loc['a', 'alpha'] = 'mychange'
+</code></pre>
+<pre><code class="language-python"># using this you will get a setting
+# with copy warning (depending on your pandas warning settings)
+# mydf['alpha']['a'] = 'newchange'
+</code></pre>
 <p>You want to use <code>loc</code> or <code>iloc</code> when setting new values to pandas dataframes.</p>
-<h5 id="exercise-4-selecting">🏋️ Exercise 4: Selecting<a class="headerlink" href="#exercise-4-selecting" title="Permanent link">&para;</a></h5>
+<h5 id="exercise-4-selecting">🏋️ Exercise 4: Selecting</h5>
 <p>select the first 10 rows of the country, genre, and year columns using <code>loc</code>. Repeat the same exercise using <code>iloc</code></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Ex 4</span>
-</code></pre></div>
-
-<h4 id="5142-filtering">5.1.4.2 Filtering<a class="headerlink" href="#5142-filtering" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python"># Cell for Ex 4
+</code></pre>
+<h4 id="5142-filtering">5.1.4.2 Filtering</h4>
 <p>filtering down your selection will be BIGLY useful in your data quests</p>
-<h5 id="51421-by-string">5.1.4.2.1 By String<a class="headerlink" href="#51421-by-string" title="Permanent link">&para;</a></h5>
+<h5 id="51421-by-string">5.1.4.2.1 By String</h5>
 <p>one of the first tools we'll use to filter our dataset is the <code>.str.contains</code> method. Let's take an example.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># remember, if we don&#39;t remember our column mames we can quickly pull them up </span>
-<span class="c1"># with:</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Index([&#39;imdb_title_id&#39;, &#39;title&#39;, &#39;original_title&#39;, &#39;year&#39;, &#39;date_published&#39;,
-       &#39;genre&#39;, &#39;duration&#39;, &#39;country&#39;, &#39;language&#39;, &#39;director&#39;, &#39;writer&#39;,
-       &#39;production_company&#39;, &#39;actors&#39;, &#39;description&#39;, &#39;avg_vote&#39;, &#39;votes&#39;,
-       &#39;budget&#39;, &#39;usa_gross_income&#39;, &#39;worlwide_gross_income&#39;, &#39;metascore&#39;,
-       &#39;reviews_from_users&#39;, &#39;reviews_from_critics&#39;, &#39;duration (hours)&#39;],
-      dtype=&#39;object&#39;)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;a.i.&#39;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>[0        False
+<pre><code class="language-python"># remember, if we don't remember our column mames we can quickly pull them up 
+# with:
+df.columns
+</code></pre>
+<pre><code>Index(['imdb_title_id', 'title', 'original_title', 'year', 'date_published',
+       'genre', 'duration', 'country', 'language', 'director', 'writer',
+       'production_company', 'actors', 'description', 'avg_vote', 'votes',
+       'budget', 'usa_gross_income', 'worlwide_gross_income', 'metascore',
+       'reviews_from_users', 'reviews_from_critics', 'duration (hours)'],
+      dtype='object')
+</code></pre>
+<pre><code class="language-python">[df['description'].str.contains('a.i.', na=False)]
+</code></pre>
+<pre><code>[0        False
  1         True
  2         True
  3        False
@@ -2590,17 +2544,13 @@ Name: duration, dtype: int64
  85853    False
  85854    False
  Name: description, Length: 85855, dtype: bool]
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">17920</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>&#39;A scientist creates Proteus--an organic super computer with artificial intelligence which becomes obsessed with human beings, and in particular the creators wife.&#39;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;artificial intelligence&#39;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">df.iloc[17920]['description']
+</code></pre>
+<pre><code>'A scientist creates Proteus--an organic super computer with artificial intelligence which becomes obsessed with human beings, and in particular the creators wife.'
+</code></pre>
+<pre><code class="language-python">df[df['description'].str.contains('artificial intelligence', na=False)]
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2962,9 +2912,8 @@ Name: duration, dtype: int64
 </div>
 
 <p>or if you know the exact string you are looking for</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Fight Club&quot;</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">df[df['title'] == &quot;Fight Club&quot;]
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3039,10 +2988,9 @@ Name: duration, dtype: int64
 </table>
 </div>
 
-<h5 id="51422-by-numerical-value">5.1.4.2.2 By numerical value<a class="headerlink" href="#51422-by-numerical-value" title="Permanent link">&para;</a></h5>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;votes&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">]</span>
-</code></pre></div>
-
+<h5 id="51422-by-numerical-value">5.1.4.2.2 By numerical value</h5>
+<pre><code class="language-python">df[df['votes'] &gt; 1000]
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3378,21 +3326,19 @@ Name: duration, dtype: int64
 <p>29362 rows × 23 columns</p>
 </div>
 
-<h5 id="exercise-5-filtering">🏋️ Exercise 5: Filtering<a class="headerlink" href="#exercise-5-filtering" title="Permanent link">&para;</a></h5>
+<h5 id="exercise-5-filtering">🏋️ Exercise 5: Filtering</h5>
 <ul>
 <li>Filter <code>df</code> for all the movies that are longer than 2 hours</li>
 <li>Filter <code>df</code> for all movies where 'day' is in the title</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Ex 5</span>
-</code></pre></div>
-
-<h4 id="5143-select-filter-operation">5.1.4.3 Select, filter, operation<a class="headerlink" href="#5143-select-filter-operation" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python"># Cell for Ex 5
+</code></pre>
+<h4 id="5143-select-filter-operation">5.1.4.3 Select, filter, operation</h4>
 <p>The real power of Pandas comes in its tools for grouping and aggregating data. Here we'll look at <em>value counts</em> and the basics of <em>group-by</em> operations.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># a basic select, filter, operate procedure would look like:</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">][</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>count    28511.000000
+<pre><code class="language-python"># a basic select, filter, operate procedure would look like:
+df[df['country'] == 'USA']['duration'].describe()
+</code></pre>
+<pre><code>count    28511.000000
 mean        93.050437
 std         18.576873
 min         42.000000
@@ -3401,13 +3347,11 @@ min         42.000000
 75%        100.000000
 max        398.000000
 Name: duration, dtype: float64
-</code></pre></div>
-
+</code></pre>
 <p>we can invert the selection with <code>~</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">)][</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>count    57344.000000
+<pre><code class="language-python">df[~(df['country'] == 'USA')]['duration'].describe()
+</code></pre>
+<pre><code>count    57344.000000
 mean       103.981410
 std         23.459158
 min         41.000000
@@ -3416,20 +3360,16 @@ min         41.000000
 75%        112.000000
 max        808.000000
 Name: duration, dtype: float64
-</code></pre></div>
-
+</code></pre>
 <p>In preparation for grouping the data, let's bin the instances by their duration (we could have chosen any numerical column). For that, we'll use <code>pd.cut</code>.  The documentation for <code>pd.cut</code> can be found <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html">here</a>. It is used to bin values into discrete intervals.  This is like a histogram where for each <em>bin</em> along the range of data values, you count the number of occurrences of that bin.  in our example, we'll use 10 bins and let Pandas decide how to evenly divide the range into the bins.  Let's see it in action.</p>
-<div class="codehilite"><pre><span></span><code>df[&#39;duration_group&#39;] = pd.cut(df[&#39;duration&#39;], 10)
+<pre><code>df['duration_group'] = pd.cut(df['duration'], 10)
 df.head()
 df.dtypes
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration_group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code class="language-python">df['duration_group'] = pd.cut(df['duration'], 10)
+</code></pre>
+<pre><code class="language-python">df.head()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3614,10 +3554,9 @@ df.dtypes
 </table>
 </div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>imdb_title_id              object
+<pre><code class="language-python">df.dtypes
+</code></pre>
+<pre><code>imdb_title_id              object
 title                      object
 original_title             object
 year                       object
@@ -3642,19 +3581,16 @@ reviews_from_critics      float64
 duration (hours)          float64
 duration_group           category
 dtype: object
-</code></pre></div>
-
+</code></pre>
 <p>Pandas includes an array of useful functionality for manipulating and analyzing tabular data.
 We'll take a look at two of these here.</p>
 <p>The <code>pandas.value_counts</code> returns statistics on the unique values within each column.</p>
 <p>We can use it, for example, to break down the movies by their duration group that we just created:</p>
-<div class="codehilite"><pre><span></span><code>pd.value_counts(df[&#39;duration_group&#39;], sort=False)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration_group&#39;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>(40.233, 117.7]    72368
+<pre><code>pd.value_counts(df['duration_group'], sort=False)
+</code></pre>
+<pre><code class="language-python">pd.value_counts(df['duration_group'], sort=False)
+</code></pre>
+<pre><code>(40.233, 117.7]    72368
 (117.7, 194.4]     13197
 (194.4, 271.1]       228
 (271.1, 347.8]        40
@@ -3665,16 +3601,13 @@ We'll take a look at two of these here.</p>
 (654.6, 731.3]         1
 (731.3, 808.0]         1
 Name: duration_group, dtype: int64
-</code></pre></div>
-
+</code></pre>
 <p>What happens if we try this on a continuous valued variable?</p>
-<div class="codehilite"><pre><span></span><code>pd.value_counts(df[&#39;duration&#39;])
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>90     5162
+<pre><code>pd.value_counts(df['duration'])
+</code></pre>
+<pre><code class="language-python">pd.value_counts(df['duration'])
+</code></pre>
+<pre><code>90     5162
 95     3194
 100    3106
 92     2418
@@ -3686,9 +3619,8 @@ Name: duration_group, dtype: int64
 729       1
 319       1
 Name: duration, Length: 266, dtype: int64
-</code></pre></div>
-
-<h5 id="exercise-6-value_counts-unique-nunique">🏋️ Exercise 6: <code>value_counts, unique, nunique</code><a class="headerlink" href="#exercise-6-value_counts-unique-nunique" title="Permanent link">&para;</a></h5>
+</code></pre>
+<h5 id="exercise-6-value_counts-unique-nunique">🏋️ Exercise 6: <code>value_counts, unique, nunique</code></h5>
 <p>We can do a little data exploration with this by seeing how common different values are. Play around with these pandas methods:</p>
 <ul>
 <li><code>value_counts()</code></li>
@@ -3702,23 +3634,20 @@ Name: duration, Length: 266, dtype: int64
 <li>(and you are already using operation with the above mentioned pandas methods, value_counts, unique, nunique (: )</li>
 </ul>
 <p>Do so with 3 different columns in the dataframe</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 6</span>
-</code></pre></div>
-
-<h4 id="5144-group-by-operation">5.1.4.4 Group-by Operation<a class="headerlink" href="#5144-group-by-operation" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python"># Cell for Exercise 6
+</code></pre>
+<h4 id="5144-group-by-operation">5.1.4.4 Group-by Operation</h4>
 <p>One of the killer features of the Pandas dataframe is the ability to do group-by operations.
 You can visualize the group-by like this (image borrowed from the <a href="http://shop.oreilly.com/product/0636920034919.do">Python Data Science Handbook</a>)</p>
 <p><img alt="image" src="https://swcarpentry.github.io/r-novice-gapminder/fig/12-plyr-fig1.png" /></p>
-<h4 id="5145-summary-statistics-with-groupby-value_counts-count-describe">5.1.4.5 Summary statistics with groupby: <code>value_counts</code>,  <code>count</code>, <code>describe</code><a class="headerlink" href="#5145-summary-statistics-with-groupby-value_counts-count-describe" title="Permanent link">&para;</a></h4>
+<h4 id="5145-summary-statistics-with-groupby-value_counts-count-describe">5.1.4.5 Summary statistics with groupby: <code>value_counts</code>,  <code>count</code>, <code>describe</code></h4>
 <p>Let's break take this in smaller steps.
 Recall our <code>duration_group</code> column.</p>
-<div class="codehilite"><pre><span></span><code>pd.value_counts(df[&#39;duration_group&#39;])
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration_group&#39;</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>(40.233, 117.7]    72368
+<pre><code>pd.value_counts(df['duration_group'])
+</code></pre>
+<pre><code class="language-python">pd.value_counts(df['duration_group'])
+</code></pre>
+<pre><code>(40.233, 117.7]    72368
 (117.7, 194.4]     13197
 (194.4, 271.1]       228
 (271.1, 347.8]        40
@@ -3729,15 +3658,12 @@ Recall our <code>duration_group</code> column.</p>
 (654.6, 731.3]         1
 (577.9, 654.6]         1
 Name: duration_group, dtype: int64
-</code></pre></div>
-
+</code></pre>
 <p><code>groupby</code> allows us to look at the number of values for each column and each value.  The group by documentation is <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">here</a>.  Basically, <code>groupby</code> allows us to create <em>groups</em> of records based on their values. Let's count how many records, or rows, in our data set fall into each bin of our duration data. </p>
-<div class="codehilite"><pre><span></span><code>df.groupby([&#39;duration_group&#39;]).count()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;duration_group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code>df.groupby(['duration_group']).count()
+</code></pre>
+<pre><code class="language-python">df.groupby(['duration_group']).count()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4073,12 +3999,10 @@ Name: duration_group, dtype: int64
 </div>
 
 <p>Now, let's find the mean of each of the columns for each <code>duration_group</code>.  <em>Notice</em> what happens to the non-numeric columns.</p>
-<div class="codehilite"><pre><span></span><code>df.groupby([&#39;duration_group&#39;]).mean()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;duration_group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code>df.groupby(['duration_group']).mean()
+</code></pre>
+<pre><code class="language-python">df.groupby(['duration_group']).mean()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4222,12 +4146,10 @@ Name: duration_group, dtype: int64
 </div>
 
 <p>You can specify a groupby using the names of table columns and compute other functions, such as the <code>sum</code>, <code>count</code>, <code>std</code>, and <code>describe</code>.</p>
-<div class="codehilite"><pre><span></span><code>df.groupby([&#39;duration_group&#39;])[&#39;metascore&#39;].describe()
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;duration_group&#39;</span><span class="p">])[</span><span class="s1">&#39;metascore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code>df.groupby(['duration_group'])['metascore'].describe()
+</code></pre>
+<pre><code class="language-python">df.groupby(['duration_group'])['metascore'].describe()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4383,13 +4305,11 @@ Name: duration_group, dtype: int64
 </div>
 
 <p>The simplest version of a groupby looks like this, and you can use almost any aggregation function you wish (mean, median, sum, minimum, maximum, standard deviation, count, etc.)</p>
-<div class="codehilite"><pre><span></span><code>&lt;data object&gt;.groupby(&lt;grouping values&gt;).&lt;aggregate&gt;()
-</code></pre></div>
-
+<pre><code>&lt;data object&gt;.groupby(&lt;grouping values&gt;).&lt;aggregate&gt;()
+</code></pre>
 <p>You can even group by multiple values: for example we can look at the metascore grouped by the <code>duration_group</code> and <code>country</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;duration_group&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">])[</span><span class="s1">&#39;metascore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">df.groupby(['duration_group', 'country'])['metascore'].describe()
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4564,7 +4484,7 @@ Name: duration_group, dtype: int64
 <p>5565 rows × 8 columns</p>
 </div>
 
-<h5 id="exercise-7-group-by">🏋️ Exercise 7: Group-by<a class="headerlink" href="#exercise-7-group-by" title="Permanent link">&para;</a></h5>
+<h5 id="exercise-7-group-by">🏋️ Exercise 7: Group-by</h5>
 <ol>
 <li>use <code>pd.cut</code> to perform a grouping of one or more of the dataframe columns
 <li>use <code>groupby</code> to group by that (those) columns and then perform
@@ -4574,8 +4494,8 @@ Name: duration_group, dtype: int64
 
 
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for excercise 7</span>
-</code></pre></div>
+<pre><code class="language-python"># Cell for excercise 7
+</code></pre>
 
               
             </article>
@@ -4641,10 +4561,12 @@ Name: duration_group, dtype: int64
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>
