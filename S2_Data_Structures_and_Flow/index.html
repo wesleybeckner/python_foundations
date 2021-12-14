@@ -1376,14 +1376,16 @@
 </tr>
 </tbody>
 </table>
-<p>Let's see an example of a decimal point containing number, known to computers as a <strong><em>floating point</em></strong> number. Let's use <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span> as the number.  (Pro tip: you can write equations in Markdown.  See this <a href="https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214">reference</a>.)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pickles = 3.14
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>print(pickles)
+<p>Let's see an example of a decimal point containing number, known to computers as a <strong><em>floating point</em></strong> number. Let's use $\pi$ as the number.  (Pro tip: you can write equations in Markdown.  See this <a href="https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214">reference</a>.)</p>
+<div class="codehilite"><pre><span></span><code>pickles = 3.14
+print(pickles)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">pickles</span> <span class="o">=</span> <span class="mf">3.14</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">type</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">pickles</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>3.14
 
 
@@ -1393,38 +1395,46 @@
 float
 </code></pre></div>
 
-<p>Cool.  We defined a variable named pickles containing a poor estimate of <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>.  Now every place the word <code>pickles</code> appears, it will have the value <code>3.14</code>, at least until we change it.  </p>
+<p>Cool.  We defined a variable named pickles containing a poor estimate of $\pi$.  Now every place the word <code>pickles</code> appears, it will have the value <code>3.14</code>, at least until we change it.  </p>
 <h4 id="exercise-1-picking-variable-names">🏋️ Exercise 1: Picking variable names<a class="headerlink" href="#exercise-1-picking-variable-names" title="Permanent link">&para;</a></h4>
-<p>Is <code>pickles</code> a good variable name for the value <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>?  If not, what would be a better name?  Is it in the <strong><em>reserved word</em></strong> list above?  Use the <code>code</code> cell below to create a new variable with your preferred name in it.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Cell for Exercise 1</span>
+<p>Is <code>pickles</code> a good variable name for the value $\pi$?  If not, what would be a better name?  Is it in the <strong><em>reserved word</em></strong> list above?  Use the <code>code</code> cell below to create a new variable with your preferred name in it.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 1</span>
 </code></pre></div>
+
 <p>Variables in Python have different data types.  The simple ones, we've already discussed such as an integer or <code>int</code>, a string or <code>str</code>, a decimal point containing number called a <strong><em>floating point</em></strong> number.  <strong><em>Floating point</em></strong> numbers are special and are stored in a computer's memory using <a href="http://steve.hollasch.net/cgindex/coding/ieeefloat.html">internal representations</a>.  One important thing to know about <strong><em>floating point</em></strong> numbers is that to a computer, the statement below may not always be true.  For now, just think about <strong><em>floating point</em></strong> numbers as approximately representing the decimal number you see.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>10.0 * 0.1 = 1.0
+<div class="codehilite"><pre><span></span><code>10.0 * 0.1 = 1.0
 </code></pre></div>
+
 <p>Variables can change their value in Python so we can change the value of <code>pickles</code> to something else.  For example, a definition of what pickles are.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pickles = &quot;A cucumber preserved in vinegar or brine.&quot;
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>print(pickles)
+<div class="codehilite"><pre><span></span><code>pickles = &quot;A cucumber preserved in vinegar or brine.&quot;
+print(pickles)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">pickles</span> <span class="o">=</span> <span class="s2">&quot;A cucumber preserved in vinegar or brine.&quot;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">pickles</span> <span class="o">=</span> <span class="s2">&quot;A cucumber preserved in vinegar or brine.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>A cucumber preserved in vinegar or brine.
 </code></pre></div>
 
 <h3 id="202-a-quick-review-of-comments">2.0.2 A quick review of comments<a class="headerlink" href="#202-a-quick-review-of-comments" title="Permanent link">&para;</a></h3>
 <p>Just like we should use good naming conventions for variables so they make sense, we should have good comments to help readers follow our code.  Good comments can turn a speck of coding gold into a valuable nugget of knowledge.  Bad or wrong comments are bugs.  If you want to learn more about why we call computer coding problems bugs, read about <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a> and see <a href="https://en.wikipedia.org/wiki/Grace_Hopper#/media/File:First_Computer_Bug,_1945.jpg">her photo of a <code>bug</code> in her notebook</a>.</p>
 <p>To comment out some text, use the <code>#</code> or hashtag or sometimes called the pound character. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>print(pickles)
+<div class="codehilite"><pre><span></span><code>print(pickles)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>A cucumber preserved in vinegar or brine.
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a># This is an example comment.  Notice it is in english and full sentences.  That is good style.
+<div class="codehilite"><pre><span></span><code># This is an example comment.  Notice it is in english and full sentences.  That is good style.
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># This is an example comment.  Notice it is in english and full sentences.  That is good style.</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># This is an example comment.  Notice it is in english and full sentences.  That is good style.</span>
 </code></pre></div>
+
 <hr />
 <h2 id="21-data-structures-variables-that-organize-data">2.1 Data Structures: Variables that organize data<a class="headerlink" href="#21-data-structures-variables-that-organize-data" title="Permanent link">&para;</a></h2>
 <p>Many variables you will encounter are more than the above simple <strong><em>data types</em></strong> (integers, strings, floating point numbers).  In fact, they may contain a few to many pieces of data rolled into one thing or <strong><em>data structure</em></strong>.  Next, we'll discuss two important <em>data structures</em>: <strong>lists</strong> and <strong>dictionaries</strong>.  There are many advanced <strong><em>data structures</em></strong> in Python that behave like <strong>lists</strong> and <strong>dictionaries</strong>, in different settings but their concepts are often similar.  Thus, understanding them here will help us understand more advanced concepts.  Let's start with the venerable <strong>list</strong>.</p>
@@ -1433,12 +1443,14 @@ float
 <p><em>For more than just shopping.</em>
 A list is an <strong><em>ordered</em> <em>collection</em></strong> of data.  By <strong><em>collection</em></strong>, we mean that it contains multiple data. By <strong><em>ordered</em></strong>, we mean that the data are arranged so that they appear first to last like words in a sentence.  The order is important for the meaning of the sentence.</p>
 <p>Let's begin by creating a list variable named <code>my_list</code> that contains three pieces of information.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>my_list = [&#39;I&#39;, &#39;like&#39;, &#39;pie&#39;]
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>my_list
+<div class="codehilite"><pre><span></span><code>my_list = [&#39;I&#39;, &#39;like&#39;, &#39;pie&#39;]
+my_list
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;like&#39;</span><span class="p">,</span> <span class="s1">&#39;pie&#39;</span><span class="p">]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">my_list</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;like&#39;</span><span class="p">,</span> <span class="s1">&#39;pie&#39;</span><span class="p">]</span>
+<span class="n">my_list</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;like&#39;, &#39;pie&#39;]
 </code></pre></div>
 
@@ -1470,101 +1482,123 @@ A list is an <strong><em>ordered</em> <em>collection</em></strong> of data.  By 
 <p><strong>People might start counting at <code>1</code>, but computers start counting at <code>0</code>.  The first element in a list has the index <code>0</code>, the last element in a list has the index of the length of the list minus 1.  For our list which is three elements long, the first index will be 0 and the last index will be <code>2</code>.</strong></p>
 <p><strong>Some programming languages also start counting at 1.  These include <a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a>, <a href="https://en.wikipedia.org/wiki/MATLAB">Matlab</a>, and the abominable <a href="https://en.wikipedia.org/wiki/R">R</a>.  This is unfortunate.  Be extra careful if you try to <a href="https://en.wikipedia.org/wiki/Porting">port code</a> from those languages to Python.</strong></p>
 <p>If you want to access a list element you can use its index.  The index value is designated by appending  <code>[</code> and <code>]</code> to the variable name with the index between.  Examples are always easier than words:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>my_list[0]
+<div class="codehilite"><pre><span></span><code>my_list[0]
 </code></pre></div>
+
 <p>Given what you know... What will this output?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;I&#39;
 </code></pre></div>
 
 <p>If you try to use an index that is larger than the length of the list minus 1, you will get an error.  Try it!</p>
 <p>The different colors means you made a boo boo!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>my_list[3]
+<div class="codehilite"><pre><span></span><code>my_list[3]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># my_list[3]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># my_list[3]</span>
 </code></pre></div>
+
 <p>The last line of the error report is the most informative for us now.  It should read:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>IndexError: list index out of range
+<div class="codehilite"><pre><span></span><code>IndexError: list index out of range
 </code></pre></div>
+
 <p>It is trying to tell you that an <code>IndexError</code> occured because the the index you tried to access is out of the range of <code>0</code> to <code>2</code>, inclusive.  Translation: stay in your lane, programmer!</p>
 <p>In addition to being able to recall or access a value of a list by the element's index in the list, we can change the value of the element.  We will also use the <code>[</code> <code>&lt;index&gt;</code> <code>]</code> notation but like when we set the value of a variable, we will use the <code>=</code> character.  Let's do it!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>my_list[2] = &#39;cake&#39;
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a>my_list
+<div class="codehilite"><pre><span></span><code>my_list[2] = &#39;cake&#39;
+my_list
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cake&#39;</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">my_list</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cake&#39;</span>
+<span class="n">my_list</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;like&#39;, &#39;cake&#39;]
 </code></pre></div>
 
 <h4 id="2111-append-and-other-list-functions">2.1.1.1 Append, and other list functions<a class="headerlink" href="#2111-append-and-other-list-functions" title="Permanent link">&para;</a></h4>
 <p>Finally, let's talk about empty lists and appending items to a list.  An empty list is created by setting a variable to <code>[]</code>.  This means the variable's <strong><em>data type</em></strong> is a list, but it contains no elements.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>a_new_list = []
+<div class="codehilite"><pre><span></span><code>a_new_list = []
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">a_new_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">a_new_list</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div>
+
 <p>We can append items to a list by using the <code>.append()</code> <strong><em>function</em></strong>.  We'll talk more about functions later, but when this <strong><em>function</em></strong> or <strong><em>method</em></strong> is used on a variable whose <strong><em>data type</em></strong> is list, it will append the value in between the <code>()</code> to the end of the list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>a_new_list.append(&quot;1st element&quot;)
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a>print(a_new_list)
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a>a_new_list.append(&quot;2nd element&quot;)
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a>print(a_new_list)
+<div class="codehilite"><pre><span></span><code>a_new_list.append(&quot;1st element&quot;)
+print(a_new_list)
+a_new_list.append(&quot;2nd element&quot;)
+print(a_new_list)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">a_new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;1st element&quot;</span><span class="p">)</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="n">a_new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;2nd element&quot;</span><span class="p">)</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">a_new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;1st element&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
+<span class="n">a_new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;2nd element&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;1st element&#39;]
 [&#39;1st element&#39;, &#39;2nd element&#39;]
 </code></pre></div>
 
 <p>Finally, in addition to the <code>.append()</code> <strong><em>function</em></strong>, there are a lot of <strong><em>functions</em></strong> (or <strong><em>methods</em></strong>) available for <strong><em>lists</em></strong>.  See a complete list of them <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">here</a>.</p>
 <p>One more we'll touch on quickly is the <code>len()</code> <strong><em>function</em></strong>.  It returns the length of a <strong><em>list</em></strong>.  Here is an example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>len(a_new_list)
+<div class="codehilite"><pre><span></span><code>len(a_new_list)
 </code></pre></div>
+
 <p>Before you run this cell.  What do you think it will output?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="n">a_new_list</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>2
 </code></pre></div>
 
 <hr />
 <h4 id="2112-slicing">2.1.1.2 Slicing<a class="headerlink" href="#2112-slicing" title="Permanent link">&para;</a></h4>
 <p>Sometimes you want to make a list from consecutive elements of a list.  This is called <strong><em>slicing</em></strong> where you cut up a list and get just the consecutive values you want.  <strong><em>Slicing</em></strong> is done with the <code>:</code> character in the index area between the <code>[</code> and the <code>]</code>.  Here is an example to pull just the last two items out of <code>my_list</code>.  We use the first index, then a <code>:</code>, then the last index plus 1.  Like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>my_list[1:3]
+<div class="codehilite"><pre><span></span><code>my_list[1:3]
 </code></pre></div>
+
 <p>You might be asking... <strong>WHY +1??</strong>  This is because with <em>slices</em> or <em>ranges</em> in Python are known as <strong><a href="https://en.wikipedia.org/wiki/Interval_(mathematics)"><em>half-open intervals</em></a></strong> where the lower bound is inclusive and the upper bound is the non-inclusive limit.  <strong>TL;DR</strong>: add one to the upper end of a <em>slice</em> or a <em>range</em> in Python.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>my_list[1:3]
+<div class="codehilite"><pre><span></span><code>my_list[1:3]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;like&#39;, &#39;cake&#39;]
 </code></pre></div>
 
 <p>Just for giggles, try it with <code>my_list[1:2]</code>.  You will see the <em>range</em> of the <em>slice</em> is only <code>1</code>.  That's because <code>2 - 1 = 1</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>my_list[1:2]
+<div class="codehilite"><pre><span></span><code>my_list[1:2]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;like&#39;]
 </code></pre></div>
 
 <p>You don't even need to use the upper bound if all you really mean is <em>the end of the list</em>.  For that, you can leave the index empty.  Hot dog!  Let's see an example...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>my_list[1:]
+<div class="codehilite"><pre><span></span><code>my_list[1:]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;like&#39;, &#39;cake&#39;]
 </code></pre></div>
 
 <p><strong>But wait, there's more!</strong>  You can set multiple elements of a list <strong>at the same time</strong> by <em>slicing</em>.  <strong>Dig this!</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a>my_list[1:] = [&#39;love&#39;, &#39;puppies&#39;]
-<a id="__codelineno-32-2" name="__codelineno-32-2"></a>my_list
+<div class="codehilite"><pre><span></span><code>my_list[1:] = [&#39;love&#39;, &#39;puppies&#39;]
+my_list
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;puppies&#39;</span><span class="p">]</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="n">my_list</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;puppies&#39;</span><span class="p">]</span>
+<span class="n">my_list</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;love&#39;, &#39;puppies&#39;]
 </code></pre></div>
 
@@ -1579,69 +1613,81 @@ A list is an <strong><em>ordered</em> <em>collection</em></strong> of data.  By 
 <h4 id="2113-negative-indices">2.1.1.3 Negative indices?!?!<a class="headerlink" href="#2113-negative-indices" title="Permanent link">&para;</a></h4>
 <p>A brief note for folks who want to learn more.  You can use negative index numbers to access from the end of the list towards the front.  That is, a negative 1 (<code>-1</code>) is the last element in the list.  A negative 2 (<code>-2</code>) is the second to last.  The same rules apply for slicing with the <code>:</code> character. </p>
 <p>A quick demo example...  Let's get last element in the list using negative indexing.  That will be <code>-1</code>.  Here goes...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>my_list[-1]
+<div class="codehilite"><pre><span></span><code>my_list[-1]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;puppies&#39;
 </code></pre></div>
 
 <p>We can also use <em>slicing</em> with <em>negative indices</em>. Remember, that <em>slicing</em> works the same way with <em>negative indices</em>, i.e. the the upper bound is non-inclusive.  Here is an example using upper and lower bounds.  Were you surprised by the results?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>my_list[-3:-1]
+<div class="codehilite"><pre><span></span><code>my_list[-3:-1]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;love&#39;]
 </code></pre></div>
 
 <hr />
 <h4 id="2114-lists-can-contain-most-anything">2.1.1.4 Lists can contain most anything<a class="headerlink" href="#2114-lists-can-contain-most-anything" title="Permanent link">&para;</a></h4>
 <p>So far, we've seen a list containing some strings.  That made our sentence analogy about the <em>ordering</em> of <em>objects</em> or strings in a list make sense.  But lists can contain a mixture of <em>data types</em> and <em>data structures</em>.  As a quick example, let's make a list that contains a integer, a string and a floating point number.  This will be a four element list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a>zoo = [ 42, &#39;Elephants&#39;, &#39;ate&#39;, 3.14 ]
+<div class="codehilite"><pre><span></span><code>zoo = [ 42, &#39;Elephants&#39;, &#39;ate&#39;, 3.14 ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Elephants&#39;</span><span class="p">,</span> <span class="s1">&#39;ate&#39;</span><span class="p">,</span> <span class="mf">3.14</span> <span class="p">]</span>
-<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="n">zoo</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Elephants&#39;</span><span class="p">,</span> <span class="s1">&#39;ate&#39;</span><span class="p">,</span> <span class="mf">3.14</span> <span class="p">]</span>
+<span class="n">zoo</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[42, &#39;Elephants&#39;, &#39;ate&#39;, 3.14]
 </code></pre></div>
 
 <p>We can even make a list of lists. <strong>META!</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a>list_of_lists = [
-<a id="__codelineno-40-2" name="__codelineno-40-2"></a>    [  42,  43,  44, 44  ],
-<a id="__codelineno-40-3" name="__codelineno-40-3"></a>    [ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39; ]
-<a id="__codelineno-40-4" name="__codelineno-40-4"></a>]
-<a id="__codelineno-40-5" name="__codelineno-40-5"></a>
-<a id="__codelineno-40-6" name="__codelineno-40-6"></a>list_of_lists[0]
-<a id="__codelineno-40-7" name="__codelineno-40-7"></a>
-<a id="__codelineno-40-8" name="__codelineno-40-8"></a>list_of_lists[0][1]
-<a id="__codelineno-40-9" name="__codelineno-40-9"></a>
-<a id="__codelineno-40-10" name="__codelineno-40-10"></a>a_list = list_of_lists[0]
-<a id="__codelineno-40-11" name="__codelineno-40-11"></a>a_list[1]
+<div class="codehilite"><pre><span></span><code>list_of_lists = [
+    [  42,  43,  44, 44  ],
+    [ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39; ]
+]
+
+list_of_lists[0]
+
+list_of_lists[0][1]
+
+a_list = list_of_lists[0]
+a_list[1]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-41-2" name="__codelineno-41-2"></a>    <span class="p">[</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">43</span><span class="p">,</span>  <span class="mi">44</span><span class="p">,</span> <span class="mi">45</span>  <span class="p">],</span>
-<a id="__codelineno-41-3" name="__codelineno-41-3"></a>    <span class="p">[</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span> <span class="p">]</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">43</span><span class="p">,</span>  <span class="mi">44</span><span class="p">,</span> <span class="mi">45</span>  <span class="p">],</span>
+    <span class="p">[</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span> <span class="p">]</span>
+<span class="p">]</span>
 </code></pre></div>
+
 <p>The important thing here is to have the right number of <code>[</code> and <code>]</code> to embed a list in a list separated between <code>,</code>.  Yeah, this <strong>is</strong> super meta.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[42, 43, 44, 45]
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>43
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;b&#39;
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="n">a_list</span> <span class="o">=</span> <span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="n">a_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">a_list</span> <span class="o">=</span> <span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>43
 </code></pre></div>
 
@@ -1652,8 +1698,9 @@ A list is an <strong><em>ordered</em> <em>collection</em></strong> of data.  By 
 <li> access <code>d</code> in list_of_lists
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="c1"># Cell for exercise 3</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for exercise 3</span>
 </code></pre></div>
+
 <hr />
 <h3 id="212-dictionaries">2.1.2 Dictionaries<a class="headerlink" href="#212-dictionaries" title="Permanent link">&para;</a></h3>
 <p><em>For more than just reading on a Friday night.</em>
@@ -1661,33 +1708,38 @@ Sometimes we want to <em>access</em> elements in a <em>data structure</em> by so
 <h4 id="2121-key-value-pairs">2.1.2.1 Key, value pairs<a class="headerlink" href="#2121-key-value-pairs" title="Permanent link">&para;</a></h4>
 <p>In the case of a Python <strong><em>dictionary</em></strong>, we call the definition a <strong><em>value</em></strong> and the way we look up the definition is a <strong><em>key</em></strong>.  This results in <strong><em>key</em></strong> and <strong><em>value</em></strong> pairs.  One <strong><em>key</em></strong> maps to one <strong><em>value</em></strong>.  In our analogy of a internet dictionary, this is the same as the word to definition pairs.</p>
 <p>Let's create a simple dictionary with a definition we have alread seen in the tutorials... Pickles. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a>my_dict = {} # create an empty dictionary
-<a id="__codelineno-47-2" name="__codelineno-47-2"></a>my_dict[&#39;pickles&#39;] = &quot;A cucumber preserved in vinegar or brine.&quot;
-<a id="__codelineno-47-3" name="__codelineno-47-3"></a>my_dict
+<div class="codehilite"><pre><span></span><code>my_dict = {} # create an empty dictionary
+my_dict[&#39;pickles&#39;] = &quot;A cucumber preserved in vinegar or brine.&quot;
+my_dict
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># create an empty dictionary</span>
-<a id="__codelineno-48-2" name="__codelineno-48-2"></a><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;pickles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A cucumber preserved in vinegar or brine.&quot;</span>
-<a id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="n">my_dict</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># create an empty dictionary</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;pickles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A cucumber preserved in vinegar or brine.&quot;</span>
+<span class="n">my_dict</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>{&#39;pickles&#39;: &#39;A cucumber preserved in vinegar or brine.&#39;}
 </code></pre></div>
 
 <p>Notice the use of the <code>#</code> comment.  Nice.  Unlike the list, for dictionaries, some of their operations use the <code>{</code> and <code>}</code> brackets.  Using a key to access or retrieve a value from the dictionary still uses the <code>[</code> and <code>]</code> brackets.  Stick with it, for realz.</p>
 <p>Case matters in a dictionary because the <code>key</code> is a <em>data type</em> itself.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a>my_dict[&#39;Pickles&#39;]
+<div class="codehilite"><pre><span></span><code>my_dict[&#39;Pickles&#39;]
 </code></pre></div>
+
 <p>returns an error (<code>KeyError: 'Pickles'</code>) and the following does not</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a>my_dict[&#39;pickles&#39;]
+<div class="codehilite"><pre><span></span><code>my_dict[&#39;pickles&#39;]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="c1"># my_dict[&#39;Pickles&#39;]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># my_dict[&#39;Pickles&#39;]</span>
 </code></pre></div>
+
 <p>This is a lot like the <code>IndexError</code> from the list case.</p>
 <p>Moving on... You can change the value of a dictionary <strong><em>key</em></strong> by <strong><em>reassigning</em></strong> it.  For example below, we use the same key <code>'pickles'</code> to change the definition of the word in our dictionary.  Notice we still use the <code>[</code> and <code>]</code> brackets but we use the <strong><em>key</em></strong> instead of the <strong><em>index</em></strong> like we did with lists.  The change we made in the string is that the cucumbers in pickles are usually small.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a>my_dict[&#39;pickles&#39;] = &quot;A small cucumber preserved in vinegar or brine.&quot;
+<p><code>my_dict['pickles'] = "A small cucumber preserved in vinegar or brine."</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;pickles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A small cucumber preserved in vinegar or brine.&quot;</span>
+<span class="n">my_dict</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;pickles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A small cucumber preserved in vinegar or brine.&quot;</span>
-<a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="n">my_dict</span>
-</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>{&#39;pickles&#39;: &#39;A small cucumber preserved in vinegar or brine.&#39;}
 </code></pre></div>
 
@@ -1710,20 +1762,23 @@ Sometimes we want to <em>access</em> elements in a <em>data structure</em> by so
 </tr>
 </tbody>
 </table>
-<p>Something like:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a>my_dict[&#39;list&#39;] = &quot;An ordered collection&quot;
-<a id="__codelineno-54-2" name="__codelineno-54-2"></a>print(my_dict)
+<p>Something like:</p>
+<div class="codehilite"><pre><span></span><code>my_dict[&#39;list&#39;] = &quot;An ordered collection&quot;
+print(my_dict)
 </code></pre></div>
-Is probably where we want to begin.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;An ordered collection&quot;</span>
-<a id="__codelineno-55-2" name="__codelineno-55-2"></a><span class="n">my_dict</span>
+
+<p>Is probably where we want to begin.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;An ordered collection&quot;</span>
+<span class="n">my_dict</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>{&#39;list&#39;: &#39;An ordered collection&#39;,
  &#39;pickles&#39;: &#39;A small cucumber preserved in vinegar or brine.&#39;}
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="c1"># my_dict[0]</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># my_dict[0]</span>
 </code></pre></div>
+
 <p>Finally, like the <strong><em>list's</em></strong> <code>.append()</code> <strong><em>function</em></strong>, there are a lot of <strong><em>functions</em></strong> (or <strong><em>methods</em></strong>) and <strong><em>attributes</em></strong> available for dictionaries.  See a complete list of them <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">here</a>.</p>
 <p>(we will cover the difference between a method and an attribute more concretely later on...)</p>
 <h2 id="22-flow-control-if-this-then-that">2.2 Flow control: If this, then that...<a class="headerlink" href="#22-flow-control-if-this-then-that" title="Permanent link">&para;</a></h2>
@@ -1738,9 +1793,10 @@ Is probably where we want to begin.</p>
 <p>Flow control refers how to programs do loops, conditional execution, and order of functional operations.  Let's start with conditionals, or the venerable <code>if</code> statement.</p>
 <h3 id="221-if">2.2.1 If<a class="headerlink" href="#221-if" title="Permanent link">&para;</a></h3>
 <p>Let's write a simple if statement</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="k">if</span> <span class="mi">5</span> <span class="o">==</span> <span class="mf">5.0</span><span class="p">:</span>
-<a id="__codelineno-57-2" name="__codelineno-57-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="mi">5</span> <span class="o">==</span> <span class="mf">5.0</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>True
 </code></pre></div>
 
@@ -1748,51 +1804,58 @@ Is probably where we want to begin.</p>
 <h4 id="2211-indentations-in-python">2.2.1.1 Indentations in python<a class="headerlink" href="#2211-indentations-in-python" title="Permanent link">&para;</a></h4>
 <p>Exercise 3.1: Writing and if statement</p>
 <p>practice writing a simple if statement, notice the automatic indentation</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="c1"># cell for exercise 3.1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for exercise 3.1</span>
 </code></pre></div>
+
 <h4 id="2212-conditional-fall-through-and-reserved-words">2.2.1.2 Conditional fall through and reserved words<a class="headerlink" href="#2212-conditional-fall-through-and-reserved-words" title="Permanent link">&para;</a></h4>
 <p>If statements can be use to execute some lines or block of code if a particular condition is satisfied.  E.g. Let's print something based on the entries in the list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a>mission = [&quot;let&#39;s&quot;, &quot;explore&quot;, &quot;some&quot;, &quot;data&quot;, &quot;!&quot;]
-<a id="__codelineno-59-2" name="__codelineno-59-2"></a>
-<a id="__codelineno-59-3" name="__codelineno-59-3"></a>if &#39;!&#39; in mission:
-<a id="__codelineno-59-4" name="__codelineno-59-4"></a>    print(&#39;#notaword&#39;)
+<div class="codehilite"><pre><span></span><code>mission = [&quot;let&#39;s&quot;, &quot;explore&quot;, &quot;some&quot;, &quot;data&quot;, &quot;!&quot;]
+
+if &#39;!&#39; in mission:
+    print(&#39;#notaword&#39;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="n">mission</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;let&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;explore&quot;</span><span class="p">,</span> <span class="s2">&quot;some&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">]</span>
-<a id="__codelineno-60-2" name="__codelineno-60-2"></a>
-<a id="__codelineno-60-3" name="__codelineno-60-3"></a><span class="k">if</span> <span class="s1">&#39;!&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
-<a id="__codelineno-60-4" name="__codelineno-60-4"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#notaword&#39;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">mission</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;let&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;explore&quot;</span><span class="p">,</span> <span class="s2">&quot;some&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="s1">&#39;!&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#notaword&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>#notaword
 </code></pre></div>
 
 <h5 id="22121-in">2.2.1.2.1 <code>in</code><a class="headerlink" href="#22121-in" title="Permanent link">&para;</a></h5>
 <p>Notice the use the special <strong><em>reserved word</em></strong> <strong>in</strong>.  This returns the value <code>True</code> when a value appears in a <strong><em>list</em></strong> and <code>False</code> when it does not.  Notice how it reads like English.  Readability is a key feature of Python and is part of the language design philosophy.</p>
 <p>Usually we want conditional logic on both sides of a binary condition, e.g. some action when <code>True</code> and some when <code>False</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a>if &#39;!&#39; in mission:
-<a id="__codelineno-61-2" name="__codelineno-61-2"></a>    print(&quot;This isn&#39;t a full word!&quot;)
-<a id="__codelineno-61-3" name="__codelineno-61-3"></a>else:
-<a id="__codelineno-61-4" name="__codelineno-61-4"></a>    print(&quot;Nothing to see here&quot;)
+<div class="codehilite"><pre><span></span><code>if &#39;!&#39; in mission:
+    print(&quot;This isn&#39;t a full word!&quot;)
+else:
+    print(&quot;Nothing to see here&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="k">if</span> <span class="s1">&#39;!&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This isn&#39;t a full word!&quot;</span><span class="p">)</span>
-<a id="__codelineno-62-3" name="__codelineno-62-3"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-62-4" name="__codelineno-62-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to see here&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="s1">&#39;!&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This isn&#39;t a full word!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to see here&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>This isn&#39;t a full word!
 </code></pre></div>
 
 <h5 id="22122-pass">2.2.1.2.2 <code>pass</code><a class="headerlink" href="#22122-pass" title="Permanent link">&para;</a></h5>
 <p>There is a special do nothing word: <code>pass</code> that skips over some arm of a conditional, e.g.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a>if &#39;data&#39; in mission:
-<a id="__codelineno-63-2" name="__codelineno-63-2"></a>    print(&quot;Congrats, you&#39;re working with data, it will be grand!&quot;)
-<a id="__codelineno-63-3" name="__codelineno-63-3"></a>else:
-<a id="__codelineno-63-4" name="__codelineno-63-4"></a>    pass
+<div class="codehilite"><pre><span></span><code>if &#39;data&#39; in mission:
+    print(&quot;Congrats, you&#39;re working with data, it will be grand!&quot;)
+else:
+    pass
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
-<a id="__codelineno-64-2" name="__codelineno-64-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congrats, you&#39;re working with data, it will be grand!&quot;</span><span class="p">)</span>
-<a id="__codelineno-64-3" name="__codelineno-64-3"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-64-4" name="__codelineno-64-4"></a>    <span class="k">pass</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congrats, you&#39;re working with data, it will be grand!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Congrats, you&#39;re working with data, it will be grand!
 </code></pre></div>
 
@@ -1800,82 +1863,90 @@ Is probably where we want to begin.</p>
 <p>In short, when you have one side of an <code>if</code> statement that has no code use an <code>else</code> and a <code>pass</code> to be a good citizen.  Remember, the person you will collaborate the most about your code is yourself in 3-6 months.  Love yourself, use <code>pass</code>.</p>
 <p><em>Note</em>: what have you noticed in this session about quotes?  What is the difference between <code>'</code> and <code>"</code>?</p>
 <p>Another simple example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1"></a>if True is False:
-<a id="__codelineno-65-2" name="__codelineno-65-2"></a>    print(&quot;I&#39;m so confused&quot;)
-<a id="__codelineno-65-3" name="__codelineno-65-3"></a>else:
-<a id="__codelineno-65-4" name="__codelineno-65-4"></a>    print(&quot;Everything is right with the world&quot;)
+<div class="codehilite"><pre><span></span><code>if True is False:
+    print(&quot;I&#39;m so confused&quot;)
+else:
+    print(&quot;Everything is right with the world&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1"></a><span class="k">if</span> <span class="kc">True</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-<a id="__codelineno-66-2" name="__codelineno-66-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m so confused&quot;</span><span class="p">)</span>
-<a id="__codelineno-66-3" name="__codelineno-66-3"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-66-4" name="__codelineno-66-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everything is right with the world&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="kc">True</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m so confused&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everything is right with the world&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Everything is right with the world
 </code></pre></div>
 
 <h5 id="22123-if-elif-and-else">2.2.1.2.3 <code>if</code>, <code>elif</code>, and <code>else</code><a class="headerlink" href="#22123-if-elif-and-else" title="Permanent link">&para;</a></h5>
 <p>It is always good practice to handle all cases explicity.  <strong><em>Conditional fall through</em></strong> is a common source of bugs.</p>
 <p>Sometimes we wish to test multiple conditions.  Use <code>if</code>, <code>elif</code>, and <code>else</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a>my_favorite = &#39;pie&#39;
-<a id="__codelineno-67-2" name="__codelineno-67-2"></a>
-<a id="__codelineno-67-3" name="__codelineno-67-3"></a>if my_favorite is &#39;cake&#39;:
-<a id="__codelineno-67-4" name="__codelineno-67-4"></a>    print(&quot;He likes cake!  I&#39;ll start making a double chocolate velvet cake right now!&quot;)
-<a id="__codelineno-67-5" name="__codelineno-67-5"></a>elif my_favorite is &#39;pie&#39;:
-<a id="__codelineno-67-6" name="__codelineno-67-6"></a>    print(&quot;He likes pie!  I&#39;ll start making a cherry pie right now!&quot;)
-<a id="__codelineno-67-7" name="__codelineno-67-7"></a>else:
-<a id="__codelineno-67-8" name="__codelineno-67-8"></a>    print(&quot;He likes &quot; + my_favorite + &quot;.  I don&#39;t know how to make that.&quot;)
+<div class="codehilite"><pre><span></span><code>my_favorite = &#39;pie&#39;
+
+if my_favorite is &#39;cake&#39;:
+    print(&quot;He likes cake!  I&#39;ll start making a double chocolate velvet cake right now!&quot;)
+elif my_favorite is &#39;pie&#39;:
+    print(&quot;He likes pie!  I&#39;ll start making a cherry pie right now!&quot;)
+else:
+    print(&quot;He likes &quot; + my_favorite + &quot;.  I don&#39;t know how to make that.&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1"></a><span class="n">my_favorite</span> <span class="o">=</span> <span class="s1">&#39;pie&#39;</span>
-<a id="__codelineno-68-2" name="__codelineno-68-2"></a>
-<a id="__codelineno-68-3" name="__codelineno-68-3"></a><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;cake&#39;</span><span class="p">:</span>
-<a id="__codelineno-68-4" name="__codelineno-68-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes cake!  I&#39;ll start making a double chocolate velvet cake right now!&quot;</span><span class="p">)</span>
-<a id="__codelineno-68-5" name="__codelineno-68-5"></a><span class="k">elif</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
-<a id="__codelineno-68-6" name="__codelineno-68-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes pie!  I&#39;ll start making a cherry pie right now!&quot;</span><span class="p">)</span>
-<a id="__codelineno-68-7" name="__codelineno-68-7"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-68-8" name="__codelineno-68-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes &quot;</span> <span class="o">+</span> <span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot;.  I don&#39;t know how to make that.&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_favorite</span> <span class="o">=</span> <span class="s1">&#39;pie&#39;</span>
+
+<span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;cake&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes cake!  I&#39;ll start making a double chocolate velvet cake right now!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes pie!  I&#39;ll start making a cherry pie right now!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes &quot;</span> <span class="o">+</span> <span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot;.  I don&#39;t know how to make that.&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>He likes pie!  I&#39;ll start making a cherry pie right now!
 </code></pre></div>
 
 <p><strong>Note</strong>: There is a big difference between the above using <code>elif</code> and this code that uses sequential <code>if</code>s:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a>if my_favorite is &#39;pie&#39;:
-<a id="__codelineno-69-2" name="__codelineno-69-2"></a>    print(&quot;He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!&quot;)
-<a id="__codelineno-69-3" name="__codelineno-69-3"></a>if my_favorite is &#39;pie&#39;:
-<a id="__codelineno-69-4" name="__codelineno-69-4"></a>    print(&quot;He still likes pie!  I&#39;ll start making a cherry pie right now!&quot;)
-<a id="__codelineno-69-5" name="__codelineno-69-5"></a>else:
-<a id="__codelineno-69-6" name="__codelineno-69-6"></a>    print(&quot;He likes &quot; + my_favorite + &quot;.  I don&#39;t know how to make that.&quot;)
+<div class="codehilite"><pre><span></span><code>if my_favorite is &#39;pie&#39;:
+    print(&quot;He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!&quot;)
+if my_favorite is &#39;pie&#39;:
+    print(&quot;He still likes pie!  I&#39;ll start making a cherry pie right now!&quot;)
+else:
+    print(&quot;He likes &quot; + my_favorite + &quot;.  I don&#39;t know how to make that.&quot;)
 </code></pre></div>
+
 <p>Before you run, the cell, can you describe how these two blocks differ in their outcomes?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1"></a><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
-<a id="__codelineno-70-2" name="__codelineno-70-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!&quot;</span><span class="p">)</span>
-<a id="__codelineno-70-3" name="__codelineno-70-3"></a><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
-<a id="__codelineno-70-4" name="__codelineno-70-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He still likes pie!  I&#39;ll start making a cherry pie right now!&quot;</span><span class="p">)</span>
-<a id="__codelineno-70-5" name="__codelineno-70-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-70-6" name="__codelineno-70-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes &quot;</span> <span class="o">+</span> <span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot;.  I don&#39;t know how to make that.&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He still likes pie!  I&#39;ll start making a cherry pie right now!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes &quot;</span> <span class="o">+</span> <span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot;.  I don&#39;t know how to make that.&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!
 He still likes pie!  I&#39;ll start making a cherry pie right now!
 </code></pre></div>
 
 <h5 id="22124-and-or-and-not">2.2.1.2.4 <code>and</code>, <code>or</code> and <code>not</code><a class="headerlink" href="#22124-and-or-and-not" title="Permanent link">&para;</a></h5>
 <p><strong>Conditionals</strong> can take <code>and</code> and <code>or</code> and <code>not</code>.  E.g.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1"></a>my_favorite = &#39;pie&#39;
-<a id="__codelineno-71-2" name="__codelineno-71-2"></a>
-<a id="__codelineno-71-3" name="__codelineno-71-3"></a>if my_favorite is &#39;cake&#39; or my_favorite is &#39;pie&#39;:
-<a id="__codelineno-71-4" name="__codelineno-71-4"></a>    print(my_favorite + &quot; : I have a recipe for that!&quot;)
-<a id="__codelineno-71-5" name="__codelineno-71-5"></a>else:
-<a id="__codelineno-71-6" name="__codelineno-71-6"></a>    print(&quot;Ew!  Who eats that?&quot;)
+<div class="codehilite"><pre><span></span><code>my_favorite = &#39;pie&#39;
+
+if my_favorite is &#39;cake&#39; or my_favorite is &#39;pie&#39;:
+    print(my_favorite + &quot; : I have a recipe for that!&quot;)
+else:
+    print(&quot;Ew!  Who eats that?&quot;)
 </code></pre></div>
+
 <blockquote>
 <p>Side note: We haven't mentioned this up until now, in the following cell, we are composing a new string using <code>+</code> and feeding this into the print statement: <code>my_favorite + " : I have a recipe for that!"</code></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a><span class="n">my_favorite</span> <span class="o">=</span> <span class="s1">&#39;pie&#39;</span>
-<a id="__codelineno-72-2" name="__codelineno-72-2"></a>
-<a id="__codelineno-72-3" name="__codelineno-72-3"></a><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;cake&#39;</span> <span class="ow">or</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
-<a id="__codelineno-72-4" name="__codelineno-72-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot; : I have a recipe for that!&quot;</span><span class="p">)</span>
-<a id="__codelineno-72-5" name="__codelineno-72-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-72-6" name="__codelineno-72-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ew!  Who eats that?&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">my_favorite</span> <span class="o">=</span> <span class="s1">&#39;pie&#39;</span>
+
+<span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;cake&#39;</span> <span class="ow">or</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_favorite</span> <span class="o">+</span> <span class="s2">&quot; : I have a recipe for that!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ew!  Who eats that?&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>pie : I have a recipe for that!
 </code></pre></div>
 
@@ -1885,28 +1956,33 @@ He still likes pie!  I&#39;ll start making a cherry pie right now!
 <li>Write an if followed by an elif statement, where only one evaluates as true and prints something
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1"></a><span class="c1"># Cell for exercise 4</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for exercise 4</span>
 </code></pre></div>
+
 <h3 id="222-for">2.2.2 For<a class="headerlink" href="#222-for" title="Permanent link">&para;</a></h3>
-<p>For loops are the standard loop, though <code>while</code> is also common.  For has the general form:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a>for items in list:
-<a id="__codelineno-74-2" name="__codelineno-74-2"></a>    do stuff
-</code></pre></div></p>
+<p>For loops are the standard loop, though <code>while</code> is also common.  For has the general form:</p>
+<div class="codehilite"><pre><span></span><code>for items in list:
+    do stuff
+</code></pre></div>
+
 <h4 id="2221-iterating-through-objects">2.2.2.1 Iterating through objects<a class="headerlink" href="#2221-iterating-through-objects" title="Permanent link">&para;</a></h4>
 <p>For loops and collections like tuples, lists and dictionaries are natural friends. The loop is <em>iterating</em> through an object we call an <em>iterable</em>. tuples, lists, and dictionaries, are all <em>iterables</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a>mission
-<a id="__codelineno-75-2" name="__codelineno-75-2"></a>
-<a id="__codelineno-75-3" name="__codelineno-75-3"></a>for item in mission:
-<a id="__codelineno-75-4" name="__codelineno-75-4"></a>    print(item)
+<div class="codehilite"><pre><span></span><code>mission
+
+for item in mission:
+    print(item)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a><span class="n">mission</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">mission</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&quot;let&#39;s&quot;, &#39;explore&#39;, &#39;some&#39;, &#39;data&#39;, &#39;!&#39;]
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
-<a id="__codelineno-77-2" name="__codelineno-77-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>let&#39;s
 explore
 some
@@ -1915,24 +1991,27 @@ data
 </code></pre></div>
 
 <p>Note that after the <strong><em>for</em></strong> loop has ended, the <code>item</code> variable remains defined and contains the last value of the list that was iteratred over.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a><span class="n">item</span>
+<div class="codehilite"><pre><span></span><code><span class="n">item</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;!&#39;
 </code></pre></div>
 
 <p>You can combine loops and conditionals:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1"></a>for item in mission:
-<a id="__codelineno-79-2" name="__codelineno-79-2"></a>    if item.endswith(&#39;!&#39;):
-<a id="__codelineno-79-3" name="__codelineno-79-3"></a>        print(item + &quot; doesn&#39;t look like a whole word!&quot;)
-<a id="__codelineno-79-4" name="__codelineno-79-4"></a>    else:
-<a id="__codelineno-79-5" name="__codelineno-79-5"></a>        print(item + &quot; is a word in a sentence!&quot;)
+<div class="codehilite"><pre><span></span><code>for item in mission:
+    if item.endswith(&#39;!&#39;):
+        print(item + &quot; doesn&#39;t look like a whole word!&quot;)
+    else:
+        print(item + &quot; is a word in a sentence!&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
-<a id="__codelineno-80-2" name="__codelineno-80-2"></a>    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
-<a id="__codelineno-80-3" name="__codelineno-80-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
-<a id="__codelineno-80-4" name="__codelineno-80-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-80-5" name="__codelineno-80-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mission</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>let&#39;s is a word in a sentence!
 explore is a word in a sentence!
 some is a word in a sentence!
@@ -1941,33 +2020,38 @@ data is a word in a sentence!
 </code></pre></div>
 
 <p>Dictionaries can use the <code>keys</code> method for iterating.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1"></a>my_dict.keys()
-<a id="__codelineno-81-2" name="__codelineno-81-2"></a>
-<a id="__codelineno-81-3" name="__codelineno-81-3"></a>for key in my_dict.keys():
-<a id="__codelineno-81-4" name="__codelineno-81-4"></a>    if len(key) &gt; 4:
-<a id="__codelineno-81-5" name="__codelineno-81-5"></a>        print(my_dict[key])
+<div class="codehilite"><pre><span></span><code>my_dict.keys()
+
+for key in my_dict.keys():
+    if len(key) &gt; 4:
+        print(my_dict[key])
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1"></a><span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>dict_keys([&#39;pickles&#39;, &#39;list&#39;])
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<a id="__codelineno-83-2" name="__codelineno-83-2"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-<a id="__codelineno-83-3" name="__codelineno-83-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>A small cucumber preserved in vinegar or brine.
 </code></pre></div>
 
 <p>Strings are basically a list.  Therefore, you can use a for loop to iteratre over the characters in a string.  Note that <code>c</code> is a typical variable name for characters in a string.  Generally, one letter variable names are not a good thing.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a>my_string = &quot;caffeine&quot;
-<a id="__codelineno-84-2" name="__codelineno-84-2"></a>for c in my_string:
-<a id="__codelineno-84-3" name="__codelineno-84-3"></a>    print(c)
+<div class="codehilite"><pre><span></span><code>my_string = &quot;caffeine&quot;
+for c in my_string:
+    print(c)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;caffeine&quot;</span>
-<a id="__codelineno-85-2" name="__codelineno-85-2"></a><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">:</span>
-<a id="__codelineno-85-3" name="__codelineno-85-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;caffeine&quot;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>c
 a
 f
@@ -1980,72 +2064,83 @@ e
 
 <h4 id="2222-range">2.2.2.2 <code>range()</code><a class="headerlink" href="#2222-range" title="Permanent link">&para;</a></h4>
 <p>Manually constructing a list of sequential numbers is a total pain.  A total pain.  So Python has a <strong><em>function</em></strong> called <code>range</code> that simplifies the creation of <strong><em>lists</em></strong> that contain a sequence.   Let's see it in action!  Note that if we want a sequence from 0 to 2, inclusive, we call the <code>range</code> function with a argument of <code>3</code>.  This is like the upper bound in <strong><em>slicing</em></strong> - it is always 1 plus the maximum value you want in the list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a>range(3)
+<div class="codehilite"><pre><span></span><code>range(3)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>range(0, 3)
 </code></pre></div>
 
 <p>Wait up, hoss.  That result doesn't look like a list!  True.  However, it acts identically to a list, but works a little different under the hood to save memory.  The equivalent hand made list would look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1"></a>[0, 1, 2]
+<div class="codehilite"><pre><span></span><code>[0, 1, 2]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1"></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[0, 1, 2]
 </code></pre></div>
 
 <h5 id="22221-list-type-cast-function">2.2.2.2.1 <code>list</code>, type cast function<a class="headerlink" href="#22221-list-type-cast-function" title="Permanent link">&para;</a></h5>
 <p>We can convert a <code>range</code> to a <code>list</code> by using the <code>list</code> type cast <strong><em>function</em></strong>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1"></a>list(range(3))
+<div class="codehilite"><pre><span></span><code>list(range(3))
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1"></a><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[0, 1, 2]
 </code></pre></div>
 
 <p>Notice that Python (in the newest versions, e.g. 3+) has an object type that is a range.  This saves memory and speeds up calculations vs. an explicit representation of a range as a list - but it can be automagically converted to a list on the fly by Python.  To show the contents as a <code>list</code> we can use the type case like with the tuple above.</p>
 <p>Sometimes, in older Python docs, you will see <code>xrange</code>.  This used the range object back in Python 2 and <code>range</code> returned an actual list.  Beware of this!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1"></a><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[0, 1, 2]
 </code></pre></div>
 
 <p>Remember earlier with slicing, the syntax <code>:3</code> meant <code>[0, 1, 2]</code>?  Well, the same upper bound philosophy applies here.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1"></a>xs = [0, 1, 2]
-<a id="__codelineno-93-2" name="__codelineno-93-2"></a>
-<a id="__codelineno-93-3" name="__codelineno-93-3"></a>for x in xs[0:1]:
-<a id="__codelineno-93-4" name="__codelineno-93-4"></a>    if x &lt; 2:
-<a id="__codelineno-93-5" name="__codelineno-93-5"></a>        print(x)
-<a id="__codelineno-93-6" name="__codelineno-93-6"></a>    else:
-<a id="__codelineno-93-7" name="__codelineno-93-7"></a>        pass
+<div class="codehilite"><pre><span></span><code>xs = [0, 1, 2]
+
+for x in xs[0:1]:
+    if x &lt; 2:
+        print(x)
+    else:
+        pass
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1"></a><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<a id="__codelineno-94-2" name="__codelineno-94-2"></a>
-<a id="__codelineno-94-3" name="__codelineno-94-3"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]:</span>
-<a id="__codelineno-94-4" name="__codelineno-94-4"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-94-5" name="__codelineno-94-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-94-6" name="__codelineno-94-6"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-94-7" name="__codelineno-94-7"></a>        <span class="k">pass</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>0
 </code></pre></div>
 
 <p>Let's use range to acccess our list, <em>mission</em> using list element indexing.  </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1"></a>for index in range(5):
-<a id="__codelineno-95-2" name="__codelineno-95-2"></a>  item = mission[index]
-<a id="__codelineno-95-3" name="__codelineno-95-3"></a>  if item.endswith(&#39;!&#39;):
-<a id="__codelineno-95-4" name="__codelineno-95-4"></a>      print(item + &quot; doesn&#39;t look like a whole word!&quot;)
-<a id="__codelineno-95-5" name="__codelineno-95-5"></a>  else:
-<a id="__codelineno-95-6" name="__codelineno-95-6"></a>      print(item + &quot; is a word in a sentence!&quot;)
+<div class="codehilite"><pre><span></span><code>for index in range(5):
+  item = mission[index]
+  if item.endswith(&#39;!&#39;):
+      print(item + &quot; doesn&#39;t look like a whole word!&quot;)
+  else:
+      print(item + &quot; is a word in a sentence!&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1"></a><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<a id="__codelineno-96-2" name="__codelineno-96-2"></a>  <span class="n">item</span> <span class="o">=</span> <span class="n">mission</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-<a id="__codelineno-96-3" name="__codelineno-96-3"></a>  <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
-<a id="__codelineno-96-4" name="__codelineno-96-4"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
-<a id="__codelineno-96-5" name="__codelineno-96-5"></a>  <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-96-6" name="__codelineno-96-6"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+  <span class="n">item</span> <span class="o">=</span> <span class="n">mission</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>let&#39;s is a word in a sentence!
 explore is a word in a sentence!
 some is a word in a sentence!
@@ -2054,20 +2149,22 @@ data is a word in a sentence!
 </code></pre></div>
 
 <p>This would probably be better written as below.  Why is it better to use to use the <code>len()</code> function than hard code the length of the list?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1"></a>for index in range(len(mission)):
-<a id="__codelineno-97-2" name="__codelineno-97-2"></a>  item = mission[index]
-<a id="__codelineno-97-3" name="__codelineno-97-3"></a>  if item.endswith(&#39;!&#39;):
-<a id="__codelineno-97-4" name="__codelineno-97-4"></a>      print(item + &quot; doesn&#39;t look like a whole word!&quot;)
-<a id="__codelineno-97-5" name="__codelineno-97-5"></a>  else:
-<a id="__codelineno-97-6" name="__codelineno-97-6"></a>      print(item + &quot; is a word in a sentence!&quot;)
+<div class="codehilite"><pre><span></span><code>for index in range(len(mission)):
+  item = mission[index]
+  if item.endswith(&#39;!&#39;):
+      print(item + &quot; doesn&#39;t look like a whole word!&quot;)
+  else:
+      print(item + &quot; is a word in a sentence!&quot;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1"></a><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mission</span><span class="p">)):</span>
-<a id="__codelineno-98-2" name="__codelineno-98-2"></a>  <span class="n">item</span> <span class="o">=</span> <span class="n">mission</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-<a id="__codelineno-98-3" name="__codelineno-98-3"></a>  <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
-<a id="__codelineno-98-4" name="__codelineno-98-4"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
-<a id="__codelineno-98-5" name="__codelineno-98-5"></a>  <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-98-6" name="__codelineno-98-6"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mission</span><span class="p">)):</span>
+  <span class="n">item</span> <span class="o">=</span> <span class="n">mission</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; doesn&#39;t look like a whole word!&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot; is a word in a sentence!&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>let&#39;s is a word in a sentence!
 explore is a word in a sentence!
 some is a word in a sentence!
@@ -2077,41 +2174,48 @@ data is a word in a sentence!
 
 <p>But in all, it isn't very Pythonesque to use indexes like that (unless you have another reason in the loop) and you would opt instead for the <code>instructor in instructors</code> form.  </p>
 <p>More often, you are doing something with the numbers that requires them to be integers, e.g. math.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1"></a><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-99-2" name="__codelineno-99-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<a id="__codelineno-99-3" name="__codelineno-99-3"></a>    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
-<a id="__codelineno-99-4" name="__codelineno-99-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>45
 </code></pre></div>
 
 <p>Before we leave the topic of <code>range()</code>, let's take a quick look at the documentation for it <a href="https://docs.python.org/3.3/library/stdtypes.html?highlight=range#ranges">here</a>.  Notice, it has another calling semantic than the one have have been using.</p>
 <p>We have been using this version:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1"></a>range(stop)
+<div class="codehilite"><pre><span></span><code>range(stop)
 </code></pre></div>
-Where the list will end at <code>stop</code> minus 1.  There is another way the <code>range</code> <strong><em>function</em></strong> can be called which is to give it an inclusive <code>start</code> and an exclusive <code>stop</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1"></a>range(start, stop)
+
+<p>Where the list will end at <code>stop</code> minus 1.  There is another way the <code>range</code> <strong><em>function</em></strong> can be called which is to give it an inclusive <code>start</code> and an exclusive <code>stop</code>:</p>
+<div class="codehilite"><pre><span></span><code>range(start, stop)
 </code></pre></div>
+
 <p>This returns a list of number that go from <code>start</code> to <code>stop</code> minus 1.</p>
 <p>Let's look at a quick example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1"></a>range(1, 9)
+<div class="codehilite"><pre><span></span><code>range(1, 9)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1"></a><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>range(1, 9)
 </code></pre></div>
 
 <h4 id="2223-nested-for-loops">2.2.2.3 Nested for loops<a class="headerlink" href="#2223-nested-for-loops" title="Permanent link">&para;</a></h4>
 <p>You can put a for loop <em>inside</em> another for loop.  This is called <em>nesting</em>.  Think of it like the <a href="https://en.wikipedia.org/wiki/Matryoshka_doll">Matryoshka dolls</a>.  The example below has a nested loop that counts to four each time the outer loop counts up one.  The <code>print</code> <strong><em>function</em></strong> shows the value of the outside loop iterator <code>i</code> and the inside loop iterator <code>j</code> and the product of the two values.  Notice how the inside loop runs through 1 to 3 for each value of the outside loop.</p>
 <p>We use some string formatting for the <code>print</code> statement.  These are called <strong><em>f-strings</em></strong> because there is an <code>f</code> before the string. Don't worry too much about the <code>print</code> function statement here as it isn't the point of this example.  <em>Advanced topic</em>: for more on formatting strings, see <a href="https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting">here</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1"></a>for i in range(1, 4):
-<a id="__codelineno-104-2" name="__codelineno-104-2"></a>    for j in range(1, 4):
-<a id="__codelineno-104-3" name="__codelineno-104-3"></a>        print(f&#39;{i} * {j} = {i * j}&#39;)
+<div class="codehilite"><pre><span></span><code>for i in range(1, 4):
+    for j in range(1, 4):
+        print(f&#39;{i} * {j} = {i * j}&#39;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-105-1" name="__codelineno-105-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-<a id="__codelineno-105-2" name="__codelineno-105-2"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-<a id="__codelineno-105-3" name="__codelineno-105-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> * </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> * </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>1 * 1 = 1
 1 * 2 = 2
 1 * 3 = 3
@@ -2127,37 +2231,41 @@ Where the list will end at <code>stop</code> minus 1.  There is another way the 
 <p>You can exit a for loop if a condition is met. We'll explore this with reserved words <code>break</code> and <code>continue</code></p>
 <h5 id="22241-break">2.2.2.4.1 <code>break</code><a class="headerlink" href="#22241-break" title="Permanent link">&para;</a></h5>
 <p>Sometimes, in a for loop, you experience a condition where you want to terminate any further iterations of the loop.  The <strong><em>reserved word</em></strong> <code>break</code> will completely exit a for loop.  In this example, we exit the for loop when the iteration variable <code>i</code> is equal to the integer 4.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-106-1" name="__codelineno-106-1"></a>for i in range(10):
-<a id="__codelineno-106-2" name="__codelineno-106-2"></a>    if i == 4:
-<a id="__codelineno-106-3" name="__codelineno-106-3"></a>        break
-<a id="__codelineno-106-4" name="__codelineno-106-4"></a>i
+<div class="codehilite"><pre><span></span><code>for i in range(10):
+    if i == 4:
+        break
+i
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<a id="__codelineno-107-2" name="__codelineno-107-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-<a id="__codelineno-107-3" name="__codelineno-107-3"></a>        <span class="k">break</span>
-<a id="__codelineno-107-4" name="__codelineno-107-4"></a><span class="n">i</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="n">i</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>4
 </code></pre></div>
 
 <h4 id="2224-continue">2.2.2.4 <code>continue</code><a class="headerlink" href="#2224-continue" title="Permanent link">&para;</a></h4>
 <p>Sometimes, in a for loop, you want to skip certain elements.  The <code>continue</code> statement will effectively skip any further statements for that element in a list.  Below, we sum the numbers from <code>0</code> to <code>9</code> and skip the value <code>5</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1"></a>sum = 0
-<a id="__codelineno-108-2" name="__codelineno-108-2"></a>for i in range(10):
-<a id="__codelineno-108-3" name="__codelineno-108-3"></a>    if i == 5:
-<a id="__codelineno-108-4" name="__codelineno-108-4"></a>        continue
-<a id="__codelineno-108-5" name="__codelineno-108-5"></a>    else:
-<a id="__codelineno-108-6" name="__codelineno-108-6"></a>        print(i)
-<a id="__codelineno-108-7" name="__codelineno-108-7"></a>        sum += i
-<a id="__codelineno-108-8" name="__codelineno-108-8"></a>
-<a id="__codelineno-108-9" name="__codelineno-108-9"></a>print(&quot;sum is &quot;, sum)
+<div class="codehilite"><pre><span></span><code>sum = 0
+for i in range(10):
+    if i == 5:
+        continue
+    else:
+        print(i)
+        sum += i
+
+print(&quot;sum is &quot;, sum)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-<a id="__codelineno-109-2" name="__codelineno-109-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-<a id="__codelineno-109-3" name="__codelineno-109-3"></a>        <span class="k">continue</span>
-<a id="__codelineno-109-4" name="__codelineno-109-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-109-5" name="__codelineno-109-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>0
 1
 2
@@ -2167,12 +2275,13 @@ Where the list will end at <code>stop</code> minus 1.  There is another way the 
 
 <h3 id="223-while">2.2.3 <code>while</code><a class="headerlink" href="#223-while" title="Permanent link">&para;</a></h3>
 <p>In contrast to a <code>for</code> loop, a <code>while</code> loop continues to execute while the initiating condition continues to evaluate as True.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-110-2" name="__codelineno-110-2"></a><span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-<a id="__codelineno-110-3" name="__codelineno-110-3"></a>  <span class="n">a</span> <span class="o">+=</span> <span class="mi">5</span>
-<a id="__codelineno-110-4" name="__codelineno-110-4"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello!&quot;</span><span class="p">)</span>
-<a id="__codelineno-110-5" name="__codelineno-110-5"></a><span class="n">a</span>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="mi">5</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello!&quot;</span><span class="p">)</span>
+<span class="n">a</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>hello!
 hello!
 
@@ -2184,36 +2293,40 @@ hello!
 </code></pre></div>
 
 <p>You can also use <code>break</code> and <code>continue</code> in <code>while</code> loops</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-111-2" name="__codelineno-111-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello!&quot;</span><span class="p">)</span>
-<a id="__codelineno-111-3" name="__codelineno-111-3"></a>  <span class="k">break</span>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello!&quot;</span><span class="p">)</span>
+  <span class="k">break</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>hello!
 </code></pre></div>
 
 <h4 id="question-2-while-loops">🙋 Question 2: While Loops<a class="headerlink" href="#question-2-while-loops" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>What happens in this cell?
-<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1"></a>a = 0
-<a id="__codelineno-112-2" name="__codelineno-112-2"></a>while a &lt; 10:
-<a id="__codelineno-112-3" name="__codelineno-112-3"></a>  if a == 5:
-<a id="__codelineno-112-4" name="__codelineno-112-4"></a>    continue
-<a id="__codelineno-112-5" name="__codelineno-112-5"></a>  a += 5
-<a id="__codelineno-112-6" name="__codelineno-112-6"></a>  print(&quot;hello!&quot;)
-</code></pre></div></p>
+<p>What happens in this cell?</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1"></a><span class="c1"># a = 0</span>
-<a id="__codelineno-113-2" name="__codelineno-113-2"></a><span class="c1"># while a &lt; 10:</span>
-<a id="__codelineno-113-3" name="__codelineno-113-3"></a><span class="c1">#   if a == 5:</span>
-<a id="__codelineno-113-4" name="__codelineno-113-4"></a><span class="c1">#     continue</span>
-<a id="__codelineno-113-5" name="__codelineno-113-5"></a><span class="c1">#   a += 5</span>
-<a id="__codelineno-113-6" name="__codelineno-113-6"></a><span class="c1">#   print(&quot;hello!&quot;)</span>
-<a id="__codelineno-113-7" name="__codelineno-113-7"></a><span class="c1"># a</span>
+<div class="codehilite"><pre><span></span><code>a = 0
+while a &lt; 10:
+  if a == 5:
+    continue
+  a += 5
+  print(&quot;hello!&quot;)
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># a = 0</span>
+<span class="c1"># while a &lt; 10:</span>
+<span class="c1">#   if a == 5:</span>
+<span class="c1">#     continue</span>
+<span class="c1">#   a += 5</span>
+<span class="c1">#   print(&quot;hello!&quot;)</span>
+<span class="c1"># a</span>
+</code></pre></div>
+
 <h2 id="23-the-zen-of-python">2.3 The Zen of Python<a class="headerlink" href="#23-the-zen-of-python" title="Permanent link">&para;</a></h2>
 <p>Finally, let's use end with a philosophy of Python.  This is a fun <a href="https://en.wikipedia.org/wiki/Easter_egg_(media)">Easter Egg</a>, to see it, <code>import this</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1"></a><span class="kn">import</span> <span class="nn">this</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">this</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.

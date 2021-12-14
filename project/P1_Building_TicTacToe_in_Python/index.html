@@ -1004,11 +1004,13 @@
 <h4 id="1211-q1">1.2.1.1 Q1<a class="headerlink" href="#1211-q1" title="Permanent link">&para;</a></h4>
 <p>First we need to define our board object (object in the loose sense for now!). This will hold the <em>memory</em> of where our current player pieces are.</p>
 <p>Say we eventually want to place in every board position a string variable, <code>'X'</code> or <code>'O'</code>. How would we represent the board? Also, how do we represent it in the least complex space possible, i.e. a list?</p>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># cell for Q1</span>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q1</span>
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]
 </code></pre></div>
 
@@ -1018,12 +1020,14 @@
 <li>hint: use <code>|</code>, <code>\n</code>, <code>.format()</code>, and unpack our board elements using an asteric (<code>*board</code>) with the print function.</li>
 </ul>
 <p>Example output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>| | | |
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>| | | |
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>| | | |
+<div class="codehilite"><pre><span></span><code>| | | |
+| | | |
+| | | |
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Cell for Q2</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q2</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1032,12 +1036,14 @@
 <h4 id="1213-q3">1.2.1.3 Q3<a class="headerlink" href="#1213-q3" title="Permanent link">&para;</a></h4>
 <p>After you've created your print function that take the board as an input. Test it out after filling your board with some <code>X's</code> and <code>O's</code></p>
 <p>Example output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>|X| | |
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>| |O| |
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>| | | |
+<div class="codehilite"><pre><span></span><code>|X| | |
+| |O| |
+| | | |
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Cell for Q3</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q3</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>|X| | |
 | |O| |
 | | | |
@@ -1045,16 +1051,19 @@
 
 <h4 id="1214-q4">1.2.1.4 Q4<a class="headerlink" href="#1214-q4" title="Permanent link">&para;</a></h4>
 <p>Now, if that looks good, wrap the print function in a function called <code>visualize_board</code> that take the variable <code>board</code> as a parameter.</p>
-<p>Example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>visualize_board(board)
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>|X| | |
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>| |O| |
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>| | | |
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Cell for Q4</span>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>visualize_board(board)
+|X| | |
+| |O| |
+| | | |
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q4</span>
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>|X| | |
 | |O| |
 | | | |
@@ -1065,91 +1074,106 @@
 <ul>
 <li>hint: think of an attribute of the dictionary you just created.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Cell for Q5</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q5</span>
 </code></pre></div>
+
 <h4 id="1216-q6">1.2.1.6 Q6<a class="headerlink" href="#1216-q6" title="Permanent link">&para;</a></h4>
 <p>Lastly, write a function called <code>init_board</code> that takes no parameters and returns the empty board dictionary</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># Cell for Q6</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q6</span>
 </code></pre></div>
+
 <h3 id="122-checking-for-a-winner">1.2.2 Checking for a Winner<a class="headerlink" href="#122-checking-for-a-winner" title="Permanent link">&para;</a></h3>
 <h4 id="1221-q1">1.2.2.1 Q1<a class="headerlink" href="#1221-q1" title="Permanent link">&para;</a></h4>
 <p>We will need a way to check if either player has won the game. Write down all the winning patterns using our board representation where places are numbered 1-9. Store these patterns in a list of lists called <code>win_patterns</code></p>
 <ul>
 <li>hint: You should identify 8 winning patterns</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Cell for Q1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q1</span>
 </code></pre></div>
+
 <h4 id="1222-q2">1.2.2.2 Q2<a class="headerlink" href="#1222-q2" title="Permanent link">&para;</a></h4>
 <p>Next, we will need to write a function that checks if there is a winning pattern on our board (i.e. all X's or all O's are in the indicated places on the board. But let's build the conditionals and logic methodically and not just jump into writing a for loop!</p>
 <p>First, access the first element of <code>win_patterns</code> and set it equal to a variable called <code>pattern</code></p>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>[1, 2, 3]
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># Cell for Q2</span>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>[1, 2, 3]
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q2</span>
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[1, 2, 3]
 </code></pre></div>
 
 <h4 id="1223-q3">1.2.2.3 Q3<a class="headerlink" href="#1223-q3" title="Permanent link">&para;</a></h4>
 <p>Use the board dictionary to get the board values at the positions stored in <code>pattern</code></p>
-<p>Example Output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>[&#39;X&#39;, &#39; &#39;, &#39; &#39;]
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># Cell for Q3</span>
+<p>Example Output:</p>
+<div class="codehilite"><pre><span></span><code>[&#39;X&#39;, &#39; &#39;, &#39; &#39;]
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q3</span>
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[&#39;X&#39;, &#39; &#39;, &#39; &#39;]
 </code></pre></div>
 
 <h4 id="1224-q4">1.2.2.4 Q4<a class="headerlink" href="#1224-q4" title="Permanent link">&para;</a></h4>
 <p>Now check for whether they contain 3 X's or 3 O's. Fill those spaces with all 'X's or all 'O's to check that your conditional is working properly. Your output should be a <code>boolean</code>: <code>True</code> or <code>False</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Cell for Q4</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q4</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>True
 </code></pre></div>
 
 <h4 id="1225-q5">1.2.2.5 Q5<a class="headerlink" href="#1225-q5" title="Permanent link">&para;</a></h4>
 <p>Now we're ready to wrap this in a for loop. Loop through every <code>pattern</code> in <code>win_patterns</code> and evaluate with your conditional. If 'X' wins then print out <code>'X' Won!</code> if 'O' wins then print out <code>'O' Won!</code></p>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>&#39;O&#39; Won!
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Cell for Q5</span>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>&#39;O&#39; Won!
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q5</span>
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;O&#39; Won!
 </code></pre></div>
 
 <h4 id="1226-q6">1.2.2.6 Q6<a class="headerlink" href="#1226-q6" title="Permanent link">&para;</a></h4>
 <p>Once we've detected a winner, there's no need to continue the for-loop. Put breaks in your loop so that it exits after detecting a winner</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Cell for Q6</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q6</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;O&#39; Won!
 </code></pre></div>
 
 <h4 id="1227-q7">1.2.2.7 Q7<a class="headerlink" href="#1227-q7" title="Permanent link">&para;</a></h4>
 <p>let's wrap this in a function. Call your function <code>check_winning</code> and have it take <code>board</code> as an input parameter. Make what were previously your print statements into returns of their respective strings. Return an empty string if there is no winner detected.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Cell for Q7</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q7</span>
 </code></pre></div>
+
 <p>Check that your code works using a board that has either 'X' or 'O' as a winner.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1"># Cell for Q7</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q7</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&quot;&#39;X&#39; Won!&quot;
 </code></pre></div>
 
 <h3 id="123-input-from-the-user">1.2.3 Input from the User<a class="headerlink" href="#123-input-from-the-user" title="Permanent link">&para;</a></h3>
 <p>We can get input from the user like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>1
 </code></pre></div>
 
 <h4 id="1231-q1">1.2.3.1 Q1<a class="headerlink" href="#1231-q1" title="Permanent link">&para;</a></h4>
 <p>Let's ask the user for their move and create some logic to embed this into the board. First write your string that will be presented to the user, asking them to play their move. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a>
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="c1"># WRITE YOUR STRING DOWN HERE</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, YOUR STRING&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="n">player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># WRITE YOUR STRING DOWN HERE</span>
+<span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, YOUR STRING&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1162,25 +1186,26 @@ X, YOUR STRING1
 <ul>
 <li>hint: you will need to convert your input into an <code>int</code> to be able to use it as a key in the <code>board</code> dictionary</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="c1">### COPY YOUR CODE FROM ABOVE ###</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="c1">### END COPY ###</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4"></a>
-<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="c1">### WRITE YOUR CONDITIONAL BELOW</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="c1"># note: you will need to think of both the conditional, as well as a method</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="c1"># to continue asking the player to make a move if the condition is not met</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="c1"># what kind of loop does this make you think of?</span>
-<a id="__codelineno-24-9" name="__codelineno-24-9"></a>
-<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-24-11" name="__codelineno-24-11"></a>  <span class="k">if</span> <span class="c1"># your condition</span>
-<a id="__codelineno-24-12" name="__codelineno-24-12"></a>    <span class="c1"># your code</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13"></a>  <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-24-14" name="__codelineno-24-14"></a>    <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
-<a id="__codelineno-24-15" name="__codelineno-24-15"></a>    <span class="k">break</span>
-<a id="__codelineno-24-16" name="__codelineno-24-16"></a>
-<a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="c1">### END YOUR CODE</span>
-<a id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">### COPY YOUR CODE FROM ABOVE ###</span>
+
+<span class="c1">### END COPY ###</span>
+
+<span class="c1">### WRITE YOUR CONDITIONAL BELOW</span>
+<span class="c1"># note: you will need to think of both the conditional, as well as a method</span>
+<span class="c1"># to continue asking the player to make a move if the condition is not met</span>
+<span class="c1"># what kind of loop does this make you think of?</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">if</span> <span class="c1"># your condition</span>
+    <span class="c1"># your code</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+    <span class="k">break</span>
+
+<span class="c1">### END YOUR CODE</span>
+<span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1192,38 +1217,39 @@ X, YOUR STRING1
 <h4 id="1241-q1">1.2.4.1 Q1<a class="headerlink" href="#1241-q1" title="Permanent link">&para;</a></h4>
 <p>We now need some code to orchestrate game play. It will decide who's turn it is, allow players to make moves, and detect when the game is over.</p>
 <p>Fill in the blanks in the code cell below to complete the game handler:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="c1"># initiate a while loop</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7"></a>  <span class="c1"># create a for loop that iterates between X and O and stores this in the </span>
-<a id="__codelineno-25-8" name="__codelineno-25-8"></a>  <span class="c1"># variable name `player`</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9"></a>  <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
-<a id="__codelineno-25-10" name="__codelineno-25-10"></a>
-<a id="__codelineno-25-11" name="__codelineno-25-11"></a>    <span class="c1"># visualize the board</span>
-<a id="__codelineno-25-12" name="__codelineno-25-12"></a>    <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13"></a>
-<a id="__codelineno-25-14" name="__codelineno-25-14"></a>    <span class="c1">### PASTE YOUR CODE FROM ABOVE FOR ASKING THE PLAYER FOR THEIR MOVE ###</span>
-<a id="__codelineno-25-15" name="__codelineno-25-15"></a>
-<a id="__codelineno-25-16" name="__codelineno-25-16"></a>    <span class="c1">### END PASTE ###</span>
-<a id="__codelineno-25-17" name="__codelineno-25-17"></a>
-<a id="__codelineno-25-18" name="__codelineno-25-18"></a>    <span class="c1">### WRITE THE LOGIC TO BREAK OUT OF THE WHILE LOOP BELOW ###</span>
-<a id="__codelineno-25-19" name="__codelineno-25-19"></a>    <span class="c1"># check if there is a winner using check_winning</span>
-<a id="__codelineno-25-20" name="__codelineno-25-20"></a>    <span class="c1"># if the return from check_winning is an empty string,</span>
-<a id="__codelineno-25-21" name="__codelineno-25-21"></a>    <span class="c1"># then continue the while loop, otherwise break the while loop and print </span>
-<a id="__codelineno-25-22" name="__codelineno-25-22"></a>    <span class="c1"># the name of the winner (X or O)</span>
-<a id="__codelineno-25-23" name="__codelineno-25-23"></a>    <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
-<a id="__codelineno-25-24" name="__codelineno-25-24"></a>    <span class="k">if</span> <span class="c1"># your condition</span>
-<a id="__codelineno-25-25" name="__codelineno-25-25"></a>      <span class="c1"># your code</span>
-<a id="__codelineno-25-26" name="__codelineno-25-26"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-25-27" name="__codelineno-25-27"></a>      <span class="c1"># your code</span>
-<a id="__codelineno-25-28" name="__codelineno-25-28"></a>
-<a id="__codelineno-25-29" name="__codelineno-25-29"></a>  <span class="c1"># break out of outer loop</span>
-<a id="__codelineno-25-30" name="__codelineno-25-30"></a>  <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-25-31" name="__codelineno-25-31"></a>    <span class="k">break</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+
+<span class="c1"># initiate a while loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+  <span class="c1"># create a for loop that iterates between X and O and stores this in the </span>
+  <span class="c1"># variable name `player`</span>
+  <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
+
+    <span class="c1"># visualize the board</span>
+    <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="c1">### PASTE YOUR CODE FROM ABOVE FOR ASKING THE PLAYER FOR THEIR MOVE ###</span>
+
+    <span class="c1">### END PASTE ###</span>
+
+    <span class="c1">### WRITE THE LOGIC TO BREAK OUT OF THE WHILE LOOP BELOW ###</span>
+    <span class="c1"># check if there is a winner using check_winning</span>
+    <span class="c1"># if the return from check_winning is an empty string,</span>
+    <span class="c1"># then continue the while loop, otherwise break the while loop and print </span>
+    <span class="c1"># the name of the winner (X or O)</span>
+    <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+    <span class="k">if</span> <span class="c1"># your condition</span>
+      <span class="c1"># your code</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1"># your code</span>
+
+  <span class="c1"># break out of outer loop</span>
+  <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="k">break</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>&#39;X&#39; will go first!
 | | | |
 | | | |
@@ -1258,7 +1284,7 @@ X, what&#39;s your move?7
 
 <h2 id="13-in-summary">1.3 In Summary<a class="headerlink" href="#13-in-summary" title="Permanent link">&para;</a></h2>
 <p>Paste all your working functions into the cell below for safe keeping:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
               

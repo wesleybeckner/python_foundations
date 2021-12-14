@@ -1066,16 +1066,18 @@
 <h2 id="30-review-from-session-on-data-structures-and-flow-control">3.0 Review from Session on Data Structures and Flow Control<a class="headerlink" href="#30-review-from-session-on-data-structures-and-flow-control" title="Permanent link">&para;</a></h2>
 <p>In our last session, we discussed <strong><em>lists</em></strong>, <strong><em>dictionaries</em></strong>, and <strong><em>flow control</em></strong>.</p>
 <p><strong><em>Lists</em></strong> are <strong><em>ordered collections</em></strong> of data that can be used to hold multiple pieces of information while preserving their order.  We use <code>[</code> and <code>]</code> to access elements by their indices which start with <code>0</code>.  All things that operate on <strong><em>lists</em></strong> like slices use the concept of an inclusive lower bound and an exclusive upper bound.  So, the following gets elements from the <strong><em>list</em></strong> <code>my_list</code> with index values of <code>0</code>, <code>1</code>, and <code>2</code>, but <strong>not</strong> <code>3</code>!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div>
+
 <h4 id="question-1-slicing">🙋 Question 1: Slicing<a class="headerlink" href="#question-1-slicing" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>What other way is there of writing the same statement using <strong><em>slicing</em></strong>?  Hint, think about leaving out one of the numbers in the slice!</p>
 </blockquote>
 <p><strong><em>Dictionaries</em></strong> are <strong><em>named</em></strong> <strong><em>collections</em></strong> of data that can be used to hold multiple pieces of information as <strong><em>values</em></strong> that are addressed by <strong><em>keys</em></strong> resulting in a <strong><em>key</em></strong> to <strong><em>value</em></strong> data structure.  They are accessed with <code>[</code> and <code>]</code> but intialized with <code>{</code> and <code>}</code>.  E.g.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>my_dict = { &#39;cake&#39; : &#39;Tasty!&#39;, &#39;toenails&#39; : &#39;Gross!&#39; }
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>my_dict[&#39;cake&#39;]
+<div class="codehilite"><pre><span></span><code>my_dict = { &#39;cake&#39; : &#39;Tasty!&#39;, &#39;toenails&#39; : &#39;Gross!&#39; }
+my_dict[&#39;cake&#39;]
 </code></pre></div>
+
 <p>Finally, we talked about <strong><em>flow control</em></strong> and using the concept of <strong><em>conditional execution</em></strong> to decide which code statements were executed.  Remember this figure?</p>
 <p><img src="https://docs.oracle.com/cd/B19306_01/appdev.102/b14261/lnpls008.gif">Flow control figure</img></p>
 <blockquote>
@@ -1085,101 +1087,118 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 <h2 id="31-functions">3.1 Functions<a class="headerlink" href="#31-functions" title="Permanent link">&para;</a></h2>
 <p>For loops let you repeat some code for every item in a list.  Functions are similar in that they run the same lines of code and, frequently, for new values of some variable (we call these <strong><em>parameters</em></strong>).  They are different in that functions are not limited to looping over items.</p>
 <p>Functions are a critical part of writing easy to read, reusable code.</p>
-<p>Create a function like:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>def function_name (parameters):
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    &quot;&quot;&quot;
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    optional docstring
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    &quot;&quot;&quot;
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    function expressions
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    return [variable]
-</code></pre></div></p>
+<p>Create a function like:</p>
+<div class="codehilite"><pre><span></span><code>def function_name (parameters):
+    &quot;&quot;&quot;
+    optional docstring
+    &quot;&quot;&quot;
+    function expressions
+    return [variable]
+</code></pre></div>
+
 <p>Here is a simple example.  It prints a string that was passed in and returns nothing.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>def print_string(string):
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    &quot;&quot;&quot;This prints out a string passed as the parameter.&quot;&quot;&quot;
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    print(string)
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    return
+<div class="codehilite"><pre><span></span><code>def print_string(string):
+    &quot;&quot;&quot;This prints out a string passed as the parameter.&quot;&quot;&quot;
+    print(string)
+    return
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">print_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>  <span class="sd">&quot;&quot;&quot;This prints out a string passed as the parameter&quot;&quot;&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>  <span class="k">return</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;This prints out a string passed as the parameter&quot;&quot;&quot;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+  <span class="k">return</span>
 </code></pre></div>
-<p>To call the function, use:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>print_string(&quot;GIX is awesome!&quot;)
-</code></pre></div></p>
+
+<p>To call the function, use:</p>
+<div class="codehilite"><pre><span></span><code>print_string(&quot;GIX is awesome!&quot;)
+</code></pre></div>
+
 <p><em>Note:</em> The function has to be defined before you can call it!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">print_string</span><span class="p">(</span><span class="s2">&quot;GIX is awesome!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">print_string</span><span class="p">(</span><span class="s2">&quot;GIX is awesome!&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>GIX is awesome!
 </code></pre></div>
 
 <h3 id="311-reserved-words-def-return-and-yield">3.1.1 Reserved words: def, return, and yield<a class="headerlink" href="#311-reserved-words-def-return-and-yield" title="Permanent link">&para;</a></h3>
 <p>Notice the highlighted words in our function definition: <code>def</code> and <code>return</code> these are <em>reserved words</em> in python used to define functions. Every function definition requires these reserved words. <code>yield</code> is another reserved word that is similar to <code>return</code> but operates slightly differently. It is beyond the scope of what we are covering in this session. This tutorial from <a href="https://realpython.com/introduction-to-python-generators/">realpython</a> has good information on the topic.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># what is return doing in this function?</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># what is return doing in this function?</span>
+<span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
 </code></pre></div>
+
 <p><code>return</code> is going to output whatever value(s) follow after the keyword <code>return</code> when we call upon our function </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>4
 </code></pre></div>
 
 <p>I'm going to return two values...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span>
 </code></pre></div>
+
 <p>and we see how the output updates accordingly</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>(4, 2)
 </code></pre></div>
 
 <p>We can capture these values on the output with...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span> <span class="o">=</span> <span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span> <span class="o">=</span> <span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>4 2
 </code></pre></div>
 
 <h3 id="312-global-vs-local-variables-and-function-parameters">3.1.2 Global vs local variables and function parameters<a class="headerlink" href="#312-global-vs-local-variables-and-function-parameters" title="Permanent link">&para;</a></h3>
 <p>In a function, new variables that you create are not saved when the function returns - these are <strong><em>local</em></strong> variables.  Variables defined outside of the function can be accessed but not changed - these are <strong><em>global</em></strong> variables.</p>
 <p>let's define the following function</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>  <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a>  <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">my_little_func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_little_func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>20
 </code></pre></div>
 
 <p>if I run the following...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># b</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># b</span>
 </code></pre></div>
+
 <p>Let's play with this a little further...</p>
 <p>...now let's define b outside the function and call our function with <code>a=5</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># what happens here?</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">100</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">my_little_func</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># what happens here?</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">my_little_func</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>50
 </code></pre></div>
 
 <p>we see that b is still 100, instead of 10 as its defined within the function. This is because b inside of <code>my_little_func</code> is a <em>local</em> variable. </p>
 <p>it doesn't matter how I define b outside the function because within the function it is set locally.</p>
 <p>... Let's do this A LITTLE MORE</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">def</span> <span class="nf">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a>  <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
 </code></pre></div>
+
 <p>now if I call on my new function, because <code>b</code> is not defined locally within the function, it takes on the global value. </p>
 <p>This is typically not happy happy fun fun behavior for us, we want to be explicit about how we define and use our variables (but there are some times when this is appropriate to do)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">b</span><span class="o">=</span> <span class="mf">1e4</span> <span class="c1"># side note, what did I do here????</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">b</span><span class="o">=</span> <span class="mf">1e4</span> <span class="c1"># side note, what did I do here????</span>
+<span class="n">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>10000.0
 
 
@@ -1192,28 +1211,30 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 <h4 id="3111-function-parameters">3.1.1.1 Function Parameters<a class="headerlink" href="#3111-function-parameters" title="Permanent link">&para;</a></h4>
 <p>Parameters (or arguments) in Python are all passed by reference.  This means that if you modify the parameters in the function, they are modified outside of the function. (Enrichment: Exceptions, see below)</p>
 <p>See the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>def change_list(my_list):
-<a id="__codelineno-19-2" name="__codelineno-19-2"></a>   &quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;
-<a id="__codelineno-19-3" name="__codelineno-19-3"></a>   my_list.append(&#39;four&#39;);
-<a id="__codelineno-19-4" name="__codelineno-19-4"></a>   print(&#39;list inside the function: &#39;, my_list)
-<a id="__codelineno-19-5" name="__codelineno-19-5"></a>   return
-<a id="__codelineno-19-6" name="__codelineno-19-6"></a>
-<a id="__codelineno-19-7" name="__codelineno-19-7"></a>my_list = [1, 2, 3];
-<a id="__codelineno-19-8" name="__codelineno-19-8"></a>print(&#39;list before the function: &#39;, my_list)
-<a id="__codelineno-19-9" name="__codelineno-19-9"></a>change_list(my_list);
-<a id="__codelineno-19-10" name="__codelineno-19-10"></a>print(&#39;list after the function: &#39;, my_list)
+<div class="codehilite"><pre><span></span><code>def change_list(my_list):
+   &quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;
+   my_list.append(&#39;four&#39;);
+   print(&#39;list inside the function: &#39;, my_list)
+   return
+
+my_list = [1, 2, 3];
+print(&#39;list before the function: &#39;, my_list)
+change_list(my_list);
+print(&#39;list after the function: &#39;, my_list)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">def</span> <span class="nf">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a>   <span class="sd">&quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a>   <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;four&#39;</span><span class="p">);</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4"></a>   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list inside the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5"></a>   <span class="k">return</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6"></a>
-<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list before the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="n">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">);</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list after the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;This changes a passed list into this function&quot;&quot;&quot;</span>
+   <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;four&#39;</span><span class="p">);</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list inside the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list before the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+<span class="n">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list after the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>list before the function:  [1, 2, 3]
 list inside the function:  [1, 2, 3, &#39;four&#39;]
 list after the function:  [1, 2, 3, &#39;four&#39;]
@@ -1225,49 +1246,51 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 <ul>
 <li>integers, float, str, tuples</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">b</span> <span class="o">=</span> <span class="mf">10.2</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7"></a>
-<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9"></a>  <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-21-10" name="__codelineno-21-10"></a>    <span class="n">b</span> <span class="o">+=</span> <span class="s2">&quot;20&quot;</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11"></a>  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">):</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12"></a>    <span class="n">b</span> <span class="o">+=</span> <span class="mi">10</span>
-<a id="__codelineno-21-13" name="__codelineno-21-13"></a>  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">):</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AYYY no tuple changes, Dude&quot;</span><span class="p">)</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15"></a>    <span class="k">pass</span>
-<a id="__codelineno-21-16" name="__codelineno-21-16"></a>  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">):</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17"></a>    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;whoaaaa&#39;</span><span class="p">)</span>
-<a id="__codelineno-21-18" name="__codelineno-21-18"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-21-19" name="__codelineno-21-19"></a>  <span class="k">return</span>
-<a id="__codelineno-21-20" name="__codelineno-21-20"></a>
-<a id="__codelineno-21-21" name="__codelineno-21-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-21-22" name="__codelineno-21-22"></a><span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-21-23" name="__codelineno-21-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">10.2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">b</span> <span class="o">+=</span> <span class="s2">&quot;20&quot;</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">+=</span> <span class="mi">10</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AYYY no tuple changes, Dude&quot;</span><span class="p">)</span>
+    <span class="k">pass</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;whoaaaa&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="k">return</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>[10, 2]
 [10, 2, &#39;whoaaaa&#39;]
 [10, 2, &#39;whoaaaa&#39;]
 </code></pre></div>
 
 <p>There is a way to change a global variable within a function with the <strong><em>global</em></strong> keyword.  Generally, the use of <strong><em>global</em></strong> variables is not encouraged, instead use parameters. We won't cover the global keyword here but you can <a href="https://www.programiz.com/python-programming/global-keyword">explore further</a> on your own if you are interested. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a>
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5"></a>  <span class="k">global</span> <span class="n">b</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6"></a>  <span class="n">b</span> <span class="o">+=</span> <span class="mi">20</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8"></a>  <span class="k">return</span> 
-<a id="__codelineno-22-9" name="__codelineno-22-9"></a>
-<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+  <span class="k">global</span> <span class="n">b</span>
+  <span class="n">b</span> <span class="o">+=</span> <span class="mi">20</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="k">return</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">my_little_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>10
 30
 30
@@ -1278,8 +1301,9 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 <blockquote>
 <p>If you are going to return multiple objects, what data structure that we talked about can be used?  Give and example below.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="c1"># Cell for excerise 1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for excerise 1</span>
 </code></pre></div>
+
 <h3 id="313-parameter-types">3.1.3 Parameter types<a class="headerlink" href="#313-parameter-types" title="Permanent link">&para;</a></h3>
 <p><strong>Function calling:</strong></p>
 <ul>
@@ -1295,22 +1319,26 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 <p><strong>Function writing:</strong>
 * default
     * <code>def func(a=10, b=20)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>def print_name(first, last=&#39;Beckner&#39;):
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a>    print(f&#39;Your name is {first} {last}&#39;)
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a>    return
+<div class="codehilite"><pre><span></span><code>def print_name(first, last=&#39;Beckner&#39;):
+    print(f&#39;Your name is {first} {last}&#39;)
+    return
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">def</span> <span class="nf">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">):</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your name is </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">))</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a>    <span class="k">return</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your name is </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">))</span>
+    <span class="k">return</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="n">print_name</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
 </code></pre></div>
 
 <p>Play around with the above function.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">print_name</span><span class="p">(</span><span class="s1">&#39;Wesley&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;the Python Foundations Instructor&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="s1">&#39;Wesley&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;the Python Foundations Instructor&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Your name is Wesley the Python Foundations Instructor
 </code></pre></div>
 
@@ -1318,24 +1346,28 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 * <code>if</code>...<code>elif</code>...<code>else</code>
 * <code>for</code>...<code>while</code>
 * other function calls</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>def print_name_age(first, last, age):
-<a id="__codelineno-28-2" name="__codelineno-28-2"></a>    print_name(first, last)
-<a id="__codelineno-28-3" name="__codelineno-28-3"></a>    print(&#39;Your age is %d&#39; % (age))
-<a id="__codelineno-28-4" name="__codelineno-28-4"></a>    if age &gt; 25 and age &lt; 40:
-<a id="__codelineno-28-5" name="__codelineno-28-5"></a>        print(&#39;You are a millenial!&#39;)
-<a id="__codelineno-28-6" name="__codelineno-28-6"></a>    return
+<div class="codehilite"><pre><span></span><code>def print_name_age(first, last, age):
+    print_name(first, last)
+    print(&#39;Your age is %d&#39; % (age))
+    if age &gt; 25 and age &lt; 40:
+        print(&#39;You are a millenial!&#39;)
+    return
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">def</span> <span class="nf">print_name_age</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2"></a>    <span class="n">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">age</span><span class="p">))</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4"></a>    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are a millenial!&#39;</span><span class="p">)</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6"></a>    <span class="k">return</span>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_name_age</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="n">print_name</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">age</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are a millenial!&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>print_name_age(age=29, last=&#39;Beckner&#39;, first=&#39;Wesley&#39;)
+
+<div class="codehilite"><pre><span></span><code>print_name_age(age=29, last=&#39;Beckner&#39;, first=&#39;Wesley&#39;)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">print_name_age</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">print_name_age</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
 Your age is 29
 You are a millenial!
@@ -1377,58 +1409,64 @@ If you've used the <a href="http://rstats.org">R</a> statistical language (and i
 <p>We will refer to writing tests, and specifically writing <em>unit tests</em> in this module. Don't worry too much about the specifics of <em>unit tests</em> for now. We will have a dedicated module for that. What we do need to talk about is a specific built in function in python called the <code>assert</code> function</p>
 <h4 id="3301-the-assert-function">3.3.0.1 the <code>assert</code> function<a class="headerlink" href="#3301-the-assert-function" title="Permanent link">&para;</a></h4>
 <p>Let's take a simple example of the assert function. If I wanted to test that the sume of two numbers is correct</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;should be 7&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;should be 7&quot;</span>
 </code></pre></div>
+
 <p>Nothing is sent to the print out because the condition is satisfied. If we run, however:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a>assert sum([2, 4]) == 7, &quot;should be 7&quot;
+<div class="codehilite"><pre><span></span><code>assert sum([2, 4]) == 7, &quot;should be 7&quot;
 </code></pre></div>
+
 <p>we get an error message:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>---------------------------------------------------------------------------
-<a id="__codelineno-34-2" name="__codelineno-34-2"></a>AssertionError                            Traceback (most recent call last)
-<a id="__codelineno-34-3" name="__codelineno-34-3"></a>&lt;ipython-input-3-d5724b127818&gt; in &lt;module&gt;()
-<a id="__codelineno-34-4" name="__codelineno-34-4"></a>----&gt; 1 assert sum([2, 4]) == 7, &quot;should be 7&quot;
-<a id="__codelineno-34-5" name="__codelineno-34-5"></a>
-<a id="__codelineno-34-6" name="__codelineno-34-6"></a>AssertionError: should be 7
+<div class="codehilite"><pre><span></span><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-3-d5724b127818&gt; in &lt;module&gt;()
+----&gt; 1 assert sum([2, 4]) == 7, &quot;should be 7&quot;
+
+AssertionError: should be 7
 </code></pre></div>
+
 <p>Now to make this a test, you will want to wrap it in a function</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="k">def</span> <span class="nf">test_sum</span><span class="p">():</span>
-<a id="__codelineno-35-2" name="__codelineno-35-2"></a>    <span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Should be 6&quot;</span>
-<a id="__codelineno-35-3" name="__codelineno-35-3"></a>
-<a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="n">test_sum</span><span class="p">()</span>
-<a id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everything passed&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">test_sum</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Should be 6&quot;</span>
+
+<span class="n">test_sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everything passed&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Everything passed
 </code></pre></div>
 
 <p>And if we include a test that does not pass:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>def test_sum():
-<a id="__codelineno-36-2" name="__codelineno-36-2"></a>  assert sum([3, 3]) == 6, &quot;Should be 6&quot;
-<a id="__codelineno-36-3" name="__codelineno-36-3"></a>
-<a id="__codelineno-36-4" name="__codelineno-36-4"></a>def test_my_broken_func():
-<a id="__codelineno-36-5" name="__codelineno-36-5"></a>  assert sum([1, 2]) == 5, &quot;Should be 5&quot;
-<a id="__codelineno-36-6" name="__codelineno-36-6"></a>
-<a id="__codelineno-36-7" name="__codelineno-36-7"></a>test_sum()
-<a id="__codelineno-36-8" name="__codelineno-36-8"></a>test_my_broken_func()
-<a id="__codelineno-36-9" name="__codelineno-36-9"></a>print(&quot;Everything passed&quot;)
+<div class="codehilite"><pre><span></span><code>def test_sum():
+  assert sum([3, 3]) == 6, &quot;Should be 6&quot;
+
+def test_my_broken_func():
+  assert sum([1, 2]) == 5, &quot;Should be 5&quot;
+
+test_sum()
+test_my_broken_func()
+print(&quot;Everything passed&quot;)
 </code></pre></div>
+
 <p>Here our test fails, because the sum of 1 and 2 is 3 and not 5. We get a traceback that tells us the source of the error:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a>---------------------------------------------------------------------------
-<a id="__codelineno-37-2" name="__codelineno-37-2"></a>AssertionError                            Traceback (most recent call last)
-<a id="__codelineno-37-3" name="__codelineno-37-3"></a>&lt;ipython-input-13-8a552fbf52bd&gt; in &lt;module&gt;()
-<a id="__codelineno-37-4" name="__codelineno-37-4"></a>      6 
-<a id="__codelineno-37-5" name="__codelineno-37-5"></a>      7 test_sum()
-<a id="__codelineno-37-6" name="__codelineno-37-6"></a>----&gt; 8 test_my_broken_func()
-<a id="__codelineno-37-7" name="__codelineno-37-7"></a>      9 print(&quot;Everything passed&quot;)
-<a id="__codelineno-37-8" name="__codelineno-37-8"></a>
-<a id="__codelineno-37-9" name="__codelineno-37-9"></a>&lt;ipython-input-13-8a552fbf52bd&gt; in test_my_broken_func()
-<a id="__codelineno-37-10" name="__codelineno-37-10"></a>      3 
-<a id="__codelineno-37-11" name="__codelineno-37-11"></a>      4 def test_my_broken_func():
-<a id="__codelineno-37-12" name="__codelineno-37-12"></a>----&gt; 5   assert sum([1, 2]) == 5, &quot;Should be 5&quot;
-<a id="__codelineno-37-13" name="__codelineno-37-13"></a>      6 
-<a id="__codelineno-37-14" name="__codelineno-37-14"></a>      7 test_sum()
-<a id="__codelineno-37-15" name="__codelineno-37-15"></a>
-<a id="__codelineno-37-16" name="__codelineno-37-16"></a>AssertionError: Should be 5
+<div class="codehilite"><pre><span></span><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-13-8a552fbf52bd&gt; in &lt;module&gt;()
+      6 
+      7 test_sum()
+----&gt; 8 test_my_broken_func()
+      9 print(&quot;Everything passed&quot;)
+
+&lt;ipython-input-13-8a552fbf52bd&gt; in test_my_broken_func()
+      3 
+      4 def test_my_broken_func():
+----&gt; 5   assert sum([1, 2]) == 5, &quot;Should be 5&quot;
+      6 
+      7 test_sum()
+
+AssertionError: Should be 5
 </code></pre></div>
+
 <p>We will worry about the intricacies of what to test for and when to test at a later time. For now, we just need to understand the assert function so we can practice debugging and writing short tests for the problems that we fix today! Ok LETS GO</p>
 <h3 id="331-know-what-its-supposed-to-do">3.3.1 Know what it's supposed to do<a class="headerlink" href="#331-know-what-its-supposed-to-do" title="Permanent link">&para;</a></h3>
 <p>This may seem obvious, but it's easy to recognize that an error is happening without knowing what the correct answer is. This makes unit tests especially handy, they force us to know the expected outcome at least for intended use cases. Here are some tips in regard to knowing the expected outcome:</p>
@@ -1453,52 +1491,55 @@ If you've used the <a href="http://rstats.org">R</a> statistical language (and i
 <p>Lastly, ask for help. Take breaks. <em>A week of hard work can sometimes save you an hour of thought.</em></p>
 <h4 id="exercise-2-debug-a-short-code-block">🏋️ Exercise 2: Debug A Short Code Block<a class="headerlink" href="#exercise-2-debug-a-short-code-block" title="Permanent link">&para;</a></h4>
 <p>Your friend is writing a function to calculate BMI. They are concerned that seemingly all the patient's values have the same BMI, despite having different heights and weights. Determine the bugs in the code then write a unit test for the function <code>calculate_bmi</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="c1"># [weight (kg), height (m)]</span>
-<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
-<a id="__codelineno-38-3" name="__codelineno-38-3"></a>
-<a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-<a id="__codelineno-38-5" name="__codelineno-38-5"></a>    <span class="c1"># kg / m ** 2 = bmi</span>
-<a id="__codelineno-38-6" name="__codelineno-38-6"></a>    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-38-7" name="__codelineno-38-7"></a>
-<a id="__codelineno-38-8" name="__codelineno-38-8"></a><span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-<a id="__codelineno-38-9" name="__codelineno-38-9"></a>    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-<a id="__codelineno-38-10" name="__codelineno-38-10"></a>    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> 
-<a id="__codelineno-38-11" name="__codelineno-38-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># [weight (kg), height (m)]</span>
+<span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
+
+<span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="c1"># kg / m ** 2 = bmi</span>
+    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
+    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 0.000367
 Patient&#39;s BMI is: 0.000367
 Patient&#39;s BMI is: 0.000367
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="c1"># [weight (kg), height (m)]</span>
-<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
-<a id="__codelineno-39-3" name="__codelineno-39-3"></a>
-<a id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-<a id="__codelineno-39-5" name="__codelineno-39-5"></a>    <span class="c1"># kg / m ** 2 = bmi</span>
-<a id="__codelineno-39-6" name="__codelineno-39-6"></a>    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-39-7" name="__codelineno-39-7"></a>
-<a id="__codelineno-39-8" name="__codelineno-39-8"></a><span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-<a id="__codelineno-39-9" name="__codelineno-39-9"></a>    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-<a id="__codelineno-39-10" name="__codelineno-39-10"></a>    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
-<a id="__codelineno-39-11" name="__codelineno-39-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># [weight (kg), height (m)]</span>
+<span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
+
+<span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="c1"># kg / m ** 2 = bmi</span>
+    <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
+    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 21.604938
 Patient&#39;s BMI is: 22.160665
 Patient&#39;s BMI is: 51.903114
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="k">def</span> <span class="nf">test_calculate_bmi</span><span class="p">():</span>
-<a id="__codelineno-40-2" name="__codelineno-40-2"></a>  <span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
-<a id="__codelineno-40-3" name="__codelineno-40-3"></a>  <span class="n">bmis</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">,</span> <span class="mf">22.16</span><span class="p">,</span> <span class="mf">51.9</span><span class="p">]</span>
-<a id="__codelineno-40-4" name="__codelineno-40-4"></a>
-<a id="__codelineno-40-5" name="__codelineno-40-5"></a>  <span class="k">for</span> <span class="n">patient</span><span class="p">,</span> <span class="n">bmi_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">bmis</span><span class="p">):</span>
-<a id="__codelineno-40-6" name="__codelineno-40-6"></a>    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-<a id="__codelineno-40-7" name="__codelineno-40-7"></a>    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
-<a id="__codelineno-40-8" name="__codelineno-40-8"></a>    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bmi</span> <span class="o">-</span> <span class="n">bmi_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;fail calc for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
-<a id="__codelineno-40-9" name="__codelineno-40-9"></a>
-<a id="__codelineno-40-10" name="__codelineno-40-10"></a><span class="n">test_calculate_bmi</span><span class="p">()</span>
-<a id="__codelineno-40-11" name="__codelineno-40-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">test_calculate_bmi</span><span class="p">():</span>
+  <span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
+  <span class="n">bmis</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">,</span> <span class="mf">22.16</span><span class="p">,</span> <span class="mf">51.9</span><span class="p">]</span>
+
+  <span class="k">for</span> <span class="n">patient</span><span class="p">,</span> <span class="n">bmi_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">bmis</span><span class="p">):</span>
+    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bmi</span> <span class="o">-</span> <span class="n">bmi_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;fail calc for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
+
+<span class="n">test_calculate_bmi</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success!&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>success!
 </code></pre></div>
 

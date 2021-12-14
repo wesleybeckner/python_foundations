@@ -768,32 +768,38 @@
 <p>In this lab we will continue to practice with numpy</p>
 <p><br></p>
 <hr />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </code></pre></div>
+
 <h2 id="l5-q1">🧮 L5 Q1<a class="headerlink" href="#l5-q1" title="Permanent link">&para;</a></h2>
 <p>Create a 3x3 array of all True's (booleans)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># cell for Q1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q1</span>
 </code></pre></div>
+
 <h2 id="l5-q2">🧮 L5 Q2<a class="headerlink" href="#l5-q2" title="Permanent link">&para;</a></h2>
 <p>extract all numbers divisible by 3</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+<div class="codehilite"><pre><span></span><code>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># cell for Q2</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q2</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 </code></pre></div>
+
 <p>There is a nifty tool, <code>np.where()</code>. The syntax works like <code>np.where(&lt;where this condition is true&gt; , &lt;return elements from this array&gt;, &lt;otherwise return elements from this aray&gt;)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Ex</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Ex</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
 </code></pre></div>
 
 <p>A similar but slightly different tool is <code>np.argwhere</code> which will return the indices of the array where the conditional is true</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Ex</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Ex</span>
+<span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>array([[0],
        [1],
        [2],
@@ -803,59 +809,68 @@
 
 <h2 id="l5-q3">🧮 L5 Q3<a class="headerlink" href="#l5-q3" title="Permanent link">&para;</a></h2>
 <p>replace all odd numbers in <code>arr</code> without changing <code>arr</code> (return a new array using <code>np.where</code>)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># cell for Q3</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q3</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 </code></pre></div>
+
 <h2 id="l5-q4">🧮 L5 Q4<a class="headerlink" href="#l5-q4" title="Permanent link">&para;</a></h2>
 <p>create the following array without hard coading (i.e. don't write any of the values in your coad)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>a = np.array([1,2,3])`
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a># desired output:
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+<div class="codehilite"><pre><span></span><code>a = np.array([1,2,3])`
+# desired output:
+#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
 </code></pre></div>
+
 <p>Hints:</p>
 <ul>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html">repeat</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html">tile</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># cell for Q4</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># desired output:</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1">#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q4</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># desired output:</span>
+<span class="c1">#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])</span>
 </code></pre></div>
+
 <h2 id="l5-q5">🧮 L5 Q5<a class="headerlink" href="#l5-q5" title="Permanent link">&para;</a></h2>
 <p>get indices where elements in <code>a</code> and <code>b</code> match.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># cell for Q5</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
 </code></pre></div>
+
 <h2 id="l5-q6">🧮 L5 Q6<a class="headerlink" href="#l5-q6" title="Permanent link">&para;</a></h2>
 <p>grab numbers between 5 and 10 in <code>b</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># cell for Q6</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q6</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
 </code></pre></div>
+
 <h2 id="l5-q7">🧮 L5 Q7<a class="headerlink" href="#l5-q7" title="Permanent link">&para;</a></h2>
 <p>swap columns 2 and 3 in <code>arr</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># cell for Q7</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q7</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
+
 <h2 id="l5-q8">🧮 L5 Q8<a class="headerlink" href="#l5-q8" title="Permanent link">&para;</a></h2>
 <p>compute the mean, median, and standard deviation of <code>sepallength</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># cell for Q8</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">sepallength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q8</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+<span class="n">sepallength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div>
+
 <h2 id="l5-q9">🧮 L5 Q9<a class="headerlink" href="#l5-q9" title="Permanent link">&para;</a></h2>
 <p>normalize sepallength so that all values occur between 0 and 1</p>
 <p>(<em>hint: (observation - min / (max - min))</em>)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># cell for Q9</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q9</span>
 </code></pre></div>
+
 <h2 id="l5-q10">🧮 L5 Q10<a class="headerlink" href="#l5-q10" title="Permanent link">&para;</a></h2>
 <p>calculate the 95 percentile score of <code>sepallength</code> using <code>np.percentile</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># cell for Q10</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q10</span>
 </code></pre></div>
+
 <p>Complete additional exercises if you wish at <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">machinelearningplus</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
               

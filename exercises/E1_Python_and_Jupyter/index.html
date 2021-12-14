@@ -733,58 +733,66 @@
 - An integer variable named <code>streaming_video_hours</code> that represents the whole number of hours you watch any streaming video service (ex. Netflix, Hulu, Disney+) per week.
 - A float variable named <code>headphone_cost</code> that represents the most money you had to pay, in dollar-cent amount (0.00), for headphones. Do not include a '$' symbol.</p>
 <p>Then after they are declared, print each one using the print() function explained in section 1.1.2.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>To check if each variable is the correct data type, use the type() function explained from section 1.1.3, in the empty code cell below. For example, <code>type(favorite_movie)</code> should return the output <code>&lt;class 'str'&gt;</code>, which indicates the string type.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <h4 id="l1-q2-practice-with-math-in-python">🧮 L1 Q2 Practice with math in Python<a class="headerlink" href="#l1-q2-practice-with-math-in-python" title="Permanent link">&para;</a></h4>
 <p>Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this function will correctly output the product of these two numbers.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>Consider the operation written in Python: <code>27 / 3 + 6</code>. Write the same syntax in the empty cell below, and modify it to include parentheses in the right location so that the result/answer of the math is 3.0, rather than 15.0.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>Let's learn more operators beyond the ones we covered earlier. Write the line of code <code>3 ** 2</code> in the cell below. From the output, what do you think the double asterisks (<code>**</code>) operator represents in Python?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>Write the line of code <code>28 / 3</code> below. Then just below the line in the same cell, write the code <code>28 // 3</code>. Compare the differences in output between the two. Can you decipher what <code>//</code> means in Python?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>Now for more complicated mathematical operations! </p>
 <p>Try to write the Python equivalent of the following:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\frac{14 + 28}{28 - 14}</div>
+<p>
 <script type="math/tex; mode=display">\frac{14 + 28}{28 - 14}</script>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
+</p>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>Now try this one:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\frac{15 + 984}{-(217+4)}</div>
+<p>
 <script type="math/tex; mode=display">\frac{15 + 984}{-(217+4)}</script>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>
+</p>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <p>And finally, write the Python equivalent for this:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\frac{-(3655 * 44)}{(8 * 16)^3}</div>
+<p>
 <script type="math/tex; mode=display">\frac{-(3655 * 44)}{(8 * 16)^3}</script>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>
+</p>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
 <h4 id="l1-q3-practice-writing-helpful-comments">🤐 L1 Q3 Practice writing helpful comments<a class="headerlink" href="#l1-q3-practice-writing-helpful-comments" title="Permanent link">&para;</a></h4>
 <p>Consider the following code below. No need to decipher and understand every piece but just be aware of the output when you run the code cell. Based on the output, modify the code cell by adding a code comment at the top of the cell briefly explaining what the code does. This comment can be as many lines as you'd like, and may or may not include direct references to the example print statements below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">def</span> <span class="nf">mystery_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;UniversityOfWashington&quot;</span><span class="p">))</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;AvocadoToast&quot;</span><span class="p">))</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;RacecaR&quot;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">mystery_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;UniversityOfWashington&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;AvocadoToast&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;RacecaR&quot;</span><span class="p">))</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>n o t g n i h s a W f O y t i s r e v i n U
 t s a o T o d a c o v A
 R a c e c a R

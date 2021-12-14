@@ -973,108 +973,109 @@
 <p><a name='x.0.1'></a></p>
 <h3 id="201-import-packages">2.0.1 Import Packages<a class="headerlink" href="#201-import-packages" title="Permanent link">&para;</a></h3>
 <p><a href="#top">back to top</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">def</span> <span class="nf">visualize_board</span><span class="p">(</span><span class="n">board_values</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="sd">  Visualizes the board during gameplay</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="sd">  Parameters</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="sd">  ----------</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="sd">  board_values : list</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="sd">    The values (&#39;X&#39;, &#39;O&#39;, or &#39; &#39; at each board location)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="sd">  Returns</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="sd">  -------</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="sd">  None</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="sd">  &quot;&quot;&quot;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>  <span class="nb">print</span><span class="p">(</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board_values</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">def</span> <span class="nf">init_board</span><span class="p">():</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>  <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">  Initializes an empty board for the start of gameplay</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">  Parameters</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">  ----------</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">  None</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">  Returns</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">  -------</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">  board : dict</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">    a dictionary with keys 1-9 and single space (&#39; &#39;) string as values</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">  &quot;&quot;&quot;</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>  <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="c1"># the keys on the game board where, if filled completely with X&#39;s or O&#39;s a </span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="c1"># winner has occurred </span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="n">win_patterns</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="k">def</span> <span class="nf">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>  <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">  Checks if the game has a winner</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">  Parameters</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">  ----------</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">  board : dict</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    the tictactoe board as a dictionary</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">  Returns</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">  -------</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">  win_statement : str</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">    defaults to an empty string if no winner. Otherwise &#39;X&#39; Won! or &#39;O&#39; Won!</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">  &quot;&quot;&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>  <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">]</span> 
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">if</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]:</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>      <span class="k">return</span> <span class="s2">&quot;&#39;X&#39; Won!&quot;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">elif</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]:</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>      <span class="k">return</span> <span class="s2">&quot;&#39;O&#39; Won!&quot;</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>  <span class="k">return</span> <span class="s1">&#39;&#39;</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="k">def</span> <span class="nf">tic_tac_toe</span><span class="p">():</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>  <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">  The tictactoe game engine. Runs the while loop that handles the game</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">  Parameters</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">  ----------</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">  None</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">  Returns</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">  -------</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">  None</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">  &quot;&quot;&quot;</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>  <span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>      <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>      <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>      <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>                    <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>      <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>      <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="k">continue</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>        <span class="k">break</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>      <span class="k">break</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">visualize_board</span><span class="p">(</span><span class="n">board_values</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Visualizes the board during gameplay</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  board_values : list</span>
+<span class="sd">    The values (&#39;X&#39;, &#39;O&#39;, or &#39; &#39; at each board location)</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  None</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board_values</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">init_board</span><span class="p">():</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Initializes an empty board for the start of gameplay</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  None</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  board : dict</span>
+<span class="sd">    a dictionary with keys 1-9 and single space (&#39; &#39;) string as values</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
+
+<span class="c1"># the keys on the game board where, if filled completely with X&#39;s or O&#39;s a </span>
+<span class="c1"># winner has occurred </span>
+<span class="n">win_patterns</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Checks if the game has a winner</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  board : dict</span>
+<span class="sd">    the tictactoe board as a dictionary</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  win_statement : str</span>
+<span class="sd">    defaults to an empty string if no winner. Otherwise &#39;X&#39; Won! or &#39;O&#39; Won!</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">]</span> 
+    <span class="k">if</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]:</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;X&#39; Won!&quot;</span>
+    <span class="k">elif</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]:</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;O&#39; Won!&quot;</span>
+
+  <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">tic_tac_toe</span><span class="p">():</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  The tictactoe game engine. Runs the while loop that handles the game</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  None</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  None</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
+  <span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
+      <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+      <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+      <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
+                    <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+      <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="k">continue</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="k">break</span>
 </code></pre></div>
+
 <p><a name='x.1'></a></p>
 <h2 id="21-oop">2.1 OOP<a class="headerlink" href="#21-oop" title="Permanent link">&para;</a></h2>
 <p><a href="#top">back to top</a></p>
@@ -1098,339 +1099,352 @@
 </ul>
 <h4 id="q1-attributes-of-tictactoe">Q1 Attributes of TicTacToe<a class="headerlink" href="#q1-attributes-of-tictactoe" title="Permanent link">&para;</a></h4>
 <p>Within class TicTacToe, define the attributes described above</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span> <span class="nc">TicTacToe</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>  <span class="c1"># create winner and start_player parameters with default values as empty </span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>  <span class="c1"># strings within __init__</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="k">pass</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="c1">##################################</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="c1">########### Attributes ###########</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="c1">##################################</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="c1"># set self.winner and self.start_player with the parameters from __init__</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="c1"># set self.board as a dictionary with &#39; &#39; as values and 1-9 as keys</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="c1"># set self.win_patterns with the 8 winning patterns (a list of lists)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">TicTacToe</span><span class="p">:</span>
+  <span class="c1"># create winner and start_player parameters with default values as empty </span>
+  <span class="c1"># strings within __init__</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+    <span class="c1">##################################</span>
+    <span class="c1">########### Attributes ###########</span>
+    <span class="c1">##################################</span>
+    <span class="c1"># set self.winner and self.start_player with the parameters from __init__</span>
+
+    <span class="c1"># set self.board as a dictionary with &#39; &#39; as values and 1-9 as keys</span>
+
+    <span class="c1"># set self.win_patterns with the 8 winning patterns (a list of lists)</span>
 </code></pre></div>
+
 <h4 id="q2-methods-of-tictactoe">Q2 Methods of TicTacToe<a class="headerlink" href="#q2-methods-of-tictactoe" title="Permanent link">&para;</a></h4>
 <p>Here now we will define the methods of <code>TicTacToe</code>. Paste your attributes from the above cell, into the bellow cell so that your changes carry over.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span> <span class="nc">TicTacToe</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>  <span class="c1"># create winner and start_player parameters with default values as empty </span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>  <span class="c1"># strings within __init__</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="k">pass</span> <span class="c1"># remove after completing</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="c1">##################################</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>  <span class="c1">########### Attributes ###########</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="c1">##################################</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="c1"># set self.winner and self.start_player with the parameters from __init__</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="c1"># set self.board as a dictionary with &#39; &#39; as values and 1-9 as keys</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="c1"># set self.win_patterns with the 8 winning patterns (a list of lists)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>  <span class="c1">###############################</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  <span class="c1">########### METHODS ###########</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>  <span class="c1">###############################    </span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>  <span class="c1"># the other functions are now passed self</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="c1"># define visualize_board and update all internal calls to the board</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>  <span class="c1"># object with self.board (and maybe self.board.values() depending on how your</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>  <span class="c1"># visualize_board function is written)</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a>  <span class="c1"># define check_winning and similarly update all calls to win_patterns,</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a>  <span class="c1"># board, and winner to be accessed via the self. Be sure to update the </span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a>  <span class="c1"># attribute self.winner with the appropriate winner in the function</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>  <span class="c1"># here the definition of check_stalemate is given</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a>  <span class="k">def</span> <span class="nf">check_stalemate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a>    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;Stalemate&#39;</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a>      <span class="k">return</span> <span class="s2">&quot;It&#39;s a stalemate!&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">TicTacToe</span><span class="p">:</span>
+  <span class="c1"># create winner and start_player parameters with default values as empty </span>
+  <span class="c1"># strings within __init__</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing</span>
+  <span class="c1">##################################</span>
+  <span class="c1">########### Attributes ###########</span>
+  <span class="c1">##################################</span>
+    <span class="c1"># set self.winner and self.start_player with the parameters from __init__</span>
+
+    <span class="c1"># set self.board as a dictionary with &#39; &#39; as values and 1-9 as keys</span>
+
+    <span class="c1"># set self.win_patterns with the 8 winning patterns (a list of lists)</span>
+
+  <span class="c1">###############################</span>
+  <span class="c1">########### METHODS ###########</span>
+  <span class="c1">###############################    </span>
+
+  <span class="c1"># the other functions are now passed self</span>
+
+  <span class="c1"># define visualize_board and update all internal calls to the board</span>
+  <span class="c1"># object with self.board (and maybe self.board.values() depending on how your</span>
+  <span class="c1"># visualize_board function is written)</span>
+
+  <span class="c1"># define check_winning and similarly update all calls to win_patterns,</span>
+  <span class="c1"># board, and winner to be accessed via the self. Be sure to update the </span>
+  <span class="c1"># attribute self.winner with the appropriate winner in the function</span>
+
+  <span class="c1"># here the definition of check_stalemate is given</span>
+  <span class="k">def</span> <span class="nf">check_stalemate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;Stalemate&#39;</span>
+      <span class="k">return</span> <span class="s2">&quot;It&#39;s a stalemate!&quot;</span>
 </code></pre></div>
+
 <h3 id="213-the-game-engine-just-a-function-for-now">2.1.3 The Game Engine (just a function for now)<a class="headerlink" href="#213-the-game-engine-just-a-function-for-now" title="Permanent link">&para;</a></h3>
 <p>Next we'll create a function that runs game play using TicTacToe as an object that it passes around. I've already done the heavy lifting of replacing references to attributes (board, win_patterns) and methods (visualize_board, check_winning) to pass through the <code>TicTacToe</code> object. I also added the option for the user to quit the game by typing in <code>'q'</code> to the input line if they would like.</p>
 <h4 id="q3-add-condition-for-stalemate">Q3 Add Condition for Stalemate<a class="headerlink" href="#q3-add-condition-for-stalemate" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>  <span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="n">TicTacToe</span><span class="p">()</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>      <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>      <span class="c1">####################################################################</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>      <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>      <span class="c1">####################################################################</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>      <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="k">break</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>      <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>          <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>                      <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>          <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>          <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>            <span class="k">continue</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>          <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>            <span class="k">break</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>      <span class="c1"># the winner varaible will now be checked within the board object</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>      <span class="c1">##############################</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a>      <span class="c1"># CALL check_stalemate() BELOW</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a>      <span class="c1">##############################</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>        <span class="n">clear_output</span><span class="p">()</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>        <span class="k">continue</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42"></a>      <span class="c1"># write an elif statement that checks if self.winner is &#39;Stalemate&#39; and</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43"></a>      <span class="c1"># subsequently visualizes the board and breaks out of the while loop</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44"></a>      <span class="c1"># also print out check_stalemante so the returned string is shown to the </span>
-<a id="__codelineno-3-45" name="__codelineno-3-45"></a>      <span class="c1"># user</span>
-<a id="__codelineno-3-46" name="__codelineno-3-46"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
-<a id="__codelineno-3-49" name="__codelineno-3-49"></a>        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-3-50" name="__codelineno-3-50"></a>        <span class="k">break</span>
-<a id="__codelineno-3-51" name="__codelineno-3-51"></a>    <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-3-52" name="__codelineno-3-52"></a>      <span class="k">break</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
+  <span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="n">TicTacToe</span><span class="p">()</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+      <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
+
+      <span class="c1">####################################################################</span>
+      <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
+      <span class="c1">####################################################################</span>
+      <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
+        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+      <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+          <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
+                      <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
+          <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
+          <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+
+      <span class="c1"># the winner varaible will now be checked within the board object</span>
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
+
+      <span class="c1">##############################</span>
+      <span class="c1"># CALL check_stalemate() BELOW</span>
+      <span class="c1">##############################</span>
+
+      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">clear_output</span><span class="p">()</span>
+        <span class="k">continue</span>
+
+      <span class="c1">##########################################################################</span>
+      <span class="c1"># write an elif statement that checks if self.winner is &#39;Stalemate&#39; and</span>
+      <span class="c1"># subsequently visualizes the board and breaks out of the while loop</span>
+      <span class="c1"># also print out check_stalemante so the returned string is shown to the </span>
+      <span class="c1"># user</span>
+      <span class="c1">##########################################################################</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
+        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="k">break</span>
 </code></pre></div>
+
 <p>Let's test our new module</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">play_game</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">play_game</span><span class="p">()</span>
 </code></pre></div>
+
 <h2 id="31-creating-an-agent">3.1 Creating an Agent<a class="headerlink" href="#31-creating-an-agent" title="Permanent link">&para;</a></h2>
 <p>we'll start by creating an agent that just selects a random playing number</p>
 <h3 id="q4-use-a-random-number-generator">Q4 Use a Random Number Generator<a class="headerlink" href="#q4-use-a-random-number-generator" title="Permanent link">&para;</a></h3>
 <p>import the random library. Use it to randomly generate numbers 1-9 (inclusive? yep, inclusive. We're going to use this to select the keys in our board dictionary! 📚)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># cell for Q4</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># generates a random number 1-9</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q4</span>
+<span class="c1"># generates a random number 1-9</span>
 </code></pre></div>
+
 <h3 id="q5-play-a-valid-move">Q5 Play a Valid Move<a class="headerlink" href="#q5-play-a-valid-move" title="Permanent link">&para;</a></h3>
 <p>Nice, now that we are generating random numbers 1-9. We need to check if a random number that's been drawn, is a valid move. We're going to do this with... yeah that's right you guessed it, a <code>while loop</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>  <span class="c1"># generate a random number 1-9 and set it equalt to the variable name &lt;move&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>  <span class="k">if</span> <span class="c1"># if the move is invalid then...</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="k">continue</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>  <span class="k">else</span><span class="p">:</span> <span class="c1"># otherwise the move is valid and we can exit the loop!</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="k">break</span>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="c1"># generate a random number 1-9 and set it equalt to the variable name &lt;move&gt;</span>
+  <span class="k">if</span> <span class="c1"># if the move is invalid then...</span>
+    <span class="k">continue</span>
+  <span class="k">else</span><span class="p">:</span> <span class="c1"># otherwise the move is valid and we can exit the loop!</span>
+    <span class="k">break</span>
 </code></pre></div>
+
 <p>Wow and that's it, we just need to wrap it in our <code>play_game</code> function. Before we do that, we need to handle the ability of our engine to perform 1 and 2 player games. In order to do this, I'm going to introduce a new object to organize how the game is setup. I'm going to call it <code>player_meta</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>player_meta = {&#39;first&#39;: {&#39;label&#39;: &#39;X&#39;,
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>                            &#39;type&#39;: &#39;human&#39;}, 
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>              &#39;second&#39;: {&#39;label&#39;: &#39;O&#39;,
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>                            &#39;type&#39;: &#39;human&#39;}}
+<div class="codehilite"><pre><span></span><code>player_meta = {&#39;first&#39;: {&#39;label&#39;: &#39;X&#39;,
+                            &#39;type&#39;: &#39;human&#39;}, 
+              &#39;second&#39;: {&#39;label&#39;: &#39;O&#39;,
+                            &#39;type&#39;: &#39;human&#39;}}
 </code></pre></div>
+
 <h3 id="q6-game-setup-and-random-ai">Q6 Game Setup and Random AI<a class="headerlink" href="#q6-game-setup-and-random-ai" title="Permanent link">&para;</a></h3>
 <p>I will skeleton out where the <code>input</code> questions need to be sent to the user, it is your task to determine how the <code>player_meta</code> dictionary should subsequently be updated!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>  <span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="n">TicTacToe</span><span class="p">()</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>  <span class="c1">##############################################################################</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="c1">################################# GAME SETUP #################################</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="c1">##############################################################################</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a>  <span class="n">players</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Players? (type 0, 1, or 2)&quot;</span><span class="p">))</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>  <span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a>                                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">},</span> 
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a>                 <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a>                                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">}}</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a>  <span class="k">if</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="n">first</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;who will go first? (X, (AI), or O (Player))&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a>    <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a>      <span class="c1">### UPDATE PLAYER_META HERE ###</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a>      <span class="c1">### UPDATE PLAYER_META HERE ### </span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a>  <span class="k">elif</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># insert wargames quote</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a>    <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a>    <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a>      <span class="c1">### UPDATE PLAYER_META HERE ###</span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a>
-<a id="__codelineno-8-25" name="__codelineno-8-25"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a>      <span class="c1">### UPDATE PLAYER_META HERE ### </span>
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a>
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a>  <span class="c1">##############################################################################</span>
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a>  <span class="c1">################################# GAME PLAY ##################################</span>
-<a id="__codelineno-8-30" name="__codelineno-8-30"></a>  <span class="c1">##############################################################################</span>
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a>  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a>    <span class="c1"># in the following line, instead of alternating between &#39;X&#39; and &#39;O&#39;, we now</span>
-<a id="__codelineno-8-33" name="__codelineno-8-33"></a>    <span class="c1"># alternate between the first and second player, which has the associated</span>
-<a id="__codelineno-8-34" name="__codelineno-8-34"></a>    <span class="c1"># metadata of label (X or O) and type (ai or human). </span>
-<a id="__codelineno-8-35" name="__codelineno-8-35"></a>    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">]:</span>  
-<a id="__codelineno-8-36" name="__codelineno-8-36"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-8-37" name="__codelineno-8-37"></a>
-<a id="__codelineno-8-38" name="__codelineno-8-38"></a>      <span class="c1"># we set the player_label and player_type according to which player is </span>
-<a id="__codelineno-8-39" name="__codelineno-8-39"></a>      <span class="c1"># playing in this round</span>
-<a id="__codelineno-8-40" name="__codelineno-8-40"></a>      <span class="n">player_label</span> <span class="o">=</span> <span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-<a id="__codelineno-8-41" name="__codelineno-8-41"></a>      <span class="n">player_type</span> <span class="o">=</span> <span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
-<a id="__codelineno-8-42" name="__codelineno-8-42"></a>
-<a id="__codelineno-8-43" name="__codelineno-8-43"></a>      <span class="k">if</span> <span class="n">player_type</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-44" name="__codelineno-8-44"></a>        <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_label</span><span class="p">))</span>
-<a id="__codelineno-8-45" name="__codelineno-8-45"></a>        <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
-<a id="__codelineno-8-46" name="__codelineno-8-46"></a>        <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
-<a id="__codelineno-8-47" name="__codelineno-8-47"></a>          <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
-<a id="__codelineno-8-48" name="__codelineno-8-48"></a>          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
-<a id="__codelineno-8-49" name="__codelineno-8-49"></a>          <span class="k">break</span>
-<a id="__codelineno-8-50" name="__codelineno-8-50"></a>
-<a id="__codelineno-8-51" name="__codelineno-8-51"></a>        <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
-<a id="__codelineno-8-52" name="__codelineno-8-52"></a>        <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-8-53" name="__codelineno-8-53"></a>          <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-8-54" name="__codelineno-8-54"></a>            <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
-<a id="__codelineno-8-55" name="__codelineno-8-55"></a>                        <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
-<a id="__codelineno-8-56" name="__codelineno-8-56"></a>            <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
-<a id="__codelineno-8-57" name="__codelineno-8-57"></a>            <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-8-58" name="__codelineno-8-58"></a>              <span class="k">continue</span>
-<a id="__codelineno-8-59" name="__codelineno-8-59"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-60" name="__codelineno-8-60"></a>              <span class="k">break</span>
-<a id="__codelineno-8-61" name="__codelineno-8-61"></a>
-<a id="__codelineno-8-62" name="__codelineno-8-62"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-8-63" name="__codelineno-8-63"></a>      <span class="c1">################### YOUR RANDOM AI AGENT CODE GOES HERE ##################</span>
-<a id="__codelineno-8-64" name="__codelineno-8-64"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-8-65" name="__codelineno-8-65"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-66" name="__codelineno-8-66"></a>        <span class="k">pass</span> <span class="c1"># delete this line when finished</span>
-<a id="__codelineno-8-67" name="__codelineno-8-67"></a>
-<a id="__codelineno-8-68" name="__codelineno-8-68"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_label</span>
-<a id="__codelineno-8-69" name="__codelineno-8-69"></a>
-<a id="__codelineno-8-70" name="__codelineno-8-70"></a>      <span class="c1"># the winner varaible will now be check within the board object</span>
-<a id="__codelineno-8-71" name="__codelineno-8-71"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
-<a id="__codelineno-8-72" name="__codelineno-8-72"></a>      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
-<a id="__codelineno-8-73" name="__codelineno-8-73"></a>      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-74" name="__codelineno-8-74"></a>        <span class="c1"># clear_output()</span>
-<a id="__codelineno-8-75" name="__codelineno-8-75"></a>        <span class="k">continue</span>
-<a id="__codelineno-8-76" name="__codelineno-8-76"></a>
-<a id="__codelineno-8-77" name="__codelineno-8-77"></a>      <span class="k">elif</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;Stalemate&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-78" name="__codelineno-8-78"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">())</span>
-<a id="__codelineno-8-79" name="__codelineno-8-79"></a>        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-8-80" name="__codelineno-8-80"></a>        <span class="k">break</span>
-<a id="__codelineno-8-81" name="__codelineno-8-81"></a>
-<a id="__codelineno-8-82" name="__codelineno-8-82"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-83" name="__codelineno-8-83"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
-<a id="__codelineno-8-84" name="__codelineno-8-84"></a>        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-8-85" name="__codelineno-8-85"></a>        <span class="k">break</span>
-<a id="__codelineno-8-86" name="__codelineno-8-86"></a>    <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-87" name="__codelineno-8-87"></a>      <span class="k">return</span> <span class="n">tic_tac_toe</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
+  <span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="n">TicTacToe</span><span class="p">()</span>
+
+  <span class="c1">##############################################################################</span>
+  <span class="c1">################################# GAME SETUP #################################</span>
+  <span class="c1">##############################################################################</span>
+  <span class="n">players</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Players? (type 0, 1, or 2)&quot;</span><span class="p">))</span>
+  <span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">},</span> 
+                 <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;human&#39;</span><span class="p">}}</span>
+  <span class="k">if</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;who will go first? (X, (AI), or O (Player))&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+      <span class="c1">### UPDATE PLAYER_META HERE ###</span>
+
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1">### UPDATE PLAYER_META HERE ### </span>
+
+  <span class="k">elif</span> <span class="n">players</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># insert wargames quote</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+      <span class="c1">### UPDATE PLAYER_META HERE ###</span>
+
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1">### UPDATE PLAYER_META HERE ### </span>
+
+  <span class="c1">##############################################################################</span>
+  <span class="c1">################################# GAME PLAY ##################################</span>
+  <span class="c1">##############################################################################</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># in the following line, instead of alternating between &#39;X&#39; and &#39;O&#39;, we now</span>
+    <span class="c1"># alternate between the first and second player, which has the associated</span>
+    <span class="c1"># metadata of label (X or O) and type (ai or human). </span>
+    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">]:</span>  
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+
+      <span class="c1"># we set the player_label and player_type according to which player is </span>
+      <span class="c1"># playing in this round</span>
+      <span class="n">player_label</span> <span class="o">=</span> <span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+      <span class="n">player_type</span> <span class="o">=</span> <span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+
+      <span class="k">if</span> <span class="n">player_type</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
+        <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_label</span><span class="p">))</span>
+        <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
+        <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
+          <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
+          <span class="k">break</span>
+
+        <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+          <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
+                        <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
+            <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
+            <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+              <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="k">break</span>
+
+      <span class="c1">##########################################################################</span>
+      <span class="c1">################### YOUR RANDOM AI AGENT CODE GOES HERE ##################</span>
+      <span class="c1">##########################################################################</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span> <span class="c1"># delete this line when finished</span>
+
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_label</span>
+
+      <span class="c1"># the winner varaible will now be check within the board object</span>
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
+      <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="c1"># clear_output()</span>
+        <span class="k">continue</span>
+
+      <span class="k">elif</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;Stalemate&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">())</span>
+        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+        <span class="k">break</span>
+
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
+        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">tic_tac_toe</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">play_game</span><span class="p">()</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">play_game</span><span class="p">()</span>
 </code></pre></div>
+
 <h2 id="32-oop-and-inheritance">3.2 OOP and Inheritance<a class="headerlink" href="#32-oop-and-inheritance" title="Permanent link">&para;</a></h2>
 <p>We'll want to reconfigure our code a bit to allow for AI to play AI. We'll use this feature to record a bunch of games and generate some data for analysis and, eventually, machine learning training.</p>
 <p>We also want to run our game system without having any input from the user for our data generation. This is a good point to reconfigure our code. Notice how long and bulky <code>play_game</code> is getting.</p>
 <h3 id="q7-inheriting-from-tictactoe">Q7 Inheriting from TicTacToe<a class="headerlink" href="#q7-inheriting-from-tictactoe" title="Permanent link">&para;</a></h3>
 <p>To better organize our code, we're going to create a new class called <code>GameEngine</code> and we're going to inherit all the properties of <code>TicTacToe</code>. Do we remember how to do this? let's try it. The simplest way is the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>class GameEngine(TicTacToe):
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>  def __init__(self):
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    super().__init__()
+<div class="codehilite"><pre><span></span><code>class GameEngine(TicTacToe):
+  def __init__(self):
+    super().__init__()
 </code></pre></div>
+
 <p>Nice. Pretty clean, right? The only new thing here I want us to introduce is the parameter <code>setup</code> setup will determine whether we have the user enter fields to setup the <code>player_meta</code> dictionary, or whether we automatically set it up to allow ai vs ai and not require input from the user (which we will need if we are to run thousands of games automatically for data generation!!!)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>class GameEngine(TicTacToe):
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>  def __init__(self, setup=&#39;auto&#39;):
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    super().__init__()
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    self.setup = setup
+<div class="codehilite"><pre><span></span><code>class GameEngine(TicTacToe):
+  def __init__(self, setup=&#39;auto&#39;):
+    super().__init__()
+    self.setup = setup
 </code></pre></div>
+
 <p>notice the new parameter flag! We're going to use it in this next step. Be sure to:</p>
 <ol>
 <li>access all methods/attributes via the <code>self</code></li>
 <li>use code you already wrote above for setting up and for the random AI agent</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">class</span> <span class="nc">GameEngine</span><span class="p">(</span><span class="n">TicTacToe</span><span class="p">):</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">):</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="n">setup</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>  <span class="k">def</span> <span class="nf">setup_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;user&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a>      <span class="c1">## YOUR GAME SETUP CODE FROM ABOVE GOES HERE, NOTE THE NEW IF STATEMENT ##</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a>    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16"></a>      <span class="c1">## THE NEW AUTOSETUP FEATURE THAT WILL ALLOW THE GAME TO RANDOMLY SETUP ##</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17"></a>      <span class="c1">##########################################################################</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18"></a>      <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19"></a>      <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22"></a>                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-<a id="__codelineno-12-23" name="__codelineno-12-23"></a>                      <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24"></a>                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>                                
-<a id="__codelineno-12-25" name="__codelineno-12-25"></a>      <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-12-26" name="__codelineno-12-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
-<a id="__codelineno-12-27" name="__codelineno-12-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-28" name="__codelineno-12-28"></a>                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
-<a id="__codelineno-12-29" name="__codelineno-12-29"></a>                      <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-30" name="__codelineno-12-30"></a>                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>
-<a id="__codelineno-12-31" name="__codelineno-12-31"></a>
-<a id="__codelineno-12-32" name="__codelineno-12-32"></a>  <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-12-33" name="__codelineno-12-33"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-12-34" name="__codelineno-12-34"></a>      <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">]:</span>  
-<a id="__codelineno-12-35" name="__codelineno-12-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-12-36" name="__codelineno-12-36"></a>        <span class="n">player_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-<a id="__codelineno-12-37" name="__codelineno-12-37"></a>        <span class="n">player_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
-<a id="__codelineno-12-38" name="__codelineno-12-38"></a>
-<a id="__codelineno-12-39" name="__codelineno-12-39"></a>        <span class="k">if</span> <span class="n">player_type</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-40" name="__codelineno-12-40"></a>          <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_label</span><span class="p">))</span>
-<a id="__codelineno-12-41" name="__codelineno-12-41"></a>          <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
-<a id="__codelineno-12-42" name="__codelineno-12-42"></a>          <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
-<a id="__codelineno-12-43" name="__codelineno-12-43"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
-<a id="__codelineno-12-44" name="__codelineno-12-44"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-45" name="__codelineno-12-45"></a>            <span class="k">break</span>
-<a id="__codelineno-12-46" name="__codelineno-12-46"></a>
-<a id="__codelineno-12-47" name="__codelineno-12-47"></a>          <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
-<a id="__codelineno-12-48" name="__codelineno-12-48"></a>          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-12-49" name="__codelineno-12-49"></a>            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-12-50" name="__codelineno-12-50"></a>              <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
-<a id="__codelineno-12-51" name="__codelineno-12-51"></a>                          <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
-<a id="__codelineno-12-52" name="__codelineno-12-52"></a>              <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
-<a id="__codelineno-12-53" name="__codelineno-12-53"></a>              <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-<a id="__codelineno-12-54" name="__codelineno-12-54"></a>                <span class="k">continue</span>
-<a id="__codelineno-12-55" name="__codelineno-12-55"></a>              <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-12-56" name="__codelineno-12-56"></a>                <span class="k">break</span>
-<a id="__codelineno-12-57" name="__codelineno-12-57"></a>
-<a id="__codelineno-12-58" name="__codelineno-12-58"></a>        <span class="c1">########################################################################</span>
-<a id="__codelineno-12-59" name="__codelineno-12-59"></a>        <span class="c1">################### YOUR RANDOM AI AGENT CODE GOES HERE ################</span>
-<a id="__codelineno-12-60" name="__codelineno-12-60"></a>        <span class="c1">########################################################################</span>
-<a id="__codelineno-12-61" name="__codelineno-12-61"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-12-62" name="__codelineno-12-62"></a>          <span class="k">pass</span> <span class="c1"># delete this line when finished</span>
-<a id="__codelineno-12-63" name="__codelineno-12-63"></a>
-<a id="__codelineno-12-64" name="__codelineno-12-64"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_label</span>
-<a id="__codelineno-12-65" name="__codelineno-12-65"></a>
-<a id="__codelineno-12-66" name="__codelineno-12-66"></a>        <span class="c1"># the winner varaible will now be check within the board object</span>
-<a id="__codelineno-12-67" name="__codelineno-12-67"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
-<a id="__codelineno-12-68" name="__codelineno-12-68"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
-<a id="__codelineno-12-69" name="__codelineno-12-69"></a>
-<a id="__codelineno-12-70" name="__codelineno-12-70"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-71" name="__codelineno-12-71"></a>          <span class="c1"># clear_output()</span>
-<a id="__codelineno-12-72" name="__codelineno-12-72"></a>          <span class="k">continue</span>
-<a id="__codelineno-12-73" name="__codelineno-12-73"></a>
-<a id="__codelineno-12-74" name="__codelineno-12-74"></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;Stalemate&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-75" name="__codelineno-12-75"></a>          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">())</span>
-<a id="__codelineno-12-76" name="__codelineno-12-76"></a>          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-12-77" name="__codelineno-12-77"></a>          <span class="k">break</span>
-<a id="__codelineno-12-78" name="__codelineno-12-78"></a>
-<a id="__codelineno-12-79" name="__codelineno-12-79"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-12-80" name="__codelineno-12-80"></a>          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
-<a id="__codelineno-12-81" name="__codelineno-12-81"></a>          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
-<a id="__codelineno-12-82" name="__codelineno-12-82"></a>          <span class="k">break</span>
-<a id="__codelineno-12-83" name="__codelineno-12-83"></a>      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-12-84" name="__codelineno-12-84"></a>        <span class="k">return</span> <span class="bp">self</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">GameEngine</span><span class="p">(</span><span class="n">TicTacToe</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="n">setup</span>
+
+  <span class="k">def</span> <span class="nf">setup_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;user&#39;</span><span class="p">:</span>
+      <span class="c1">##########################################################################</span>
+      <span class="c1">## YOUR GAME SETUP CODE FROM ABOVE GOES HERE, NOTE THE NEW IF STATEMENT ##</span>
+      <span class="c1">##########################################################################</span>
+
+
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
+      <span class="c1">##########################################################################</span>
+      <span class="c1">## THE NEW AUTOSETUP FEATURE THAT WILL ALLOW THE GAME TO RANDOMLY SETUP ##</span>
+      <span class="c1">##########################################################################</span>
+      <span class="n">first</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">])</span>
+      <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
+                      <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>                                
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">},</span> 
+                      <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ai&#39;</span><span class="p">}}</span>
+
+  <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">]:</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+        <span class="n">player_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+        <span class="n">player_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_meta</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">player_type</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
+          <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, what&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_label</span><span class="p">))</span>
+          <span class="c1"># we&#39;re going to allow the user to quit the game from the input line</span>
+          <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quiting the game&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+          <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+              <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, that position is already taken! &quot;</span>\
+                          <span class="s2">&quot;What&#39;s your move?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>  
+              <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>            
+              <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+                <span class="k">continue</span>
+              <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="c1">########################################################################</span>
+        <span class="c1">################### YOUR RANDOM AI AGENT CODE GOES HERE ################</span>
+        <span class="c1">########################################################################</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span> <span class="c1"># delete this line when finished</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_label</span>
+
+        <span class="c1"># the winner varaible will now be check within the board object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+          <span class="c1"># clear_output()</span>
+          <span class="k">continue</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;Stalemate&#39;</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_stalemate</span><span class="p">())</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+          <span class="k">break</span>
+
+        <span class="k">else</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_winning</span><span class="p">())</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">visualize_board</span><span class="p">()</span>
+          <span class="k">break</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span>
 </code></pre></div>
+
 <p>And now we can practice using our Engine:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">()</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">board</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1475,15 +1489,17 @@ It&#39;s a stalemate!
 
 <h3 id="q8-test-the-engine">Q8 Test the Engine<a class="headerlink" href="#q8-test-the-engine" title="Permanent link">&para;</a></h3>
 <p>Check that we can still use the <code>GameEngine</code> to play a human v human or human v AI game of tic tac toe:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">)</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">)</span>
+<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>How many Players? (type 0, 1, or 2)1
 who will go first? (X, (AI), or O (Player))O
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1522,14 +1538,16 @@ O, what&#39;s your move?7
 
 <h2 id="33-simulating-data">3.3 Simulating Data<a class="headerlink" href="#33-simulating-data" title="Permanent link">&para;</a></h2>
 <p>We will now want to run our game thousands of times to collect data for building our AI agents. The following code should run without any input from the user:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>game = GameEngine()
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>game.setup_game()
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a>board = game.play_game()
+<div class="codehilite"><pre><span></span><code>game = GameEngine()
+game.setup_game()
+board = game.play_game()
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">()</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">board</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
+
+<div class="codehilite"><pre><span></span><code><span class="n">game</span> <span class="o">=</span> <span class="n">GameEngine</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">setup_game</span><span class="p">()</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
 </code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>| | | |
 | | | |
 | | | |
@@ -1566,18 +1584,21 @@ O, what&#39;s your move?7
 
 <h3 id="q9-record-1000-games">Q9 Record 1000 Games<a class="headerlink" href="#q9-record-1000-games" title="Permanent link">&para;</a></h3>
 <p>Write a for loop that creates 1000 games and saves the game data in the following dictionary format, replacing <code>&lt;THE GAME NUMBER&gt;</code> with whatever index you are using in the for loop:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>data = {}
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a>data[&#39;game {}&#39;.format(&lt;THE GAME NUMBER&gt;)] = {&#39;board&#39;: board.board,
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a>          &#39;winner&#39;: board.winner,
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a>          &#39;starting player&#39;: board.start_player}
+<div class="codehilite"><pre><span></span><code>data = {}
+data[&#39;game {}&#39;.format(&lt;THE GAME NUMBER&gt;)] = {&#39;board&#39;: board.board,
+          &#39;winner&#39;: board.winner,
+          &#39;starting player&#39;: board.start_player}
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Cell for Q9</span>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q9</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="kn">import</span> <span class="nn">json</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a>    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>
+
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
               
