@@ -25,7 +25,7 @@ In our last session, we discussed **_lists_**, **_dictionaries_**, and **_flow c
 
 **_Lists_** are **_ordered collections_** of data that can be used to hold multiple pieces of information while preserving their order.  We use `[` and `]` to access elements by their indices which start with `0`.  All things that operate on **_lists_** like slices use the concept of an inclusive lower bound and an exclusive upper bound.  So, the following gets elements from the **_list_** `my_list` with index values of `0`, `1`, and `2`, but **not** `3`!
 
-```
+```py
 my_list[0:3]
 ```
 
