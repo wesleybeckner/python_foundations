@@ -10,11 +10,6 @@ The breakdown for this course is as follows:
     * Introduction to Python; Lists, Dictionaries, and Flow Control; Functions; Pandas; NumPy; Visualization: Matplotlib, Seaborn, and Pandas
 *	Software Topics
     *	Object Oriented Programming; Debugging
-*	Project
-    * P1: Building TicTacToe in Python
-    * P2: Object Oriented Programming in TicTacToe
-    * P3: Random TicTacToe Agents
-    * P4: Debugging TicTacToe Agents
 *	Sessions
     * S1: Python and Jupyter
     * S2: Data Structures and Flow
@@ -29,5 +24,10 @@ The breakdown for this course is as follows:
     * E3: Practice with Functions
     * E4: Practice with Pandas
     * E5: Practice with NumPy
+*	Project
+    * P1: Building TicTacToe in Python
+    * P2: Object Oriented Programming in TicTacToe
+    * P3: Random TicTacToe Agents
+    * P4: Debugging TicTacToe Agents
 *	Reading
     * JVDP chapters 1-4
