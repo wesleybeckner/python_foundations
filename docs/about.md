@@ -23,8 +23,8 @@ The breakdown for this course is as follows:
 *	Exercises
     * E1: Practice with Python and Jupyter Notebooks
     * E2: Practice with Flow Control
-    * E3: Practice with Functions and Pandas
-    * E4: Pandas
-    * E5: NumPy
+    * E3: Practice with Functions
+    * E4: Practice with Pandas
+    * E5: Practice with NumPy
 *	Reading
     * JVDP chapters 1-4
