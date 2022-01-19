@@ -28,7 +28,7 @@ Recall, we discussed **_variables_** and **_comments_**.
 
 ### 2.0.1 A quick review of variables
 
-Variables are human names we give data objects in our code.  Variables in Python should be named using appropriately descriptions of their purpose.  By convention, most variable names are `lower case` and may optionally contain the underscore character ('`_`'). So far, you've only seen examples of functions and variables in Python, but eventually you will encounter all the types of python objects in this table!
+Variables are human names we give data objects in our code.  Variables in Python should be named using appropriate descriptions of their purpose.  By convention, most variable names are `lower case` and may optionally contain the underscore character ('`_`'). So far, you've only seen examples of functions and variables in Python, but eventually you will encounter all the types of python objects in this table!
 
 | Type  | Naming Convention | Examples |
 |:---:|:---|:---|
@@ -53,7 +53,7 @@ Examples of _reserved words_ that you should not use as variable names are in th
 | global | yield | break | try | global | 
 
 
-Let's see an example of a decimal point containing number, known to computers as a **_floating point_** number. Let's use $\pi$ as the number.  (Pro tip: you can write equations in Markdown.  See this [reference](https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214).)
+Let's see an example of a decimal point containing number, known to computers as a **_floating point_** number. Let's use \\(\pi\\) as the number.  (Pro tip: you can write equations in Markdown.  See this [reference](https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214).)
 
 ```
 pickles = 3.14
@@ -64,24 +64,16 @@ print(pickles)
 ```python
 pickles = 3.14
 print(pickles)
-type(pickles)
 ```
 
     3.14
 
 
-
-
-
-    float
-
-
-
-Cool.  We defined a variable named pickles containing a poor estimate of $\pi$.  Now every place the word `pickles` appears, it will have the value `3.14`, at least until we change it.  
+Cool.  We defined a variable named pickles containing a poor estimate of \\(\pi\\).  Now every place the word `pickles` appears, it will have the value `3.14`, at least until we change it.  
 
 #### 🏋️ Exercise 1: Picking variable names
 
-Is `pickles` a good variable name for the value $\pi$?  If not, what would be a better name?  Is it in the **_reserved word_** list above?  Use the `code` cell below to create a new variable with your preferred name in it.
+Is `pickles` a good variable name for the value \\(\pi\\)?  If not, what would be a better name?  Is it in the **_reserved word_** list above?  Use the `code` cell below to create a new variable with your preferred name in it.
 
 
 ```python
@@ -172,7 +164,7 @@ my_list
 
 
 
-Now the value of the variable `my_list` points to a list of three strings.  The use of `[`, `]`, and `,` are used to denote the begining, end and separator of the list.  Like a sentence, this list of words is ordered.  I like cake.
+Now the value of the variable `my_list` points to a list of three strings.  The use of `[`, `]`, and `,` are used to denote the begining, end and separator of the list.  Like a sentence, this list of words is ordered.  I like pie.
 
 **Notice, we didn't use a `print()` on the variable.  The last variable _expression_ in a cell is shown in the notebook by default.**
 
@@ -389,7 +381,7 @@ my_list
 
 
 
-And who doesn't love puppies? Recap... Lists are _ordered_ _collections_ of information that you can recognize by their use of `[` and `]`.  To access or _address_ elements in the list, you can use _indices_.  They start at `0` in Python.  The last element of a list has the index of the length of the list minus 1.  When _slicing_ a list, use two indices separated by `:`.  If you leave one off, it means everying up to or beyond that element.  
+And who doesn't love puppies? Recap... Lists are _ordered_ _collections_ of information that you can recognize by their use of `[` and `]`.  To access or _address_ elements in the list, you can use _indices_.  They start at `0` in Python.  The last element of a list has the index of the length of the list minus 1.  When _slicing_ a list, use two indices separated by `:`.  If you leave one off, it means everything up to or beyond that element.  
 
 #### 🙋 Question 1: Slicing
 
@@ -552,7 +544,7 @@ Make sure you understand why the above works.  Take a minute and play with the f
 
 
 ```python
-# Cell for exercise 3
+# Cell for exercise 2
 ```
 
 ---
@@ -669,7 +661,7 @@ Finally, like the **_list's_** `.append()` **_function_**, there are a lot of **
 
 ## 2.2 Flow control: If this, then that...
 
-**_Flow control_** is a fancy phrase meaning to execute some code statements under certain conditions.  The simplist case, is an `if` statement (figure right below):  If a variable is `True` then do something.  If it is `False` then do something else, or do nothing at all.  
+**_Flow control_** is a fancy phrase meaning to execute some code statements under certain conditions.  The simplest case, is an `if` statement (figure right below):  If a variable is `True` then do something.  If it is `False` then do something else, or do nothing at all.  
 
 
 
@@ -714,7 +706,7 @@ practice writing a simple if statement, notice the automatic indentation
 
 #### 2.2.1.2 Conditional fall through and reserved words
 
-If statements can be use to execute some lines or block of code if a particular condition is satisfied.  E.g. Let's print something based on the entries in the list.
+If statements can be used to execute some lines or block of code if a particular condition is satisfied.  E.g. Let's print something based on the entries in the list.
 
 ```
 mission = ["let's", "explore", "some", "data", "!"]
@@ -849,7 +841,7 @@ else:
     print("He likes " + my_favorite + ".  I don't know how to make that.")
 ```
 
-Before you run, the cell, can you describe how these two blocks differ in their outcomes?
+Before you run the cell, can you describe how these two blocks differ in their outcomes?
 
 
 ```python
@@ -951,7 +943,7 @@ for item in mission:
     !
 
 
-Note that after the **_for_** loop has ended, the `item` variable remains defined and contains the last value of the list that was iteratred over.
+Note that after the **_for_** loop has ended, the `item` variable remains defined and contains the last value of the list that was iterated over.
 
 
 ```python
@@ -1024,7 +1016,7 @@ for key in my_dict.keys():
     A small cucumber preserved in vinegar or brine.
 
 
-Strings are basically a list.  Therefore, you can use a for loop to iteratre over the characters in a string.  Note that `c` is a typical variable name for characters in a string.  Generally, one letter variable names are not a good thing.
+Strings are basically a list.  Therefore, you can use a for loop to iterate over the characters in a string.  Note that `c` is a typical variable name for characters in a string.  Generally, one letter variable names are not a good thing.
 
 ```
 my_string = "caffeine"

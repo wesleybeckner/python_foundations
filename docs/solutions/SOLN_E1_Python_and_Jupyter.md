@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Lab 1: Practice with Python and Jupyter Notebooks
 
@@ -32,50 +32,110 @@ Then after they are declared, print each one using the print() function explaine
 
 
 ```python
+favorite_movie = "The King"
+national_chain = "Chipotle"
+streaming_video_hours = 14
+headphone_cost = 120
 
+print(favorite_movie)
+print(national_chain)
+print(streaming_video_hours)
+print(headphone_cost)
 ```
+
+    The King
+    Chipotle
+    14
+    120
+
 
 To check if each variable is the correct data type, use the type() function explained from section 1.1.3, in the empty code cell below. For example, `type(favorite_movie)` should return the output `<class 'str'>`, which indicates the string type.
 
 
 ```python
-
+print(type(favorite_movie))
+print(type(national_chain))
+print(type(streaming_video_hours))
+print(type(headphone_cost))
 ```
+
+    <class 'str'>
+    <class 'str'>
+    <class 'int'>
+    <class 'int'>
+
 
 #### 🧮 L1 Q2 Practice with math in Python
 
-Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this function will correctly output the product of these two numbers.
+Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this cell will correctly output the product of these two numbers.
 
 
 ```python
-
+23*31
 ```
+
+
+
+
+    713
+
+
 
 Consider the operation written in Python: `27 / 3 + 6`. Write the same syntax in the empty cell below, and modify it to include parentheses in the right location so that the result/answer of the math is 3.0, rather than 15.0.
 
 
 ```python
-
+27 / (3 + 6)
 ```
+
+
+
+
+    3.0
+
+
 
 Let's learn more operators beyond the ones we covered earlier. Write the line of code `3 ** 2` in the cell below. From the output, what do you think the double asterisks (`**`) operator represents in Python?
 
 
 ```python
-
+# represent to the power of (number after double asterisk)
+3 ** 2
 ```
+
+
+
+
+    9
+
+
 
 Write the line of code `28 / 3` below. Then just below the line in the same cell, write the code `28 // 3`. Compare the differences in output between the two. Can you decipher what `//` means in Python?
 
 
 ```python
-
+28/3
 ```
+
+
+
+
+    9.333333333333334
+
+
 
 
 ```python
-
+# // operator returns math.floor(division), aka the floor division
+28//3
 ```
+
+
+
+
+    9
+
+
 
 Now for more complicated mathematical operations! 
 
@@ -85,8 +145,15 @@ $$\frac{14 + 28}{28 - 14}$$
 
 
 ```python
-
+(14 + 28) / (28 - 14)
 ```
+
+
+
+
+    3.0
+
+
 
 Now try this one:
 
@@ -94,8 +161,15 @@ $$\frac{15 + 984}{-(217+4)}$$
 
 
 ```python
-
+(15 + 984) / -(217+4)
 ```
+
+
+
+
+    -4.520361990950226
+
+
 
 And finally, write the Python equivalent for this:
 
@@ -103,8 +177,15 @@ $$\frac{-(3655 * 44)}{(8 * 16)^3}$$
 
 
 ```python
-
+-(365*44)/(8*16)**3
 ```
+
+
+
+
+    -0.0076580047607421875
+
+
 
 #### 🤐 L1 Q3 Practice writing helpful comments
 
@@ -113,8 +194,21 @@ Consider the following code below. No need to decipher and understand every piec
 
 ```python
 def mystery_function(x):
-    y = list(x)
-    return " ".join(y[::-1])
+  """
+  Reverses the order of the input
+
+  Parameters
+  ----------
+  x: str
+    a string of characters
+
+  Returns
+  -------
+  y: str
+    reverse order of x
+  """
+  y = list(x)
+  return " ".join(y[::-1])
 
 print(mystery_function("UniversityOfWashington"))
 print(mystery_function("AvocadoToast"))
@@ -130,7 +224,15 @@ print(mystery_function("RacecaR"))
 
 Consider the vision statement of the Global Innovation Exchange: "Our mission is to build the talent that leverages emerging technologies in new and impactful ways". Type that same statement in a new text cell below, only add a `_` (underscore) at the beginning and end. What ends up happening to the format of the text as a result?
 
+_Our mission is to build the talent that leverages emerging technologies in new and impactful ways_
+
 In a new text cell, list all of the potential data science projects you might work on, with each one on its own separate line. Then add a `- ` at the beginning of each line; include a single space between the hyphen and the first letter in your project name! Based on the output, what can you decipher that this `- ` changes in the formatting?
+
+Projects:
+
+- smart bedside lamp
+- workout reminder app
+- personal finances dashboard
 
 #### 🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community
 
@@ -141,6 +243,14 @@ Python has strong support from a community of avid developers and computer scien
 - According to their most recent annual report, which continent provides the highest proportion of grants to the PSF?
 - Name at least three ways that the PSF recommends you can get involved with the community.
 
+1. comp.lang.python
+2. Some variation of: "to be open about how they can improve transparency, provide the community with opportunities to interact, and be responsive to raised suggestions"
+3. Australia
+4. 3 ways to get invovled:
+    1. Read the FAQ
+    2. Attend a conference
+    3. Read the diversity statement
+
 #### 🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3
 
 Inside of the following link, https://www.python.org/doc/, is an article about the Python Software Foundation's decision to end support for Python version 2, and move with support for version 3. From the article, answer the following questions in a new text cell just below this one:
@@ -148,6 +258,10 @@ Inside of the following link, https://www.python.org/doc/, is an article about t
 - What official date was Python 2 no longer supported?
 - What is the version number of the last supported Python 2?
 - In your own words, describe why the Python Software Foundation made the decision to stop supporting Python 2.
+
+1. January 1st 2020
+2. 2.7
+3. It's costly, man! And it adds to project complexity to be cross-compatible
 
 #### 📓 L1 Q7 Advanced - Create your own Google Colab notebook!
 

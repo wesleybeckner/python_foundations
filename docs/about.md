@@ -27,4 +27,4 @@ The breakdown for this course is as follows:
     * P3: Random TicTacToe Agents
     * P4: Debugging TicTacToe Agents
 *	Reading
-    * JVDP chapters 1-4
+    * [JVDP](https://jakevdp.github.io/PythonDataScienceHandbook/) chapters 1-4

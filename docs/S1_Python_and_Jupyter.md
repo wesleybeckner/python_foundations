@@ -29,7 +29,7 @@ A lot of us are familiar with Excel, and when we get started in Python, it may s
 <br><small>Image borrowed from nobledesktop.com</small><br>
 </p>
 
-* Simplicity
+Simplicity
   * Excel
     * GUI makes simple calculations, well simple!
     * Many are at least somewhat versed, so sharing is simple too!
@@ -38,13 +38,15 @@ A lot of us are familiar with Excel, and when we get started in Python, it may s
       * This is unavoidable, but to our advantage our learning material is currated so that we learn python while solving relevant problems!
     * <strike>You need to setup your own coding environment</strike> (Thanks Colab!)
 
-* Automation / Data Connectivity
+
+Automation / Data Connectivity
   * Excel
     * Need to execute xlsx file with relevant data (copy, paste, edit, paradigm)
   * Python
     * Integration with databases for easy update, chart or analysis delivery
 
-* Scalability & Big Data
+
+Scalability & Big Data
   * Excel
     * less than millions of data points
     * poor version control
@@ -69,7 +71,7 @@ I, and the TA's I have had in the past, have worked hard on this material to dem
 
 Our goal is to not only give an introduction to Python, but also to demonstrate general coding concepts. For these next few sections, we'll be executing various lines of code right here in this interactive, Google Colab notebook. If you're wondering how this is possible and how this all works, don't worry; we'll get to the intricacies of interactive notebooks later!
 
-You'll discover the many benefits of this general purpose programming language. In particular, **_The syntax for Python is understandable to read and easy to learn_**, compared to the syntax of other languages that requires more of a background of underlying computer science - languages such as Java, C, and C++. In this course, you'll discover that Python is especially ideal for working with scientific data. Topics such as data science, machine learning, and data visualization will be covered later on this week - all while continuing to utilize Python.
+You'll discover the many benefits of this general purpose programming language. In particular, **_The syntax for Python is understandable to read and easy to learn_**, compared to the syntax of other languages that requires more of a background of underlying computer science - languages such as Java, C, and C++. In this course, you'll discover that Python is especially ideal for working with scientific data. Topics such as data manipulation and visualization will be covered later on this week - all while continuing to utilize Python.
 
 
 ```python
@@ -77,7 +79,7 @@ You'll discover the many benefits of this general purpose programming language. 
 !python --version
 ```
 
-    Python 3.8.12
+    Python 3.7.12
 
 
 
@@ -192,10 +194,11 @@ Variables are nothing but reserved memory locations to store values. This means 
 For your reference...
 
 **Data Types**
+
 1.   Numbers
-  * floating point
-  * integers
-  * complex numbers
+    1. floating point
+    2. integers
+    3. complex numbers
 2.   strings
 3.  boolean values
 4.   lists and dicts
@@ -450,7 +453,7 @@ a * b
 
 #### 🏋️ Exercise 3: Discover More Operators On Your Own!
 
-Beyond the three arithmetic operators we have just demonstrated for you, there are more in Python to discover. To start, try typing `14 / 4` in the empty code cell below:
+Beyond the three arithmetic operators we have just demonstrated, there are more in Python to discover. To start, try typing `14 / 4` in the empty code cell below:
 
 
 ```python
@@ -545,7 +548,7 @@ The same goes for combining floats with strings: is our output from the code `nu
 # num2 + num3
 ```
 
-Nope! Same TypeError results here. One workaround/solution for this is converting(type casting) the `num3` string variable into either a float or a integer, using Python's built-in `float()` and `int()` functions respectively. Let's try adding `num1` and `num3` again, only this time using `int()` to convert `num3` into an integer type, running the full line of code as `num1 + int(num3)`.
+Nope! Same TypeError results here. One workaround/solution for this is converting (**_type casting_**) the `num3` string variable into either a float or a integer, using Python's built-in `float()` and `int()` functions respectively. Let's try adding `num1` and `num3` again, only this time using `int()` to convert `num3` into an integer type, running the full line of code as `num1 + int(num3)`.
 
 
 ```python
@@ -559,7 +562,7 @@ num1 + int(num3)
 
 
 
-This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail tomorrow! - just be aware that this example only works because the string represented by `num3` was a valid convertible string ("5") to begin with. In other words, if `num3` was "Five" instead of "5", we would not be able to execute `int(num3)` without getting an error.
+This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail in session 3! - just be aware that this example only works because the string represented by `num3` was a valid convertible string ("5") to begin with. In other words, if `num3` was "Five" instead of "5", we would not be able to execute `int(num3)` without getting an error.
 
 
 ```python
@@ -701,7 +704,7 @@ print(some_function(7,12))
     0.3402777777777778
 
 
-Visualizations - such as scatterplots, heatmaps, and charts - can also be generated directly inside of a Jupyter notebook as a cell output, and can be saved as a separate image file. This also makes notebooks useful to generate both visual representations of data and interactive reports on that same data. We'll be covering visualizations in Session 4.
+Visualizations - such as scatterplots, heatmaps, and charts - can also be generated directly inside of a Jupyter notebook as a cell output, and can be saved as a separate image file. This also makes notebooks useful to generate both visual representations of data and interactive reports on that same data. We'll be covering visualizations in Session 6.
 
 
 ```python
@@ -798,7 +801,7 @@ Create a new text cell below with the UW official tagline like before, only this
 
 *text cell for exercise 8*
 
-Later in the Breakout section, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.
+Later in the lab for this session, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.
 
 #### 🏋️ Exercise 9: Always double check the type of cell you're running
 
@@ -815,16 +818,15 @@ Later in the Breakout section, you'll learn more formatting syntax with Markdown
     - There are IDEs such as **[Visual Studio Code](https://code.visualstudio.com)** that have extensions which allow you to create and these .ipynb files right on the editor.
 - Python isn't the only language supported by Jupyter, as you can also run notebooks with R and Julia as well, by adding specific computing engines for them.
 - Notebooks - both in Jupyter and Google Colab - can integrate directly with GitHub repositories
-  - we are doing this with our Jupyter Hub!
-  - [link to GitHub](https://github.com/wesleybeckner/ds_for_engineers)
+    - [link to GitHub](https://github.com/wesleybeckner/python_foundations)
 
-### 1.2.5 ...So what does this have to do with Jupyter Hub?
+### 1.2.5 ...So what does this have to do with Google Colab?
 
-**[Jupyter Hub](https://jupyter.org/hub)** is based on Jupyter Notebook. Both the notebook platform and the development machine are hosted on the cloud provided by UW IT - no need to install Python or external libraries locally on your computer! 
+**[Google Colab](https://research.google.com/colaboratory/faq.html)** is based on Jupyter Notebook. Both the notebook platform and the development machine are hosted on the cloud - no need to install Python or external libraries locally on your computer! 
 
-We'll be using Jupyter Hub for these courses. That includes all exercises and projects. 
+We'll be using Google Colab for this course. That includes all exercises and projects. 
 
-Jupyter Hub comes with [pre-configured images](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html) with Python libraries pre-installed. We are on the tensor-flow image of Jupyter Hub. You've seen examples of these used already! Some of the most popular scientific libraries include:
+Google Colab comes with [pre-configured images](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html) with Python libraries pre-installed. Some of the most popular scientific libraries include:
 - NumPy
 - SciPy
 - Pandas
