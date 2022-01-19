@@ -1267,7 +1267,7 @@
 <h2 id="20-a-quick-review-from-last-session">2.0 A quick review from last session<a class="headerlink" href="#20-a-quick-review-from-last-session" title="Permanent link">&para;</a></h2>
 <p>Recall, we discussed <strong><em>variables</em></strong> and <strong><em>comments</em></strong>.</p>
 <h3 id="201-a-quick-review-of-variables">2.0.1 A quick review of variables<a class="headerlink" href="#201-a-quick-review-of-variables" title="Permanent link">&para;</a></h3>
-<p>Variables are human names we give data objects in our code.  Variables in Python should be named using appropriately descriptions of their purpose.  By convention, most variable names are <code>lower case</code> and may optionally contain the underscore character ('<code>_</code>'). So far, you've only seen examples of functions and variables in Python, but eventually you will encounter all the types of python objects in this table!</p>
+<p>Variables are human names we give data objects in our code.  Variables in Python should be named using appropriate descriptions of their purpose.  By convention, most variable names are <code>lower case</code> and may optionally contain the underscore character ('<code>_</code>'). So far, you've only seen examples of functions and variables in Python, but eventually you will encounter all the types of python objects in this table!</p>
 <table>
 <thead>
 <tr>
@@ -1376,28 +1376,21 @@
 </tr>
 </tbody>
 </table>
-<p>Let's see an example of a decimal point containing number, known to computers as a <strong><em>floating point</em></strong> number. Let's use $\pi$ as the number.  (Pro tip: you can write equations in Markdown.  See this <a href="https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214">reference</a>.)</p>
+<p>Let's see an example of a decimal point containing number, known to computers as a <strong><em>floating point</em></strong> number. Let's use \(\pi\) as the number.  (Pro tip: you can write equations in Markdown.  See this <a href="https://medium.com/analytics-vidhya/writing-math-equations-in-jupyter-notebook-a-naive-introduction-a5ce87b9a214">reference</a>.)</p>
 <div class="codehilite"><pre><span></span><code>pickles = 3.14
 print(pickles)
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">pickles</span> <span class="o">=</span> <span class="mf">3.14</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">pickles</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>3.14
-
-
-
-
-
-float
 </code></pre></div>
 
-<p>Cool.  We defined a variable named pickles containing a poor estimate of $\pi$.  Now every place the word <code>pickles</code> appears, it will have the value <code>3.14</code>, at least until we change it.  </p>
+<p>Cool.  We defined a variable named pickles containing a poor estimate of \(\pi\).  Now every place the word <code>pickles</code> appears, it will have the value <code>3.14</code>, at least until we change it.  </p>
 <h4 id="exercise-1-picking-variable-names">🏋️ Exercise 1: Picking variable names<a class="headerlink" href="#exercise-1-picking-variable-names" title="Permanent link">&para;</a></h4>
-<p>Is <code>pickles</code> a good variable name for the value $\pi$?  If not, what would be a better name?  Is it in the <strong><em>reserved word</em></strong> list above?  Use the <code>code</code> cell below to create a new variable with your preferred name in it.</p>
+<p>Is <code>pickles</code> a good variable name for the value \(\pi\)?  If not, what would be a better name?  Is it in the <strong><em>reserved word</em></strong> list above?  Use the <code>code</code> cell below to create a new variable with your preferred name in it.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 1</span>
 </code></pre></div>
 
@@ -1454,7 +1447,7 @@ my_list
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;like&#39;, &#39;pie&#39;]
 </code></pre></div>
 
-<p>Now the value of the variable <code>my_list</code> points to a list of three strings.  The use of <code>[</code>, <code>]</code>, and <code>,</code> are used to denote the begining, end and separator of the list.  Like a sentence, this list of words is ordered.  I like cake.</p>
+<p>Now the value of the variable <code>my_list</code> points to a list of three strings.  The use of <code>[</code>, <code>]</code>, and <code>,</code> are used to denote the begining, end and separator of the list.  Like a sentence, this list of words is ordered.  I like pie.</p>
 <p><strong>Notice, we didn't use a <code>print()</code> on the variable.  The last variable <em>expression</em> in a cell is shown in the notebook by default.</strong></p>
 <p>The elements in a list have indices.  That is, to access an element in the list, you can refer to it by its index.  Think of a list like a very simple table.</p>
 <table>
@@ -1602,7 +1595,7 @@ my_list
 <div class="codehilite"><pre><span></span><code>[&#39;I&#39;, &#39;love&#39;, &#39;puppies&#39;]
 </code></pre></div>
 
-<p>And who doesn't love puppies? Recap... Lists are <em>ordered</em> <em>collections</em> of information that you can recognize by their use of <code>[</code> and <code>]</code>.  To access or <em>address</em> elements in the list, you can use <em>indices</em>.  They start at <code>0</code> in Python.  The last element of a list has the index of the length of the list minus 1.  When <em>slicing</em> a list, use two indices separated by <code>:</code>.  If you leave one off, it means everying up to or beyond that element.  </p>
+<p>And who doesn't love puppies? Recap... Lists are <em>ordered</em> <em>collections</em> of information that you can recognize by their use of <code>[</code> and <code>]</code>.  To access or <em>address</em> elements in the list, you can use <em>indices</em>.  They start at <code>0</code> in Python.  The last element of a list has the index of the length of the list minus 1.  When <em>slicing</em> a list, use two indices separated by <code>:</code>.  If you leave one off, it means everything up to or beyond that element.  </p>
 <h4 id="question-1-slicing">🙋 Question 1: Slicing<a class="headerlink" href="#question-1-slicing" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Will either one of the following codes will return an error?</p>
@@ -1698,7 +1691,7 @@ a_list[1]
 <li> access <code>d</code> in list_of_lists
 </ol>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for exercise 3</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for exercise 2</span>
 </code></pre></div>
 
 <hr />
@@ -1782,7 +1775,7 @@ print(my_dict)
 <p>Finally, like the <strong><em>list's</em></strong> <code>.append()</code> <strong><em>function</em></strong>, there are a lot of <strong><em>functions</em></strong> (or <strong><em>methods</em></strong>) and <strong><em>attributes</em></strong> available for dictionaries.  See a complete list of them <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">here</a>.</p>
 <p>(we will cover the difference between a method and an attribute more concretely later on...)</p>
 <h2 id="22-flow-control-if-this-then-that">2.2 Flow control: If this, then that...<a class="headerlink" href="#22-flow-control-if-this-then-that" title="Permanent link">&para;</a></h2>
-<p><strong><em>Flow control</em></strong> is a fancy phrase meaning to execute some code statements under certain conditions.  The simplist case, is an <code>if</code> statement (figure right below):  If a variable is <code>True</code> then do something.  If it is <code>False</code> then do something else, or do nothing at all.  </p>
+<p><strong><em>Flow control</em></strong> is a fancy phrase meaning to execute some code statements under certain conditions.  The simplest case, is an <code>if</code> statement (figure right below):  If a variable is <code>True</code> then do something.  If it is <code>False</code> then do something else, or do nothing at all.  </p>
 <p><img src="https://docs.oracle.com/cd/B19306_01/appdev.102/b14261/lnpls008.gif">Flow control figure</img></p>
 <p>In the above figure: </p>
 <ul>
@@ -1808,7 +1801,7 @@ print(my_dict)
 </code></pre></div>
 
 <h4 id="2212-conditional-fall-through-and-reserved-words">2.2.1.2 Conditional fall through and reserved words<a class="headerlink" href="#2212-conditional-fall-through-and-reserved-words" title="Permanent link">&para;</a></h4>
-<p>If statements can be use to execute some lines or block of code if a particular condition is satisfied.  E.g. Let's print something based on the entries in the list.</p>
+<p>If statements can be used to execute some lines or block of code if a particular condition is satisfied.  E.g. Let's print something based on the entries in the list.</p>
 <div class="codehilite"><pre><span></span><code>mission = [&quot;let&#39;s&quot;, &quot;explore&quot;, &quot;some&quot;, &quot;data&quot;, &quot;!&quot;]
 
 if &#39;!&#39; in mission:
@@ -1913,7 +1906,7 @@ else:
     print(&quot;He likes &quot; + my_favorite + &quot;.  I don&#39;t know how to make that.&quot;)
 </code></pre></div>
 
-<p>Before you run, the cell, can you describe how these two blocks differ in their outcomes?</p>
+<p>Before you run the cell, can you describe how these two blocks differ in their outcomes?</p>
 <div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He likes pie!  I&#39;ll start making a double chocolate velvet pie right now!&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">my_favorite</span> <span class="ow">is</span> <span class="s1">&#39;pie&#39;</span><span class="p">:</span>
@@ -1990,7 +1983,7 @@ data
 !
 </code></pre></div>
 
-<p>Note that after the <strong><em>for</em></strong> loop has ended, the <code>item</code> variable remains defined and contains the last value of the list that was iteratred over.</p>
+<p>Note that after the <strong><em>for</em></strong> loop has ended, the <code>item</code> variable remains defined and contains the last value of the list that was iterated over.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">item</span>
 </code></pre></div>
 
@@ -2041,7 +2034,7 @@ for key in my_dict.keys():
 <div class="codehilite"><pre><span></span><code>A small cucumber preserved in vinegar or brine.
 </code></pre></div>
 
-<p>Strings are basically a list.  Therefore, you can use a for loop to iteratre over the characters in a string.  Note that <code>c</code> is a typical variable name for characters in a string.  Generally, one letter variable names are not a good thing.</p>
+<p>Strings are basically a list.  Therefore, you can use a for loop to iterate over the characters in a string.  Note that <code>c</code> is a typical variable name for characters in a string.  Generally, one letter variable names are not a good thing.</p>
 <div class="codehilite"><pre><span></span><code>my_string = &quot;caffeine&quot;
 for c in my_string:
     print(c)

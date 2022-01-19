@@ -513,8 +513,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#125-so-what-does-this-have-to-do-with-jupyter-hub" class="md-nav__link">
-    1.2.5 ...So what does this have to do with Jupyter Hub?
+  <a href="#125-so-what-does-this-have-to-do-with-google-colab" class="md-nav__link">
+    1.2.5 ...So what does this have to do with Google Colab?
   </a>
   
 </li>
@@ -1118,8 +1118,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#125-so-what-does-this-have-to-do-with-jupyter-hub" class="md-nav__link">
-    1.2.5 ...So what does this have to do with Jupyter Hub?
+  <a href="#125-so-what-does-this-have-to-do-with-google-colab" class="md-nav__link">
+    1.2.5 ...So what does this have to do with Google Colab?
   </a>
   
 </li>
@@ -1316,15 +1316,19 @@
 </ul>
 <h4 id="1131-variable-types">1.1.3.1 Variable types<a class="headerlink" href="#1131-variable-types" title="Permanent link">&para;</a></h4>
 <p>For your reference...</p>
-<p><strong>Data Types</strong>
-1.   Numbers
-  * floating point
-  * integers
-  * complex numbers
-2.   strings
-3.  boolean values
-4.   lists and dicts
-5. NoneType</p>
+<p><strong>Data Types</strong></p>
+<ol>
+<li>Numbers<ol>
+<li>floating point</li>
+<li>integers</li>
+<li>complex numbers</li>
+</ol>
+</li>
+<li>strings</li>
+<li>boolean values</li>
+<li>lists and dicts</li>
+<li>NoneType</li>
+</ol>
 <p>In this section we will also introduce a built-in python function <code>type()</code></p>
 <p>Let's explore some common variable data types in Python. The first type to discuss is a <strong>string</strong>, which we've already seen before when we initialized <code>city_name</code>. Strings in Python are simply a collection of characters wrapped around quotes, and a string can represent any kind of info depending on how it's used, such as a person's name, a city name (like we just demonstrated), or a complete sentence. Here are some examples of string variables in Python below.</p>
 <p><strong>... we can also use single or double quotes</strong></p>
@@ -1466,7 +1470,7 @@
 </code></pre></div>
 
 <h4 id="exercise-3-discover-more-operators-on-your-own">🏋️ Exercise 3: Discover More Operators On Your Own!<a class="headerlink" href="#exercise-3-discover-more-operators-on-your-own" title="Permanent link">&para;</a></h4>
-<p>Beyond the three arithmetic operators we have just demonstrated for you, there are more in Python to discover. To start, try typing <code>14 / 4</code> in the empty code cell below:</p>
+<p>Beyond the three arithmetic operators we have just demonstrated, there are more in Python to discover. To start, try typing <code>14 / 4</code> in the empty code cell below:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 3</span>
 </code></pre></div>
 
@@ -1516,14 +1520,14 @@
 <div class="codehilite"><pre><span></span><code><span class="c1"># num2 + num3</span>
 </code></pre></div>
 
-<p>Nope! Same TypeError results here. One workaround/solution for this is converting(type casting) the <code>num3</code> string variable into either a float or a integer, using Python's built-in <code>float()</code> and <code>int()</code> functions respectively. Let's try adding <code>num1</code> and <code>num3</code> again, only this time using <code>int()</code> to convert <code>num3</code> into an integer type, running the full line of code as <code>num1 + int(num3)</code>.</p>
+<p>Nope! Same TypeError results here. One workaround/solution for this is converting (<strong><em>type casting</em></strong>) the <code>num3</code> string variable into either a float or a integer, using Python's built-in <code>float()</code> and <code>int()</code> functions respectively. Let's try adding <code>num1</code> and <code>num3</code> again, only this time using <code>int()</code> to convert <code>num3</code> into an integer type, running the full line of code as <code>num1 + int(num3)</code>.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">num1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>10
 </code></pre></div>
 
-<p>This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail tomorrow! - just be aware that this example only works because the string represented by <code>num3</code> was a valid convertible string ("5") to begin with. In other words, if <code>num3</code> was "Five" instead of "5", we would not be able to execute <code>int(num3)</code> without getting an error.</p>
+<p>This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail in session 3! - just be aware that this example only works because the string represented by <code>num3</code> was a valid convertible string ("5") to begin with. In other words, if <code>num3</code> was "Five" instead of "5", we would not be able to execute <code>int(num3)</code> without getting an error.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># num3 = &quot;Five&quot;</span>
 <span class="c1"># int(num3)</span>
 </code></pre></div>
@@ -1612,7 +1616,7 @@
 <div class="codehilite"><pre><span></span><code>0.3402777777777778
 </code></pre></div>
 
-<p>Visualizations - such as scatterplots, heatmaps, and charts - can also be generated directly inside of a Jupyter notebook as a cell output, and can be saved as a separate image file. This also makes notebooks useful to generate both visual representations of data and interactive reports on that same data. We'll be covering visualizations in Session 4.</p>
+<p>Visualizations - such as scatterplots, heatmaps, and charts - can also be generated directly inside of a Jupyter notebook as a cell output, and can be saved as a separate image file. This also makes notebooks useful to generate both visual representations of data and interactive reports on that same data. We'll be covering visualizations in Session 6.</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1666,7 +1670,7 @@
 <li><code>&gt;</code> on a new line for the last line (hit enter before)</li>
 </ul>
 <p><em>text cell for exercise 8</em></p>
-<p>Later in the Breakout section, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.</p>
+<p>Later in the lab for this session, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.</p>
 <h4 id="exercise-9-always-double-check-the-type-of-cell-youre-running">🏋️ Exercise 9: Always double check the type of cell you're running<a class="headerlink" href="#exercise-9-always-double-check-the-type-of-cell-youre-running" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="c1"># It can be easy to mistakenly write something in a code cell, when you actually</span>
 <span class="c1"># wanted a text cell instead. For example... what happens when you hit the Play</span>
@@ -1680,14 +1684,15 @@
 </ul>
 </li>
 <li>Python isn't the only language supported by Jupyter, as you can also run notebooks with R and Julia as well, by adding specific computing engines for them.</li>
-<li>Notebooks - both in Jupyter and Google Colab - can integrate directly with GitHub repositories</li>
-<li>we are doing this with our Jupyter Hub!</li>
-<li><a href="https://github.com/wesleybeckner/ds_for_engineers">link to GitHub</a></li>
+<li>Notebooks - both in Jupyter and Google Colab - can integrate directly with GitHub repositories<ul>
+<li><a href="https://github.com/wesleybeckner/python_foundations">link to GitHub</a></li>
 </ul>
-<h3 id="125-so-what-does-this-have-to-do-with-jupyter-hub">1.2.5 ...So what does this have to do with Jupyter Hub?<a class="headerlink" href="#125-so-what-does-this-have-to-do-with-jupyter-hub" title="Permanent link">&para;</a></h3>
-<p><strong><a href="https://jupyter.org/hub">Jupyter Hub</a></strong> is based on Jupyter Notebook. Both the notebook platform and the development machine are hosted on the cloud provided by UW IT - no need to install Python or external libraries locally on your computer! </p>
-<p>We'll be using Jupyter Hub for these courses. That includes all exercises and projects. </p>
-<p>Jupyter Hub comes with <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html">pre-configured images</a> with Python libraries pre-installed. We are on the tensor-flow image of Jupyter Hub. You've seen examples of these used already! Some of the most popular scientific libraries include:
+</li>
+</ul>
+<h3 id="125-so-what-does-this-have-to-do-with-google-colab">1.2.5 ...So what does this have to do with Google Colab?<a class="headerlink" href="#125-so-what-does-this-have-to-do-with-google-colab" title="Permanent link">&para;</a></h3>
+<p><strong><a href="https://research.google.com/colaboratory/faq.html">Google Colab</a></strong> is based on Jupyter Notebook. Both the notebook platform and the development machine are hosted on the cloud - no need to install Python or external libraries locally on your computer! </p>
+<p>We'll be using Google Colab for this course. That includes all exercises and projects. </p>
+<p>Google Colab comes with <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html">pre-configured images</a> with Python libraries pre-installed. Some of the most popular scientific libraries include:
 - NumPy
 - SciPy
 - Pandas
