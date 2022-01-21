@@ -19,6 +19,12 @@ In this lab we will continue to practice manipulating pandas DataFrames.
 
 
 
+
+```python
+import pandas as pd
+import numpy as np
+```
+
 ## 🐼 L4 Q1 
 
 Convert the two series into the columns of a DataFrame
@@ -26,12 +32,12 @@ Convert the two series into the columns of a DataFrame
 
 ```python
 ser1 = pd.Series(list('abcedfghijklmnopqrstuvwxyz'))
-ser2 = pd.Series(np.arange(26))
+ser2 = pd.Series([i for i in range(26)])
 ```
 
 ## 🐼 L4 Q2
 
-Conver the series into a DataFrame with 7 rows and 5 columns
+Convert the series into a DataFrame with 7 rows and 5 columns
 
 
 ```python
@@ -76,10 +82,15 @@ print(fruit.tolist())
 
 ## 🐼 L4 Q6
 
-Compute the euclidian distance between vectors p and q (pythagorean theorem)
+Compute the euclidian distance between vectors p and q 
+
+> Euclidean distance is calculated as the square root of the sum of the squared differences between the two vectors
+
+This is related to the [L2 vector norm](https://machinelearningmastery.com/vector-norms-machine-learning/)
 
 
 ```python
+import math
 p = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 q = pd.Series([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 ```
@@ -103,7 +114,7 @@ print(ser)
 
 ## 🐼 L4 Q8
 
-Check if there are missing values in a dataframe using `.isnull()`, `.values`, and `.any()`
+Check if there are missing values in each column of a dataframe using `.isnull()`, and `.any()`
 
 
 ```python

@@ -23,7 +23,7 @@ Today we'll be discussing a very important concept through all of programming: h
 
 A class is created with the reserved word `class`
 
-A class can have attributes
+A class can have attributes. You can think of these as charateristics that describe the object.
 
 
 ```python
@@ -32,9 +32,7 @@ class MyClass:
   some_attribute = 5
 ```
 
-We use the **_class blueprint_** _MyClass_ to create an **_instance_**
-
-We can now access attributes belonging to that class:
+Defining a class in the above way, creates a **_blueprint_**. We use the **_class blueprint_** _MyClass_ to create an **_instance_**. And after we do so, we can now access attributes belonging to that class:
 
 
 ```python
@@ -67,7 +65,26 @@ instance.some_attribute
 
 
 
-In practice we always use the `__init__()` function, which is executed when the class is being initiated. 
+In practice we always use the `__init__()` function, which is executed when the class is being initiated. This is the pythonic way to be _explicit_ about initializing the attributes of our class
+
+> Upon investigation, you will find that the trouble with _not_ using the `__init__()` method is that your attributes are not guaranteed to be initialized upon creation of the object from the class blueprint
+
+
+```python
+# define a class
+class MyClass:
+  # we define our __init__ method that is called when the object is initialized
+  def __init__(self): # we pass in the reserved word self
+    # we reference the current object of the class via the self parameter
+    # and set its attributes 
+    self.some_attribute = 5
+```
+
+When we use `__init__`, we also have to make use of a special reserved word in python: `self`. The `self` parameter refers to the _current_ instance of the class. In other words, when the object is declared, it will refer to that specific object in memory and not _all_ instances of the class in question. This is yet another pythonic way of being explicit.
+
+> what is the special keyword [`self`](http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html) doing, do we really need it? Read more about the philosophy of _the self_ by visiting the link!
+
+Let's practice class declaration now, in the context of Pokeballs
 
 <br>
 
@@ -75,10 +92,26 @@ In practice we always use the `__init__()` function, which is executed when the 
 <img src="https://cdn2.bulbagarden.net/upload/thumb/2/23/Pok%C3%A9_Balls_GL.png/250px-Pok%C3%A9_Balls_GL.png"></img>
 </p>
 
+We have a lot of different kinds of Poke balls! This is going to help us understand some of the powerful mechanisms inherit in python classes! 
+
+Let's start by defining a class to describe the simple, standard Poke ball. It will have the following attributes:
+
+* `contains` the name of the pokemon contained in the Poke ball. Default value is `None`
+* `type_name` the type of Poke ball. Default value is `"Poke ball"`
+* `catch_rate` the probability of a successful catch upon throwing the Poke ball. The default value is `0.5` and the user will not be able to set the value of this object.
+
+Let's take a look at how we do this:
+
 
 ```python
+# define the class in the standard way via the reserved word class
 class Pokeball:
-  def __init__(self, contains=None, type_name="poke ball"):
+
+  # define the init method pass in the "self" and any attributes that will
+  # be definable upon initialization of the object
+  def __init__(self, contains=None, type_name="Poke ball"):
+
+    # now set the attributes of the object via the self
     self.contains = contains
     self.type_name = type_name
     self.catch_rate = 0.50 # note this attribute is not accessible upon init
@@ -86,25 +119,30 @@ class Pokeball:
 
 
 ```python
-# empty pokeball
+# empty Poke ball
 pokeball1 = Pokeball()
 
-# used pokeball of a different type
-pokeball1 = Pokeball("Pikachu", "master ball")
+# used Poke ball of a different type
+pokeball1 = Pokeball("Pikachu", "Master ball")
 ```
 
-> what is the special keyword [`self`](http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html) doing?
+### 🙋 Question 1
 
-The `self` parameter is a reference to the current instance of the class and is used to access variables belonging to the class.
+Note that, were we to run the following cell, we would get an error. Why would we get an error?
 
-classes can also contain methods
+
+```python
+# Pokeball("Charmander", "Poke ball", catch_rate=0.5)
+```
+
+classes can also contain methods. I'm going to introduce a new method `catch` that is used to catch new pokemon. It will have a random chance of success and, additionally, it will only work if the Poke ball is empty.
 
 
 ```python
 import random
 
 class Pokeball:
-  def __init__(self, contains=None, type_name="poke ball"):
+  def __init__(self, contains=None, type_name="Poke ball"):
     self.contains = contains
     self.type_name = type_name
     self.catch_rate = 0.50 # note this attribute is not accessible upon init
@@ -120,9 +158,11 @@ class Pokeball:
         print(f"{pokemon} escaped!")
         pass
     else:
-      print("pokeball is not empty!")
+      print("Poke ball is not empty!")
 
 ```
+
+We can envoke the `catch` method the same way we would return the attribute of an object - by running `<object>.method()`. Note that, because this is a method, we must use `()`, the same way we use `()` with functions. Inside the `()` we pass any necessary parameters. In this case we will pass the name of the Pokemon we are trying to catch:
 
 
 ```python
@@ -148,38 +188,72 @@ Create a release method for the class Pokeball:
 
 ```python
 # Cell for Exercise 1
+import random
+
+class Pokeball:
+  def __init__(self, contains=None, type_name="Poke ball"):
+    self.contains = contains
+    self.type_name = type_name
+    self.catch_rate = 0.50 # note this attribute is not accessible upon init
+
+  def catch(self, pokemon):
+    """
+    Used to catch Pokemon with an empty Poke ball. Has a probabilistic chance of
+    success.
+    """
+    if self.contains == None:
+      if random.random() < self.catch_rate:
+        self.contains = pokemon
+        print(f"{pokemon} captured!")
+      else:
+        print(f"{pokemon} escaped!")
+        pass
+    else:
+      print("Poke ball is not empty!")
+
+  def release(self):
+    pass
 ```
 
 ### 4.1.2 Inheritance
 
-Inheritance allows you to adopt into a child class, the methods and attributes of a parent class
+Inheritance allows you to adopt into a child class, the methods and attributes of a parent class. We inherit a parent class by passing it into the child class:
 
 
 ```python
-class MasterBall(Pokeball):
+# Pokeball is the parent class and Masterball is the child class
+class Masterball(Pokeball):
   pass
 ```
 
+Once we declare an object of the child class. We will have access to all of the parent class attributes. In this case, masterball will inherit the type_name of "Poke ball" from the Pokeball class:
+
 
 ```python
-masterball = MasterBall()
+masterball = Masterball()
 masterball.type_name
 ```
 
 
 
 
-    'poke ball'
+    'Poke ball'
 
 
 
-HMMM we don't like that type name. let's make sure we change some of the inherited attributes!
+HMMM we don't like that type name because this is not a regular-old Poke ball anymore. It is a Master ball! 
+
+Let's make sure we change some of the inherited attributes. 
 
 We'll do this again with the `__init__` function
 
 
 ```python
-class MasterBall(Pokeball):
+# we still pass Pokeball into Masterball
+class Masterball(Pokeball):
+
+  # now we pass into the init method the class attribute values we actually
+  # desire, instead of just inheriting them from the parent class
   def __init__(self, contains=None, type_name="Masterball", catch_rate=0.8):
     self.contains = contains
     self.type_name = type_name
@@ -188,7 +262,7 @@ class MasterBall(Pokeball):
 
 
 ```python
-masterball = MasterBall()
+masterball = Masterball()
 masterball.type_name
 ```
 
@@ -211,15 +285,18 @@ We can also write this, this way:
 
 
 ```python
-class MasterBall(Pokeball):
+class Masterball(Pokeball):
   def __init__(self, contains=None, type_name="Masterball"):
+    # instead of rewriting all of the self.<attribute> commands, we can access
+    # the init method from the parent class (where those commands are already
+    # declared)
     Pokeball.__init__(self, contains, type_name)
     self.catch_rate = 0.8
 ```
 
 
 ```python
-masterball = MasterBall()
+masterball = Masterball()
 masterball.type_name
 ```
 
@@ -232,7 +309,7 @@ masterball.type_name
 
 
 ```python
-masterball = MasterBall()
+masterball = Masterball()
 masterball.catch("charmander")
 ```
 
@@ -243,15 +320,17 @@ The keyword `super` will let us write even more succintly:
 
 
 ```python
-class MasterBall(Pokeball):
+class Masterball(Pokeball):
   def __init__(self, contains=None, type_name="Masterball"):
+    # super() is taking the namespace of the parent class, note that with this 
+    # mechanism we no longer have to pass in the self attribute 
     super().__init__(contains, type_name)
     self.catch_rate = 0.8
 ```
 
 
 ```python
-masterball = MasterBall()
+masterball = Masterball()
 masterball.catch("charmander")
 ```
 
@@ -269,7 +348,7 @@ Write another class object called `GreatBall` that inherits the properties of `P
 
 ### 4.1.3 Interacting Objects
 
-As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire
+As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire. This is where form and function meet.
 
 ### 🏋️ Exercise 3
 
@@ -280,9 +359,9 @@ Write another class object called `Pokemon`. It has the [attributes](https://bul
 * speed
 * type
 
-Now create a class object called `FastBall`, it inherits the properties of `Pokeball` but has a new condition on `catch` method: if pokemon.speed > 100 then there is 100% chance of catch success.
+Now create a class object called `Fastball`, it inherits the properties of `Pokeball` but has a new condition on `catch` method: if pokemon.speed > 100 then there is 100% chance of catch success.
 
-> what changes do you have to make to the way we've been interacting with pokeball to make this new requirement work?
+> what changes do you have to make to the way we've been interacting with Poke ball to make this new requirement work?
 
 
 ```python

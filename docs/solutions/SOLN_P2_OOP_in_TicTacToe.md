@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/project/P2_OOP_in_TicTacToe.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_P2_OOP_in_TicTacToe.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations <br> Project Part 2: Object Oriented Programming
 
@@ -190,16 +190,27 @@ Within class TicTacToe, define the attributes described above
 class TicTacToe:
   # create winner and start_player parameters with default values as empty 
   # strings within __init__
-  def __init__(self):
+  def __init__(self, winner='', start_player=''):
     ##################################
     ########### Attributes ###########
     ##################################
     # set self.winner and self.start_player with the parameters from __init__
-
+    self.winner = winner
+    self.start_player = start_player
     # set self.board as a dictionary with ' ' as values and 1-9 as keys
- 
+    self.board = {1: ' ',
+                  2: ' ',
+                  3: ' ',
+                  4: ' ',
+                  5: ' ',
+                  6: ' ',
+                  7: ' ',
+                  8: ' ',
+                  9: ' ',}
     # set self.win_patterns with the 8 winning patterns (a list of lists)
-         
+    self.win_patterns = [[1,2,3], [4,5,6], [7,8,9],
+                [1,4,7], [2,5,8], [3,6,9],
+                [1,5,9], [7,5,3]]
 ```
 
 #### Q2 Methods of TicTacToe
@@ -211,15 +222,27 @@ Now we will define the methods of `TicTacToe`. Paste your attributes from the ab
 class TicTacToe:
   # create winner and start_player parameters with default values as empty 
   # strings within __init__
-  def __init__(self):
-  ##################################
-  ########### Attributes ###########
-  ##################################
+  def __init__(self, winner='', start_player=''):
+    ##################################
+    ########### Attributes ###########
+    ##################################
     # set self.winner and self.start_player with the parameters from __init__
-
+    self.winner = winner
+    self.start_player = start_player
     # set self.board as a dictionary with ' ' as values and 1-9 as keys
- 
+    self.board = {1: ' ',
+                  2: ' ',
+                  3: ' ',
+                  4: ' ',
+                  5: ' ',
+                  6: ' ',
+                  7: ' ',
+                  8: ' ',
+                  9: ' ',}
     # set self.win_patterns with the 8 winning patterns (a list of lists)
+    self.win_patterns = [[1,2,3], [4,5,6], [7,8,9],
+                [1,4,7], [2,5,8], [3,6,9],
+                [1,5,9], [7,5,3]]
 
   ###############################
   ########### METHODS ###########
@@ -227,13 +250,76 @@ class TicTacToe:
 
   # the other functions are now passed self
 
-  # define visualize_board and update the board
-  # object with self.board (and maybe self.board.values() depending on how your
-  # visualize_board function is written)
+  # define visualize_board (you will probably need to change "board" to 
+  # self.board.values() depending on how your visualize_board() function is
+  # written)
+  def visualize_board(self):
+    """
+    Visualizes the board during gameplay
 
-  # define check_winning and similarly update win_patterns,
-  # board, and winner to be accessed via the self. Be sure to update the 
-  # attribute self.winner with the appropriate winner in the function
+    Parameters
+    ----------
+    board_values : list
+      The values ('X', 'O', or ' ' at each board location)
+
+    Returns
+    -------
+    None
+
+    """
+    print(
+      "|{}|{}|{}|\n|{}|{}|{}|\n|{}|{}|{}|\n".format(*self.board.values())
+      )
+    
+  def init_board(self):
+    """
+    Initializes an empty board for the start of gameplay
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    board : dict
+      a dictionary with keys 1-9 and single space (' ') string as values
+    """
+    self.board = {1: ' ',
+          2: ' ',
+          3: ' ',
+          4: ' ',
+          5: ' ',
+          6: ' ',
+          7: ' ',
+          8: ' ',
+          9: ' ',}
+                  
+  # define check_winning and make sure win_patterns,
+  # board, and winner are accessed via the self within the function call.
+  # Update the attribute self.winner with the appropriate winner in the function
+  def check_winning(self):
+    """
+    Checks if the game has a winner
+
+    Parameters
+    ----------
+    board : dict
+      the tictactoe board as a dictionary
+
+    Returns
+    -------
+    win_statement : str
+      defaults to an empty string if no winner. Otherwise 'X' Won! or 'O' Won!
+    """
+    for pattern in self.win_patterns:
+      values = [self.board[i] for i in pattern] 
+      if values == ['X', 'X', 'X']:
+        self.winner = 'X'
+        return "'X' Won!"
+      elif values == ['O', 'O', 'O']:
+        self.winner = 'O'
+        return "'O' Won!"
+    return ''
 
   # here the definition of check_stalemate is given
   def check_stalemate(self):
@@ -285,15 +371,15 @@ def play_game():
       ##############################
       # CALL check_stalemate() BELOW
       ##############################
+      tic_tac_toe.check_stalemate()
 
       if tic_tac_toe.winner == '':
-        clear_output()
         continue
 
       ##########################################################################
       # write an elif statement that checks if self.winner is 'Stalemate' and
       # subsequently visualizes the board and breaks out of the while loop
-      # also print out check_stalemante so the returned string is shown to the 
+      # also print out check_stalemate so the returned string is shown to the 
       # user
       ##########################################################################
       else:
@@ -311,14 +397,35 @@ Let's test our new module
 play_game()
 ```
 
-    |X|O|X|
-    |O|O|X|
-    |X| |O|
+    'X' will go first!
+    | | | |
+    | | | |
+    | | | |
     
-    X, what's your move?8
-    It's a stalemate!
-    |X|O|X|
-    |O|O|X|
-    |X|X|O|
+    X, what's your move?1
+    |X| | |
+    | | | |
+    | | | |
+    
+    O, what's your move?2
+    |X|O| |
+    | | | |
+    | | | |
+    
+    X, what's your move?4
+    |X|O| |
+    |X| | |
+    | | | |
+    
+    O, what's your move?5
+    |X|O| |
+    |X|O| |
+    | | | |
+    
+    X, what's your move?7
+    'X' Won!
+    |X|O| |
+    |X|O| |
+    |X| | |
     
 

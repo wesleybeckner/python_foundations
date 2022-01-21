@@ -30,6 +30,7 @@ A lot of us are familiar with Excel, and when we get started in Python, it may s
 </p>
 
 Simplicity
+
   * Excel
     * GUI makes simple calculations, well simple!
     * Many are at least somewhat versed, so sharing is simple too!
@@ -40,6 +41,7 @@ Simplicity
 
 
 Automation / Data Connectivity
+
   * Excel
     * Need to execute xlsx file with relevant data (copy, paste, edit, paradigm)
   * Python
@@ -47,6 +49,7 @@ Automation / Data Connectivity
 
 
 Scalability & Big Data
+
   * Excel
     * less than millions of data points
     * poor version control

@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S3_Functions_and_Debugging.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S3_Functions_and_Debugging.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 3: Functions and Debugging
 
@@ -621,11 +621,34 @@ for patient in patients:
 
 
 ```python
+# [weight (kg), height (m)]
+patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
+
+def calculate_bmi(weight, height):
+    # kg / m ** 2 = bmi
+    return weight / (height ** 2)
+
+for patient in patients:
+    weight, height = patient ### not properly referencing iterated variable
+    bmi = calculate_bmi(weight, height) ### should be swapped
+    print("Patient's BMI is: %f" % bmi)
+```
+
+    Patient's BMI is: 21.604938
+    Patient's BMI is: 22.160665
+    Patient's BMI is: 51.903114
+
+
+
+```python
 def test_calculate_bmi():
   patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
   bmis = [21.6, 22.16, 51.9]
 
-  pass
+  for patient, bmi_ in zip(patients, bmis):
+    weight, height = patient ### not properly referencing iterated variable
+    bmi = calculate_bmi(weight, height) ### should be swapped
+    assert np.abs(bmi - bmi_) < 0.1, "fail calc for {}".format(patient)
     
 test_calculate_bmi()
 print("success!")

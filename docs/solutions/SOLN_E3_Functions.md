@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E3_Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E3_Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Lab 3: Practice with Functions
 
@@ -33,7 +33,23 @@ Write a Python function to find the maximum of three numbers
 
 ```python
 # Cell for L3 Q1 A
+def max_num(a, b, c):
+  if (a > b) and (a > c):
+    return a
+  elif (b > a) and (b > c):
+    return b
+  else:
+    return c
+
+max_num(100, 20, 3)
 ```
+
+
+
+
+    100
+
+
 
 ### Part B
 
@@ -49,7 +65,21 @@ Expected Output : -336
 
 ```python
 # Cell for L3 Q1 B
+def mult_list(a):
+  val = 1
+  for i in a:
+    val *= i
+  return val
+
+mult_list([8, 2, 3, -1, 7])
 ```
+
+
+
+
+    -336
+
+
 
 ### Part C
 
@@ -65,7 +95,18 @@ Expected Output : "dcba4321"
 
 ```python
 # Cell for L3 Q1 C
+def rev_string(a):
+  return a[::-1]
+
+rev_string("1234abcd")
 ```
+
+
+
+
+    'dcba4321'
+
+
 
 ## ❄️ L3 Q2: Finding Unique Elements
 
@@ -80,7 +121,22 @@ Unique List : [1, 2, 3, 4, 5]
 
 ```python
 # Cell for L3 Q2
+def find_unique(a):
+  b = []
+  for i in a:
+    if i not in b:
+      b.append(i)
+  return b
+
+find_unique([1,2,3,3,3,3,4,5])
 ```
+
+
+
+
+    [1, 2, 3, 4, 5]
+
+
 
 ## ❗ L3 Q3: Computing Factorials
 
@@ -96,7 +152,21 @@ Output: 24
 
 ```python
 # Cell for L3 Q3
+def fact(a):
+  b = 1
+  for i in range(1,a+1):
+    b *= i
+  return b
+
+fact(4)
 ```
+
+
+
+
+    24
+
+
 
 ## Practicing our hand at functions by implementing recursion
 
@@ -151,7 +221,6 @@ This problem is intended to be a fun way to wrap our heads around functions... d
 ## 🛺 L3 Q4: Recursive Functions
 
 Using recursion, complete the Fibonacci sequence up to the 10th place using recursion and any or all of the following:
-
 * `if` `elif` `else`
 * `range`
 
@@ -181,4 +250,20 @@ Value: 34
 
 ```python
 # Cell for L3 Q4
+def fib(a):
+  if a == 0:
+    return 0
+  elif a == 1:
+    return 1
+  else:
+    return fib(a-1) + fib(a-2)
+
+fib(9)
 ```
+
+
+
+
+    34
+
+

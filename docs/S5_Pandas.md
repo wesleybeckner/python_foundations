@@ -23,7 +23,7 @@ Today, we will jump into the **Pandas** package.  Packages are collections of re
 
 ### 5.1.1 Pandas and Scikit-Learn `load_datasets`
 
-We begin by loading the Panda's package.  Packages are collections of functions that share a common utility.  We've seen `import` before.  Let's use it to import Pandas and all the richness that pandas has.
+We begin by loading the Pandas package.  Packages are collections of functions that share a common utility.  We've seen `import` before.  Let's use it to import Pandas and all the richness that Pandas has.
 
 We'll also use a very useful feature of the scikit-learn toolkit, the `load_datasets` module. We will do some very rudimentary tasks with this dataset, just to demonstrate the utility of `load_datasets`, then we will switch over to a more relevant dataset for our purposes.
 
@@ -173,9 +173,12 @@ import pandas as pd
 import pandas as pd
 ```
 
-### 5.1.2 Creating pandas dataframes
+### 5.1.2 Creating pandas DataFrames
 
-Let's create an empty _data frame_ and put the result into a variable called `df`.  This is a popular choice for a _data frame_ variable name.
+_DataFrames_ are two-dimensional tables of data that are the common data object we work with in Pandas. You can think of it as like an Excel spreadsheet.
+
+
+Let's create an empty _DataFrame_ and put the result into a variable called `df`.  This is a popular choice for a _DataFrame_ variable name.
 
 ```
 df = pd.DataFrame()
@@ -186,7 +189,7 @@ df = pd.DataFrame()
 df = pd.DataFrame()
 ```
 
-Let's open the Wine dataset as a pandas data frame.  Notice we change the value of the `df` variable to point to a new data frame.
+Let's open the Wine dataset as a pandas DataFrame.  Notice we change the value of the `df` variable to point to a new DataFrame.
 
 ```
 df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
@@ -199,9 +202,7 @@ df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 
 #### 5.1.2.1 From excel and csv
 
-Please follow this [link](https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv)
-
-This is what we call a csv or comma separated value file. We have a method reading these directly into pandas:
+We will now be reading the data from this [link](https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv). This is what we call a csv or comma separated value file. We have a method to read these directly into pandas:
 
 
 ```python
