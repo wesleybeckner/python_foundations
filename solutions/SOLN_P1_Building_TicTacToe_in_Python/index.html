@@ -1,0 +1,1286 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>SOLN P1 Building TicTacToe in Python - Python Foundations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+      <link rel="stylesheet" href="../../styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-114664473-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-foundations-project-part-1-building-the-game-tic-tac-toe" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python Foundations" class="md-header__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Foundations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SOLN P1 Building TicTacToe in Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python Foundations" class="md-nav__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Foundations
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Sessions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sessions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sessions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S1_Python_and_Jupyter/" class="md-nav__link">
+        Introduction to Python and Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S2_Data_Structures_and_Flow/" class="md-nav__link">
+        Data Structures and Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S3_Functions_and_Debugging/" class="md-nav__link">
+        Functions and Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S4_Object_Oriented_Programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S5_Pandas/" class="md-nav__link">
+        Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S6_Matplotlib/" class="md-nav__link">
+        Matplotlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S7_Numpy/" class="md-nav__link">
+        NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Exercises
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercises" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E1_Python_and_Jupyter/" class="md-nav__link">
+        Practice with Python and Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E2_Flow_Control/" class="md-nav__link">
+        Practice with Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E3_Functions/" class="md-nav__link">
+        Practice with Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E4_Pandas/" class="md-nav__link">
+        Practice with Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E5_Numpy/" class="md-nav__link">
+        Practice with NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P1_Building_TicTacToe_in_Python/" class="md-nav__link">
+        Building TicTacToe in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P2_OOP_in_TicTacToe/" class="md-nav__link">
+        Object Oriented Programming in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P3_Random_TicTacToe_Agents/" class="md-nav__link">
+        Random TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P4_Debugging_TicTacToe_Agents/" class="md-nav__link">
+        Debugging TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-defining-and-visualizing-the-board" class="md-nav__link">
+    1.1 Defining and Visualizing the Board
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Defining and Visualizing the Board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-q1" class="md-nav__link">
+    1.1 Q1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-q2" class="md-nav__link">
+    1.1 Q2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-q3" class="md-nav__link">
+    1.1 Q3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-q4" class="md-nav__link">
+    1.1 Q4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-q5" class="md-nav__link">
+    1.1 Q5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-q6" class="md-nav__link">
+    1.1 Q6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-checking-for-a-winner" class="md-nav__link">
+    1.2 Checking for a Winner
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Checking for a Winner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-q1" class="md-nav__link">
+    1.2 Q1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q2" class="md-nav__link">
+    1.2 Q2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q3" class="md-nav__link">
+    1.2 Q3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q4" class="md-nav__link">
+    1.2 Q4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q5" class="md-nav__link">
+    1.2 Q5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q6" class="md-nav__link">
+    1.2 Q6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-q7" class="md-nav__link">
+    1.2 Q7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-input-from-the-user" class="md-nav__link">
+    1.3 Input from the User
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Input from the User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13-q1" class="md-nav__link">
+    1.3 Q1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-q2" class="md-nav__link">
+    1.3 Q2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-creating-a-game-handler" class="md-nav__link">
+    1.4 Creating a Game Handler
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Creating a Game Handler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#14-q1" class="md-nav__link">
+    1.4 Q1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-in-summary" class="md-nav__link">
+    1.5 In Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_P1_Building_TicTacToe_in_Python.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="python-foundations-project-part-1-building-the-game-tic-tac-toe">Python Foundations <br> Project Part 1: Building the Game Tic-Tac-Toe<a class="headerlink" href="#python-foundations-project-part-1-building-the-game-tic-tac-toe" title="Permanent link">&para;</a></h1>
+<p><strong>Instructor</strong>: Wesley Beckner</p>
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+<br></p>
+<hr />
+<p><br></p>
+<p>In this project notebook we'll be laying the foundations of our tic-tac-toe game!</p>
+<p>In order to complete this notebook you will have to have covered sessions 1-3 where we discuss python, conditionals/flow, and functions.</p>
+<p><br></p>
+<hr />
+<h2 id="11-defining-and-visualizing-the-board">1.1 Defining and Visualizing the Board<a class="headerlink" href="#11-defining-and-visualizing-the-board" title="Permanent link">&para;</a></h2>
+<h3 id="11-q1">1.1 Q1<a class="headerlink" href="#11-q1" title="Permanent link">&para;</a></h3>
+<p>First we need to define our board object (object in the loose sense for now!). This will hold the <em>memory</em> of where our current player pieces are.</p>
+<p>Say we eventually want to place in every board position a string variable, <code>'X'</code> or <code>'O'</code>. How would we represent the board? Also, how do we represent it in the least complex space possible, i.e. a list?</p>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q1</span>
+
+<span class="c1"># create a variable called &quot;board&quot;  and set it equal to a list of 9 strings</span>
+<span class="c1"># filled with a single white space</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">]</span>
+<span class="n">board</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]
+</code></pre></div>
+
+<h3 id="11-q2">1.1 Q2<a class="headerlink" href="#11-q2" title="Permanent link">&para;</a></h3>
+<p>We would like to be able to visualize where our players have executed onto the board. How can we use what we've learned about print functions to visualize an empty board?</p>
+<ul>
+<li>hint: use <code>|</code>, <code>\n</code>, <code>.format()</code>, and unpack our board elements using an asteric (<code>*board</code>) with the print function.</li>
+</ul>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>| | | |
+| | | |
+| | | |
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q2</span>
+
+<span class="c1"># call the print() function on your board; if you can get your output to look</span>
+<span class="c1"># like the example in a single print() call, great! if not, don&#39;t worry! solve </span>
+<span class="c1"># this however you feel comfortable. Just make sure the output looks like the</span>
+<span class="c1"># example</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>| | | |
+| | | |
+| | | |
+</code></pre></div>
+
+<h3 id="11-q3">1.1 Q3<a class="headerlink" href="#11-q3" title="Permanent link">&para;</a></h3>
+<p>After you've created your print script that takes the board as an input, test it out by filling your board with some <code>X's</code> and <code>O's</code></p>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>|X| | |
+| |O| |
+| | | |
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q3</span>
+
+<span class="c1"># now copy and paste your code from above, but before you run your script, fill </span>
+<span class="c1"># in an &#39;X&#39; in the first (0-index) position of your board list and an &#39;O&#39; in the </span>
+<span class="c1"># 4th (3-index) position</span>
+<span class="n">board</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>|X| | |
+| |O| |
+| | | |
+</code></pre></div>
+
+<h3 id="11-q4">1.1 Q4<a class="headerlink" href="#11-q4" title="Permanent link">&para;</a></h3>
+<p>Now, if that looks good, wrap the print function in a function called <code>visualize_board</code> that takes the variable <code>board</code> as a parameter.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>visualize_board(board)
+|X| | |
+| |O| |
+| | | |
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q4</span>
+
+<span class="c1"># now write a function called &quot;visualize_board&quot; that takes in your board object</span>
+<span class="c1"># as an input and prints out the board the way we just prototyped above.</span>
+<span class="k">def</span> <span class="nf">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>|X| | |
+| |O| |
+| | | |
+</code></pre></div>
+
+<h3 id="11-q5">1.1 Q5<a class="headerlink" href="#11-q5" title="Permanent link">&para;</a></h3>
+<p>It may be more useful to organize our board into a dictionary. Recreate your board variable now using integers 1-9 as the keys and empty strings <code>' '</code> as the values. What do you now need to feed into your function <code>visualize_board</code> for it to output the same result?</p>
+<ul>
+<li>hint: think of an attribute of the dictionary you just created.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q5</span>
+<span class="n">board</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
+</code></pre></div>
+
+<h3 id="11-q6">1.1 Q6<a class="headerlink" href="#11-q6" title="Permanent link">&para;</a></h3>
+<p>Lastly, write a function called <code>init_board</code> that takes no parameters and returns the empty board dictionary</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q6</span>
+<span class="k">def</span> <span class="nf">init_board</span><span class="p">():</span>
+  <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{1: &#39; &#39;, 2: &#39; &#39;, 3: &#39; &#39;, 4: &#39; &#39;, 5: &#39; &#39;, 6: &#39; &#39;, 7: &#39; &#39;, 8: &#39; &#39;, 9: &#39; &#39;}
+</code></pre></div>
+
+<h2 id="12-checking-for-a-winner">1.2 Checking for a Winner<a class="headerlink" href="#12-checking-for-a-winner" title="Permanent link">&para;</a></h2>
+<h3 id="12-q1">1.2 Q1<a class="headerlink" href="#12-q1" title="Permanent link">&para;</a></h3>
+<p>We will need a way to check if either player has won the game. Write down all the winning patterns using our board representation where places are numbered 1-9. Store these patterns in a list of lists called <code>win_patterns</code></p>
+<ul>
+<li>hint: You should identify 8 winning patterns</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q1</span>
+<span class="n">win_patterns</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</code></pre></div>
+
+<h3 id="12-q2">1.2 Q2<a class="headerlink" href="#12-q2" title="Permanent link">&para;</a></h3>
+<p>Next, we will need to write a function that checks if there is a winning pattern on our board (i.e. all X's or all O's are in the indicated places on the board. But let's build the conditionals and logic methodically and not just jump into writing a for loop!</p>
+<p>First, access the first element of <code>win_patterns</code> and set it equal to a variable called <code>pattern</code></p>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>[1, 2, 3]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q2</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">win_patterns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pattern</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[1, 2, 3]
+</code></pre></div>
+
+<h3 id="12-q3">1.2 Q3<a class="headerlink" href="#12-q3" title="Permanent link">&para;</a></h3>
+<p>Use the board dictionary to get the board values at the positions stored in <code>pattern</code></p>
+<p>Example Output:</p>
+<div class="codehilite"><pre><span></span><code>[&#39;X&#39;, &#39; &#39;, &#39; &#39;]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q3</span>
+<span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+  <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">player_tokens</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[&#39; &#39;, &#39; &#39;, &#39; &#39;]
+</code></pre></div>
+
+<h3 id="12-q4">1.2 Q4<a class="headerlink" href="#12-q4" title="Permanent link">&para;</a></h3>
+<p>Now check for whether they contain 3 X's or 3 O's. Fill those spaces with all 'X's or all 'O's to check that your conditional is working properly. Your output should be a <code>boolean</code>: <code>True</code> or <code>False</code></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q4</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+<span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+  <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>True
+</code></pre></div>
+
+<h3 id="12-q5">1.2 Q5<a class="headerlink" href="#12-q5" title="Permanent link">&para;</a></h3>
+<p>Now we're ready to wrap this in a for loop. Loop through every <code>pattern</code> in <code>win_patterns</code> and evaluate with your conditional. If 'X' wins then print out <code>'X' Won!</code> if 'O' wins then print out <code>'O' Won!</code></p>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>&#39;O&#39; Won!
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q5</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
+  <span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+    <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; Won!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;O&#39; Won!&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&#39;X&#39; Won!
+</code></pre></div>
+
+<h3 id="12-q6">1.2 Q6<a class="headerlink" href="#12-q6" title="Permanent link">&para;</a></h3>
+<p>Once we've detected a winner, there's no need to continue the for-loop. Put breaks in your loop so that it exits after detecting a winner</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q6</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
+  <span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+    <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; Won!&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">elif</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;O&#39; Won!&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&#39;X&#39; Won!
+</code></pre></div>
+
+<h3 id="12-q7">1.2 Q7<a class="headerlink" href="#12-q7" title="Permanent link">&para;</a></h3>
+<p>let's wrap this in a function. Call your function <code>check_winning</code> and have it take <code>board</code> as an input parameter. Make what were previously your print statements into returns of their respective strings. Return an empty string if there is no winner detected.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q7</span>
+<span class="k">def</span> <span class="nf">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
+    <span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+      <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;X&#39; Won!&quot;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;O&#39; Won!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">pass</span>
+  <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+</code></pre></div>
+
+<p>Check that your code works using a board that has either 'X' or 'O' as a winner.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q7</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&quot;&#39;X&#39; Won!&quot;
+</code></pre></div>
+
+<h2 id="13-input-from-the-user">1.3 Input from the User<a class="headerlink" href="#13-input-from-the-user" title="Permanent link">&para;</a></h2>
+<p>We can get input from the user like so:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>1
+</code></pre></div>
+
+<h3 id="13-q1">1.3 Q1<a class="headerlink" href="#13-q1" title="Permanent link">&para;</a></h3>
+<p>Let's ask the user for their move and create some logic to embed this into the board. First write your string that will be presented to the user, asking them to play their move. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># WRITE YOUR STRING DOWN HERE</span>
+<span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, Choose your move&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>| | | |
+| | | |
+| | | |
+X, Choose your move1
+</code></pre></div>
+
+<h3 id="13-q2">1.3 Q2<a class="headerlink" href="#13-q2" title="Permanent link">&para;</a></h3>
+<p>Great. Now we need to check that the position is actually available to the user, if not, ask the user for a different move; otherwise update the board and ask for the next move from the next player</p>
+<ul>
+<li>hint: you will need to convert your input into an <code>int</code> to be able to use it as a key in the <code>board</code> dictionary</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1">### COPY YOUR CODE FROM ABOVE ###</span>
+<span class="n">player</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># WRITE YOUR STRING DOWN HERE</span>
+<span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, Choose your move&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+<span class="c1">### END COPY ###</span>
+
+<span class="c1">### WRITE YOUR CONDITIONAL BELOW</span>
+<span class="c1"># note: you will need to think of both the conditional, as well as a method</span>
+<span class="c1"># to continue asking the player to make a move if the condition is not met</span>
+<span class="c1"># what kind of loop does this make you think of?</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+    <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, sorry that spot is taken!</span><span class="se">\n</span><span class="s2">Choose another move&quot;</span>
+            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+    <span class="k">break</span>
+
+<span class="c1">### END YOUR CODE</span>
+<span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>|X| | |
+| | | |
+| | | |
+X, Choose your move1
+X, sorry that spot is taken!
+Choose another move2
+</code></pre></div>
+
+<h2 id="14-creating-a-game-handler">1.4 Creating a Game Handler<a class="headerlink" href="#14-creating-a-game-handler" title="Permanent link">&para;</a></h2>
+<h3 id="14-q1">1.4 Q1<a class="headerlink" href="#14-q1" title="Permanent link">&para;</a></h3>
+<p>We now need some code to orchestrate game play. It will decide who's turn it is, allow players to make moves, and detect when the game is over.</p>
+<p>Fill in the blanks in the code cell below to complete the game handler:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+
+<span class="c1"># initiate a while loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+  <span class="c1"># create a for loop that iterates between X and O and stores this in the </span>
+  <span class="c1"># variable name `player`</span>
+  <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
+
+    <span class="c1"># visualize the board</span>
+    <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="c1">### PASTE YOUR CODE FROM ABOVE FOR ASKING THE PLAYER FOR THEIR MOVE ###</span>
+    <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, Choose your move&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, sorry that spot is taken!</span><span class="se">\n</span><span class="s2">Choose another move&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+        <span class="k">break</span>
+    <span class="c1">### END PASTE ###</span>
+
+    <span class="c1">### WRITE THE LOGIC TO BREAK OUT OF THE WHILE LOOP BELOW ###</span>
+    <span class="c1"># check if there is a winner using check_winning</span>
+    <span class="c1"># if the return from check_winning is an empty string,</span>
+    <span class="c1"># then continue the while loop, otherwise break the while loop and print </span>
+    <span class="c1"># the name of the winner (X or O)</span>
+    <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
+      <span class="k">break</span>
+
+  <span class="c1"># break out of outer loop</span>
+  <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="k">break</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&#39;X&#39; will go first!
+| | | |
+| | | |
+| | | |
+X, Choose your move1
+|X| | |
+| | | |
+| | | |
+O, Choose your move2
+|X|O| |
+| | | |
+| | | |
+X, Choose your move4
+|X|O| |
+|X| | |
+| | | |
+O, Choose your move3
+|X|O|O|
+|X| | |
+| | | |
+X, Choose your move7
+&#39;X&#39; Won!
+</code></pre></div>
+
+<h2 id="15-in-summary">1.5 In Summary<a class="headerlink" href="#15-in-summary" title="Permanent link">&para;</a></h2>
+<p>Paste all your working functions into the cell below for safe keeping:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">init_board</span><span class="p">():</span>
+  <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+         <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,}</span>
+
+<span class="k">def</span> <span class="nf">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|</span><span class="si">{}</span><span class="s2">|&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">board</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">win_patterns</span><span class="p">:</span>
+    <span class="n">player_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+      <span class="n">player_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;X&#39; Won!&quot;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">player_tokens</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="s2">&quot;&#39;O&#39; Won!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">pass</span>
+  <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;X&#39; will go first!&quot;</span><span class="p">)</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">init_board</span><span class="p">()</span>
+
+<span class="c1"># initiate a while loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+  <span class="c1"># create a for loop that iterates between X and O and stores this in the </span>
+  <span class="c1"># variable name `player`</span>
+  <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]):</span>  
+
+    <span class="c1"># visualize the board</span>
+    <span class="n">visualize_board</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="c1">### PASTE YOUR CODE FROM ABOVE FOR ASKING THE PLAYER FOR THEIR MOVE ###</span>
+    <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, Choose your move&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="n">move</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, sorry that spot is taken!</span><span class="se">\n</span><span class="s2">Choose another move&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player</span><span class="p">)))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">move</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+        <span class="k">break</span>
+    <span class="c1">### END PASTE ###</span>
+
+    <span class="c1">### WRITE THE LOGIC TO BREAK OUT OF THE WHILE LOOP BELOW ###</span>
+    <span class="c1"># check if there is a winner using check_winning</span>
+    <span class="c1"># if the return from check_winning is an empty string,</span>
+    <span class="c1"># then continue the while loop, otherwise break the while loop and print </span>
+    <span class="c1"># the name of the winner (X or O)</span>
+    <span class="n">winner</span> <span class="o">=</span> <span class="n">check_winning</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
+      <span class="k">break</span>
+
+  <span class="c1"># break out of outer loop</span>
+  <span class="k">if</span> <span class="n">winner</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="k">break</span>
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

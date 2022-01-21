@@ -548,13 +548,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exercise-11-debug-a-class-method" class="md-nav__link">
-    🏋️ Exercise 11: Debug a Class Method
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -969,13 +962,6 @@
           <li class="md-nav__item">
   <a href="#exercise-10-more-slicing" class="md-nav__link">
     🏋️ Exercise 10: More Slicing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercise-11-debug-a-class-method" class="md-nav__link">
-    🏋️ Exercise 11: Debug a Class Method
   </a>
   
 </li>
@@ -1672,178 +1658,6 @@ arr2 = np.random.randint(5, 11, (10,5))
 
 <h3 id="exercise-10-more-slicing">🏋️ Exercise 10: More Slicing<a class="headerlink" href="#exercise-10-more-slicing" title="Permanent link">&para;</a></h3>
 <p>swap columns 2 and 3 in <code>arr</code></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 10</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></div>
-
-<h3 id="exercise-11-debug-a-class-method">🏋️ Exercise 11: Debug a Class Method<a class="headerlink" href="#exercise-11-debug-a-class-method" title="Permanent link">&para;</a></h3>
-<p>Your friend is developing a new pokemon game. They are excited to release but are running into some trouble! </p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;poke ball&quot;</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
-
-  <span class="c1"># the method catch, will update self.contains, if a catch is successful</span>
-  <span class="c1"># it will also use self.catch_rate to set the performance of the catch</span>
-  <span class="k">def</span> <span class="nf">catch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">pokemon</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> captured!&quot;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> escaped!&quot;</span><span class="p">)</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pokeball is not empty!&quot;</span><span class="p">)</span>
-
-  <span class="k">def</span> <span class="nf">release</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pokeball is already empty&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contains</span><span class="p">,</span> <span class="s2">&quot;has been released&quot;</span><span class="p">)</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="kc">None</span>
-
-
-<span class="k">class</span> <span class="nc">Pokemon</span><span class="p">():</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">type_</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">type_</span> <span class="o">=</span> <span class="n">type_</span>
-
-<span class="k">class</span> <span class="nc">FastBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Fastball&quot;</span><span class="p">):</span>
-    <span class="n">Pokeball</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.6</span>
-
-  <span class="k">def</span> <span class="nf">catch_fast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">pokemon</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;has been captured&quot;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pokeball is not empty&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="n">pokemon</span><span class="p">)</span>
-</code></pre></div>
-
-<p>They're concerned that the object <code>FastBall</code> doesn't return the pokemon's name when executing <code>print(fast.contains)</code> when they know the pokeball contains a pokemon. Help them find the bug, then write the following unit tests:</p>
-<ol>
-<li>showing that the pokeball updates properly with the name of the pokemon after it makes a capture of a pokemon with a speed &gt; 100</li>
-<li>showing that the <code>catch_rate</code> of 0.6 is resulting in a 60% catch rate for pokemon with speeds &lt; 100</li>
-</ol>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Your friend shows you this code </span>
-<span class="n">fast</span> <span class="o">=</span> <span class="n">FastBall</span><span class="p">()</span>
-
-<span class="n">mewtwo</span> <span class="o">=</span> <span class="n">Pokemon</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mewtwo&#39;</span><span class="p">,</span> 
-                 <span class="n">weight</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
-                 <span class="n">speed</span><span class="o">=</span><span class="mi">110</span><span class="p">,</span> 
-                 <span class="n">type_</span><span class="o">=</span><span class="s1">&#39;Psychic&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fast</span><span class="o">.</span><span class="n">contains</span><span class="p">)</span>
-
-<span class="n">fast</span><span class="o">.</span><span class="n">catch_fast</span><span class="p">(</span><span class="n">mewtwo</span><span class="p">)</span>
-
-<span class="c1"># this is the line they are concerned about</span>
-<span class="c1"># why does this not return MewTwo?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fast</span><span class="o">.</span><span class="n">contains</span><span class="p">)</span>
-
-<span class="n">fast</span><span class="o">.</span><span class="n">catch_fast</span><span class="p">(</span><span class="n">mewtwo</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>None
-Mewtwo has been captured
-&lt;__main__.Pokemon object at 0x7fd4bfe612d0&gt;
-Pokeball is not empty
-</code></pre></div>
-
-<h1 id="part-2-optional-use-a-test-runner">Part 2 (Optional): Use a Test Runner<a class="headerlink" href="#part-2-optional-use-a-test-runner" title="Permanent link">&para;</a></h1>
-<p>Create the following files:</p>
-<ul>
-<li><code>pokemon.py</code></li>
-<li><code>test_pokemon.py</code></li>
-</ul>
-<p>paste the following into <code>pokemon.py</code>:</p>
-<div class="codehilite"><pre><span></span><code>import random
-import numpy as np
-
-class Pokeball:
-  def __init__(self, contains=None, type_name=&quot;poke ball&quot;):
-    self.contains = contains
-    self.type_name = type_name
-    self.catch_rate = 0.50 # note this attribute is not accessible upon init
-
-  # the method catch, will update self.contains, if a catch is successful
-  # it will also use self.catch_rate to set the performance of the catch
-  def catch(self, pokemon):
-    if self.contains == None:
-      if random.random() &lt; self.catch_rate:
-        self.contains = pokemon
-        print(f&quot;{pokemon} captured!&quot;)
-      else:
-        print(f&quot;{pokemon} escaped!&quot;)
-        pass
-    else:
-      print(&quot;pokeball is not empty!&quot;)
-
-  def release(self):
-    if self.contains == None:
-      print(&quot;Pokeball is already empty&quot;)
-    else:
-      print(self.contains, &quot;has been released&quot;)
-      self.contains = None
-
-
-class Pokemon():
-  def __init__(self, name, weight, speed, type_):
-    self.name = name
-    self.weight = weight
-    self.speed = speed
-    self.type_ = type_
-
-class FastBall(Pokeball):
-  def __init__(self, contains=None, type_name=&quot;Fastball&quot;):
-    Pokeball.__init__(self, contains, type_name)
-    self.catch_rate = 0.6
-
-  def catch_fast(self, pokemon):
-    if pokemon.speed &gt; 100:
-      if self.contains == None:
-        self.contains = pokemon
-        print(pokemon.name, &quot;has been captured&quot;)
-      else:
-        print(&quot;Pokeball is not empty&quot;)
-    else:
-      self.catch(pokemon)
-</code></pre></div>
-
-<p>in <code>test_pokemon.py</code> paste any unit tests you've written along with the imports at the top of the file (be sure to import any other libraries you used in your unit tests as well)</p>
-<div class="codehilite"><pre><span></span><code>from pokemon import *
-import random
-import numpy as np
-
-### YOUR UNIT TESTS HERE ###
-def test_&lt;name_of_your_test&gt;():
-  # ....
-  assert &lt;your assert statement&gt;
-</code></pre></div>
-
-<p>make sure <code>pokemon.py</code> and <code>test_pokemon.py</code> are in the same directory then run the command</p>
-<div class="codehilite"><pre><span></span><code>pytest
-</code></pre></div>
-
-<p>from the command line. You should get a readout like the following</p>
-<div class="codehilite"><pre><span></span><code>================================================= test session starts ==================================================
-platform linux -- Python 3.8.1, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
-rootdir: /mnt/c/Users/wesley/Documents/apps/temp_c3_l2
-plugins: dash-1.20.0, anyio-2.2.0
-collected 1 item
-
-test_pokemon.py .                                                                                                [100%]
-
-================================================== 1 passed in 0.06s ===================================================
-</code></pre></div>
 
               
             </article>
