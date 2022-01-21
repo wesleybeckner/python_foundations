@@ -767,14 +767,18 @@
 <p>In this lab we will continue to practice manipulating pandas DataFrames.</p>
 <p><br></p>
 <hr />
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+
 <h2 id="l4-q1">🐼 L4 Q1<a class="headerlink" href="#l4-q1" title="Permanent link">&para;</a></h2>
 <p>Convert the two series into the columns of a DataFrame</p>
 <div class="codehilite"><pre><span></span><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcedfghijklmnopqrstuvwxyz&#39;</span><span class="p">))</span>
-<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="p">))</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">)])</span>
 </code></pre></div>
 
 <h2 id="l4-q2">🐼 L4 Q2<a class="headerlink" href="#l4-q2" title="Permanent link">&para;</a></h2>
-<p>Conver the series into a DataFrame with 7 rows and 5 columns</p>
+<p>Convert the series into a DataFrame with 7 rows and 5 columns</p>
 <div class="codehilite"><pre><span></span><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
 </code></pre></div>
 
@@ -801,8 +805,13 @@
 </code></pre></div>
 
 <h2 id="l4-q6">🐼 L4 Q6<a class="headerlink" href="#l4-q6" title="Permanent link">&para;</a></h2>
-<p>Compute the euclidian distance between vectors p and q (pythagorean theorem)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<p>Compute the euclidian distance between vectors p and q </p>
+<blockquote>
+<p>Euclidean distance is calculated as the square root of the sum of the squared differences between the two vectors</p>
+</blockquote>
+<p>This is related to the <a href="https://machinelearningmastery.com/vector-norms-machine-learning/">L2 vector norm</a></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </code></pre></div>
 
@@ -820,7 +829,7 @@ dtype: float64
 </code></pre></div>
 
 <h2 id="l4-q8">🐼 L4 Q8<a class="headerlink" href="#l4-q8" title="Permanent link">&para;</a></h2>
-<p>Check if there are missing values in a dataframe using <code>.isnull()</code>, <code>.values</code>, and <code>.any()</code></p>
+<p>Check if there are missing values in each column of a dataframe using <code>.isnull()</code>, and <code>.any()</code></p>
 <div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv&#39;</span><span class="p">)</span>
 </code></pre></div>
 

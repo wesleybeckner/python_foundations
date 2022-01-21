@@ -372,10 +372,10 @@
         
           <li class="md-nav__item">
   <a href="#512-creating-pandas-dataframes" class="md-nav__link">
-    5.1.2 Creating pandas dataframes
+    5.1.2 Creating pandas DataFrames
   </a>
   
-    <nav class="md-nav" aria-label="5.1.2 Creating pandas dataframes">
+    <nav class="md-nav" aria-label="5.1.2 Creating pandas DataFrames">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -864,10 +864,10 @@
         
           <li class="md-nav__item">
   <a href="#512-creating-pandas-dataframes" class="md-nav__link">
-    5.1.2 Creating pandas dataframes
+    5.1.2 Creating pandas DataFrames
   </a>
   
-    <nav class="md-nav" aria-label="5.1.2 Creating pandas dataframes">
+    <nav class="md-nav" aria-label="5.1.2 Creating pandas DataFrames">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1089,7 +1089,7 @@
 <hr />
 <h2 id="51-pandas">5.1 Pandas<a class="headerlink" href="#51-pandas" title="Permanent link">&para;</a></h2>
 <h3 id="511-pandas-and-scikit-learn-load_datasets">5.1.1 Pandas and Scikit-Learn <code>load_datasets</code><a class="headerlink" href="#511-pandas-and-scikit-learn-load_datasets" title="Permanent link">&para;</a></h3>
-<p>We begin by loading the Panda's package.  Packages are collections of functions that share a common utility.  We've seen <code>import</code> before.  Let's use it to import Pandas and all the richness that pandas has.</p>
+<p>We begin by loading the Pandas package.  Packages are collections of functions that share a common utility.  We've seen <code>import</code> before.  Let's use it to import Pandas and all the richness that Pandas has.</p>
 <p>We'll also use a very useful feature of the scikit-learn toolkit, the <code>load_datasets</code> module. We will do some very rudimentary tasks with this dataset, just to demonstrate the utility of <code>load_datasets</code>, then we will switch over to a more relevant dataset for our purposes.</p>
 <div class="codehilite"><pre><span></span><code>import pandas
 from sklearn.datasets import load_wine
@@ -1220,15 +1220,16 @@ School of Information and Computer Science.
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </code></pre></div>
 
-<h3 id="512-creating-pandas-dataframes">5.1.2 Creating pandas dataframes<a class="headerlink" href="#512-creating-pandas-dataframes" title="Permanent link">&para;</a></h3>
-<p>Let's create an empty <em>data frame</em> and put the result into a variable called <code>df</code>.  This is a popular choice for a <em>data frame</em> variable name.</p>
+<h3 id="512-creating-pandas-dataframes">5.1.2 Creating pandas DataFrames<a class="headerlink" href="#512-creating-pandas-dataframes" title="Permanent link">&para;</a></h3>
+<p><em>DataFrames</em> are two-dimensional tables of data that are the common data object we work with in Pandas. You can think of it as like an Excel spreadsheet.</p>
+<p>Let's create an empty <em>DataFrame</em> and put the result into a variable called <code>df</code>.  This is a popular choice for a <em>DataFrame</em> variable name.</p>
 <div class="codehilite"><pre><span></span><code>df = pd.DataFrame()
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 </code></pre></div>
 
-<p>Let's open the Wine dataset as a pandas data frame.  Notice we change the value of the <code>df</code> variable to point to a new data frame.</p>
+<p>Let's open the Wine dataset as a pandas DataFrame.  Notice we change the value of the <code>df</code> variable to point to a new DataFrame.</p>
 <div class="codehilite"><pre><span></span><code>df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 </code></pre></div>
 
@@ -1236,8 +1237,7 @@ School of Information and Computer Science.
 </code></pre></div>
 
 <h4 id="5121-from-excel-and-csv">5.1.2.1 From excel and csv<a class="headerlink" href="#5121-from-excel-and-csv" title="Permanent link">&para;</a></h4>
-<p>Please follow this <a href="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv">link</a></p>
-<p>This is what we call a csv or comma separated value file. We have a method reading these directly into pandas:</p>
+<p>We will now be reading the data from this <a href="https://raw.githubusercontent.com/wesleybeckner/ds_for_engineers/main/data/truffle_margin/margin_data.csv">link</a>. This is what we call a csv or comma separated value file. We have a method to read these directly into pandas:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/wesleybeckner/technology_explorers/main/assets/imdb_movies.csv&#39;</span><span class="p">)</span>
 </code></pre></div>
 

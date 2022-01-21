@@ -344,6 +344,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    🙋 Question 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercise-1" class="md-nav__link">
     🏋️ Exercise 1
   </a>
@@ -683,6 +690,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    🙋 Question 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercise-1" class="md-nav__link">
     🏋️ Exercise 1
   </a>
@@ -755,14 +769,13 @@
 <h2 id="41-object-oriented-programming">4.1: Object Oriented Programming<a class="headerlink" href="#41-object-oriented-programming" title="Permanent link">&para;</a></h2>
 <h3 id="411-classes-instances-methods-and-attribtues">4.1.1 Classes, Instances, Methods, and Attribtues<a class="headerlink" href="#411-classes-instances-methods-and-attribtues" title="Permanent link">&para;</a></h3>
 <p>A class is created with the reserved word <code>class</code></p>
-<p>A class can have attributes</p>
+<p>A class can have attributes. You can think of these as charateristics that describe the object.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># define a class</span>
 <span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
   <span class="n">some_attribute</span> <span class="o">=</span> <span class="mi">5</span>
 </code></pre></div>
 
-<p>We use the <strong><em>class blueprint</em></strong> <em>MyClass</em> to create an <strong><em>instance</em></strong></p>
-<p>We can now access attributes belonging to that class:</p>
+<p>Defining a class in the above way, creates a <strong><em>blueprint</em></strong>. We use the <strong><em>class blueprint</em></strong> <em>MyClass</em> to create an <strong><em>instance</em></strong>. And after we do so, we can now access attributes belonging to that class:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># create instance</span>
 <span class="n">instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
 
@@ -781,35 +794,67 @@
 <div class="codehilite"><pre><span></span><code>50
 </code></pre></div>
 
-<p>In practice we always use the <code>__init__()</code> function, which is executed when the class is being initiated. </p>
+<p>In practice we always use the <code>__init__()</code> function, which is executed when the class is being initiated. This is the pythonic way to be <em>explicit</em> about initializing the attributes of our class</p>
+<blockquote>
+<p>Upon investigation, you will find that the trouble with <em>not</em> using the <code>__init__()</code> method is that your attributes are not guaranteed to be initialized upon creation of the object from the class blueprint</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="c1"># define a class</span>
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+  <span class="c1"># we define our __init__ method that is called when the object is initialized</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># we pass in the reserved word self</span>
+    <span class="c1"># we reference the current object of the class via the self parameter</span>
+    <span class="c1"># and set its attributes </span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">some_attribute</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div>
+
+<p>When we use <code>__init__</code>, we also have to make use of a special reserved word in python: <code>self</code>. The <code>self</code> parameter refers to the <em>current</em> instance of the class. In other words, when the object is declared, it will refer to that specific object in memory and not <em>all</em> instances of the class in question. This is yet another pythonic way of being explicit.</p>
+<blockquote>
+<p>what is the special keyword <a href="http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html"><code>self</code></a> doing, do we really need it? Read more about the philosophy of <em>the self</em> by visiting the link!</p>
+</blockquote>
+<p>Let's practice class declaration now, in the context of Pokeballs</p>
 <p><br></p>
 <p align=center>
 <img src="https://cdn2.bulbagarden.net/upload/thumb/2/23/Pok%C3%A9_Balls_GL.png/250px-Pok%C3%A9_Balls_GL.png"></img>
 </p>
 
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;poke ball&quot;</span><span class="p">):</span>
+<p>We have a lot of different kinds of Poke balls! This is going to help us understand some of the powerful mechanisms inherit in python classes! </p>
+<p>Let's start by defining a class to describe the simple, standard Poke ball. It will have the following attributes:</p>
+<ul>
+<li><code>contains</code> the name of the pokemon contained in the Poke ball. Default value is <code>None</code></li>
+<li><code>type_name</code> the type of Poke ball. Default value is <code>"Poke ball"</code></li>
+<li><code>catch_rate</code> the probability of a successful catch upon throwing the Poke ball. The default value is <code>0.5</code> and the user will not be able to set the value of this object.</li>
+</ul>
+<p>Let's take a look at how we do this:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># define the class in the standard way via the reserved word class</span>
+<span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
+
+  <span class="c1"># define the init method pass in the &quot;self&quot; and any attributes that will</span>
+  <span class="c1"># be definable upon initialization of the object</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Poke ball&quot;</span><span class="p">):</span>
+
+    <span class="c1"># now set the attributes of the object via the self</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># empty pokeball</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># empty Poke ball</span>
 <span class="n">pokeball1</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">()</span>
 
-<span class="c1"># used pokeball of a different type</span>
-<span class="n">pokeball1</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">(</span><span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span> <span class="s2">&quot;master ball&quot;</span><span class="p">)</span>
+<span class="c1"># used Poke ball of a different type</span>
+<span class="n">pokeball1</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">(</span><span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span> <span class="s2">&quot;Master ball&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<blockquote>
-<p>what is the special keyword <a href="http://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html"><code>self</code></a> doing?</p>
-</blockquote>
-<p>The <code>self</code> parameter is a reference to the current instance of the class and is used to access variables belonging to the class.</p>
-<p>classes can also contain methods</p>
+<h3 id="question-1">🙋 Question 1<a class="headerlink" href="#question-1" title="Permanent link">&para;</a></h3>
+<p>Note that, were we to run the following cell, we would get an error. Why would we get an error?</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Pokeball(&quot;Charmander&quot;, &quot;Poke ball&quot;, catch_rate=0.5)</span>
+</code></pre></div>
+
+<p>classes can also contain methods. I'm going to introduce a new method <code>catch</code> that is used to catch new pokemon. It will have a random chance of success and, additionally, it will only work if the Poke ball is empty.</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;poke ball&quot;</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Poke ball&quot;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
@@ -825,9 +870,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> escaped!&quot;</span><span class="p">)</span>
         <span class="k">pass</span>
     <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pokeball is not empty!&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Poke ball is not empty!&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<p>We can envoke the <code>catch</code> method the same way we would return the attribute of an object - by running <code>&lt;object&gt;.method()</code>. Note that, because this is a method, we must use <code>()</code>, the same way we use <code>()</code> with functions. Inside the <code>()</code> we pass any necessary parameters. In this case we will pass the name of the Pokemon we are trying to catch:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">pokeball</span> <span class="o">=</span> <span class="n">Pokeball</span><span class="p">()</span>
 <span class="n">pokeball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;picachu&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -844,31 +890,63 @@
 <h3 id="exercise-1">🏋️ Exercise 1<a class="headerlink" href="#exercise-1" title="Permanent link">&para;</a></h3>
 <p>Create a release method for the class Pokeball:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 1</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">Pokeball</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Poke ball&quot;</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.50</span> <span class="c1"># note this attribute is not accessible upon init</span>
+
+  <span class="k">def</span> <span class="nf">catch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to catch Pokemon with an empty Poke ball. Has a probabilistic chance of</span>
+<span class="sd">    success.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">pokemon</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> captured!&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s2"> escaped!&quot;</span><span class="p">)</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Poke ball is not empty!&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">release</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div>
 
 <h3 id="412-inheritance">4.1.2 Inheritance<a class="headerlink" href="#412-inheritance" title="Permanent link">&para;</a></h3>
-<p>Inheritance allows you to adopt into a child class, the methods and attributes of a parent class</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+<p>Inheritance allows you to adopt into a child class, the methods and attributes of a parent class. We inherit a parent class by passing it into the child class:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Pokeball is the parent class and Masterball is the child class</span>
+<span class="k">class</span> <span class="nc">Masterball</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">pass</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
+<p>Once we declare an object of the child class. We will have access to all of the parent class attributes. In this case, masterball will inherit the type_name of "Poke ball" from the Pokeball class:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">Masterball</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>&#39;poke ball&#39;
+<div class="codehilite"><pre><span></span><code>&#39;Poke ball&#39;
 </code></pre></div>
 
-<p>HMMM we don't like that type name. let's make sure we change some of the inherited attributes!</p>
+<p>HMMM we don't like that type name because this is not a regular-old Poke ball anymore. It is a Master ball! </p>
+<p>Let's make sure we change some of the inherited attributes. </p>
 <p>We'll do this again with the <code>__init__</code> function</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we still pass Pokeball into Masterball</span>
+<span class="k">class</span> <span class="nc">Masterball</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+
+  <span class="c1"># now we pass into the init method the class attribute values we actually</span>
+  <span class="c1"># desire, instead of just inheriting them from the parent class</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">,</span> <span class="n">catch_rate</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contains</span> <span class="o">=</span> <span class="n">contains</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="n">catch_rate</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">Masterball</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
@@ -882,20 +960,23 @@
 </code></pre></div>
 
 <p>We can also write this, this way:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Masterball</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">):</span>
+    <span class="c1"># instead of rewriting all of the self.&lt;attribute&gt; commands, we can access</span>
+    <span class="c1"># the init method from the parent class (where those commands are already</span>
+    <span class="c1"># declared)</span>
     <span class="n">Pokeball</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.8</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">Masterball</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">type_name</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>&#39;Masterball&#39;
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">Masterball</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;charmander&quot;</span><span class="p">)</span>
 </code></pre></div>
 
@@ -903,13 +984,15 @@
 </code></pre></div>
 
 <p>The keyword <code>super</code> will let us write even more succintly:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MasterBall</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Masterball</span><span class="p">(</span><span class="n">Pokeball</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="s2">&quot;Masterball&quot;</span><span class="p">):</span>
+    <span class="c1"># super() is taking the namespace of the parent class, note that with this </span>
+    <span class="c1"># mechanism we no longer have to pass in the self attribute </span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">contains</span><span class="p">,</span> <span class="n">type_name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">catch_rate</span> <span class="o">=</span> <span class="mf">0.8</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">MasterBall</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">masterball</span> <span class="o">=</span> <span class="n">Masterball</span><span class="p">()</span>
 <span class="n">masterball</span><span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="s2">&quot;charmander&quot;</span><span class="p">)</span>
 </code></pre></div>
 
@@ -922,7 +1005,7 @@
 </code></pre></div>
 
 <h3 id="413-interacting-objects">4.1.3 Interacting Objects<a class="headerlink" href="#413-interacting-objects" title="Permanent link">&para;</a></h3>
-<p>As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire</p>
+<p>As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire. This is where form and function meet.</p>
 <h3 id="exercise-3">🏋️ Exercise 3<a class="headerlink" href="#exercise-3" title="Permanent link">&para;</a></h3>
 <p>Write another class object called <code>Pokemon</code>. It has the <a href="https://bulbapedia.bulbagarden.net/wiki/Type">attributes</a>:</p>
 <ul>
@@ -931,9 +1014,9 @@
 <li>speed</li>
 <li>type</li>
 </ul>
-<p>Now create a class object called <code>FastBall</code>, it inherits the properties of <code>Pokeball</code> but has a new condition on <code>catch</code> method: if pokemon.speed &gt; 100 then there is 100% chance of catch success.</p>
+<p>Now create a class object called <code>Fastball</code>, it inherits the properties of <code>Pokeball</code> but has a new condition on <code>catch</code> method: if pokemon.speed &gt; 100 then there is 100% chance of catch success.</p>
 <blockquote>
-<p>what changes do you have to make to the way we've been interacting with pokeball to make this new requirement work?</p>
+<p>what changes do you have to make to the way we've been interacting with Poke ball to make this new requirement work?</p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 3</span>
 </code></pre></div>
