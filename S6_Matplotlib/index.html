@@ -373,6 +373,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    🙋 Question 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercise-1-adjust-figure-size" class="md-nav__link">
     🏋️ Exercise 1: Adjust Figure Size
   </a>
@@ -488,7 +495,7 @@
         
           <li class="md-nav__item">
   <a href="#6251-enrichment-skew-and-tailedness" class="md-nav__link">
-    6.2.5.1 Enrichment: Skew and Tailedness
+    🍒 6.2.5.1 Enrichment: Skew and Tailedness
   </a>
   
 </li>
@@ -809,6 +816,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    🙋 Question 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercise-1-adjust-figure-size" class="md-nav__link">
     🏋️ Exercise 1: Adjust Figure Size
   </a>
@@ -924,7 +938,7 @@
         
           <li class="md-nav__item">
   <a href="#6251-enrichment-skew-and-tailedness" class="md-nav__link">
-    6.2.5.1 Enrichment: Skew and Tailedness
+    🍒 6.2.5.1 Enrichment: Skew and Tailedness
   </a>
   
 </li>
@@ -1004,7 +1018,7 @@
 <hr />
 <h2 id="61-visualization-with-matplotlib">6.1 Visualization with Matplotlib<a class="headerlink" href="#61-visualization-with-matplotlib" title="Permanent link">&para;</a></h2>
 <p>Lets start by importing our <code>matplotlib</code> module. </p>
-<p>Pyplot is a module of Matplotlib that provides functions to add plot elements like text, lines, and images. typically we import this module like so</p>
+<p>Pyplot is a module of Matplotlib that provides functions to add plot elements like text, lines, and images. Typically we import this module like so</p>
 <div class="codehilite"><pre><span></span><code>import matplotlib.pyplot as plt
 </code></pre></div>
 
@@ -1013,7 +1027,7 @@
 </code></pre></div>
 
 <h3 id="611-the-basics">6.1.1 The Basics<a class="headerlink" href="#611-the-basics" title="Permanent link">&para;</a></h3>
-<p>Matplotlib is strongly object oriented and its principal objects are the <strong><em>figure</em></strong> and the <strong><em>axes</em></strong>. But before we get into that I want us to explore the <em>most basic</em> use case. In this basic use case, we don't declare the <code>figure</code> and <code>axes</code> objects explicitly, but rather work directly in the <code>pyplot</code> namespace.</p>
+<p>Matplotlib is strongly object oriented and its principal objects are the <strong><em>figure</em></strong> and the <strong><em>axes</em></strong>. But before we get into that I want us to explore the <em>most basic</em> use case. In this basic use case, we don't declare the <code>figure</code> and <code>axes</code> objects explicitly, but rather work directly in the <code>pyplot</code> namespace. I'l demonstrate to show what I mean here.</p>
 <p>I'm going to create a list of x and y values and plot them with <code>pyplot</code></p>
 <div class="codehilite"><pre><span></span><code>x = [1,2,3,4,5,6,7]
 y = [1,1,2,3,5,8,13]
@@ -1046,6 +1060,7 @@ plt.ylabel(&#39;Value&#39;)
 </code></pre></div>
 
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_7_1.png" /></p>
+<h4 id="question-1">🙋 Question 1<a class="headerlink" href="#question-1" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>What do we think about the out-of-the-box formatting of <code>pyplot</code>? What are some things we can do to make it better? Could we make it bigger? Perhaps different dimensions? Does anyone recognize that default line color?</p>
 </blockquote>
@@ -1940,7 +1955,7 @@ plt.hist(df[&#39;duration&#39;])
 </code></pre></div>
 
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_61_1.png" /></p>
-<h4 id="6251-enrichment-skew-and-tailedness">6.2.5.1 <strong>Enrichment</strong>: Skew and Tailedness<a class="headerlink" href="#6251-enrichment-skew-and-tailedness" title="Permanent link">&para;</a></h4>
+<h4 id="6251-enrichment-skew-and-tailedness">🍒 6.2.5.1 <strong>Enrichment</strong>: Skew and Tailedness<a class="headerlink" href="#6251-enrichment-skew-and-tailedness" title="Permanent link">&para;</a></h4>
 <p>While we're on the topic of KDEs/histograms and other statistical plots, this is a convenient time to talk about skew and tailedness or, otherwise known as kurtosis</p>
 <ul>
 <li><code>df.skew()</code> indicates the skewdness of the data</li>
@@ -2090,7 +2105,7 @@ plt.hist(df[&#39;duration&#39;])
 </div>
 
 <p>So we have this raw table of pearsons correlations between each of our input features, how do we and how should we turn this into a plot?</p>
-<p>Typically we'd use a heat map on an feature vs feature grid to view this kind of data. In the following I'm going to use some <code>numpy</code> methods you may not have seen before. Links to the documentation for these methods are at the end of the notebook.</p>
+<p>Typically we'd use a heat map on a feature vs feature grid to view this kind of data. In the following I'm going to use some <code>numpy</code> methods you may not have seen before. Links to the documentation for these methods are at the end of the notebook.</p>
 <div class="codehilite"><pre><span></span><code>import numpy as np
 fig, ax = plt.subplots(1, 1, figsize = (10,10))
 
@@ -2428,9 +2443,6 @@ if (outputEl) {{
 
 
 &lt;function __main__.my_plot&gt;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
               
