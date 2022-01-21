@@ -21,7 +21,7 @@ In this session we'll be discussing visualization strategies. And, more specific
 
 Lets start by importing our `matplotlib` module. 
 
-Pyplot is a module of Matplotlib that provides functions to add plot elements like text, lines, and images. typically we import this module like so
+Pyplot is a module of Matplotlib that provides functions to add plot elements like text, lines, and images. Typically we import this module like so
 
 ```
 import matplotlib.pyplot as plt
@@ -36,7 +36,7 @@ import matplotlib.pyplot as plt
 
 ### 6.1.1 The Basics
 
-Matplotlib is strongly object oriented and its principal objects are the **_figure_** and the **_axes_**. But before we get into that I want us to explore the _most basic_ use case. In this basic use case, we don't declare the `figure` and `axes` objects explicitly, but rather work directly in the `pyplot` namespace.
+Matplotlib is strongly object oriented and its principal objects are the **_figure_** and the **_axes_**. But before we get into that I want us to explore the _most basic_ use case. In this basic use case, we don't declare the `figure` and `axes` objects explicitly, but rather work directly in the `pyplot` namespace. I'l demonstrate to show what I mean here.
 
 I'm going to create a list of x and y values and plot them with `pyplot`
 
@@ -95,6 +95,8 @@ plt.ylabel('Value')
 ![png](S6_Matplotlib_files/S6_Matplotlib_7_1.png)
     
 
+
+#### 🙋 Question 1
 
 > What do we think about the out-of-the-box formatting of `pyplot`? What are some things we can do to make it better? Could we make it bigger? Perhaps different dimensions? Does anyone recognize that default line color?
 
@@ -1305,7 +1307,7 @@ df['duration'].plot(kind='kde', ax=ax)
     
 
 
-#### 6.2.5.1 **Enrichment**: Skew and Tailedness
+#### 🍒 6.2.5.1 **Enrichment**: Skew and Tailedness
 
 While we're on the topic of KDEs/histograms and other statistical plots, this is a convenient time to talk about skew and tailedness or, otherwise known as kurtosis
 
@@ -1481,7 +1483,7 @@ df.corr()
 
 So we have this raw table of pearsons correlations between each of our input features, how do we and how should we turn this into a plot?
 
-Typically we'd use a heat map on an feature vs feature grid to view this kind of data. In the following I'm going to use some `numpy` methods you may not have seen before. Links to the documentation for these methods are at the end of the notebook.
+Typically we'd use a heat map on a feature vs feature grid to view this kind of data. In the following I'm going to use some `numpy` methods you may not have seen before. Links to the documentation for these methods are at the end of the notebook.
 
 ```
 import numpy as np
@@ -1972,8 +1974,3 @@ interact(my_plot)
     <function __main__.my_plot>
 
 
-
-
-```python
-
-```

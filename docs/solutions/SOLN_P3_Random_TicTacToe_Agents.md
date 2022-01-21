@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/project/P3_Random_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_P3_Random_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Project Part 3: Building Agents (Random AI Agent)
 
@@ -39,16 +39,106 @@ We will need to pull in our OOP work from the previous project notebook. Be sure
 
 ```python
 class TicTacToe:
-  ##########################
-  ##### YOUR CODE HERE #####
-  ##########################
-  pass
+  def __init__(self, winner='', start_player=''):
+    self.winner = winner
+    self.start_player = start_player
+    self.board = {1: ' ',
+                  2: ' ',
+                  3: ' ',
+                  4: ' ',
+                  5: ' ',
+                  6: ' ',
+                  7: ' ',
+                  8: ' ',
+                  9: ' ',}
+    self.win_patterns = [[1,2,3], [4,5,6], [7,8,9],
+                        [1,4,7], [2,5,8], [3,6,9],
+                        [1,5,9], [7,5,3]]
+
+  def visualize_board(self):
+    """
+    Visualizes the board during gameplay
+
+    Parameters
+    ----------
+    board_values : list
+      The values ('X', 'O', or ' ' at each board location)
+
+    Returns
+    -------
+    None
+
+    """
+    print(
+      "|{}|{}|{}|\n|{}|{}|{}|\n|{}|{}|{}|\n".format(*self.board.values())
+      )
+                  
+  def check_winning(self):
+    """
+    Checks if the game has a winner
+
+    Parameters
+    ----------
+    board : dict
+      the tictactoe board as a dictionary
+
+    Returns
+    -------
+    win_statement : str
+      defaults to an empty string if no winner. Otherwise 'X' Won! or 'O' Won!
+    """
+    for pattern in self.win_patterns:
+      values = [self.board[i] for i in pattern] 
+      if values == ['X', 'X', 'X']:
+        self.winner = 'X'
+        return "'X' Won!"
+      elif values == ['O', 'O', 'O']:
+        self.winner = 'O'
+        return "'O' Won!"
+    return ''
+
+  # here the definition of check_stalemate is given
+  def check_stalemate(self):
+    if ' ' not in self.board.values():
+      self.winner = 'Stalemate'
+      return "It's a stalemate!"
 
 def play_game():
-  ##########################
-  ##### YOUR CODE HERE #####
-  ##########################
-  pass
+  print("'X' will go first!")
+  tic_tac_toe = TicTacToe()
+  while True:
+    for player in (['X', 'O']):  
+      tic_tac_toe.visualize_board()
+      move = input("{}, what's your move?".format(player))
+
+      if move in ['q', 'quit']:
+        tic_tac_toe.winner = 'F'
+        print('quiting the game')
+        break
+
+      move = int(move)
+      if tic_tac_toe.board[move] != ' ':
+        while True:
+          move = input("{}, that position is already taken! "\
+                      "What's your move?".format(player))  
+          move = int(move)            
+          if tic_tac_toe.board[move] != ' ':
+            continue
+          else:
+            break
+            
+      tic_tac_toe.board[move] = player
+      tic_tac_toe.check_winning()
+      tic_tac_toe.check_stalemate()
+
+      if tic_tac_toe.winner == '':
+        continue
+      else:
+        print(tic_tac_toe.check_winning())
+        tic_tac_toe.visualize_board()
+        break
+    if tic_tac_toe.winner != '':
+      break
 ```
 
 ## 3.1 Creating an Agent
@@ -63,7 +153,17 @@ import the random library. Use it to randomly generate numbers 1-9 (inclusive? y
 ```python
 # cell for Q4
 # generates a random number 1-9
+import random
+
+random.randint(1,9)
 ```
+
+
+
+
+    1
+
+
 
 ### Q2 Play a Valid Move
 
@@ -73,7 +173,8 @@ Nice, now that we are generating random numbers 1-9. We need to check if a rando
 ```python
 while True:
   # generate a random number 1-9 and set it equal to the variable name <move>
-  if # if the move is invalid then...
+  move = random.randint(1,9)
+  if board[move] != ' ': # if the move is invalid then...
     continue
   else: # otherwise the move is valid and we can exit the loop!
     break
@@ -114,17 +215,27 @@ def play_game():
     first = input("who will go first? (X, (AI), or O (Player))")
     if first == 'O':
       ### UPDATE PLAYER_META HERE ###
-
+      player_meta['first']['label'] = 'O'
+      player_meta['second']['label'] = 'X'
+      player_meta['second']['type'] = 'ai'
     else:
       ### UPDATE PLAYER_META HERE ### 
+      player_meta['first']['label'] = 'X'
+      player_meta['second']['label'] = 'O'
+      player_meta['first']['type'] = 'ai'
 
   elif players == 0: # insert wargames quote
     first = random.choice(['X', 'O'])
     if first == 'O':
       ### UPDATE PLAYER_META HERE ###
-                             
+      player_meta['first']['label'] = 'O'
+      player_meta['second']['label'] = 'X'
+      player_meta['second']['type'] = 'ai'
+      player_meta['first']['type'] = 'ai'                
     else:
       ### UPDATE PLAYER_META HERE ### 
+      player_meta['second']['type'] = 'ai'
+      player_meta['first']['type'] = 'ai'
   
   ##############################################################################
   ################################# GAME PLAY ##################################
@@ -164,7 +275,13 @@ def play_game():
       ################### YOUR RANDOM AI AGENT CODE GOES HERE ##################
       ##########################################################################
       else:
-        pass # delete this line when finished
+        while True:
+          # generate a random number 1-9 and set it equal to the variable name <move>
+          move = random.randint(1,9)
+          if tic_tac_toe.board[move] != ' ': # if the move is invalid then...
+            continue
+          else: # otherwise the move is valid and we can exit the loop!
+            break
       
       tic_tac_toe.board[move] = player_label
       
@@ -192,6 +309,45 @@ def play_game():
 ```python
 play_game()
 ```
+
+    How many Players? (type 0, 1, or 2)1
+    who will go first? (X, (AI), or O (Player))O
+    | | | |
+    | | | |
+    | | | |
+    
+    O, what's your move?1
+    |O| | |
+    | | | |
+    | | | |
+    
+    |O| | |
+    | |X| |
+    | | | |
+    
+    O, what's your move?2
+    |O|O| |
+    | |X| |
+    | | | |
+    
+    |O|O| |
+    | |X| |
+    | |X| |
+    
+    O, what's your move?3
+    'O' Won!
+    |O|O|O|
+    | |X| |
+    | |X| |
+    
+
+
+
+
+
+    <__main__.TicTacToe at 0x7f94c095b490>
+
+
 
 ## 3.2 OOP and Inheritance
 
@@ -231,14 +387,47 @@ class GameEngine(TicTacToe):
   def __init__(self, setup='auto'):
     super().__init__()
     self.setup = setup
+    self.player_meta = {'first': {'label': 'X',
+                                    'type': 'human'}, 
+                    'second': {'label': 'O',
+                                    'type': 'human'}}
 
   def setup_game(self):
-
     if self.setup == 'user':
       ##########################################################################
       ## YOUR GAME SETUP CODE FROM ABOVE GOES HERE, NOTE THE NEW IF STATEMENT ##
       ##########################################################################
+      players = int(input("How many Players? (type 0, 1, or 2)"))
       
+      if players == 1:
+        first = input("who will go first? (X, (AI), or O (Player))")
+        if first == 'O':
+          ### UPDATE PLAYER_META HERE ###
+          self.start_player = 'O'
+          self.player_meta['first']['label'] = 'O'
+          self.player_meta['second']['label'] = 'X'
+          self.player_meta['second']['type'] = 'ai'
+        else:
+          ### UPDATE PLAYER_META HERE ### 
+          self.start_player = 'X'
+          self.player_meta['first']['label'] = 'X'
+          self.player_meta['second']['label'] = 'O'
+          self.player_meta['first']['type'] = 'ai'
+
+      elif players == 0: # insert wargames quote
+        first = random.choice(['X', 'O'])
+        if first == 'O':
+          ### UPDATE PLAYER_META HERE ###
+          self.start_player = 'O'
+          self.player_meta['first']['label'] = 'O'
+          self.player_meta['second']['label'] = 'X'
+          self.player_meta['second']['type'] = 'ai'
+          self.player_meta['first']['type'] = 'ai'                
+        else:
+          ### UPDATE PLAYER_META HERE ### 
+          self.start_player = 'X'
+          self.player_meta['second']['type'] = 'ai'
+          self.player_meta['first']['type'] = 'ai'
 
     elif self.setup == 'auto':
       ##########################################################################
@@ -247,16 +436,14 @@ class GameEngine(TicTacToe):
       first = random.choice(['X', 'O'])
       if first == 'O':
         self.start_player = 'O'
-        self.player_meta = {'second': {'label': 'X',
-                                  'type': 'ai'}, 
-                      'first': {'label': 'O',
-                                  'type': 'ai'}}                                
+        self.player_meta['first']['label'] = 'O'
+        self.player_meta['second']['label'] = 'X'
+        self.player_meta['second']['type'] = 'ai'
+        self.player_meta['first']['type'] = 'ai'                               
       else:
         self.start_player = 'X'
-        self.player_meta = {'first': {'label': 'X',
-                                  'type': 'ai'}, 
-                      'second': {'label': 'O',
-                                  'type': 'ai'}}
+        self.player_meta['second']['type'] = 'ai'
+        self.player_meta['first']['type'] = 'ai' 
 
   def play_game(self):
     while True:
@@ -288,7 +475,13 @@ class GameEngine(TicTacToe):
         ################### YOUR RANDOM AI AGENT CODE GOES HERE ################
         ########################################################################
         else:
-          pass # delete this line when finished
+          while True:
+            # generate a random number 1-9 and set it equal to the variable name <move>
+            move = random.randint(1,9)
+            if self.board[move] != ' ': # if the move is invalid then...
+              continue
+            else: # otherwise the move is valid and we can exit the loop!
+              break
 
         self.board[move] = player_label
 
@@ -326,42 +519,38 @@ board = game.play_game()
     | | | |
     | | | |
     
-    | | | |
     | |X| |
     | | | |
-    
     | | | |
-    | |X| |
-    | |O| |
-    
-    | |X| |
-    | |X| |
-    | |O| |
     
     | |X|O|
-    | |X| |
-    | |O| |
+    | | | |
+    | | | |
     
-    | |X|O|
-    | |X| |
+    |X|X|O|
+    | | | |
+    | | | |
+    
+    |X|X|O|
+    | |O| |
+    | | | |
+    
+    |X|X|O|
     |X|O| |
-    
-    | |X|O|
-    | |X| |
-    |X|O|O|
+    | | | |
     
     |X|X|O|
-    | |X| |
-    |X|O|O|
+    |X|O| |
+    | |O| |
     
     |X|X|O|
-    |O|X| |
-    |X|O|O|
+    |X|O|X|
+    | |O| |
     
-    It's a stalemate!
+    'O' Won!
     |X|X|O|
-    |O|X|X|
-    |X|O|O|
+    |X|O|X|
+    |O|O| |
     
 
 
@@ -393,31 +582,31 @@ game.play_game()
     | | | |
     | | | |
     
-    |O| |X|
-    | | | |
-    | | | |
-    
-    O, what's your move?4
-    |O| |X|
     |O| | |
     | | | |
-    
-    |O| |X|
-    |O| | |
-    | | |X|
+    | |X| |
     
     O, what's your move?7
+    |O| | |
+    | | | |
+    |O|X| |
+    
+    |O| | |
+    | | |X|
+    |O|X| |
+    
+    O, what's your move?4
     'O' Won!
-    |O| |X|
     |O| | |
     |O| |X|
+    |O|X| |
     
 
 
 
 
 
-    <__main__.GameEngine at 0x7f71d3713050>
+    <__main__.GameEngine at 0x7f94c09eefd0>
 
 
 
@@ -442,34 +631,42 @@ board = game.play_game()
     | | | |
     | | | |
     
+    | |X| |
     | | | |
     | | | |
-    | | |O|
     
+    | |X|O|
+    | | | |
+    | | | |
+    
+    | |X|O|
     | | | |
     | | |X|
-    | | |O|
     
-    | |O| |
+    | |X|O|
+    | | | |
+    | |O|X|
+    
+    | |X|O|
     | | |X|
-    | | |O|
+    | |O|X|
     
-    | |O| |
-    |X| |X|
-    | | |O|
-    
-    |O|O| |
-    |X| |X|
-    | | |O|
-    
-    |O|O| |
-    |X| |X|
     | |X|O|
+    | | |X|
+    |O|O|X|
     
-    'O' Won!
-    |O|O| |
-    |X|O|X|
     | |X|O|
+    |X| |X|
+    |O|O|X|
+    
+    |O|X|O|
+    |X| |X|
+    |O|O|X|
+    
+    It's a stalemate!
+    |O|X|O|
+    |X|X|X|
+    |O|O|X|
     
 
 
@@ -487,6 +684,14 @@ data['game {}'.format(<THE GAME NUMBER>)] = {'board': board.board,
 
 ```python
 # Cell for Q9
+data = {}
+for i in range(1000):
+  game = GameEngine()
+  game.setup_game()
+  board = game.play_game()
+  data['game {}'.format(i)] = {'board': board.board,
+          'winner': board.winner,
+          'starting player': board.start_player}
 ```
 
 
