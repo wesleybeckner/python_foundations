@@ -1,0 +1,1564 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>SOLN S7 Numpy - Python Foundations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+      <link rel="stylesheet" href="../../styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-114664473-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-foundations-session-7-numpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python Foundations" class="md-header__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Foundations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SOLN S7 Numpy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python Foundations" class="md-nav__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Foundations
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Sessions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sessions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sessions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S1_Python_and_Jupyter/" class="md-nav__link">
+        Introduction to Python and Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S2_Data_Structures_and_Flow/" class="md-nav__link">
+        Data Structures and Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S3_Functions_and_Debugging/" class="md-nav__link">
+        Functions and Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S4_Object_Oriented_Programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S5_Pandas/" class="md-nav__link">
+        Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S6_Matplotlib/" class="md-nav__link">
+        Matplotlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S7_Numpy/" class="md-nav__link">
+        NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Exercises
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercises" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E1_Python_and_Jupyter/" class="md-nav__link">
+        Practice with Python and Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E2_Flow_Control/" class="md-nav__link">
+        Practice with Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E3_Functions/" class="md-nav__link">
+        Practice with Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E4_Pandas/" class="md-nav__link">
+        Practice with Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/E5_Numpy/" class="md-nav__link">
+        Practice with NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P1_Building_TicTacToe_in_Python/" class="md-nav__link">
+        Building TicTacToe in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P2_OOP_in_TicTacToe/" class="md-nav__link">
+        Object Oriented Programming in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P3_Random_TicTacToe_Agents/" class="md-nav__link">
+        Random TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P4_Debugging_TicTacToe_Agents/" class="md-nav__link">
+        Debugging TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numpy-numerical-python" class="md-nav__link">
+    numpy: Numerical Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-numpy-arrays" class="md-nav__link">
+    7.1 NumPy Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 NumPy Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-creating-numpy-arrays" class="md-nav__link">
+    7.1.1 Creating NumPy Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.1 Creating NumPy Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-specify-datatype" class="md-nav__link">
+    🏋️ Exercise 1: Specify datatype
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-creating-arrays-from-numpy-methods" class="md-nav__link">
+    7.1.2 Creating Arrays from NumPy Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-creating-arrays" class="md-nav__link">
+    🏋️ Exercise 2: Creating Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-numpy-array-attributes" class="md-nav__link">
+    7.2 NumPy Array Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 NumPy Array Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3-conditional-check-on-array-attributes" class="md-nav__link">
+    🏋️ Exercise 3: Conditional Check on Array Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-numpy-array-slicing-copying-setting" class="md-nav__link">
+    7.3 NumPy Array Slicing, Copying, Setting
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 NumPy Array Slicing, Copying, Setting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-4-array-setting-and-slicing" class="md-nav__link">
+    🏋️ Exercise 4: Array Setting and Slicing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-numpy-array-reshaping-concatenation-and-splitting" class="md-nav__link">
+    7.4 NumPy Array Reshaping, Concatenation, and Splitting
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 NumPy Array Reshaping, Concatenation, and Splitting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-5-reshaping-and-concatenating" class="md-nav__link">
+    🏋️ Exercise 5: Reshaping and Concatenating
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-additional-exercises" class="md-nav__link">
+    7.5 Additional Exercises
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Additional Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-6-boolean-array" class="md-nav__link">
+    🏋️ Exercise 6: boolean Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-7-index-on-conditional" class="md-nav__link">
+    🏋️ Exercise 7: Index on Conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#753-npwhere" class="md-nav__link">
+    7.5.3 np.where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#754-npargwhere" class="md-nav__link">
+    7.5.4 np.argwhere
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-8-edit-a-copy-not-a-view" class="md-nav__link">
+    🏋️ Exercise 8: Edit a Copy not a View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-9-read-numpy-documentation" class="md-nav__link">
+    🏋️ Exercise 9: Read NumPy Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-10-more-slicing" class="md-nav__link">
+    🏋️ Exercise 10: More Slicing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S7_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="python-foundations-session-7-numpy">Python Foundations, Session 7: NumPy<a class="headerlink" href="#python-foundations-session-7-numpy" title="Permanent link">&para;</a></h1>
+<p><strong>Instructor</strong>: Wesley Beckner</p>
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+<br></p>
+<hr />
+<p><br></p>
+<p>Today, we will jump into the <strong>Numpy</strong> package.  </p>
+<h4 id="numpy-numerical-python"><a href="http://numpy.org/"><code>numpy</code></a>: Numerical Python<a class="headerlink" href="#numpy-numerical-python" title="Permanent link">&para;</a></h4>
+<p>Numpy is short for "Numerical Python", and contains tools for efficient manipulation of arrays of data.
+If you have used other computational tools like IDL or MatLab, Numpy should feel very familiar.</p>
+<p><br></p>
+<hr />
+<h2 id="import-libraries">Import Libraries<a class="headerlink" href="#import-libraries" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># for numpy section</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># for debugging section</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">suppress_stdout</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">devnull</span><span class="p">:</span>
+        <span class="n">old_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">devnull</span>
+        <span class="k">try</span><span class="p">:</span>  
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">old_stdout</span>
+</code></pre></div>
+
+<h2 id="71-numpy-arrays">7.1 NumPy Arrays<a class="headerlink" href="#71-numpy-arrays" title="Permanent link">&para;</a></h2>
+<h3 id="711-creating-numpy-arrays">7.1.1 Creating NumPy Arrays<a class="headerlink" href="#711-creating-numpy-arrays" title="Permanent link">&para;</a></h3>
+<p>When we worked with lists, we saw that we could fill them with all sorts of datatypes. NumPy arrays are necessarily of one datatype:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># these will all be ints</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 6, 5, 4])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># these will all be floats</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ])
+</code></pre></div>
+
+<p>We can check the data types in the standard way:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
+</code></pre></div>
+
+<p>We see that all types are <em>upcast</em> to the most complext object in the array. For instance, because 3.14 is a float, all the other numbers in the array will be a float:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+&lt;class &#39;numpy.float64&#39;&gt;
+</code></pre></div>
+
+<p>We can also specify the datatypes in the array:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1.  , 2.  , 3.14, 6.  , 5.  , 4.  ], dtype=float32)
+</code></pre></div>
+
+<h4 id="exercise-1-specify-datatype">🏋️ Exercise 1: Specify datatype<a class="headerlink" href="#exercise-1-specify-datatype" title="Permanent link">&para;</a></h4>
+<p>Create an array of 5 numbers whose datatypes are 16 bit integers. Make one of the numbers not a whole number. What happens to the number when it is stored in the 16 bit integer array?</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 1</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.2</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">]</span>
+<span class="n">arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+&lt;class &#39;numpy.int16&#39;&gt;
+
+
+
+
+
+array([2, 2, 3, 6, 5, 4], dtype=int16)
+</code></pre></div>
+
+<h3 id="712-creating-arrays-from-numpy-methods">7.1.2 Creating Arrays from NumPy Methods<a class="headerlink" href="#712-creating-arrays-from-numpy-methods" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of 10 zeros</span>
+<span class="c1"># how can we specify the datatype?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of 10 1&#39;s</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># fill an array of the following dimensions</span>
+<span class="c1"># with value 42</span>
+<span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="mi">42</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[42, 42, 42],
+       [42, 42, 42]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># arange from start (inc) to stop (exc)</span>
+<span class="c1"># integers with step size</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1, 3, 5, 7, 9])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of numbers that divides</span>
+<span class="c1"># the space between start and stop (inc, inc)</span>
+<span class="c1"># with X equally spaced intervals</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([ 0. ,  2.5,  5. ,  7.5, 10. ])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of values drawn from a </span>
+<span class="c1"># uniform distribution</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0.37454012, 0.95071431, 0.73199394, 0.59865848, 0.15601864])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of values from a normal distribution</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ 0.27904129,  1.01051528, -0.58087813, -0.52516981, -0.57138017],
+       [-0.92408284, -2.61254901,  0.95036968,  0.81644508, -1.523876  ],
+       [-0.42804606, -0.74240684, -0.7033438 , -2.13962066, -0.62947496],
+       [ 0.59772047,  2.55948803,  0.39423302,  0.12221917, -0.51543566],
+       [-0.60025385,  0.94743982,  0.291034  , -0.63555974, -1.02155219]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># create an array of random integers between 5 and 10 with shape 2x2</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ 9,  7],
+       [10,  5]])
+</code></pre></div>
+
+<h3 id="exercise-2-creating-arrays">🏋️ Exercise 2: Creating Arrays<a class="headerlink" href="#exercise-2-creating-arrays" title="Permanent link">&para;</a></h3>
+<p>a. Create a 5x5 array of ones with datatype <code>int16</code></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 2a</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1]], dtype=int16)
+</code></pre></div>
+
+<p>b. Create an array of 10 numbers drawn from a uniform distribution between 0 and 1</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 2b</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0.25877998, 0.66252228, 0.31171108, 0.52006802, 0.54671028,
+       0.18485446, 0.96958463, 0.77513282, 0.93949894, 0.89482735])
+</code></pre></div>
+
+<p>c. Create an array of 10 numbers drawn from a normal distribution centered at 80 with a standard deviation of 5</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 2c</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([79.19122307, 83.6923329 , 80.85684141, 79.42175859, 78.49448152,
+       72.60739005, 76.40077896, 77.69680615, 85.28561113, 81.71809145])
+</code></pre></div>
+
+<p>d. Create an array of 10 intergers drawn from a uniform distribution between 5 and 10 inclusive</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 2d</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([ 5,  8,  6,  5, 10,  9,  7,  8, 10,  7])
+</code></pre></div>
+
+<h2 id="72-numpy-array-attributes">7.2 NumPy Array Attributes<a class="headerlink" href="#72-numpy-array-attributes" title="Permanent link">&para;</a></h2>
+<p>Common array attributes are <code>shape</code>, <code>size</code>, <code>nbytes</code>, and <code>itemsize</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[7 5 7 9 7]
+ [5 9 6 7 5]
+ [6 6 8 9 7]
+ [5 8 9 8 9]
+ [9 7 9 8 9]]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>(5, 5)
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="o">.</span><span class="n">dtype</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>dtype(&#39;int64&#39;)
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>25
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="o">.</span><span class="n">nbytes</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>200
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="o">.</span><span class="n">itemsize</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>8
+</code></pre></div>
+
+<h3 id="exercise-3-conditional-check-on-array-attributes">🏋️ Exercise 3: Conditional Check on Array Attributes<a class="headerlink" href="#exercise-3-conditional-check-on-array-attributes" title="Permanent link">&para;</a></h3>
+<p>write a conditional that checks that the total number of bytes of the array object <code>my_arr</code> divided by the size of each item (in bytes) is equal to the number of items in the array (<em>hint: we covered the attributes above</em>)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for exercise 3</span>
+<span class="n">my_arr</span><span class="o">.</span><span class="n">nbytes</span> <span class="o">/</span> <span class="n">my_arr</span><span class="o">.</span><span class="n">itemsize</span> <span class="o">==</span> <span class="n">my_arr</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>True
+</code></pre></div>
+
+<h2 id="73-numpy-array-slicing-copying-setting">7.3 NumPy Array Slicing, Copying, Setting<a class="headerlink" href="#73-numpy-array-slicing-copying-setting" title="Permanent link">&para;</a></h2>
+<p>Array slicing operates much the same way as with python lists</p>
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[7, 5, 7, 9, 7],
+       [5, 9, 6, 7, 5],
+       [6, 6, 8, 9, 7],
+       [5, 8, 9, 8, 9],
+       [9, 7, 9, 8, 9]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># grab the first row</span>
+<span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([7, 5, 7, 9, 7])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># grab the first element of the first row</span>
+
+<span class="c1"># instead of this</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># we do this</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>7
+7
+</code></pre></div>
+
+<p>We can time these...</p>
+<div class="codehilite"><pre><span></span><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>The slowest run took 27.80 times longer than the fastest. This could mean that an intermediate result is being cached.
+1000000 loops, best of 5: 362 ns per loop
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">my_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>The slowest run took 38.37 times longer than the fastest. This could mean that an intermediate result is being cached.
+10000000 loops, best of 5: 177 ns per loop
+</code></pre></div>
+
+<p>We can use the same slicing notation as with lists</p>
+<p><code>my_arr[start:stop:step]</code></p>
+<p>for n-dimensional arrays</p>
+<p><code>my_arr[1-start:1-stop:1-step, 2-start:2-stop:2-step, ... n-start:n-stop:n-step]</code></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># with arrays, we simply separate each dimension with a comma</span>
+<span class="n">my_arr</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[7, 5],
+       [5, 9]])
+</code></pre></div>
+
+<p>Slices are views not copies. This means we can set slices of arrays to new values, and the original object will change:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0, 0, 7, 9, 7],
+       [0, 0, 6, 7, 5],
+       [6, 6, 8, 9, 7],
+       [5, 8, 9, 8, 9],
+       [9, 7, 9, 8, 9]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">my_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">my_arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0, 0, 7, 9, 7],
+       [0, 0, 6, 7, 5],
+       [6, 6, 8, 9, 7],
+       [5, 8, 9, 1, 1],
+       [9, 7, 9, 1, 1]])
+</code></pre></div>
+
+<p>Step through an array slice</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># remember that we can use steps in slicing</span>
+<span class="n">my_arr</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># the last number after :: is the step size</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0, 7, 7],
+       [0, 6, 5],
+       [6, 8, 7],
+       [5, 9, 1],
+       [9, 9, 1]])
+</code></pre></div>
+
+<p>We can use negative step sizes the way we do with lists. A negative step size reverses the order of start and stop, so it is a convenient way to reverse the order of one or more dimensions of an array</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># reverse the rows</span>
+<span class="n">my_arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[9, 7, 9, 1, 1],
+       [5, 8, 9, 1, 1],
+       [6, 6, 8, 9, 7],
+       [0, 0, 6, 7, 5],
+       [0, 0, 7, 9, 7]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># reverse the columns</span>
+<span class="n">my_arr</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[7, 9, 7, 0, 0],
+       [5, 7, 6, 0, 0],
+       [7, 9, 8, 6, 6],
+       [1, 1, 9, 8, 5],
+       [1, 1, 9, 7, 9]])
+</code></pre></div>
+
+<p>Sometimes we want to create a copy of an array, despite the default slicing behavior. We can do this with the <code>.copy()</code> method</p>
+<div class="codehilite"><pre><span></span><code><span class="n">new_arr</span> <span class="o">=</span> <span class="n">my_arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">new_arr</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[0 0 7 9 7]
+ [0 0 6 7 5]
+ [6 6 8 9 7]
+ [5 8 9 1 1]
+ [9 7 9 1 1]]
+</code></pre></div>
+
+<h3 id="exercise-4-array-setting-and-slicing">🏋️ Exercise 4: Array Setting and Slicing<a class="headerlink" href="#exercise-4-array-setting-and-slicing" title="Permanent link">&para;</a></h3>
+<p>set all the even columns of <code>my_arr</code> to 0 and all the odd columns to 1 (interpret the first column to be 1 and the last to be 5, i.e. don't index at 0 when thinking of each column as even/odd!)</p>
+<p>Example Output:</p>
+<div class="codehilite"><pre><span></span><code>array([[0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 4</span>
+<span class="n">my_arr</span><span class="p">[::,::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_arr</span><span class="p">[::,</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">my_arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0],
+       [0, 1, 0, 1, 0]])
+</code></pre></div>
+
+<h2 id="74-numpy-array-reshaping-concatenation-and-splitting">7.4 NumPy Array Reshaping, Concatenation, and Splitting<a class="headerlink" href="#74-numpy-array-reshaping-concatenation-and-splitting" title="Permanent link">&para;</a></h2>
+<p>reshaping is going to be a common task for us:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># reshape into a 3x3 array</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># rows then columns</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+</code></pre></div>
+
+<p>The reshaped dimensions have to be evenly divisible into the total number of elements:</p>
+<p><em><code>-1</code> will infer the proper dimension based on the other dimensions provided and the total number of elements</em></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># arr.reshape(4,2) # throws and error</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ 0,  1,  2],
+       [ 3,  4,  5],
+       [ 6,  7,  8],
+       [ 9, 10, 11]])
+</code></pre></div>
+
+<p>A common manipulation in numpy is to convert a 1 dimensional array into a 2 dimensional array. You will see this frequently when working with test/train datasets in machine learning.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="c1"># reshape into 2 dimensions</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0],
+       [1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># back to one dimension</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+</code></pre></div>
+
+<p>We can also concatenate arrays</p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[1 2 3] [4 5 6]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># now a single array</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 4, 5, 6])
+</code></pre></div>
+
+<p><code>vstack</code> or vertical stack will place the two arrays on top of eachother:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span><span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre></div>
+
+<p><code>hstack</code> will place them side by side</p>
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span><span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1, 2, 3, 4, 5, 6])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[1 2 3]
+ [7 8 9]]
+[4 5 6]
+(2, 3)
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[1, 2, 3],
+       [7, 8, 9],
+       [4, 5, 6]])
+</code></pre></div>
+
+<p>Lastly, we can also split arrays. We give the indices where the split should be performed</p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">arr</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ 7,  7, 10,  8,  6,  6,  9, 10,  5,  9],
+       [10,  8,  8,  8,  8,  8, 10, 10,  7,  6],
+       [ 8,  5, 10,  5,  5,  5,  7, 10,  5,  8],
+       [ 9,  5,  7, 10,  7,  5, 10,  9,  5,  7],
+       [ 6,  8,  7, 10,  5,  8,  5, 10,  5,  6],
+       [ 8,  8, 10,  6,  7,  5,  9,  5,  5,  7],
+       [ 5,  6,  6,  8, 10,  9,  5,  5,  7, 10],
+       [ 6,  9,  8,  6, 10,  8,  7,  7,  5, 10],
+       [ 9,  8,  6, 10, 10,  7,  5,  5,  8,  7],
+       [10,  9,  7,  8,  8,  7,  8,  7,  6,  7]])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># the start of the new array will be at index 5</span>
+<span class="c1"># (row-wise)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[ 7  7 10  8  6  6  9 10  5  9]
+ [10  8  8  8  8  8 10 10  7  6]
+ [ 8  5 10  5  5  5  7 10  5  8]
+ [ 9  5  7 10  7  5 10  9  5  7]
+ [ 6  8  7 10  5  8  5 10  5  6]]
+[[ 8  8 10  6  7  5  9  5  5  7]
+ [ 5  6  6  8 10  9  5  5  7 10]
+ [ 6  9  8  6 10  8  7  7  5 10]
+ [ 9  8  6 10 10  7  5  5  8  7]
+ [10  9  7  8  8  7  8  7  6  7]]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[array([[ 7,  7, 10,  8,  6,  6,  9, 10,  5,  9],
+        [10,  8,  8,  8,  8,  8, 10, 10,  7,  6]]),
+ array([[ 8,  5, 10,  5,  5,  5,  7, 10,  5,  8],
+        [ 9,  5,  7, 10,  7,  5, 10,  9,  5,  7]]),
+ array([[ 6,  8,  7, 10,  5,  8,  5, 10,  5,  6],
+        [ 8,  8, 10,  6,  7,  5,  9,  5,  5,  7]]),
+ array([[ 5,  6,  6,  8, 10,  9,  5,  5,  7, 10],
+        [ 6,  9,  8,  6, 10,  8,  7,  7,  5, 10]]),
+ array([[ 9,  8,  6, 10, 10,  7,  5,  5,  8,  7],
+        [10,  9,  7,  8,  8,  7,  8,  7,  6,  7]])]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[array([[ 7,  7, 10,  8,  6],
+        [10,  8,  8,  8,  8],
+        [ 8,  5, 10,  5,  5],
+        [ 9,  5,  7, 10,  7],
+        [ 6,  8,  7, 10,  5],
+        [ 8,  8, 10,  6,  7],
+        [ 5,  6,  6,  8, 10],
+        [ 6,  9,  8,  6, 10],
+        [ 9,  8,  6, 10, 10],
+        [10,  9,  7,  8,  8]]), array([[ 6,  9, 10,  5,  9],
+        [ 8, 10, 10,  7,  6],
+        [ 5,  7, 10,  5,  8],
+        [ 5, 10,  9,  5,  7],
+        [ 8,  5, 10,  5,  6],
+        [ 5,  9,  5,  5,  7],
+        [ 9,  5,  5,  7, 10],
+        [ 8,  7,  7,  5, 10],
+        [ 7,  5,  5,  8,  7],
+        [ 7,  8,  7,  6,  7]])]
+</code></pre></div>
+
+<h3 id="exercise-5-reshaping-and-concatenating">🏋️ Exercise 5: Reshaping and Concatenating<a class="headerlink" href="#exercise-5-reshaping-and-concatenating" title="Permanent link">&para;</a></h3>
+<p>We'll practice a few of these methods we've learned.</p>
+<ol>
+<li>make <code>arr2</code> match the shape of <code>arr1</code> using <code>reshape</code></li>
+<li>stack <code>arr1</code> on top of <code>arr2</code> using <code>vstack</code> and call this new array <code>arr</code></li>
+<li>replace all the even columns of <code>arr</code> with zeros</li>
+<li>return the sum of <code>arr</code> using <code>arr.sum()</code></li>
+</ol>
+<p>starting code:</p>
+<div class="codehilite"><pre><span></span><code>np.random.seed(42)
+arr1 = np.random.randint(5, 11, (5,10))
+arr2 = np.random.randint(5, 11, (10,5))
+</code></pre></div>
+
+<p>expected output:</p>
+<div class="codehilite"><pre><span></span><code>374
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[ 8  9  7  9  9  6  7  7  7  9]
+ [ 8  7 10  9  6  8 10 10  6  8]
+ [ 9  5  8  6 10  9  8  5  5  7]
+ [ 7  6  8  8 10 10 10  7  8  8]
+ [ 5  7  9  7  9  5  6  8  5  8]]
+
+[[10  6  6  5  6]
+ [ 9  6  8  8  8]
+ [ 8  9  7 10  5]
+ [ 8  6  8  6 10]
+ [10 10  6  8 10]
+ [ 9  6  6  8  6]
+ [ 6 10  8 10 10]
+ [ 8  5 10  9  9]
+ [ 6  9  6  5  8]
+ [ 8  8  9  5  9]]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 5</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">arr2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span><span class="n">arr1</span><span class="p">))</span>
+<span class="n">arr</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>374
+</code></pre></div>
+
+<h2 id="75-additional-exercises">7.5 Additional Exercises<a class="headerlink" href="#75-additional-exercises" title="Permanent link">&para;</a></h2>
+<h3 id="exercise-6-boolean-array">🏋️ Exercise 6: boolean Array<a class="headerlink" href="#exercise-6-boolean-array" title="Permanent link">&para;</a></h3>
+<p>Create a 3x3 array of all True's (booleans)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 6</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ True,  True,  True],
+       [ True,  True,  True],
+       [ True,  True,  True]])
+</code></pre></div>
+
+<h3 id="exercise-7-index-on-conditional">🏋️ Exercise 7: Index on Conditional<a class="headerlink" href="#exercise-7-index-on-conditional" title="Permanent link">&para;</a></h3>
+<p>extract all numbers divisible by 3</p>
+<div class="codehilite"><pre><span></span><code>arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 7</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0, 3, 6, 9])
+</code></pre></div>
+
+<h3 id="753-npwhere">7.5.3 <code>np.where</code><a class="headerlink" href="#753-npwhere" title="Permanent link">&para;</a></h3>
+<p>There is a nifty tool, <code>np.where()</code>. The syntax works like <code>np.where(&lt;where this condition is true&gt; , &lt;return elements from this array&gt;, &lt;otherwise return elements from this aray&gt;)</code></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Example</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
+</code></pre></div>
+
+<h3 id="754-npargwhere">7.5.4 <code>np.argwhere</code><a class="headerlink" href="#754-npargwhere" title="Permanent link">&para;</a></h3>
+<p>A similar but slightly different tool is <code>np.argwhere</code> which will return the indices of the array where the conditional is true</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Example</span>
+<span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[0],
+       [1],
+       [2],
+       [3],
+       [4]])
+</code></pre></div>
+
+<h3 id="exercise-8-edit-a-copy-not-a-view">🏋️ Exercise 8: Edit a Copy not a View<a class="headerlink" href="#exercise-8-edit-a-copy-not-a-view" title="Permanent link">&para;</a></h3>
+<p>replace all odd numbers in <code>arr</code> with -1 without changing <code>arr</code> (return a new array using <code>np.where</code>)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 8</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
+</code></pre></div>
+
+<h3 id="exercise-9-read-numpy-documentation">🏋️ Exercise 9: Read NumPy Documentation<a class="headerlink" href="#exercise-9-read-numpy-documentation" title="Permanent link">&para;</a></h3>
+<p>create the following array without hard coding (i.e. don't write any of the values in your code)</p>
+<div class="codehilite"><pre><span></span><code>a = np.array([1,2,3])`
+# desired output:
+#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+</code></pre></div>
+
+<p>Hints:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html">repeat</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html">tile</a></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Exercise 9</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># desired output:</span>
+<span class="c1">#&gt; array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+</code></pre></div>
+
+<h3 id="exercise-10-more-slicing">🏋️ Exercise 10: More Slicing<a class="headerlink" href="#exercise-10-more-slicing" title="Permanent link">&para;</a></h3>
+<p>swap columns 2 and 3 in <code>arr1</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">arr1</span><span class="p">[:,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[ 9,  9,  7,  9,  6,  7,  7,  7,  9],
+       [ 7,  9, 10,  6,  8, 10, 10,  6,  8],
+       [ 5,  6,  8, 10,  9,  8,  5,  5,  7],
+       [ 6,  8,  8, 10, 10, 10,  7,  8,  8],
+       [ 7,  7,  9,  9,  5,  6,  8,  5,  8]])
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
