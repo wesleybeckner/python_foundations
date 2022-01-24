@@ -29,138 +29,131 @@ import numpy as np
 
 ## 🧮 L5 Q1 
 
-Create a 3x3 array of all True's (booleans)
+Get the common items between these two arrays
+
+```
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+```
 
 
 ```python
 # cell for Q1
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
 ```
 
 ## 🧮 L5 Q2
 
-extract all numbers divisible by 3
+Now, get the positions where elements of `a` and `b` match
 
 ```
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
 ```
 
 
 ```python
 # cell for Q2
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-```
-
-There is a nifty tool, `np.where()`. The syntax works like `np.where(<where this condition is true> , <return elements from this array>, <otherwise return elements from this aray>)`
-
-
-```python
-# Ex
-a = np.arange(10)
-np.where(a<5, a, a*10)
-```
-
-
-
-
-    array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
-
-
-
-A similar but slightly different tool is `np.argwhere` which will return the indices of the array where the conditional is true
-
-
-```python
-# Ex
-np.argwhere(a<5)
-```
-
-
-
-
-    array([[0],
-           [1],
-           [2],
-           [3],
-           [4]])
-
-
-
-## 🧮 L5 Q3
-
-replace all odd numbers in `arr` without changing `arr` (return a new array using `np.where`)
-
-
-```python
-# cell for Q3
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-```
-
-## 🧮 L5 Q4
-
-create the following array without hard coading (i.e. don't write any of the values in your coad)
-
-```
-a = np.array([1,2,3])`
-# desired output:
-#> array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-```
-
-Hints:
-
-* [repeat](https://numpy.org/doc/stable/reference/generated/numpy.repeat.html)
-* [tile](https://numpy.org/doc/stable/reference/generated/numpy.tile.html)
-
-
-```python
-# cell for Q4
-a = np.array([1,2,3])
-# desired output:
-#> array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
-```
-
-## 🧮 L5 Q5
-get indices where elements in `a` and `b` match.
-
-
-```python
-# cell for Q5
 a = np.array([1,2,3,2,3,4,3,4,5,6])
 b = np.array([7,2,10,2,7,4,9,4,9,8])
 ```
 
+## 🧮 L5 Q3
+
+Get all the items that are between 5 and 10 in `b`
+
+```
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+```
+
+
+```python
+# cell for Q3
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+```
+
+## 🧮 L5 Q4
+
+Read the url as a 2D array rather than a 1D array by omitting the `species` field
+
+```
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_1d = np.genfromtxt(url, delimiter=',', dtype=None)
+```
+
+
+```python
+# cell for Q4
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_data = np.genfromtxt(url, delimiter=',', dtype=None)
+iris_data.shape
+```
+
+    /usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:3: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+      This is separate from the ipykernel package so we can avoid doing imports until
+
+
+
+
+
+    (150,)
+
+
+
+## 🧮 L5 Q5
+
+Now insert np.nan in 20 random positions the 2D `iris_data`
+
+
+```python
+# cell for Q5
+```
+
 ## 🧮 L5 Q6
 
-grab numbers between 5 and 10 in `b`
+Now find the total number and position of missing values in `iris_data`
 
 
 ```python
 # cell for Q6
-b = np.array([7,2,10,2,7,4,9,4,9,8])
 ```
 
 ## 🧮 L5 Q7
 
-swap columns 2 and 3 in `arr`
+Filter the rows of iris_2d that has `petallength (3rd column) > 1.5` and `sepallength (1st column) < 5.0`
 
 
 ```python
 # cell for Q7
-arr = np.arange(9).reshape(3,3)
 ```
 
 ## 🧮 L5 Q8
 
-compute the mean, median, and standard deviation of `sepallength`
+Select the rows of `iris_data` that do not have any `nan` values
 
 
 ```python
 # cell for Q8
+```
+
+## 🧮 L5 Q9
+
+compute the mean, median, and standard deviation of `sepallength`
+
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris = np.genfromtxt(url, delimiter=',', dtype='object')
+sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])
+
+
+```python
+# cell for Q9
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 iris = np.genfromtxt(url, delimiter=',', dtype='object')
 sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])
 ```
 
-## 🧮 L5 Q9
+## 🧮 L5 Q10
 
 normalize sepallength so that all values occur between 0 and 1
 
@@ -168,21 +161,16 @@ normalize sepallength so that all values occur between 0 and 1
 
 
 ```python
-# cell for Q9
+# cell for Q10
 ```
 
-## 🧮 L5 Q10
+## 🧮 L5 Q11
 
 calculate the 95 percentile score of `sepallength` using `np.percentile`
 
 
 ```python
-# cell for Q10
+# cell for Q11
 ```
 
 Complete additional exercises if you wish at [machinelearningplus](https://www.machinelearningplus.com/python/101-numpy-exercises-python/)
-
-
-```python
-
-```

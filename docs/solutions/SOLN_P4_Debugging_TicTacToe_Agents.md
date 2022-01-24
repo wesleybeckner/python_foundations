@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/project/P4_Debugging_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_P4_Debugging_TicTacToe_Agents.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Project Part 4: Debugging
 
@@ -213,7 +213,61 @@ It's a stalemate!
 
 ```python
 # Cell for Q1
+random.seed(12)
+game = GameEngine(setup='auto')
+game.setup_game()
+game.play_game()
 ```
+
+    | | | |
+    | | | |
+    | | | |
+    
+    | | | |
+    | |O| |
+    | | | |
+    
+    | | | |
+    | |O| |
+    | | |X|
+    
+    | | | |
+    | |O|O|
+    | | |X|
+    
+    | | |X|
+    | |O|O|
+    | | |X|
+    
+    | | |X|
+    | |O|O|
+    |O| |X|
+    
+    |X| |X|
+    | |O|O|
+    |O| |X|
+    
+    |X| |X|
+    | |O|O|
+    |O|O|X|
+    
+    |X| |X|
+    |X|O|O|
+    |O|O|X|
+    
+    It's a stalemate!
+    |X|O|X|
+    |X|O|O|
+    |O|O|X|
+    
+
+
+
+
+
+    <__main__.GameEngine at 0x7f0692cda450>
+
+
 
 ### Q2 Check the Relevant Attributes and Function/Method Calls
 
@@ -233,7 +287,19 @@ Now that we have made the error repeatable, let's check the internal states of t
 
 ```python
 # Cell for Q2
+print(game.winner)
+print(game.check_stalemate())
+print(game.winner)
+print(game.check_winning())
+print(game.winner)
 ```
+
+    Stalemate
+    It's a stalemate!
+    Stalemate
+    'O' Won!
+    O
+
 
 ### Q3 Make Changes to `check_stalemate()`
 
@@ -285,7 +351,7 @@ class TicTacToe:
     return ''
 
   def check_stalemate(self):
-    if ' ' not in self.board.values():
+    if (' ' not in self.board.values()) and self.check_winning() == '':
       self.winner = 'Stalemate'
       return "It's a stalemate!"
 
@@ -456,6 +522,6 @@ game.play_game()
 
 
 
-    <__main__.GameEngine at 0x7ff59a34d910>
+    <__main__.GameEngine at 0x7f0692c4d790>
 
 

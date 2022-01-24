@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S7_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S7_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 7: NumPy
 
@@ -136,7 +136,33 @@ Create an array of 5 numbers whose datatypes are 16 bit integers. Make one of th
 
 ```python
 # Cell for Exercise 1
+arr = np.array([1, 2, 3.14, 6, 5, 4], dtype='int16')
+[print(type(i)) for i in arr]
+arr[0] = 2.2
+[print(type(i)) for i in arr]
+arr
 ```
+
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+    <class 'numpy.int16'>
+
+
+
+
+
+    array([2, 2, 3, 6, 5, 4], dtype=int16)
+
+
 
 ### 7.1.2 Creating Arrays from NumPy Methods
 
@@ -234,11 +260,11 @@ np.random.normal(loc=0, scale=1, size=(5,5))
 
 
 
-    array([[ 0.61764085,  1.2170708 ,  0.22628827,  0.84740143,  0.17483301],
-           [-1.21685489,  1.04934739,  1.32510566,  0.73450106, -0.95449726],
-           [-0.75117942, -1.13042805,  0.76997736,  1.26838952,  0.42448624],
-           [ 0.94053558, -0.86764109,  0.14586185, -1.36987106, -0.77178075],
-           [ 0.87867355, -0.23959451,  1.20938197,  0.53796   ,  2.73442216]])
+    array([[ 0.27904129,  1.01051528, -0.58087813, -0.52516981, -0.57138017],
+           [-0.92408284, -2.61254901,  0.95036968,  0.81644508, -1.523876  ],
+           [-0.42804606, -0.74240684, -0.7033438 , -2.13962066, -0.62947496],
+           [ 0.59772047,  2.55948803,  0.39423302,  0.12221917, -0.51543566],
+           [-0.60025385,  0.94743982,  0.291034  , -0.63555974, -1.02155219]])
 
 
 
@@ -251,8 +277,8 @@ np.random.randint(5, 11, (2,2))
 
 
 
-    array([[5, 9],
-           [8, 9]])
+    array([[ 9,  7],
+           [10,  5]])
 
 
 
@@ -263,28 +289,66 @@ a. Create a 5x5 array of ones with datatype `int16`
 
 ```python
 # Cell for Exercise 2a
+np.ones(shape=(5,5),dtype='int16')
 ```
+
+
+
+
+    array([[1, 1, 1, 1, 1],
+           [1, 1, 1, 1, 1],
+           [1, 1, 1, 1, 1],
+           [1, 1, 1, 1, 1],
+           [1, 1, 1, 1, 1]], dtype=int16)
+
+
 
 b. Create an array of 10 numbers drawn from a uniform distribution between 0 and 1
 
 
 ```python
 # Cell for Exercise 2b
+np.random.random(size=10)
 ```
+
+
+
+
+    array([0.25877998, 0.66252228, 0.31171108, 0.52006802, 0.54671028,
+           0.18485446, 0.96958463, 0.77513282, 0.93949894, 0.89482735])
+
+
 
 c. Create an array of 10 numbers drawn from a normal distribution centered at 80 with a standard deviation of 5
 
 
 ```python
 # Cell for Exercise 2c
+np.random.normal(loc=80, scale=5, size=10)
 ```
+
+
+
+
+    array([79.19122307, 83.6923329 , 80.85684141, 79.42175859, 78.49448152,
+           72.60739005, 76.40077896, 77.69680615, 85.28561113, 81.71809145])
+
+
 
 d. Create an array of 10 intergers drawn from a uniform distribution between 5 and 10 inclusive
 
 
 ```python
 # Cell for Exercise 2d
+np.random.randint(5, 11, size=10)
 ```
+
+
+
+
+    array([ 5,  8,  6,  5, 10,  9,  7,  8, 10,  7])
+
+
 
 ## 7.2 NumPy Array Attributes
 
@@ -296,11 +360,11 @@ my_arr = np.random.randint(low=5, high=10, size=(5,5))
 print(my_arr)
 ```
 
-    [[7 8 7 5 5]
-     [8 8 9 9 7]
-     [8 5 9 9 5]
-     [9 7 8 5 8]
-     [9 9 5 7 6]]
+    [[7 5 7 9 7]
+     [5 9 6 7 5]
+     [6 6 8 9 7]
+     [5 8 9 8 9]
+     [9 7 9 8 9]]
 
 
 
@@ -370,6 +434,7 @@ write a conditional that checks that the total number of bytes of the array obje
 
 ```python
 # Cell for exercise 3
+my_arr.nbytes / my_arr.itemsize == my_arr.size
 ```
 
 
@@ -391,11 +456,11 @@ my_arr
 
 
 
-    array([[7, 8, 7, 5, 5],
-           [8, 8, 9, 9, 7],
-           [8, 5, 9, 9, 5],
-           [9, 7, 8, 5, 8],
-           [9, 9, 5, 7, 6]])
+    array([[7, 5, 7, 9, 7],
+           [5, 9, 6, 7, 5],
+           [6, 6, 8, 9, 7],
+           [5, 8, 9, 8, 9],
+           [9, 7, 9, 8, 9]])
 
 
 
@@ -408,7 +473,7 @@ my_arr[0]
 
 
 
-    array([7, 8, 7, 5, 5])
+    array([7, 5, 7, 9, 7])
 
 
 
@@ -423,8 +488,8 @@ print(my_arr[0][0])
 print(my_arr[0, 0])
 ```
 
-    9
-    9
+    7
+    7
 
 
 We can time these...
@@ -435,8 +500,8 @@ We can time these...
 my_arr[0][0]
 ```
 
-    The slowest run took 38.40 times longer than the fastest. This could mean that an intermediate result is being cached.
-    1000000 loops, best of 5: 381 ns per loop
+    The slowest run took 27.80 times longer than the fastest. This could mean that an intermediate result is being cached.
+    1000000 loops, best of 5: 362 ns per loop
 
 
 
@@ -445,8 +510,8 @@ my_arr[0][0]
 my_arr[0, 0]
 ```
 
-    The slowest run took 60.67 times longer than the fastest. This could mean that an intermediate result is being cached.
-    10000000 loops, best of 5: 170 ns per loop
+    The slowest run took 38.37 times longer than the fastest. This could mean that an intermediate result is being cached.
+    10000000 loops, best of 5: 177 ns per loop
 
 
 We can use the same slicing notation as with lists
@@ -466,8 +531,8 @@ my_arr[:2, :2]
 
 
 
-    array([[7, 8],
-           [8, 8]])
+    array([[7, 5],
+           [5, 9]])
 
 
 
@@ -482,11 +547,11 @@ my_arr
 
 
 
-    array([[0, 0, 7, 5, 5],
-           [0, 0, 9, 9, 7],
-           [8, 5, 9, 9, 5],
-           [9, 7, 8, 5, 8],
-           [9, 9, 5, 7, 6]])
+    array([[0, 0, 7, 9, 7],
+           [0, 0, 6, 7, 5],
+           [6, 6, 8, 9, 7],
+           [5, 8, 9, 8, 9],
+           [9, 7, 9, 8, 9]])
 
 
 
@@ -499,11 +564,11 @@ my_arr
 
 
 
-    array([[0, 0, 7, 5, 5],
-           [0, 0, 9, 9, 7],
-           [8, 5, 9, 9, 5],
-           [9, 7, 8, 1, 1],
-           [9, 9, 5, 1, 1]])
+    array([[0, 0, 7, 9, 7],
+           [0, 0, 6, 7, 5],
+           [6, 6, 8, 9, 7],
+           [5, 8, 9, 1, 1],
+           [9, 7, 9, 1, 1]])
 
 
 
@@ -518,11 +583,11 @@ my_arr[:, ::2] # the last number after :: is the step size
 
 
 
-    array([[0, 7, 5],
-           [0, 9, 7],
-           [8, 9, 5],
-           [9, 8, 1],
-           [9, 5, 1]])
+    array([[0, 7, 7],
+           [0, 6, 5],
+           [6, 8, 7],
+           [5, 9, 1],
+           [9, 9, 1]])
 
 
 
@@ -537,11 +602,11 @@ my_arr[::-1]
 
 
 
-    array([[9, 9, 5, 1, 1],
-           [9, 7, 8, 1, 1],
-           [8, 5, 9, 9, 5],
-           [0, 0, 9, 9, 7],
-           [0, 0, 7, 5, 5]])
+    array([[9, 7, 9, 1, 1],
+           [5, 8, 9, 1, 1],
+           [6, 6, 8, 9, 7],
+           [0, 0, 6, 7, 5],
+           [0, 0, 7, 9, 7]])
 
 
 
@@ -554,11 +619,11 @@ my_arr[:, ::-1]
 
 
 
-    array([[5, 5, 7, 0, 0],
-           [7, 9, 9, 0, 0],
-           [5, 9, 9, 5, 8],
-           [1, 1, 8, 7, 9],
-           [1, 1, 5, 9, 9]])
+    array([[7, 9, 7, 0, 0],
+           [5, 7, 6, 0, 0],
+           [7, 9, 8, 6, 6],
+           [1, 1, 9, 8, 5],
+           [1, 1, 9, 7, 9]])
 
 
 
@@ -571,11 +636,11 @@ new_arr[:,:] = 0
 print(my_arr)
 ```
 
-    [[0 0 7 5 5]
-     [0 0 9 9 7]
-     [8 5 9 9 5]
-     [9 7 8 1 1]
-     [9 9 5 1 1]]
+    [[0 0 7 9 7]
+     [0 0 6 7 5]
+     [6 6 8 9 7]
+     [5 8 9 1 1]
+     [9 7 9 1 1]]
 
 
 ### 🏋️ Exercise 4: Array Setting and Slicing
@@ -594,6 +659,9 @@ array([[0, 1, 0, 1, 0],
 
 ```python
 # Cell for Exercise 4
+my_arr[::,::2] = 0
+my_arr[::,1::2] = 1
+my_arr
 ```
 
 
@@ -792,36 +860,38 @@ arr
 
 
 
-    array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
-           [ 6,  6,  6,  5,  5,  5,  7, 10,  9,  6],
-           [ 6,  7,  6,  5,  9,  8,  6,  5,  8,  9],
-           [ 8,  5, 10, 10,  8,  7,  8,  6,  6, 10],
-           [ 7,  5,  6, 10,  9, 10,  6,  6, 10,  5],
-           [ 8,  6, 10, 10,  7,  8,  9,  5,  9,  8],
-           [ 8,  8,  9,  8, 10,  9,  8, 10,  7,  8],
-           [ 9,  6,  8,  6, 10,  7,  5,  7,  8,  6],
-           [ 6,  9,  6,  9, 10,  5,  8,  9,  5,  6],
-           [ 6,  5,  6, 10, 10,  5,  9,  9,  5,  9]])
+    array([[ 7,  7, 10,  8,  6,  6,  9, 10,  5,  9],
+           [10,  8,  8,  8,  8,  8, 10, 10,  7,  6],
+           [ 8,  5, 10,  5,  5,  5,  7, 10,  5,  8],
+           [ 9,  5,  7, 10,  7,  5, 10,  9,  5,  7],
+           [ 6,  8,  7, 10,  5,  8,  5, 10,  5,  6],
+           [ 8,  8, 10,  6,  7,  5,  9,  5,  5,  7],
+           [ 5,  6,  6,  8, 10,  9,  5,  5,  7, 10],
+           [ 6,  9,  8,  6, 10,  8,  7,  7,  5, 10],
+           [ 9,  8,  6, 10, 10,  7,  5,  5,  8,  7],
+           [10,  9,  7,  8,  8,  7,  8,  7,  6,  7]])
 
 
 
 
 ```python
-a, b = np.split(arr, [5])
+# the start of the new array will be at index 5
+# (row-wise)
+a, b = np.split(arr, [5]) 
 print(a)
 print(b)
 ```
 
-    [[ 8  9  7  7 10  8  6  6  9 10]
-     [ 5  9 10  8  8  8  8  8 10 10]
-     [ 7  6  8  5 10  5  5  5  7 10]
-     [ 5  8  9  5  7 10  7  5 10  9]
-     [ 5  7  6  8  7 10  5  8  5 10]]
-    [[ 5  6  8  8 10  6  7  5  9  5]
-     [ 5  7  5  6  6  8 10  9  5  5]
-     [ 7 10  6  9  8  6 10  8  7  7]
-     [ 5 10  9  8  6 10 10  7  5  5]
-     [ 8  7 10  9  7  8  8  7  8  7]]
+    [[ 7  7 10  8  6  6  9 10  5  9]
+     [10  8  8  8  8  8 10 10  7  6]
+     [ 8  5 10  5  5  5  7 10  5  8]
+     [ 9  5  7 10  7  5 10  9  5  7]
+     [ 6  8  7 10  5  8  5 10  5  6]]
+    [[ 8  8 10  6  7  5  9  5  5  7]
+     [ 5  6  6  8 10  9  5  5  7 10]
+     [ 6  9  8  6 10  8  7  7  5 10]
+     [ 9  8  6 10 10  7  5  5  8  7]
+     [10  9  7  8  8  7  8  7  6  7]]
 
 
 
@@ -832,16 +902,16 @@ np.vsplit(arr, [2,4,6,8])
 
 
 
-    [array([[ 5,  6, 10,  6,  7, 10,  6, 10,  6,  7],
-            [ 6,  6,  6,  5,  5,  5,  7, 10,  9,  6]]),
-     array([[ 6,  7,  6,  5,  9,  8,  6,  5,  8,  9],
-            [ 8,  5, 10, 10,  8,  7,  8,  6,  6, 10]]),
-     array([[ 7,  5,  6, 10,  9, 10,  6,  6, 10,  5],
-            [ 8,  6, 10, 10,  7,  8,  9,  5,  9,  8]]),
-     array([[ 8,  8,  9,  8, 10,  9,  8, 10,  7,  8],
-            [ 9,  6,  8,  6, 10,  7,  5,  7,  8,  6]]),
-     array([[ 6,  9,  6,  9, 10,  5,  8,  9,  5,  6],
-            [ 6,  5,  6, 10, 10,  5,  9,  9,  5,  9]])]
+    [array([[ 7,  7, 10,  8,  6,  6,  9, 10,  5,  9],
+            [10,  8,  8,  8,  8,  8, 10, 10,  7,  6]]),
+     array([[ 8,  5, 10,  5,  5,  5,  7, 10,  5,  8],
+            [ 9,  5,  7, 10,  7,  5, 10,  9,  5,  7]]),
+     array([[ 6,  8,  7, 10,  5,  8,  5, 10,  5,  6],
+            [ 8,  8, 10,  6,  7,  5,  9,  5,  5,  7]]),
+     array([[ 5,  6,  6,  8, 10,  9,  5,  5,  7, 10],
+            [ 6,  9,  8,  6, 10,  8,  7,  7,  5, 10]]),
+     array([[ 9,  8,  6, 10, 10,  7,  5,  5,  8,  7],
+            [10,  9,  7,  8,  8,  7,  8,  7,  6,  7]])]
 
 
 
@@ -853,25 +923,25 @@ np.hsplit(arr, [5])
 
 
 
-    [array([[ 5,  6, 10,  6,  7],
-            [ 6,  6,  6,  5,  5],
-            [ 6,  7,  6,  5,  9],
-            [ 8,  5, 10, 10,  8],
-            [ 7,  5,  6, 10,  9],
-            [ 8,  6, 10, 10,  7],
-            [ 8,  8,  9,  8, 10],
-            [ 9,  6,  8,  6, 10],
-            [ 6,  9,  6,  9, 10],
-            [ 6,  5,  6, 10, 10]]), array([[10,  6, 10,  6,  7],
-            [ 5,  7, 10,  9,  6],
-            [ 8,  6,  5,  8,  9],
-            [ 7,  8,  6,  6, 10],
-            [10,  6,  6, 10,  5],
-            [ 8,  9,  5,  9,  8],
-            [ 9,  8, 10,  7,  8],
-            [ 7,  5,  7,  8,  6],
-            [ 5,  8,  9,  5,  6],
-            [ 5,  9,  9,  5,  9]])]
+    [array([[ 7,  7, 10,  8,  6],
+            [10,  8,  8,  8,  8],
+            [ 8,  5, 10,  5,  5],
+            [ 9,  5,  7, 10,  7],
+            [ 6,  8,  7, 10,  5],
+            [ 8,  8, 10,  6,  7],
+            [ 5,  6,  6,  8, 10],
+            [ 6,  9,  8,  6, 10],
+            [ 9,  8,  6, 10, 10],
+            [10,  9,  7,  8,  8]]), array([[ 6,  9, 10,  5,  9],
+            [ 8, 10, 10,  7,  6],
+            [ 5,  7, 10,  5,  8],
+            [ 5, 10,  9,  5,  7],
+            [ 8,  5, 10,  5,  6],
+            [ 5,  9,  5,  5,  7],
+            [ 9,  5,  5,  7, 10],
+            [ 8,  7,  7,  5, 10],
+            [ 7,  5,  5,  8,  7],
+            [ 7,  8,  7,  6,  7]])]
 
 
 
@@ -928,6 +998,9 @@ print(arr2)
 
 ```python
 # Cell for Exercise 5
+arr = np.vstack((arr2.reshape(arr1.shape),arr1))
+arr[:, 1::2] = 0
+arr.sum()
 ```
 
 
@@ -946,7 +1019,17 @@ Create a 3x3 array of all True's (booleans)
 
 ```python
 # Cell for Exercise 6
+np.ones((3,3)) == 1
 ```
+
+
+
+
+    array([[ True,  True,  True],
+           [ True,  True,  True],
+           [ True,  True,  True]])
+
+
 
 ### 🏋️ Exercise 7: Index on Conditional
 
@@ -960,7 +1043,15 @@ arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```python
 # Cell for Exercise 7
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr[arr%3==0]
 ```
+
+
+
+
+    array([0, 3, 6, 9])
+
+
 
 ### 7.5.3 `np.where`
 
@@ -1010,7 +1101,15 @@ replace all odd numbers in `arr` with -1 without changing `arr` (return a new ar
 ```python
 # Cell for Exercise 8
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+np.where(arr % 2 == 0, arr, -1)
 ```
+
+
+
+
+    array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
+
+
 
 ### 🏋️ Exercise 9: Read NumPy Documentation
 
@@ -1033,7 +1132,15 @@ Hints:
 a = np.array([1,2,3])
 # desired output:
 #> array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+np.concatenate((np.repeat(a,3),np.tile(a,3)))
 ```
+
+
+
+
+    array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+
+
 
 ### 🏋️ Exercise 10: More Slicing
 
@@ -1041,5 +1148,16 @@ swap columns 2 and 3 in `arr1`
 
 
 ```python
-# Cell for Exercise 10
+arr1[:,(1,3,2,4,5,6,7,8,9)]
 ```
+
+
+
+
+    array([[ 9,  9,  7,  9,  6,  7,  7,  7,  9],
+           [ 7,  9, 10,  6,  8, 10, 10,  6,  8],
+           [ 5,  6,  8, 10,  9,  8,  5,  5,  7],
+           [ 6,  8,  8, 10, 10, 10,  7,  8,  8],
+           [ 7,  7,  9,  9,  5,  6,  8,  5,  8]])
+
+
