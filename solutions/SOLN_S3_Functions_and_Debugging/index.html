@@ -867,11 +867,17 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 <div class="codehilite"><pre><span></span><code>GIX is awesome!
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">dummy_function</span><span class="p">():</span>
+  <span class="k">pass</span>
+  <span class="c1"># could also have an empty return</span>
+</code></pre></div>
+
 <h3 id="311-reserved-words-def-return-and-yield">3.1.1 Reserved words: def, return, and yield<a class="headerlink" href="#311-reserved-words-def-return-and-yield" title="Permanent link">&para;</a></h3>
 <p>Notice the highlighted words in our function definition: <code>def</code> and <code>return</code> these are <em>reserved words</em> in python used to define functions. Every function definition requires these reserved words. <code>yield</code> is another reserved word that is similar to <code>return</code> but operates slightly differently. It is beyond the scope of what we are covering in this session. This tutorial from <a href="https://realpython.com/introduction-to-python-generators/">realpython</a> has good information on the topic.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># what is return doing in this function?</span>
 <span class="k">def</span> <span class="nf">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
+  <span class="n">the_square</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
+  <span class="k">return</span> <span class="n">the_square</span>
 </code></pre></div>
 
 <p><code>return</code> is going to output whatever value(s) follow after the keyword <code>return</code> when we call upon our function </p>
@@ -888,12 +894,6 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 </code></pre></div>
 
 <p>and we see how the output updates accordingly</p>
-<div class="codehilite"><pre><span></span><code><span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>(4, 2)
-</code></pre></div>
-
 <p>We can capture these values on the output with...</p>
 <div class="codehilite"><pre><span></span><code><span class="n">square</span><span class="p">,</span> <span class="n">new_a</span> <span class="o">=</span> <span class="n">my_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
@@ -902,6 +902,18 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>4 2
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">square</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>4
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">new_a</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>2
 </code></pre></div>
 
 <h3 id="312-global-vs-local-variables-and-function-parameters">3.1.2 Global vs local variables and function parameters<a class="headerlink" href="#312-global-vs-local-variables-and-function-parameters" title="Permanent link">&para;</a></h3>
@@ -927,9 +939,15 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># what happens here?</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">my_little_func</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>50
+<div class="codehilite"><pre><span></span><code>100
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># I set b = 100</span>
+<span class="c1"># my little func ran (where b=10 inside the funciton)</span>
+<span class="c1"># i outputed b (the global variable b) and it still have the value of 100</span>
 </code></pre></div>
 
 <p>we see that b is still 100, instead of 10 as its defined within the function. This is because b inside of <code>my_little_func</code> is a <em>local</em> variable. </p>
@@ -943,6 +961,7 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 <p>now if I call on my new function, because <code>b</code> is not defined locally within the function, it takes on the global value. </p>
 <p>This is typically not happy-happy fun-fun behavior for us: we want to be explicit about how we define and use our variables (but there are some times when this is appropriate to do)</p>
 <div class="codehilite"><pre><span></span><code><span class="n">b</span><span class="o">=</span> <span class="mf">1e4</span> <span class="c1"># side note, what did I do here????</span>
+<span class="c1"># 1 * 10 ** 4</span>
 <span class="n">my_new_func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
 
@@ -953,6 +972,12 @@ Where do <strong><em>for</em></strong> loops fit in? <br></p>
 
 
 20000.0
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">b</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>10000.0
 </code></pre></div>
 
 <h4 id="3111-function-parameters">3.1.1.1 Function Parameters<a class="headerlink" href="#3111-function-parameters" title="Permanent link">&para;</a></h4>
@@ -976,9 +1001,9 @@ print(&#39;list after the function: &#39;, my_list)
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list inside the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
    <span class="k">return</span>
 
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list before the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
-<span class="n">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">);</span>
+<span class="n">change_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list after the function: &#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
 </code></pre></div>
 
@@ -1018,9 +1043,9 @@ list after the function:  [1, 2, 3, &#39;four&#39;]
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>a string
-a string20
-a string
+<div class="codehilite"><pre><span></span><code>[10, 2]
+[10, 2, &#39;whoaaaa&#39;]
+[10, 2, &#39;whoaaaa&#39;]
 </code></pre></div>
 
 <p>There is a way to change a global variable within a function with the <strong><em>global</em></strong> keyword.  Generally, the use of <strong><em>global</em></strong> variables is not encouraged, instead use parameters. We won't cover the global keyword here but you can <a href="https://www.programiz.com/python-programming/global-keyword">explore further</a> on your own if you are interested. </p>
@@ -1030,6 +1055,19 @@ a string
 <p>If you are going to return multiple objects, what data structure that we talked about can be used?  Give an example below.</p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Cell for excerise 1</span>
+<span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+  <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">:</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">i</span>
+  <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e10</span><span class="p">]</span>
+<span class="n">find_max</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>10000000000.0
 </code></pre></div>
 
 <h3 id="313-parameter-types">3.1.3 Parameter types<a class="headerlink" href="#313-parameter-types" title="Permanent link">&para;</a></h3>
@@ -1064,10 +1102,10 @@ a string
     <span class="k">return</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">print_name</span><span class="p">(</span><span class="s1">&#39;Beckner&#39;</span><span class="p">,</span> <span class="s1">&#39;Wesley&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
+<div class="codehilite"><pre><span></span><code>Your name is Beckner Wesley
 </code></pre></div>
 
 <p>Play around with the above function.</p>
@@ -1106,6 +1144,12 @@ a string
 <div class="codehilite"><pre><span></span><code>Your name is Wesley Beckner
 Your age is 29
 You are a millenial!
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">thing</span><span class="p">():</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">pass</span>
+  <span class="k">return</span>
 </code></pre></div>
 
 <h2 id="32-the-scientific-python-stack">3.2 The scientific python stack<a class="headerlink" href="#32-the-scientific-python-stack" title="Permanent link">&para;</a></h2>
@@ -1235,14 +1279,29 @@ AssertionError: Should be 5
     <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> 
+    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 0.000367
-Patient&#39;s BMI is: 0.000367
-Patient&#39;s BMI is: 0.000367
+<div class="codehilite"><pre><span></span><code>Patient&#39;s BMI is: 21.604938
+Patient&#39;s BMI is: 22.160665
+Patient&#39;s BMI is: 51.903114
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">calculate_bmi</span><span class="p">(</span><span class="n">patients</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">patients</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>51.90311418685122
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[70, 1.8]
+[80, 1.9]
+[150, 1.7]
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># [weight (kg), height (m)]</span>
@@ -1253,8 +1312,8 @@ Patient&#39;s BMI is: 0.000367
     <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients</span><span class="p">:</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
+    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Patient&#39;s BMI is: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bmi</span><span class="p">)</span>
 </code></pre></div>
 
@@ -1267,16 +1326,21 @@ Patient&#39;s BMI is: 51.903114
   <span class="n">patients</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">70</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]]</span> 
   <span class="n">bmis</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">,</span> <span class="mf">22.16</span><span class="p">,</span> <span class="mf">51.9</span><span class="p">]</span>
 
-  <span class="k">for</span> <span class="n">patient</span><span class="p">,</span> <span class="n">bmi_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">bmis</span><span class="p">):</span>
-    <span class="n">weight</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">patient</span> <span class="c1">### not properly referencing iterated variable</span>
-    <span class="n">bmi</span> <span class="o">=</span> <span class="n">calculate_bmi</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="c1">### should be swapped</span>
-    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bmi</span> <span class="o">-</span> <span class="n">bmi_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;fail calc for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="p">(((</span><span class="n">calculate_bmi</span><span class="p">(</span><span class="n">patients</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">patients</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">bmis</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="p">(</span><span class="n">calculate_bmi</span><span class="p">(</span><span class="n">patients</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">patients</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">bmis</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">),</span> <span class="s2">&quot;values not consistent&quot;</span>
 
 <span class="n">test_calculate_bmi</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success!&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>success!
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>10
 </code></pre></div>
 
               
