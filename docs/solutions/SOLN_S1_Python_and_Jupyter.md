@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 1: Python and Jupyter Notebooks
 
@@ -108,10 +108,10 @@ Printing output to the console is as simple as running Python's built-in print()
 
 
 ```python
-print("Hello, GIX Students")
+print("Hello, GIX Students. Here are my changes")
 ```
 
-    Hello, GIX Students
+    Hello, GIX Students. Here are my changes
 
 
 Variables can be created just by typing the name you'd like, followed by the equal sign, and the value you want to assign the variable to. In this case, we'll create a variable called `some_school` and set it to the value of `"University of Washington"`:
@@ -144,7 +144,11 @@ Now that you've stepped through our quick primer on Python, for our first coding
 
 ```python
 # Cell for Exercise 1
+print("hello world!")
 ```
+
+    hello world!
+
 
 ### 1.1.3 What are variables?
 
@@ -175,7 +179,7 @@ x = 150
 print(x)
 ```
 
-    25
+    150
     150
 
 
@@ -214,6 +218,21 @@ Let's explore some common variable data types in Python. The first type to discu
 **... we can also use single or double quotes**
 
 **... and triple quotes open whole blocks of string content**
+
+
+```python
+some_school = "University of Washington"
+```
+
+
+```python
+'''
+this is a string
+a line here
+a line there
+etc...
+'''
+```
 
 
 ```python
@@ -258,6 +277,11 @@ you have to use double quotes here...
 
 
 ```python
+"patrick said = 'here's what patrick' "
+```
+
+
+```python
 "here's one with a single quote inside"
 ```
 
@@ -282,6 +306,14 @@ double triples
 
     '\nheres \na block with \ndouble triples\n'
 
+
+
+
+```python
+print("here's some text\\n here's some more text")
+```
+
+    here's some text\n here's some more text
 
 
 
@@ -331,7 +363,7 @@ A float in Python is considered any number with decimal point values. This is th
 ```python
 # what do we notice is different here?
 y = 21.0
-half = 0.5
+half = .5
 data_generated_by_deathstar = 2.08 #exabytes/year
 ```
 
@@ -363,7 +395,12 @@ print the type of the stored variable
 
 ```python
 # Cell for Exercise 2
+hundred = 100
+print(type(hundred))
 ```
+
+    <class 'int'>
+
 
 Now create another variable called `largest_computer_in_the_galaxy` and assign it the string value of `"Deep Thought"` in the code cell below.
 
@@ -374,7 +411,12 @@ print the stored variable
 
 ```python
 # Cell for Exercise 2
+largest_computer_in_the_galaxy = "Deep Thought"
+print(largest_computer_in_the_galaxy)
 ```
+
+    Deep Thought
+
 
 There are many more variable types to explore in Python, both ones built-in to Python and ones created by open-source libraries. The later sessions will cover more of these types, such as lists and DataFrames in session 2.
 
@@ -461,14 +503,35 @@ Beyond the three arithmetic operators we have just demonstrated, there are more 
 
 ```python
 # Cell for Exercise 3
+14 / 4
+
+
+# BAD PYTHON
+
+12+5/6*7+4
 ```
+
+
+
+
+    21.833333333333336
+
+
 
 Just by typing the computation and seeing the output on your own, you can quickly recognize that `/` is a division operator. Now try `14 % 4` in the empty code below. From the output, can you guess what the `%` sign in Python accomplishes here?
 
 
 ```python
 # Cell for Exercise 3
+16 % 3
 ```
+
+
+
+
+    1
+
+
 
 #### 🏋️ Exercise 4: Order of Operations
 
@@ -516,13 +579,13 @@ For this example, what happens when we add `num1` and `num2` together in Python,
 
 
 ```python
-num1 + num2
+type(num1 + num2)
 ```
 
 
 
 
-    10.0
+    float
 
 
 
@@ -533,7 +596,15 @@ Finally, let's discuss a third variable, called `num3`, and let's assign it a va
 
 ```python
 num3 = "5"
+type(num3)
 ```
+
+
+
+
+    str
+
+
 
 If we try adding `num1` with `num3`, or 5 + "5", what is our output now from the code `num1 + num3`?
 
@@ -555,6 +626,18 @@ Nope! Same TypeError results here. One workaround/solution for this is convertin
 
 
 ```python
+num3
+```
+
+
+
+
+    '5'
+
+
+
+
+```python
 num1 + int(num3)
 ```
 
@@ -565,6 +648,18 @@ num1 + int(num3)
 
 
 
+
+```python
+int(num3)
+```
+
+
+
+
+    5
+
+
+
 This time, we get no TypeError - the output is 10! Without diving too much further into the intricacies of these conversion functions - the concept of functions themselves will be covered in more detail in session 3! - just be aware that this example only works because the string represented by `num3` was a valid convertible string ("5") to begin with. In other words, if `num3` was "Five" instead of "5", we would not be able to execute `int(num3)` without getting an error.
 
 
@@ -572,22 +667,6 @@ This time, we get no TypeError - the output is 10! Without diving too much furth
 # num3 = "Five"
 # int(num3)
 ```
-
-Note: There are _some_ interesting mathematical operations you can perform on strings
-
-> this will be useful to know for the Lab on data structures and flow control!
-
-
-```python
-"Five" * 3
-```
-
-
-
-
-    'FiveFiveFive'
-
-
 
 ### 1.1.5 Code comments with '#'
 
@@ -614,7 +693,9 @@ In this case, the `# Adds 2 to 5, so we get 7` part of the previous line of code
 
 
 ```python
-# Adds 2 to 5, so we get 7
+# Adds 2 to 5, so we get 7 # Adds 2 to 5, so we get 7 # Adds 2 to 5, so we get 7
+# # Adds 2 to 5, so we get 7 # Adds 2 to 5, so we get 7 # Adds 2 to 5, so we get
+
 2 + 5
 ```
 
@@ -629,10 +710,11 @@ You may use this syntax for code that you may not want to execute, but still sav
 
 
 ```python
-# print("I commented out this line of code so you won't see this statement printed")
+print("I commented out this line of code so you won't see this statement printed")
 print("There should be one line printed from this cell, and should be this one.")
 ```
 
+    I commented out this line of code so you won't see this statement printed
     There should be one line printed from this cell, and should be this one.
 
 
@@ -644,7 +726,7 @@ Let's write a comment that explains the following line of code, `25 % 7`.
 
 
 ```python
-25 % 7
+25 % 7 # returns the modulus of 25 and 7
 ```
 
 
@@ -738,7 +820,7 @@ plt.show()
 
 
     
-![png](S1_Python_and_Jupyter_files/S1_Python_and_Jupyter_109_0.png)
+![png](SOLN_S1_Python_and_Jupyter_files/SOLN_S1_Python_and_Jupyter_113_0.png)
     
 
 
@@ -765,6 +847,8 @@ Or by hovering your mouse over to the bottom of a cell and select **\+ Code**:
 
 And lastly. For code blocks, we can simply hit `esc` + `a` to enter a code block above or `esc` + `b` to enter a code block below.
 
+I just learned this!
+
 Just kidding one last note... we can delete a block by holding `ctrl` + `m` + `d`
 
 #### 🏋️ Exercise 6: Edit A Code Cell
@@ -775,8 +859,11 @@ Note: I also want you to uncomment the following cell block! (how do we do that?
 
 
 ```python
-# print("Hello World!"
+print("Hello World!")
 ```
+
+    Hello World!
+
 
 Code cells exemplify one possible benefit of running your code in a notebook rather than in a single Python script (.py) file; you can create separate code cells and execute each portion your code separately and as needed. That also means being able to troubleshoot certain lines of code without having to rerun your entire work every time. 
 
@@ -800,6 +887,8 @@ Create a simple text cell that reads the official tagline of UW (hint: https://w
 
 <i>text cell for exercise 7</i>
 
+Now Matters
+
 
 
 #### 1.2.3.3 Markdown for text cells
@@ -819,6 +908,18 @@ Create a new text cell below with the UW official tagline like before, only this
 * `>` on a new line for the last line (hit enter before)
 
 *text cell for exercise 8*
+
+##### Now Matters
+
+**Now Matters**
+
+*Now Matters*
+
+> Now Matters
+
+**_Now Matters_**
+
+
 
 Later in the lab for this session, you'll learn more formatting syntax with Markdown. We also recommend trying out Markdown on a blank new Jupyter notebook for you to experiment with the all the different formatting this markup language has to offer. There is much more to discover with Markdown, and the References section of this notebook gives you a list of resources to learn more.
 

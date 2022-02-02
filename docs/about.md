@@ -28,3 +28,20 @@ The breakdown for this course is as follows:
     * P4: Debugging TicTacToe Agents
 *	Reading
     * [JVDP](https://jakevdp.github.io/PythonDataScienceHandbook/) chapters 1-4
+
+The recommended flow of sessions, exercises, and project modules is as follows:
+
+<center>
+
+| Day | Modules                                                                                                               |
+|-----|-----------------------------------------------------------------------------------------------------------------------|
+| 1   | Session 1: Python and Jupyter <br> Exercise 1: Practice with Python and Jupyter                                       |
+| 2   | Session 2: Data Structures and Flow Control <br> Exercise 2: Practice with Flow Control                               |
+| 3   | Session 3: Functions and Debugging <br> Exercise 3: Practice with Functions <br> Project Part 1: Building Tic-tac-toe in Python |
+| 4   | Session 4: Object Oriented Programming <br> Project Part 2: Object Oriented Programming in Tic-tac-toe                |
+| 5   | Session 5: Pandas <br> Exercise 4: Practice with Pandas                                                               |
+| 6   | Session 6: Matplotlib <br> Project Part 3: Random Tic-tac-toe Agents                                                  |
+| 7   | Session 7: NumPy <br> Exercise 5: Practice with NumPy                                                                 |
+| 8   | Project Part 4: Debugging Tic-tac-toe Agents                                                                     |
+
+</center>

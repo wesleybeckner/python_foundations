@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S2_Data_Structures_and_Flow.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S2_Data_Structures_and_Flow.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 2: Lists, Dictionaries, and Flow Control
 
@@ -34,11 +34,11 @@ Variables are human names we give data objects in our code.  Variables in Python
 |:---:|:---|:---|
 | **Function** | Use a lowercase word or words. Separate words by underscores to improve readability. | `function, my_function`|
 | **Variable** |  Use a lowercase single letter, word, or words. Separate words with underscores to improve readability. | `x, var, my_variable` |
-| Constant | Use an uppercase single letter, word or words. Separate words with underscores to improve readability. | `CONSTANT, MY_CONSTANT, MY_LONG_CONSTANT` |
-| Method | Use a lowercase word or words. Separate words with underscores to improve readability. | `class_method, method` |
 | Class | Start each word with a capital letter. Do not separate words with underscores. This style is called camel case. | `Model, MyClass` |
+| Method | Use a lowercase word or words. Separate words with underscores to improve readability. | `class_method, method` |
+| Constant | Use an uppercase single letter, word or words. Separate words with underscores to improve readability. | `CONSTANT, MY_CONSTANT, MY_LONG_CONSTANT` |
 | Module | Use a short, lowercase word or words. Separate words with underscores to improve readability. | `module.py, my_module.py` |
-| Package | Use a short, lowercase word or words. Do not separate words with underscores. | `package, mypackage` |
+| Package (a collection of Modules) | Use a short, lowercase word or words. Do not separate words with underscores. | `package, mypackage` |
 
 Some names you might want to use are off-limits because they are **_reserved words_**, meaning they are words in Python that have special meaning. 
 
@@ -78,6 +78,13 @@ Is `pickles` a good variable name for the value \\(\pi\\)?  If not, what would b
 
 ```python
 # Cell for Exercise 1
+pie = 3.14 
+```
+
+Variables in Python have different data types.  The simple ones, we've already discussed such as an integer or `int`, a string or `str`, a decimal point containing number called a **_floating point_** number.  **_Floating point_** numbers are special and are stored in a computer's memory using [internal representations](http://steve.hollasch.net/cgindex/coding/ieeefloat.html).  One important thing to know about **_floating point_** numbers is that to a computer, the statement below may not always be true.  For now, just think about **_floating point_** numbers as approximately representing the decimal number you see.
+
+```
+10.0 * 0.1 = 1.0
 ```
 
 Variables can change their value in Python so we can change the value of `pickles` to something else.  For example, a definition of what pickles are.
@@ -96,19 +103,23 @@ print(pickles)
     A cucumber preserved in vinegar or brine.
 
 
-### 🍒 Enrichment: Floating point and binary representation of numbers
-
-Variables in Python have different data types.  The simple ones, we've already discussed such as an integer or `int`, a string or `str`, a decimal point containing number called a **_floating point_** number.  **_Floating point_** numbers are special and are stored in a computer's memory using [internal representations](http://steve.hollasch.net/cgindex/coding/ieeefloat.html).  One important thing to know about **_floating point_** numbers is that to a computer, the statement below may not always be true.  For now, just think about **_floating point_** numbers as [approximately](https://stackoverflow.com/questions/1089018/why-cant-decimal-numbers-be-represented-exactly-in-binary) representing the decimal number you see.
-
-```
-10.0 * 0.1 == 1.0
-```
-
 ### 2.0.2 A quick review of comments
 
 Just like we should use good naming conventions for variables so they make sense, we should have good comments to help readers follow our code.  Good comments can turn a speck of coding gold into a valuable nugget of knowledge.  Bad or wrong comments are bugs.  If you want to learn more about why we call computer coding problems bugs, read about [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) and see [her photo of a `bug` in her notebook](https://en.wikipedia.org/wiki/Grace_Hopper#/media/File:First_Computer_Bug,_1945.jpg).
 
 To comment out some text, use the `#` or hashtag or sometimes called the pound character. 
+
+```
+print(pickles)
+```
+
+
+```python
+print(pickles)
+```
+
+    A cucumber preserved in vinegar or brine.
+
 
 ```
 # This is an example comment.  Notice it is in english and full sentences.  That is good style.
@@ -220,6 +231,8 @@ my_list
 
 
 ```python
+# my_list[2] = 'cake'
+# my_list
 my_list[2] = 'cake'
 my_list
 ```
@@ -242,7 +255,15 @@ a_new_list = []
 
 ```python
 a_new_list = []
+a_new_list
 ```
+
+
+
+
+    []
+
+
 
 We can append items to a list by using the `.append()` **_function_**.  We'll talk more about functions later, but when this **_function_** or **_method_** is used on a variable whose **_data type_** is list, it will append the value in between the `()` to the end of the list.
 
@@ -255,6 +276,24 @@ print(a_new_list)
 
 
 ```python
+a_new_list.append("1st element")
+```
+
+
+```python
+a_new_list
+```
+
+
+
+
+    ['1st element']
+
+
+
+
+```python
+a_new_list = []
 a_new_list.append("1st element")
 print(a_new_list)
 a_new_list.append("2nd element")
@@ -341,13 +380,13 @@ my_list[1:]
 
 
 ```python
-my_list[1:]
+my_list[:]
 ```
 
 
 
 
-    ['like', 'cake']
+    ['I', 'like', 'cake']
 
 
 
@@ -357,6 +396,18 @@ my_list[1:]
 my_list[1:] = ['love', 'puppies']
 my_list
 ```
+
+
+```python
+my_list[1:]
+```
+
+
+
+
+    ['like', 'cake']
+
+
 
 
 ```python
@@ -380,6 +431,33 @@ And who doesn't love puppies? Recap... Lists are _ordered_ _collections_ of info
 `my_list[:len(my_list)]`
 
 `my_list[len(my_list)]`
+
+
+```python
+my_list[:len(my_list)]
+```
+
+
+
+
+    ['I', 'love', 'puppies']
+
+
+
+
+```python
+longer_list = ['I', 'like', 'puppies', 'and', 'sand', 'castles']
+number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# list[<start>:<end>:<step>]
+number_list[::-1]
+```
+
+
+
+
+    [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+
 
 ---
 
@@ -413,13 +491,25 @@ my_list[-3:-1]
 
 
 ```python
-my_list[-3:-1]
+longer_list
 ```
 
 
 
 
-    ['I', 'love']
+    ['I', 'like', 'puppies', 'and', 'sand', 'castles']
+
+
+
+
+```python
+longer_list[5::-1]
+```
+
+
+
+
+    ['castles', 'sand', 'and', 'puppies', 'like', 'I']
 
 
 
@@ -535,7 +625,35 @@ Make sure you understand why the above works.  Take a minute and play with the f
 
 ```python
 # Cell for exercise 2
+print(list_of_lists[0][-1])
+print(list_of_lists[1][-3])
 ```
+
+    45
+    b
+
+
+
+```python
+list_of_lists
+```
+
+
+
+
+    [[42, 43, 44, 45], ['a', 'b', 'c', 'd']]
+
+
+
+
+```python
+print(list_of_lists[-2][-1])
+print(list_of_lists[-1][-3])
+```
+
+    45
+    b
+
 
 ---
 
@@ -675,7 +793,6 @@ Let's write a simple if statement
 ```python
 if 5 == 5.0:
   print(True)
-
 ```
 
     True
@@ -692,6 +809,10 @@ practice writing a simple if statement, notice the automatic indentation
 
 ```python
 # cell for exercise 3.1
+a = 2
+b = 3
+if b < a:
+  print(True)
 ```
 
 #### 2.2.1.2 Conditional fall through and reserved words
@@ -731,13 +852,13 @@ else:
 
 
 ```python
-if '!' in mission:
+if 4 in mission:
     print("This isn't a full word!")
 else:
     print("Nothing to see here")
 ```
 
-    This isn't a full word!
+    Nothing to see here
 
 
 ##### 2.2.1.2.2 `pass`
@@ -752,20 +873,17 @@ else:
 
 
 ```python
-if 'data' in mission:
+unexpected = 0
+if 4 in mission:
     print("Congrats, you're working with data, it will be grand!")
 else:
+    unexpected += 1
     pass
 ```
 
-    Congrats, you're working with data, it will be grand!
+The use of `pass` here is very important.  While you can actually skip the `else` and `pass` statements and the code will behave identically, using them is an important signal that you intended for the negative case to do nothing.  When you are writing code, you should start thinking about reading code and how others will read your code.
 
-
-The use of `pass` here is very important.  While you can actually skip the `else` and `pass` statements and the code will behave identically, using them is an important signal that you intended for the negative case to do nothing. Most of the time when `pass` is used, it is used as a placeholder for an eventual action/function/loop to be filled in. By using pass, we [signal this intention](https://www.programiz.com/python-programming/pass-statement). 
-
-> As a side note, I personally have felt the pangs of conditional fall through. Had I used the else/pass nomenclature, I would have signalled to myself that at some point in the future, I needed to explicitly account for when a specific execution of the code passes through this condition. Because I was not tabulating this conditional fall through, unbeknownst to me code I had productionized, was in fact not working _exactly_ the way I intended it to.
-
-In short, when you have one side of an `if` statement that has no code use an `else` and a `pass` to be a good citizen. When you are writing code, you should start thinking about reading code and how others will read your code. Remember, the person you will collaborate the most about your code is yourself in 3-6 months.  
+In short, when you have one side of an `if` statement that has no code use an `else` and a `pass` to be a good citizen.  Remember, the person you will collaborate the most about your code is yourself in 3-6 months.  Love yourself, use `pass`.
 
 _Note_: what have you noticed in this session about quotes?  What is the difference between ``'`` and ``"``?
 
@@ -837,7 +955,26 @@ Before you run the cell, can you describe how these two blocks differ in their o
 
 
 ```python
-if my_favorite is 'pie':
+a = 0
+for i in range(10):
+  a += 1 # a = a + 1
+```
+
+
+```python
+a
+```
+
+
+
+
+    10
+
+
+
+
+```python
+if my_favorite == 'pie':
     print("He likes pie!  I'll start making a double chocolate velvet pie right now!")
 if my_favorite is 'pie':
     print("He still likes pie!  I'll start making a cherry pie right now!")
@@ -868,7 +1005,7 @@ else:
 ```python
 my_favorite = 'pie'
 
-if my_favorite is 'cake' or my_favorite is 'pie':
+if (my_favorite is 'cake') or (my_favorite is 'pie'):
     print(my_favorite + " : I have a recipe for that!")
 else:
     print("Ew!  Who eats that?")
@@ -876,6 +1013,12 @@ else:
 
     pie : I have a recipe for that!
 
+
+
+```python
+# and or
+# & |
+```
 
 #### 🏋️ Exercise 3: Writing conditionals
 
@@ -887,7 +1030,27 @@ else:
 
 ```python
 # Cell for exercise 4
+thing = [1, 2, 3, 4]
+if 1 in thing:
+  print(1)
+if 4 in thing:
+  print(4)
+
+print()
+
+if thing == [1, 2, 3, 4]:
+  # will evaluate if the two objects are equal in value
+  print('equals evals as true')
+if thing is [1, 2, 3, 4]:
+  # is will evaluate if we are in the same memory location
+  print('is evals as true')
 ```
+
+    1
+    4
+    
+    equals evals as true
+
 
 ### 2.2.2 For
 
@@ -924,8 +1087,8 @@ mission
 
 
 ```python
-for item in mission:
-    print(item)
+for i in mission:
+    print(i)
 ```
 
     let's
@@ -939,14 +1102,24 @@ Note that after the **_for_** loop has ended, the `item` variable remains define
 
 
 ```python
-item
+%%timeit
+for i in range(10):
+  pass
 ```
 
+    The slowest run took 5.96 times longer than the fastest. This could mean that an intermediate result is being cached.
+    1000000 loops, best of 5: 410 ns per loop
 
 
 
-    '!'
+```python
+%%timeit
+i = 0
+while i < 10:
+  i += 1
+```
 
+    1000000 loops, best of 5: 677 ns per loop
 
 
 You can combine loops and conditionals:
@@ -1053,6 +1226,18 @@ range(3)
 
 
 
+
+```python
+list(range(1, 10, 2))
+```
+
+
+
+
+    [1, 3, 5, 7, 9]
+
+
+
 Wait up, hoss.  That result doesn't look like a list!  True.  However, it acts identically to a list, but works a little different under the hood to save memory.  The equivalent hand made list would look like this:
 
 ```
@@ -1123,7 +1308,7 @@ for x in xs[0:1]:
 ```python
 xs = [0, 1, 2]
 
-for x in xs[0:1]:
+for x in xs[0:3]:
     if x < 2:
         print(x)
     else:
@@ -1131,6 +1316,7 @@ for x in xs[0:1]:
 ```
 
     0
+    1
 
 
 Let's use range to acccess our list, _mission_ using list element indexing.  
@@ -1146,8 +1332,8 @@ for index in range(5):
 
 
 ```python
-for index in range(5):
-  item = mission[index]
+for index in range(5): #0, 1, 2, 3, 4
+  item = mission[index] # the different items in the list mission
   if item.endswith('!'):
       print(item + " doesn't look like a whole word!")
   else:
@@ -1187,6 +1373,20 @@ for index in range(len(mission)):
     some is a word in a sentence!
     data is a word in a sentence!
     ! doesn't look like a whole word!
+
+
+
+```python
+for item in mission[:3]:
+  if item.endswith('!'):
+      print(item + " doesn't look like a whole word!")
+  else:
+      print(item + " is a word in a sentence!")
+```
+
+    let's is a word in a sentence!
+    explore is a word in a sentence!
+    some is a word in a sentence!
 
 
 But in all, it isn't very Pythonesque to use indexes like that (unless you have another reason in the loop) and you would opt instead for the `instructor in instructors` form.  
@@ -1284,11 +1484,19 @@ i
 
 
 ```python
-for i in range(10):
+for i in range(10): # creates a list that starts at 0 ends at 10 exclusive
+    print(i)
     if i == 4:
         break
 i
 ```
+
+    0
+    1
+    2
+    3
+    4
+
 
 
 
@@ -1318,8 +1526,7 @@ print("sum is ", sum)
 for i in range(6):
     if i == 3:
         continue
-    else:
-        print(i)
+    print(i)
 ```
 
     0
@@ -1339,18 +1546,11 @@ a = 0
 while a < 10:
   a += 5
   print("hello!")
-a
+# a
 ```
 
     hello!
     hello!
-
-
-
-
-
-    10
-
 
 
 You can also use `break` and `continue` in `while` loops
