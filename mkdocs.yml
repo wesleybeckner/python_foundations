@@ -5,8 +5,8 @@ theme:
     primary: "blue"
     accent: "indigo"
 nav:
-  - Introduction: index.md
-  - About: about.md
+  - About: index.md
+  - Introduction: introduction.md
   - Sessions:
       - Introduction to Python and Jupyter: S1_Python_and_Jupyter.md
       - Data Structures and Flow Control: S2_Data_Structures_and_Flow.md
@@ -26,6 +26,8 @@ nav:
       - Object Oriented Programming in Python: project/P2_OOP_in_TicTacToe.md
       - Random TicTacToe Agents: project/P3_Random_TicTacToe_Agents.md
       - Debugging TicTacToe Agents: project/P4_Debugging_TicTacToe_Agents.md
+  - Extras:
+      - Spotify API: extras/Spotify_API.md
 markdown_extensions:
   - admonition
   - codehilite:
