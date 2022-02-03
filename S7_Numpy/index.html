@@ -196,7 +196,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        About
+        Introduction
       </a>
     </li>
   
@@ -211,7 +211,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        Introduction
+        About
       </a>
     </li>
   
@@ -1001,22 +1001,6 @@ If you have used other computational tools like IDL or MatLab, Numpy should feel
 <div class="codehilite"><pre><span></span><code><span class="c1"># for numpy section</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># for debugging section</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
-
-<span class="nd">@contextmanager</span>
-<span class="k">def</span> <span class="nf">suppress_stdout</span><span class="p">():</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">devnull</span><span class="p">:</span>
-        <span class="n">old_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">devnull</span>
-        <span class="k">try</span><span class="p">:</span>  
-            <span class="k">yield</span>
-        <span class="k">finally</span><span class="p">:</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">old_stdout</span>
 </code></pre></div>
 
 <h2 id="71-numpy-arrays">7.1 NumPy Arrays<a class="headerlink" href="#71-numpy-arrays" title="Permanent link">&para;</a></h2>

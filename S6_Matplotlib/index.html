@@ -196,7 +196,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        About
+        Introduction
       </a>
     </li>
   
@@ -211,7 +211,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        Introduction
+        About
       </a>
     </li>
   
@@ -560,6 +560,67 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-enrichment-other-plot-types-continued" class="md-nav__link">
+    6.5 🍒 Enrichment: Other Plot Types (Continued)
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 🍒 Enrichment: Other Plot Types (Continued)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-bar-plots-advanced" class="md-nav__link">
+    6.5.1 Bar Plots (Advanced)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-3d-plots" class="md-nav__link">
+    6.5.2 3D Plots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653-visualization-with-plotly" class="md-nav__link">
+    6.5.3 Visualization with Plotly
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5.3 Visualization with Plotly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6531-scatter-plot-with-size-and-color" class="md-nav__link">
+    6.5.3.1 Scatter Plot with Size and Color
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-plotly-with-ipywidgets" class="md-nav__link">
+    6.5.2 Plotly with IpyWidgets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
   
 </li>
       
@@ -1016,6 +1077,67 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-enrichment-other-plot-types-continued" class="md-nav__link">
+    6.5 🍒 Enrichment: Other Plot Types (Continued)
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 🍒 Enrichment: Other Plot Types (Continued)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-bar-plots-advanced" class="md-nav__link">
+    6.5.1 Bar Plots (Advanced)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-3d-plots" class="md-nav__link">
+    6.5.2 3D Plots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653-visualization-with-plotly" class="md-nav__link">
+    6.5.3 Visualization with Plotly
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5.3 Visualization with Plotly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6531-scatter-plot-with-size-and-color" class="md-nav__link">
+    6.5.3.1 Scatter Plot with Size and Color
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-plotly-with-ipywidgets" class="md-nav__link">
+    6.5.2 Plotly with IpyWidgets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
   
 </li>
       
@@ -1873,11 +1995,11 @@ df.groupby(&#39;country&#39;).filter(lambda x: x.shape[0] &gt; 100).\
 <div class="codehilite"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">7.5</span><span class="p">))</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span>\
-   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>\
+   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>\
    <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcd08681210&gt;
+<div class="codehilite"><pre><span></span><code>&lt;AxesSubplot:ylabel=&#39;country&#39;&gt;
 </code></pre></div>
 
 <p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_57_1.png" /></p>
@@ -2137,42 +2259,17 @@ sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
 <h2 id="64-visualization-with-ipywidgets">6.4 Visualization with IpyWidgets<a class="headerlink" href="#64-visualization-with-ipywidgets" title="Permanent link">&para;</a></h2>
 <h3 id="641-interact">6.4.1 Interact<a class="headerlink" href="#641-interact" title="Permanent link">&para;</a></h3>
 <p>Here we're going to introduce a very basic use case of IPython's widgets using <code>interact</code>. The <code>interact</code> method (<code>ipywidgets.interact</code>) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using IPython’s widgets.</p>
-<div class="codehilite"><pre><span></span><code>from ipywidgets import interact
-def my_plot(col=filtdf.select_dtypes(&#39;number&#39;).columns):
-  fig, ax = plt.subplots(1,1,figsize=(10,5))
-  filtdf.boxplot(column=col, by=&#39;country&#39;, ax=ax)
-
-interact(my_plot)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">filtdf</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
   <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-  <span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span>\
+   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>\
+   <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </code></pre></div>
 
 <p>After defining our function that returns our plot, and defining input parameters for the fields we would like to interact with, we call our function with <code>interact</code></p>
 <div class="codehilite"><pre><span></span><code>interact(my_plot)
 </code></pre></div>
 
-<p>Let's say we want to look at information from the IMDb data based on country. Because there are so many countries in the database, let's filter it down to only the top 5 countries. How could we do this using <code>value_counts</code>? Let's try this below</p>
-<div class="codehilite"><pre><span></span><code><span class="n">top_5_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># get list of top 5 countries</span>
-<span class="n">filtdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_5_countries</span><span class="p">)]</span> <span class="c1"># only select rows whose country is in the list</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
-  return array(a, dtype, copy=False, order=order)
-
-
-
-
-
-&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fccddd7dc90&gt;
-</code></pre></div>
-
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_82_2.png" /></p>
 <div class="codehilite"><pre><span></span><code><span class="n">interact</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
 </code></pre></div>
 
@@ -2182,22 +2279,22 @@ interact(my_plot)
 
 
 
-&lt;function __main__.my_plot&gt;
+&lt;function __main__.my_plot(col=Index([&#39;duration&#39;, &#39;avg_vote&#39;, &#39;votes&#39;, &#39;metascore&#39;, &#39;reviews_from_users&#39;,
+       &#39;reviews_from_critics&#39;],
+      dtype=&#39;object&#39;))&gt;
 </code></pre></div>
 
 <p>Let's break this down. Normally, I would just set my y-variable to a value, so that when I call my function, my figure is generated with the corresponding data field:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">):</span>
   <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-  <span class="n">filtdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span>\
+   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>\
+   <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="n">my_plot</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
-  return array(a, dtype, copy=False, order=order)
-</code></pre></div>
-
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_85_1.png" /></p>
+<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_83_0.png" /></p>
 <p>Instead, we want to give <code>interact()</code> a list of values for the user to select from, this is the difference between a regular function, and one we might feed into interact.</p>
 <div class="codehilite"><pre><span></span><code>y = [&#39;duration&#39;,
  &#39;avg_vote&#39;,
@@ -2207,7 +2304,7 @@ interact(my_plot)
  &#39;reviews_from_critics&#39;]
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="n">filtdf</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>[&#39;duration&#39;,
@@ -2219,9 +2316,14 @@ interact(my_plot)
 </code></pre></div>
 
 <h4 id="exercise-5-ipywidgets-and-figures-in-functions">🏋️ Exercise 5: IpyWidgets and Figures in Functions<a class="headerlink" href="#exercise-5-ipywidgets-and-figures-in-functions" title="Permanent link">&para;</a></h4>
-<p>In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time filter your dataframe for only the top 10 directors that most frequently occur in the IMDb datafile.</p>
+<p>In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time for directors rather than country. Filter your dataframe for only directors that have 5 or more datapoints and only return the top 10 highest average values (there should be 10 directors in the final plot).</p>
 <p>When you build the interactive plot, grouby director this time instead of country.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Code block for Exercise 5</span>
+<span class="k">def</span> <span class="nf">my_plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;director&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span>\
+   <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;director&#39;</span><span class="p">)[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>\
+   <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">interact</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
@@ -2233,20 +2335,13 @@ interact(my_plot)
 
 
 
-&lt;function __main__.my_plot&gt;
+&lt;function __main__.my_plot(col=Index([&#39;duration&#39;, &#39;avg_vote&#39;, &#39;votes&#39;, &#39;metascore&#39;, &#39;reviews_from_users&#39;,
+       &#39;reviews_from_critics&#39;],
+      dtype=&#39;object&#39;))&gt;
 </code></pre></div>
 
-<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.triu.html"><code>numpy.triu</code></a> </li>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html"><code>numpy.ones_like</code></a></li>
-<li><a href="https://ipywidgets.readthedocs.io/en/latest/"><code>ipywidgets</code></a></li>
-<li><a href="https://youtu.be/xZ_z8KWkhXE?t=822">StatQuest: Correlation</a></li>
-<li><a href="https://www.youtube.com/watch?v=qtaqvPAeEJY&amp;ab_channel=StatQuestwithJoshStarmer">StatQuest: Covariance</a></li>
-</ul>
-<h1 id="enrichment-topics">Enrichment Topics<a class="headerlink" href="#enrichment-topics" title="Permanent link">&para;</a></h1>
-<h2 id="64-other-plot-types">6.4 Other Plot Types<a class="headerlink" href="#64-other-plot-types" title="Permanent link">&para;</a></h2>
-<h3 id="641-bar-plots-advanced">6.4.1 Bar Plots (Advanced)<a class="headerlink" href="#641-bar-plots-advanced" title="Permanent link">&para;</a></h3>
+<h2 id="65-enrichment-other-plot-types-continued">6.5 🍒 Enrichment: Other Plot Types (Continued)<a class="headerlink" href="#65-enrichment-other-plot-types-continued" title="Permanent link">&para;</a></h2>
+<h3 id="651-bar-plots-advanced">6.5.1 Bar Plots (Advanced)<a class="headerlink" href="#651-bar-plots-advanced" title="Permanent link">&para;</a></h3>
 <p>Similar to how we created bar plots with pandas, we can use matplotlib to make barplots </p>
 <div class="codehilite"><pre><span></span><code>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
 hp = [10, 12, 8, 16]
@@ -2269,7 +2364,7 @@ plt.ylabel(&#39;HP&#39;)
 <div class="codehilite"><pre><span></span><code>Text(0, 0.5, &#39;HP&#39;)
 </code></pre></div>
 
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_95_1.png" /></p>
+<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_91_1.png" /></p>
 <p>Doing the same but with horizontally oriented bars</p>
 <div class="codehilite"><pre><span></span><code>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
 hp = [10, 12, 8, 16]
@@ -2292,7 +2387,7 @@ plt.xlabel(&#39;HP&#39;)
 <div class="codehilite"><pre><span></span><code>Text(0.5, 0, &#39;HP&#39;)
 </code></pre></div>
 
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_97_1.png" /></p>
+<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_93_1.png" /></p>
 <p>We can also add error bars</p>
 <div class="codehilite"><pre><span></span><code>pokemon = [&#39;Charmander&#39;, &#39;Pikachu&#39;, &#39;Squirtle&#39;, &#39;Bulbasaur&#39;]
 hp = [10, 12, 8, 16]
@@ -2325,8 +2420,8 @@ print(variance)
 <div class="codehilite"><pre><span></span><code>Text(0.5, 0, &#39;HP&#39;)
 </code></pre></div>
 
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_99_1.png" /></p>
-<h3 id="642-3d-plots">6.4.2 3D Plots<a class="headerlink" href="#642-3d-plots" title="Permanent link">&para;</a></h3>
+<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_95_1.png" /></p>
+<h3 id="652-3d-plots">6.5.2 3D Plots<a class="headerlink" href="#652-3d-plots" title="Permanent link">&para;</a></h3>
 <p>You can also create 3D plots in matplotlib using <code>ax.scatter3D</code></p>
 <div class="codehilite"><pre><span></span><code>ax = plt.axes(projection=&#39;3d&#39;)
 ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
@@ -2346,10 +2441,10 @@ print(ls)
 <div class="codehilite"><pre><span></span><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fdf86d241d0&gt;
 </code></pre></div>
 
-<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_101_1.png" /></p>
-<h2 id="65-visualization-with-plotly">6.5 Visualization with Plotly<a class="headerlink" href="#65-visualization-with-plotly" title="Permanent link">&para;</a></h2>
+<p><img alt="png" src="../S6_Matplotlib_files/S6_Matplotlib_97_1.png" /></p>
+<h3 id="653-visualization-with-plotly">6.5.3 Visualization with Plotly<a class="headerlink" href="#653-visualization-with-plotly" title="Permanent link">&para;</a></h3>
 <p>Another great plotting library, that is gaining in popularity (especially in enterprise settings) is plotly. As an added exercise, if you have additional time, explore some of the <a href="https://plotly.com/python/">plotly examples</a> then recreate the breakout room assignment using plotly instead of matplotlib.</p>
-<h3 id="651-scatter-plot-with-size-and-color">6.5.1 Scatter Plot with Size and Color<a class="headerlink" href="#651-scatter-plot-with-size-and-color" title="Permanent link">&para;</a></h3>
+<h4 id="6531-scatter-plot-with-size-and-color">6.5.3.1 Scatter Plot with Size and Color<a class="headerlink" href="#6531-scatter-plot-with-size-and-color" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 </code></pre></div>
 
@@ -2433,6 +2528,15 @@ if (outputEl) {{
 
 &lt;function __main__.my_plot&gt;
 </code></pre></div>
+
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.triu.html"><code>numpy.triu</code></a> </li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html"><code>numpy.ones_like</code></a></li>
+<li><a href="https://ipywidgets.readthedocs.io/en/latest/"><code>ipywidgets</code></a></li>
+<li><a href="https://youtu.be/xZ_z8KWkhXE?t=822">StatQuest: Correlation</a></li>
+<li><a href="https://www.youtube.com/watch?v=qtaqvPAeEJY&amp;ab_channel=StatQuestwithJoshStarmer">StatQuest: Covariance</a></li>
+</ul>
 
               
             </article>
