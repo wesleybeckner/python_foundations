@@ -97,6 +97,13 @@ print_string("GIX is awesome!")
     GIX is awesome!
 
 
+
+```python
+def dummy_function():
+  pass
+  # could also have an empty return
+```
+
 ### 3.1.1 Reserved words: def, return, and yield
 
 Notice the highlighted words in our function definition: `def` and `return` these are *reserved words* in python used to define functions. Every function definition requires these reserved words. `yield` is another reserved word that is similar to `return` but operates slightly differently. It is beyond the scope of what we are covering in this session. This tutorial from [realpython](https://realpython.com/introduction-to-python-generators/) has good information on the topic.
@@ -105,7 +112,8 @@ Notice the highlighted words in our function definition: `def` and `return` thes
 ```python
 # what is return doing in this function?
 def my_square(a):
-  return a ** 2
+  the_square = a ** 2
+  return the_square
 ```
 
 `return` is going to output whatever value(s) follow after the keyword `return` when we call upon our function 
@@ -133,18 +141,6 @@ def my_square(a):
 
 and we see how the output updates accordingly
 
-
-```python
-my_square(a)
-```
-
-
-
-
-    (4, 2)
-
-
-
 We can capture these values on the output with...
 
 
@@ -158,6 +154,30 @@ print(square, new_a)
 ```
 
     4 2
+
+
+
+```python
+square
+```
+
+
+
+
+    4
+
+
+
+
+```python
+new_a
+```
+
+
+
+
+    2
+
 
 
 ### 3.1.2 Global vs local variables and function parameters
@@ -201,14 +221,22 @@ Let's play with this a little further...
 # what happens here?
 b = 100
 my_little_func(5)
+b
 ```
 
 
 
 
-    50
+    100
 
 
+
+
+```python
+# I set b = 100
+# my little func ran (where b=10 inside the funciton)
+# i outputed b (the global variable b) and it still have the value of 100
+```
 
 we see that b is still 100, instead of 10 as its defined within the function. This is because b inside of `my_little_func` is a *local* variable. 
 
@@ -230,6 +258,7 @@ This is typically not happy-happy fun-fun behavior for us: we want to be explici
 
 ```python
 b= 1e4 # side note, what did I do here????
+# 1 * 10 ** 4
 my_new_func(a)
 ```
 
@@ -240,6 +269,18 @@ my_new_func(a)
 
 
     20000.0
+
+
+
+
+```python
+b
+```
+
+
+
+
+    10000.0
 
 
 
@@ -270,9 +311,9 @@ def change_list(my_list):
    print('list inside the function: ', my_list)
    return
 
-my_list = [1, 2, 3];
+my_list = [1, 2, 3]
 print('list before the function: ', my_list)
-change_list(my_list);
+change_list(my_list)
 print('list after the function: ', my_list)
 ```
 
@@ -317,9 +358,9 @@ my_little_func(b)
 print(b)
 ```
 
-    a string
-    a string20
-    a string
+    [10, 2]
+    [10, 2, 'whoaaaa']
+    [10, 2, 'whoaaaa']
 
 
 There is a way to change a global variable within a function with the **_global_** keyword.  Generally, the use of **_global_** variables is not encouraged, instead use parameters. We won't cover the global keyword here but you can [explore further](https://www.programiz.com/python-programming/global-keyword) on your own if you are interested. 
@@ -333,7 +374,26 @@ Write a function that takes one parameter and returns any data structure
 
 ```python
 # Cell for excerise 1
+def find_max(a_list):
+  ans = 0
+  for i in a_list:
+    if i > ans:
+      ans = i
+  return ans
 ```
+
+
+```python
+a_list = [100, 1e4, 55, -100, 1e10]
+find_max(a_list)
+```
+
+
+
+
+    10000000000.0
+
+
 
 ### 3.1.3 Parameter types
 
@@ -372,10 +432,10 @@ def print_name(first, last='Beckner'):
 
 
 ```python
-print_name(last='Beckner', first='Wesley')
+print_name('Beckner', 'Wesley')
 ```
 
-    Your name is Wesley Beckner
+    Your name is Beckner Wesley
 
 
 Play around with the above function.
@@ -426,6 +486,14 @@ print_name_age(age=29, last='Beckner', first='Wesley')
     Your age is 29
     You are a millenial!
 
+
+
+```python
+def thing():
+  for i in range(10):
+    pass
+  return
+```
 
 ## 3.2 The scientific python stack
 
@@ -609,14 +677,37 @@ def calculate_bmi(weight, height):
     return weight / (height ** 2)
 
 for patient in patients:
-    weight, height = patients[0] 
-    bmi = calculate_bmi(height, weight) 
+    weight, height = patient
+    bmi = calculate_bmi(weight, height) 
     print("Patient's BMI is: %f" % bmi)
 ```
 
-    Patient's BMI is: 0.000367
-    Patient's BMI is: 0.000367
-    Patient's BMI is: 0.000367
+    Patient's BMI is: 21.604938
+    Patient's BMI is: 22.160665
+    Patient's BMI is: 51.903114
+
+
+
+```python
+calculate_bmi(patients[2][0], patients[2][1])
+```
+
+
+
+
+    51.90311418685122
+
+
+
+
+```python
+for patient in patients:
+  print(patient)
+```
+
+    [70, 1.8]
+    [80, 1.9]
+    [150, 1.7]
 
 
 
@@ -629,8 +720,8 @@ def calculate_bmi(weight, height):
     return weight / (height ** 2)
 
 for patient in patients:
-    weight, height = patient ### not properly referencing iterated variable
-    bmi = calculate_bmi(weight, height) ### should be swapped
+    weight, height = patient
+    bmi = calculate_bmi(weight, height) 
     print("Patient's BMI is: %f" % bmi)
 ```
 
@@ -645,14 +736,25 @@ def test_calculate_bmi():
   patients = [[70, 1.8], [80, 1.9], [150, 1.7]] 
   bmis = [21.6, 22.16, 51.9]
 
-  for patient, bmi_ in zip(patients, bmis):
-    weight, height = patient ### not properly referencing iterated variable
-    bmi = calculate_bmi(weight, height) ### should be swapped
-    assert np.abs(bmi - bmi_) < 0.1, "fail calc for {}".format(patient)
+  for i in range(3):
+    assert (((calculate_bmi(patients[i][0], patients[i][1]) - bmis[i]) < 0.01) and
+            (calculate_bmi(patients[i][0], patients[i][1]) - bmis[i]) > -0.01), "values not consistent"
     
 test_calculate_bmi()
 print("success!")
 ```
 
     success!
+
+
+
+```python
+abs(-10)
+```
+
+
+
+
+    10
+
 

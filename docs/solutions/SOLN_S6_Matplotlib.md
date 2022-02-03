@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/S6_Matplotlib.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_S6_Matplotlib.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Python Foundations, Session 6: Visualization
 **Instructor**: Wesley Beckner
@@ -56,13 +56,43 @@ plt.plot(x, y)
 
 
 
-    [<matplotlib.lines.Line2D at 0x22a7cd340d0>]
+    [<matplotlib.lines.Line2D at 0x7fb4a1d75ed0>]
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_5_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_5_1.png)
+    
+
+
+We can label the axes of our figure using the `xlabel` and `ylabel` attributes, and label our title using the `title` attribute.
+
+```
+plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+plt.title('The Fibonacci Sequence')
+plt.xlabel('Order in Sequence')
+plt.ylabel('Value')
+```
+
+
+```python
+plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+plt.title('The Fibonacci Sequence')
+plt.xlabel('Order in Sequence')
+plt.ylabel('Value')
+```
+
+
+
+
+    Text(0, 0.5, 'Value')
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_7_1.png)
     
 
 
@@ -72,16 +102,53 @@ plt.plot(x, y)
 
 Before we make any changes, let's become acquianted with the more appropriate way to work in `matplotlib.pyplot`. In this formality, we explicitly create our `figure` and `axes` objects.
 
+```
+# This is one way to do it...
+# plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+
+# but we can also do it this way, concretely declaring the figure, axes
+# objects directly
+
+# We declare the figure
+fig = plt.figure()
+
+# and then add axes 
+ax = fig.add_subplot(111)
+```
+
 You can think of the `figure` as a canvas, where you specify dimensions and possibly unifying attributes of its contents, like, background color, border, etc. You use the canvas, the `figure`, to containerize your other objects, primarily your `axes`, and to save its contents with `savefig`.
 
 You can think of an `axes` as the actual graphs or plots themselves. And when we declare these objects, we have access to all the methods of `matplotlib.pyplot` (e.g. `.plot`, `.scatter`, `.hist` etc.) You can place many of these `axes` into the `figure` container in a variety of ways.
 
 The last component of a `pyplot` figure are the `axis`, the graphical axis we typically think of.
 
+
+```python
+# This is one way to do it...
+# plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13])
+
+# but we can also do it this way, concretely declaring the figure, axes
+# objects directly
+
+# We declare the figure
+fig = plt.figure()
+
+# and then add axes 
+ax = fig.add_subplot(111) # number of rows, number of columns, 
+# from left to right and top to bottom the individual axes that 
+# this add_subplot call is creating
+```
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_9_0.png)
+    
+
+
 `plt.subplots` returns a `figure` and `axes` object(s) together:
 
 ```
-### We can create the figure (fig) and axes (ax) in a single line
+### We can also do it in 1 line
 fig, ax = plt.subplots(1, 1, figsize=(8,8))
 ```
 
@@ -89,13 +156,13 @@ and we'll go ahead and adjust the figure size with the parameter `figsize` and s
 
 
 ```python
-# We can create the figure (fig) and axes (ax) in a single line
-fig, ax = plt.subplots(1, 1, figsize=(10,5))
+### We can also do it in 1 line
+fig, ax = plt.subplots(1, 1)
 ```
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_8_0.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_11_0.png)
     
 
 
@@ -106,9 +173,7 @@ To recap, by convention we typically separate our plots into three components: a
 * **_Axis_**: They are the traditional `axis` we think of in a graph and take care of generating the graph limits.
 
 <br> 
-
 **Example:**
-
 > `fig, ax = plt.subplots(1, 1, figsize=(8,8))` is creating the figure (`fig`) and axes (`ax`) explicitly, and depending on whether we create 2D or 3D plots, the axes will contain 2-3 `axis`.
 
 #### 🏋️ Exercise 1: Adjust Figure Size
@@ -134,7 +199,23 @@ y = [1,1,2,3,5,8,13]
 # Cell for Exercise 1
 x = [1,2,3,4,5,6,7]
 y = [1,1,2,3,5,8,13]
+
+fig, ax = plt.subplots(1, 1, figsize=(6, 3))
+ax.plot(x,y[::-1], linestyle='', marker='.')
 ```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7fb49f7dab10>]
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_14_1.png)
+    
+
 
 ### 6.1.2 Manipulating Plot Attributes
 
@@ -288,7 +369,36 @@ mp.markers.MarkerStyle.markers
 
 
 
-Let's see some of these changes in action
+
+```python
+plt.plot([1,2,3], [4,5,6])
+plt.title('here is my title')
+```
+
+
+
+
+    Text(0.5, 1.0, 'here is my title')
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_17_1.png)
+    
+
+
+
+```python
+ax.title
+```
+
+
+
+
+    Text(0.5, 1.0, '')
+
+
 
 
 ```python
@@ -298,60 +408,7 @@ ax.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13],
         linestyle=':', 
         color='tab:blue')
 ax.plot([1,2,3,4,5,6,7],[0,3,8,6,5,4,1], marker='.', 
-        linestyle='-.', color='#3E1515')
-```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22a7ce86cd0>]
-
-
-
-
-    
-![png](S6_Matplotlib_files/S6_Matplotlib_15_1.png)
-    
-
-
-If we want to make a *scatter plot* without any lines at all, we set the `linestyle` to an empty string
-
-```
-fig, ax = plt.subplots(1,1, figsize=(5,5))
-plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='*', linestyle='', color='tab:green')
-```
-
-
-```python
-fig, ax = plt.subplots(1,1, figsize=(5,5))
-plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='h', linestyle='', ms=10,
-         color='tab:green')
-```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22a7cf02c10>]
-
-
-
-
-    
-![png](S6_Matplotlib_files/S6_Matplotlib_17_1.png)
-    
-
-
-You may be wondering where those axis labels are. We can set those as well!
-
-
-```python
-fig, ax = plt.subplots(1,1, figsize=(5,5))
-ax.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], 
-        marker='s', 
-        linestyle=':', 
-        color='tab:blue')
-ax.plot([1,2,3,4,5,6,7],[0,3,8,6,5,4,1], marker='.', 
-        linestyle='-.', color='#3E1515')
+        linestyle='-.', color='tab:orange')
 ax.set_title('My Random Values')
 ax.set_xlabel('Order in Sequence')
 ax.set_ylabel('Value')
@@ -366,7 +423,40 @@ ax.set_ylabel('Value')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_19_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_19_1.png)
+    
+
+
+If we want to make a *scatter plot* without any lines at all, we set the `linestyle` to an empty string
+
+```
+fig, ax = plt.subplots(1,1, figsize=(5,5))
+plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='*', linestyle='', color='tab:green')
+ax.set_title('The Fibonacci Sequence')
+ax.set_xlabel('Order in Sequence')
+ax.set_ylabel('Value')
+```
+
+
+```python
+fig, ax = plt.subplots(1,1, figsize=(5,5))
+plt.plot([1,2,3,4,5,6,7],[1,1,2,3,5,8,13], marker='h', linestyle='', ms=50,
+         color='tab:pink')
+ax.set_title('The Fibonacci Sequence')
+ax.set_xlabel('Order in Sequence')
+ax.set_ylabel('Value')
+```
+
+
+
+
+    Text(0, 0.5, 'Value')
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_21_1.png)
     
 
 
@@ -432,18 +522,21 @@ ax.plot(x,y1)
 ax.plot(x,y2)
 ax.plot(x,y3)
 ax.plot(x,y4)
+
+# ax2 = ax.secondary_yaxis('right', functions=(lambda x: x, lambda x: x**2))
+# ax2.axes.plot(x, [i*100 for i in])
 ```
 
 
 
 
-    [<matplotlib.lines.Line2D at 0x7fcd316d14d0>]
+    [<matplotlib.lines.Line2D at 0x7fb49727a090>]
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_21_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_23_1.png)
     
 
 
@@ -505,16 +598,14 @@ The second thing we'll need to talk about is the grid of the ax object
 
 
 ```python
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots(2, 2)
 ```
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_26_0.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_28_0.png)
     
 
-
-we can investigate its shape:
 
 
 ```python
@@ -528,8 +619,6 @@ ax.shape
 
 
 
-as well as the contents contained within:
-
 
 ```python
 ax
@@ -538,10 +627,10 @@ ax
 
 
 
-    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x7fcd316f9210>,
-            <matplotlib.axes._subplots.AxesSubplot object at 0x7fcd316490d0>],
-           [<matplotlib.axes._subplots.AxesSubplot object at 0x7fcd315fb710>,
-            <matplotlib.axes._subplots.AxesSubplot object at 0x7fcd315b0d50>]],
+    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x7fb4968ea3d0>,
+            <matplotlib.axes._subplots.AxesSubplot object at 0x7fb497187b50>],
+           [<matplotlib.axes._subplots.AxesSubplot object at 0x7fb496b3b190>,
+            <matplotlib.axes._subplots.AxesSubplot object at 0x7fb496b9ee10>]],
           dtype=object)
 
 
@@ -554,12 +643,10 @@ we have the pandas equivalent:
 
 `df.iloc[0,1] = element`
 
-Putting this all together we can create the following:
-
 
 ```python
 import random
-random.seed(42)
+random.seed(12)
 fig, ax = plt.subplots(2, 2, figsize=(10,10))
 ax[0,0].plot(range(10), [random.random() for i in range(10)],
              c='tab:blue')
@@ -574,13 +661,13 @@ ax[1,1].plot(range(10), [random.random() for i in range(10)],
 
 
 
-    [<matplotlib.lines.Line2D at 0x22a7daee280>]
+    [<matplotlib.lines.Line2D at 0x7fb4964a5a10>]
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_33_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_32_1.png)
     
 
 
@@ -656,16 +743,31 @@ y2 = [round(random.random() * 8) + 11 for i in range(10)]
 # title: Fibonacci Sequence; xlabel: x values; ylabel: y values
  
 ### YOUR CODE HERE ###
- 
+ax[0].plot(x, y1, c='tab:green', marker='.', ls='')
+ax[0].set_title('fib')
+ax[0].set_xlabel('index')
+ax[0].set_ylabel('value')
+
 # plot the right axes, set the title and axes labels
 # title: My Random Values; xlabel: x values; ylabel: y values
  
 ### YOUR CODE HERE ###
+ax[1].plot(x, y2, c='tab:pink', ms=10, ls=':', marker='s')
+ax[1].set_title('fib')
+ax[1].set_xlabel('index')
+ax[1].set_ylabel('value')
 ```
 
 
+
+
+    Text(0, 0.5, 'value')
+
+
+
+
     
-![png](S6_Matplotlib_files/S6_Matplotlib_35_0.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_34_1.png)
     
 
 
@@ -710,6 +812,10 @@ df = pd.read_csv("https://raw.githubusercontent.com/wesleybeckner/"\
   "technology_explorers/main/assets/imdb_movies.csv")
 ```
 
+    /usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2882: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
+      exec(code_obj, self.user_global_ns, self.user_ns)
+
+
 
 ```python
 # we check the shape of our data to see if its as we expect 
@@ -751,7 +857,10 @@ df.describe()
 
 
 
-<div>
+
+  <div id="df-ae1b6090-642d-4081-835b-e121bda495bb">
+    <div class="colab-df-container">
+      <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -853,6 +962,82 @@ df.describe()
   </tbody>
 </table>
 </div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ae1b6090-642d-4081-835b-e121bda495bb')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-ae1b6090-642d-4081-835b-e121bda495bb button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-ae1b6090-642d-4081-835b-e121bda495bb');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
 
 
 
@@ -941,7 +1126,7 @@ df.loc[:, df.dtypes == object].describe()
     </tr>
     <tr>
       <th>top</th>
-      <td>tt0000009</td>
+      <td>tt0131549</td>
       <td>Anna</td>
       <td>Anna</td>
       <td>2017</td>
@@ -1009,13 +1194,13 @@ df.plot()
 
 
 
-    <AxesSubplot:>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb4820224d0>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_47_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_46_1.png)
     
 
 
@@ -1028,20 +1213,21 @@ df.plot(ax=ax)
 
 
 ```python
-fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot(ax=ax)
+fig, ax1 = plt.subplots(1, 1, figsize = (10, 5))
+df.plot(ax=ax1)
+ax1.set_title('My Title')
 ```
 
 
 
 
-    <AxesSubplot:>
+    Text(0.5, 1.0, 'My Title')
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_49_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_48_1.png)
     
 
 
@@ -1061,34 +1247,13 @@ df.plot(ax=ax, ls='', marker='.', ms=2)
 
 
 
-    <AxesSubplot:>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb481e19610>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_51_1.png)
-    
-
-
-To plot X and Y that are specific columns of our dataframe we specify them in the call to `df.plot()`
-
-
-```python
-fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-df.plot('avg_vote', 'metascore', ax=ax, ls='', marker='.', ms=2)
-```
-
-
-
-
-    <AxesSubplot:xlabel='avg_vote'>
-
-
-
-
-    
-![png](S6_Matplotlib_files/S6_Matplotlib_53_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_50_1.png)
     
 
 
@@ -1098,9 +1263,26 @@ Make a plot of duration vs metascore
 
 
 ```python
+fig, ax = plt.subplots(1, 1, figsize=(10, 5))
+df.plot('duration', 'metascore', ax=ax, ls='', marker='.', alpha=0.9, ms=3)
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb4818eac90>
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_52_1.png)
+    
+
+
+
+```python
 # Cell for Exercise 4
-fig, ax = plt.subplots(1, 1, figsize = (10, 5))
-# plot the data
 ```
 
 
@@ -1112,7 +1294,7 @@ fig, ax = plt.subplots(1, 1, figsize = (10, 5))
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_55_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_53_1.png)
     
 
 
@@ -1130,29 +1312,77 @@ df.groupby('country').filter(lambda x: x.shape[0] > 100).\
 
 
 ```python
+def newf(x):
+  return x.shape[0] > 100
+```
+
+
+```python
 fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
 
-df.groupby('country').filter(lambda x: x.shape[0] > 100).\
-   groupby('country')['duration'].mean().sort_values(na_position='first')\
+df.groupby('country').filter(newf).\
+   groupby('country')['duration'].mean().sort_values()\
    [-20:].plot(kind='barh', ax=ax)
 ```
 
 
 
 
-    <AxesSubplot:ylabel='country'>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb481741550>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_57_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_56_1.png)
     
 
 
-## 6.3 🍒 Enrichment: Other Plot Types
 
-### 6.3.1 Box Plots
+```python
+fig, ax = plt.subplots(figsize=(10,5))
+
+df.groupby('country').filter(lambda x: x.shape[0] > 100).\
+  groupby('country')['duration'].mean().sort_values()[-20:]\
+  .plot(kind='barh', ax=ax)
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb481413950>
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_57_1.png)
+    
+
+
+
+```python
+fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
+
+df.groupby('country').filter(lambda x: x.shape[0] > 100).\
+   groupby('country')['duration'].mean().sort_values()\
+   [-20:].plot(kind='bar', ax=ax) # .plot(kind='barh')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb481730350>
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_58_1.png)
+    
+
+
+### 6.2.3 Box Plots
 
 Maybe we thought it was usefull to see the feature data in the scatter plots ( we can visually scan for correlations between feature sets, check outliers, etc.) but perhaps more instructive, is a boxplot. A box plot or boxplot is a statistical method for graphically depicting aggregate data through their quartiles. It will be useful to inspect the [boxplot API](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html) to see the default behavior for representing the quartiles and outliers. 
 
@@ -1163,30 +1393,45 @@ df.plot(kind='box', ax=ax)
 
 
 ```python
+df['genre'].unique()
+```
+
+
+
+
+    array(['Romance', 'Biography, Crime, Drama', 'Drama', ..., 'Family, War',
+           'Documentary', 'Crime, War'], dtype=object)
+
+
+
+
+```python
+
+```
+
+
+```python
 fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
-df.groupby('country').filter((lambda x: (x.shape[0] > 100) & # filter by number of datapoints
-                              (x['duration'].mean() < 100)) # filter by average movie time
+df.loc[df['genre'] == 'Romance'].groupby('country').filter((lambda x: (x.shape[0] > 100)  # filter by number of datapoints
+                              # (x['duration'].mean() < 95)
+                              ) # filter by average movie time
                          ).boxplot(by='country', column='duration', rot=90, ax=ax)
 ```
 
-    /usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
-      return array(a, dtype, copy=False, order=order)
 
 
 
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fcd04c5d9d0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb480fb1350>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_60_2.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_62_1.png)
     
 
 
-### 6.3.2 Histograms
+### 6.2.4 Histograms
 
 What are some other kinds of plots we can make? A good one to be aware of is the histogram. 
 
@@ -1199,48 +1444,205 @@ plt.hist(df['duration'])
 
 
 ```python
-plt.title('Demo Hist')
-plt.xlabel('Duration')
-plt.ylabel('Frequency')
-plt.hist(df['duration'])
+df[['duration']]
 ```
 
 
 
 
-    (array([7.2368e+04, 1.3197e+04, 2.2800e+02, 4.0000e+01, 1.1000e+01,
-            4.0000e+00, 4.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]),
-     array([ 41. , 117.7, 194.4, 271.1, 347.8, 424.5, 501.2, 577.9, 654.6,
-            731.3, 808. ]),
-     <a list of 10 Patch objects>)
+
+  <div id="df-d9eacf1a-f91c-4db0-bfcd-529b67c1cf3f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>85850</th>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>85851</th>
+      <td>103</td>
+    </tr>
+    <tr>
+      <th>85852</th>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>85853</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>85854</th>
+      <td>74</td>
+    </tr>
+  </tbody>
+</table>
+<p>85855 rows × 1 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d9eacf1a-f91c-4db0-bfcd-529b67c1cf3f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d9eacf1a-f91c-4db0-bfcd-529b67c1cf3f button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d9eacf1a-f91c-4db0-bfcd-529b67c1cf3f');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+```python
+df[['duration']].plot(kind='hist')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb480b0e510>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_62_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_65_1.png)
     
 
 
 
 ```python
-df['duration'].plot(kind='hist')
+plt.hist(df['duration'])
+
+plt.title('Demo Hist')
+plt.xlabel('Duration')
+plt.ylabel('Frequency')
 ```
 
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fcd0471d210>
+    Text(0, 0.5, 'Frequency')
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_63_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_66_1.png)
     
 
 
-### 6.3.3 Kernel Density Estimates
+### 6.2.5 Kernel Density Estimates
 
 Another useful plot type for data analysis is the kernel density estimate. You can think of this plot as exactly like a histogram, except instead of creating bins in which to accrue datapoints, you deposit a gaussian distribution around every datapoint in your dataset. By this mechanism, you avoid creating bias in your data summary as you otherwise would be when predifining bin sizes and locations in a histogram.
 
@@ -1259,11 +1661,33 @@ df['duration'].plot(kind='kde', ax=ax)
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_65_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_68_1.png)
     
 
 
-#### 🍒🍒 6.3.3.1 **Double** Enrichment: Skew and Tailedness
+
+```python
+fig, ax = plt.subplots(1, 1, figsize=(10,7.5))
+df.loc[df['genre'] == 'Romance'].groupby('country').filter((lambda x: (x.shape[0] > 100)  # filter by number of datapoints
+                              # (x['duration'].mean() < 95)
+                              ) # filter by average movie time
+                         )['duration'].plot(kind='kde', ax=ax)
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb47e8bff50>
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_69_1.png)
+    
+
+
+#### 🍒 6.2.5.1 **Enrichment**: Skew and Tailedness
 
 While we're on the topic of KDEs/histograms and other statistical plots, this is a convenient time to talk about skew and tailedness or, otherwise known as kurtosis
 
@@ -1323,7 +1747,7 @@ interact(inspect_kurt_skew)
 
 
 
-### 6.3.4 Correlation Plots
+### 6.2.6 Correlation Plots
 
 Often, we'll want to quantify the strength of a relationship between input variables. We can do this by calculating correlations. 
 
@@ -1350,7 +1774,10 @@ df.corr()
 
 
 
-<div>
+
+  <div id="df-e88c32bb-3cb6-48b6-b7e4-31e9b6b52dc3">
+    <div class="colab-df-container">
+      <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1434,6 +1861,82 @@ df.corr()
   </tbody>
 </table>
 </div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e88c32bb-3cb6-48b6-b7e4-31e9b6b52dc3')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-e88c32bb-3cb6-48b6-b7e4-31e9b6b52dc3 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-e88c32bb-3cb6-48b6-b7e4-31e9b6b52dc3');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
 
 
 
@@ -1463,13 +1966,13 @@ sns.heatmap(df.corr())
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fcd023a6a10>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb47e488bd0>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_74_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_78_1.png)
     
 
 
@@ -1491,13 +1994,13 @@ sns.heatmap(df.corr(), mask=mask, cmap=cmap, ax=ax)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fcd0239fc90>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb47e3768d0>
 
 
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_75_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_79_1.png)
     
 
 
@@ -1505,19 +2008,26 @@ What do we notice?
 
 looks like reviews and votes are all pretty correlated. Surprising?
 
-## 6.4 Visualization with IpyWidgets
+## 6.3 Visualization with IpyWidgets
 
-### 6.4.1 Interact
+### 6.3.1 Interact
 
 Here we're going to introduce a very basic use case of IPython's widgets using `interact`. The `interact` method (`ipywidgets.interact`) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using IPython’s widgets.
 
+```
+from ipywidgets import interact
+def my_plot(col=filtdf.select_dtypes('number').columns):
+  fig, ax = plt.subplots(1,1,figsize=(10,5))
+  filtdf.boxplot(column=col, by='country', ax=ax)
+  
+interact(my_plot)
+```
+
 
 ```python
-def my_plot(col=df.select_dtypes('number').columns):
+def my_plot(col=filtdf.select_dtypes('number').columns):
   fig, ax = plt.subplots(1,1,figsize=(10,5))
-  df.groupby('country').filter(lambda x: x.shape[0] > 100).\
-   groupby('country')[col].mean().sort_values(na_position='first')\
-   [-20:].plot(kind='barh', ax=ax)
+  filtdf.boxplot(column=col, by='country', ax=ax)
 ```
 
 After defining our function that returns our plot, and defining input parameters for the fields we would like to interact with, we call our function with `interact`
@@ -1525,6 +2035,36 @@ After defining our function that returns our plot, and defining input parameters
 ```
 interact(my_plot)
 ```
+
+Let's say we want to look at information from the IMDb data based on country. Because there are so many countries in the database, let's filter it down to only the top 5 countries. How could we do this using `value_counts`? Let's try this below
+
+
+```python
+top_5_countries = df['country'].value_counts()[:5].keys() # get list of top 5 countries
+filtdf = df.loc[df['country'].isin(top_5_countries)] # only select rows whose country is in the list
+```
+
+
+```python
+filtdf.boxplot(column='duration', by='country')
+```
+
+    /usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+      return array(a, dtype, copy=False, order=order)
+
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7fb47e29af10>
+
+
+
+
+    
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_86_2.png)
+    
+
 
 
 ```python
@@ -1538,9 +2078,7 @@ interact(my_plot)
 
 
 
-    <function __main__.my_plot(col=Index(['duration', 'avg_vote', 'votes', 'metascore', 'reviews_from_users',
-           'reviews_from_critics'],
-          dtype='object'))>
+    <function __main__.my_plot>
 
 
 
@@ -1548,18 +2086,23 @@ Let's break this down. Normally, I would just set my y-variable to a value, so t
 
 
 ```python
+top_5_countries = df['country'].value_counts()[:5].keys() # get list of top 5 countries
+filtdf = df.loc[df['country'].isin(top_5_countries)] # only select rows whose country is in the list
+
 def my_plot(col='duration'):
   fig, ax = plt.subplots(1,1,figsize=(10,5))
-  df.groupby('country').filter(lambda x: x.shape[0] > 100).\
-   groupby('country')[col].mean().sort_values(na_position='first')\
-   [-20:].plot(kind='barh', ax=ax)
+  filtdf.boxplot(column=col, by='country', ax=ax)
 
-my_plot()
+my_plot(col='avg_vote')
 ```
+
+    /usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+      return array(a, dtype, copy=False, order=order)
+
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_83_0.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_89_1.png)
     
 
 
@@ -1576,7 +2119,7 @@ y = ['duration',
 
 
 ```python
-list(df.select_dtypes('number').columns)
+list(filtdf.select_dtypes('number').columns)
 ```
 
 
@@ -1593,18 +2136,23 @@ list(df.select_dtypes('number').columns)
 
 #### 🏋️ Exercise 5: IpyWidgets and Figures in Functions
 
-In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time for directors rather than country. Filter your dataframe for only directors that have 5 or more datapoints and only return the top 10 highest average values (there should be 10 directors in the final plot).
+In the previous section we created a single dropdown menu to select our y variable for our plot. Here, we would like to do the same thing, but this time filter your dataframe for only the top 10 directors that most frequently occur in the IMDb datafile.
 
 When you build the interactive plot, grouby director this time instead of country.
 
 
 ```python
 # Code block for Exercise 5
-def my_plot(col=df.select_dtypes('number').columns):
+```
+
+
+```python
+top_10_directors = df['director'].value_counts()[:10].keys() # get list of top 5 countries
+filtdf = df.loc[df['director'].isin(top_10_directors)] # only select rows whose country is in the list
+
+def my_plot(col=filtdf.select_dtypes('number').columns):
   fig, ax = plt.subplots(1,1,figsize=(10,5))
-  df.groupby('director').filter(lambda x: x.shape[0] > 5).\
-   groupby('director')[col].mean().sort_values(na_position='first')\
-   [-10:].plot(kind='barh', ax=ax)
+  filtdf.boxplot(column=col, by='director', ax=ax, rot=90)
 ```
 
 
@@ -1619,9 +2167,7 @@ interact(my_plot)
 
 
 
-    <function __main__.my_plot(col=Index(['duration', 'avg_vote', 'votes', 'metascore', 'reviews_from_users',
-           'reviews_from_critics'],
-          dtype='object'))>
+    <function __main__.my_plot>
 
 
 
@@ -1675,7 +2221,7 @@ plt.ylabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_93_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_100_1.png)
     
 
 
@@ -1711,7 +2257,7 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_95_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_102_1.png)
     
 
 
@@ -1759,7 +2305,7 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_97_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_104_1.png)
     
 
 
@@ -1795,7 +2341,7 @@ ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_99_1.png)
+![png](SOLN_S6_Matplotlib_files/SOLN_S6_Matplotlib_106_1.png)
     
 
 

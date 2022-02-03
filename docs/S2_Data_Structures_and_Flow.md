@@ -96,14 +96,6 @@ print(pickles)
     A cucumber preserved in vinegar or brine.
 
 
-### 🍒 Enrichment: Floating point and binary representation of numbers
-
-Variables in Python have different data types.  The simple ones, we've already discussed such as an integer or `int`, a string or `str`, a decimal point containing number called a **_floating point_** number.  **_Floating point_** numbers are special and are stored in a computer's memory using [internal representations](http://steve.hollasch.net/cgindex/coding/ieeefloat.html).  One important thing to know about **_floating point_** numbers is that to a computer, the statement below may not always be true.  For now, just think about **_floating point_** numbers as [approximately](https://stackoverflow.com/questions/1089018/why-cant-decimal-numbers-be-represented-exactly-in-binary) representing the decimal number you see.
-
-```
-10.0 * 0.1 == 1.0
-```
-
 ### 2.0.2 A quick review of comments
 
 Just like we should use good naming conventions for variables so they make sense, we should have good comments to help readers follow our code.  Good comments can turn a speck of coding gold into a valuable nugget of knowledge.  Bad or wrong comments are bugs.  If you want to learn more about why we call computer coding problems bugs, read about [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) and see [her photo of a `bug` in her notebook](https://en.wikipedia.org/wiki/Grace_Hopper#/media/File:First_Computer_Bug,_1945.jpg).

@@ -209,8 +209,8 @@ We will now be reading the data from this [link](https://raw.githubusercontent.c
 df = pd.read_csv('https://raw.githubusercontent.com/wesleybeckner/technology_explorers/main/assets/imdb_movies.csv')
 ```
 
-    /usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py:2718: DtypeWarning: Columns (3) have mixed types.Specify dtype option on import or set low_memory=False.
-      interactivity=interactivity, compiler=compiler, result=result)
+    C:\Users\WesleyBeckner\AppData\Local\Temp\ipykernel_17180\2664770703.py:1: DtypeWarning: Columns (3) have mixed types. Specify dtype option on import or set low_memory=False.
+      df = pd.read_csv('https://raw.githubusercontent.com/wesleybeckner/technology_explorers/main/assets/imdb_movies.csv')
 
 
 We can do this in a similar way with excel files. 
@@ -594,13 +594,13 @@ from_dict.to_dict()
 
 
 
-#### 🏋️ Exercise 2: Create a DataFrame
+#### 🏋️ Exercise 1: Create a DataFrame
 
 Create a dictionary with the following keys: `movies, songs, books`. In each key list your top 5 favorites in the cooresponding category. Then use `pd.DataFrame` to turn this into a dictionary.
 
 
 ```python
-# Cell for Ex 2
+# Cell for Ex 1
 ```
 
 #### 5.1.2.4 on `pandas.Series`
@@ -1195,13 +1195,13 @@ df.describe()
 
 
 
-#### 🏋️ Exercise 3: Viewing DataFrames
+#### 🏋️ Exercise 2: Viewing DataFrames
 
 Using the dataframe you made in exercise 1, return the following attributes: the datatype stored in each column, the column names, the indices, and the shape.
 
 
 ```python
-# Cell for Ex 3
+# Cell for Ex 2
 ```
 
 ### 5.1.4 Manipulating data with ``pandas``
@@ -1718,13 +1718,13 @@ mydf.loc['a', 'alpha'] = 'mychange'
 
 You want to use `loc` or `iloc` when setting new values to pandas dataframes.
 
-##### 🏋️ Exercise 4: Selecting
+##### 🏋️ Exercise 3: Selecting
 
 select the first 10 rows of the country, genre, and year columns using `loc`. Repeat the same exercise using `iloc`
 
 
 ```python
-# Cell for Ex 4
+# Cell for Ex 3
 ```
 
 #### 5.1.4.2 Filtering
@@ -2592,14 +2592,14 @@ df[df['votes'] > 1000]
 
 
 
-##### 🏋️ Exercise 5: Filtering
+##### 🏋️ Exercise 4: Filtering
 
 * Filter `df` for all the movies that are longer than 2 hours
 * Filter `df` for all movies where 'day' is in the title
 
 
 ```python
-# Cell for Ex 5
+# Cell for Ex 4
 ```
 
 #### 5.1.4.3 Select, filter, operation
@@ -2954,7 +2954,7 @@ pd.value_counts(df['duration'])
 
 
 
-##### 🏋️ Exercise 6: `value_counts, unique, nunique`
+##### 🏋️ Exercise 5: `value_counts, unique, nunique`
 
 We can do a little data exploration with this by seeing how common different values are. Play around with these pandas methods:
 
@@ -2972,7 +2972,7 @@ Do so with 3 different columns in the dataframe
 
 
 ```python
-# Cell for Exercise 6
+# Cell for Exercise 5
 ```
 
 #### 5.1.4.4 Group-by Operation
@@ -3883,7 +3883,7 @@ df.groupby(['duration_group', 'country'])['metascore'].describe()
 
 
 
-##### 🏋️ Exercise 7: Group-by
+##### 🏋️ Exercise 6: Group-by
 
 <ol>
 <li>use <code>pd.cut</code> to perform a grouping of one or more of the dataframe columns
@@ -3894,5 +3894,5 @@ df.groupby(['duration_group', 'country'])['metascore'].describe()
 
 
 ```python
-# Cell for excercise 7
+# Cell for excercise 6
 ```
