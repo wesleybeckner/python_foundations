@@ -1625,23 +1625,11 @@ interact(my_plot)
 
 
 
-
-# References
-
-* [`numpy.triu`](https://numpy.org/doc/stable/reference/generated/numpy.triu.html) 
-* [`numpy.ones_like`](https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html)
-* [`ipywidgets`](https://ipywidgets.readthedocs.io/en/latest/)
-* [StatQuest: Correlation](https://youtu.be/xZ_z8KWkhXE?t=822)
-* [StatQuest: Covariance](https://www.youtube.com/watch?v=qtaqvPAeEJY&ab_channel=StatQuestwithJoshStarmer)
-
-
-# Enrichment Topics
-
-## 6.4 Other Plot Types
+## 6.5 🍒 Enrichment: Other Plot Types (Continued)
 
 
 
-### 6.4.1 Bar Plots (Advanced)
+### 6.5.1 Bar Plots (Advanced)
 
 Similar to how we created bar plots with pandas, we can use matplotlib to make barplots 
 ```
@@ -1675,7 +1663,7 @@ plt.ylabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_93_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_91_1.png)
     
 
 
@@ -1711,7 +1699,7 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_95_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_93_1.png)
     
 
 
@@ -1759,11 +1747,11 @@ plt.xlabel('HP')
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_97_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_95_1.png)
     
 
 
-### 6.4.2 3D Plots
+### 6.5.2 3D Plots
 
 You can also create 3D plots in matplotlib using `ax.scatter3D`
 
@@ -1795,15 +1783,15 @@ ax.scatter3D(range(10),[i*random.random()*.25 for i in range(10)])
 
 
     
-![png](S6_Matplotlib_files/S6_Matplotlib_99_1.png)
+![png](S6_Matplotlib_files/S6_Matplotlib_97_1.png)
     
 
 
-## 6.5 Visualization with Plotly
+### 6.5.3 Visualization with Plotly
 
 Another great plotting library, that is gaining in popularity (especially in enterprise settings) is plotly. As an added exercise, if you have additional time, explore some of the [plotly examples](https://plotly.com/python/) then recreate the breakout room assignment using plotly instead of matplotlib.
 
-### 6.5.1 Scatter Plot with Size and Color
+#### 6.5.3.1 Scatter Plot with Size and Color
 
 
 ```python
@@ -1899,4 +1887,14 @@ interact(my_plot)
 
     <function __main__.my_plot>
 
+
+
+
+## References
+
+* [`numpy.triu`](https://numpy.org/doc/stable/reference/generated/numpy.triu.html) 
+* [`numpy.ones_like`](https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html)
+* [`ipywidgets`](https://ipywidgets.readthedocs.io/en/latest/)
+* [StatQuest: Correlation](https://youtu.be/xZ_z8KWkhXE?t=822)
+* [StatQuest: Covariance](https://www.youtube.com/watch?v=qtaqvPAeEJY&ab_channel=StatQuestwithJoshStarmer)
 

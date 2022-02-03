@@ -1,5 +1,3 @@
-<a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/exercises/E5_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
 # Python Foundations, Lab 5: Practice with Numpy
 
 **Instructor**: Wesley Beckner
@@ -75,7 +73,7 @@ b = np.array([7,2,10,2,7,4,9,4,9,8])
 
 ## 🧮 L5 Q4
 
-Read the url as a 2D array rather than a 1D array by omitting the `species` field
+Read the url as a 2D array rather than a 1D array by omitting the `species` field (the last column; hint: check parameter `usecols`)
 
 ```
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
@@ -103,7 +101,7 @@ iris_data.shape
 
 ## 🧮 L5 Q5
 
-Now insert np.nan in 20 random positions the 2D `iris_data`
+Now insert np.nan in 20 random positions in the 2D `iris_data` using `random.randint`
 
 
 ```python
@@ -114,6 +112,20 @@ Now insert np.nan in 20 random positions the 2D `iris_data`
 
 Now find the total number and position of missing values in `iris_data`
 
+Note: NumPy designed nan so that nan == nan returns False, but nan != nan returns True.
+
+```
+np.nan == np.nan
+## False
+np.nan != np.nan
+## True
+
+```
+
+> This is because equivalence between missing or invalid values is not well defined. In practice, this behavior prevents silent bugs from creeping into your program.
+
+In order to see which elements of bot are nan, you can use `np.isnan()` function.
+
 
 ```python
 # cell for Q6
@@ -121,7 +133,7 @@ Now find the total number and position of missing values in `iris_data`
 
 ## 🧮 L5 Q7
 
-Filter the rows of iris_2d that has `petallength (3rd column) > 1.5` and `sepallength (1st column) < 5.0`
+Filter the rows of `iris_data` that has `petallength (3rd column) > 1.5` and `sepallength (1st column) < 5.0`
 
 
 ```python
