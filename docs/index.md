@@ -3,7 +3,7 @@ layout: default
 ---
 
 # Python Foundations
-Welcome to Python Foundations, my name is [Wesley](https://wesleybeckner.github.io/). Whether you've landed here by accident or on purpose, Welcome! 
+Welcome to Python Foundations, my name is [Wesley](https://wesleybeckner.github.io/)
 
 Visit the [github repo](https://github.com/wesleybeckner/python_foundations) to access all materials and code for this class 
 
@@ -15,7 +15,7 @@ The recommended schedule for this material:
 
 <center>
 
-| Day (~2.5hrs)| Modules                                                                                                               |
+| Day (2.5 hrs/day)| Modules                                                                                                               |
 |:---:|-----------------------------------------------------------------------------------------------------------------------|
 | 1   | Session 1: Python and Jupyter <br> Exercise 1: Practice with Python and Jupyter                                       |
 | 2   | Session 2: Data Structures and Flow Control <br> Exercise 2: Practice with Flow Control                               |
