@@ -89,7 +89,7 @@ Let's practice class declaration now, in the context of Pokeballs
 <br>
 
 <p align=center>
-<img src="https://cdn2.bulbagarden.net/upload/thumb/2/23/Pok%C3%A9_Balls_GL.png/250px-Pok%C3%A9_Balls_GL.png"></img>
+<img src="https://raw.githubusercontent.com/wesleybeckner/python_foundations/main/assets/pokeballs.png"></img>
 </p>
 
 We have a lot of different kinds of Poke balls! This is going to help us understand some of the powerful mechanisms inherit in python classes! 
