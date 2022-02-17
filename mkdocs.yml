@@ -15,12 +15,12 @@ nav:
       - Pandas: S5_Pandas.md
       - Matplotlib: S6_Matplotlib.md
       - NumPy: S7_Numpy.md
-  - Exercises:
-      - Practice with Python and Jupyter Notebooks: exercises/E1_Python_and_Jupyter.md
-      - Practice with Flow Control: exercises/E2_Flow_Control.md
-      - Practice with Functions: exercises/E3_Functions.md
-      - Practice with Pandas: exercises/E4_Pandas.md
-      - Practice with NumPy: exercises/E5_Numpy.md
+  - Labs:
+      - Practice with Python and Jupyter Notebooks: labs/L1_Python_and_Jupyter.md
+      - Practice with Flow Control: labs/L2_Flow_Control.md
+      - Practice with Functions: labs/L3_Functions.md
+      - Practice with Pandas: labs/L4_Pandas.md
+      - Practice with NumPy: labs/L5_Numpy.md
   - Project: 
       - Building TicTacToe in Python: project/P1_Building_TicTacToe_in_Python.md
       - Object Oriented Programming in Python: project/P2_OOP_in_TicTacToe.md

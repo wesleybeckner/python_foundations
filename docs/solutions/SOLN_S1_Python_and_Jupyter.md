@@ -819,7 +819,9 @@ plt.show()
 ```
 
 
+    
 ![png](SOLN_S1_Python_and_Jupyter_files/SOLN_S1_Python_and_Jupyter_113_0.png)
+    
 
 
 We certainly recognize that much of the code you have just seen may be unfamiliar to you, but these are all simply previews of what we'll be covering for this week! Here are some examples of how Jupyter Notebooks can be utilized:

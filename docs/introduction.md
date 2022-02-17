@@ -15,12 +15,12 @@ The breakdown for this course is as follows:
     * S5: Pandas
     * S6: Matplotlib
     * S7: NumPy
-*	Exercises
-    * E1: Practice with Python and Jupyter Notebooks
-    * E2: Practice with Flow Control
-    * E3: Practice with Functions
-    * E4: Practice with Pandas
-    * E5: Practice with NumPy
+*	Labs
+    * L1: Practice with Python and Jupyter Notebooks
+    * L2: Practice with Flow Control
+    * L3: Practice with Functions
+    * L4: Practice with Pandas
+    * L5: Practice with NumPy
 *	Project
     * P1: Building TicTacToe in Python
     * P2: Object Oriented Programming in TicTacToe
