@@ -13,7 +13,7 @@
     
     
       
-        <title>SOLN E3 Functions - Python Foundations</title>
+        <title>SOLN L2 Flow Control - Python Foundations</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-foundations-lab-3-practice-with-functions" class="md-skip">
+        <a href="#python-foundations-lab-2-practice-with-flow-control" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SOLN E3 Functions
+              SOLN L2 Flow Control
             
           </span>
         </div>
@@ -618,11 +618,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#l3-q1-basic-function-writing" class="md-nav__link">
-    ✍🏽 L3 Q1: Basic Function Writing
+  <a href="#l2-q1-print-and-for-loops" class="md-nav__link">
+    ➿ L2 Q1: Print and For Loops
   </a>
   
-    <nav class="md-nav" aria-label="✍🏽 L3 Q1: Basic Function Writing">
+    <nav class="md-nav" aria-label="➿ L2 Q1: Print and For Loops">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -652,29 +652,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#l3-q2-finding-unique-elements" class="md-nav__link">
-    ❄️ L3 Q2: Finding Unique Elements
+  <a href="#l2-q2-conditionals-and-for-loops" class="md-nav__link">
+    🔙 L2 Q2: Conditionals and For Loops
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#l3-q3-computing-factorials" class="md-nav__link">
-    ❗ L3 Q3: Computing Factorials
+  <a href="#l2-q3-practice-with-collections" class="md-nav__link">
+    🧺 L2 Q3: Practice with Collections
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#practicing-our-hand-at-functions-by-implementing-recursion" class="md-nav__link">
-    Practicing our hand at functions by implementing recursion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l3-q4-recursive-functions" class="md-nav__link">
-    🛺 L3 Q4: Recursive Functions
+  <a href="#l2-q4-the-fizzbuzz-task" class="md-nav__link">
+    🐝 L2 Q4 The FizzBuzz task
   </a>
   
 </li>
@@ -692,164 +685,102 @@
               
                 
 
-<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E3_Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-lab-3-practice-with-functions">Python Foundations, Lab 3: Practice with Functions<a class="headerlink" href="#python-foundations-lab-3-practice-with-functions" title="Permanent link">&para;</a></h1>
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E2_Flow_Control.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="python-foundations-lab-2-practice-with-flow-control">Python Foundations, Lab 2: Practice with Flow Control<a class="headerlink" href="#python-foundations-lab-2-practice-with-flow-control" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
-<p>In this lab we will continue to practice writing functions</p>
+<p>In this lab we will continue to practice flow control.</p>
 <p><br></p>
 <hr />
-<h2 id="l3-q1-basic-function-writing">✍🏽 L3 Q1: Basic Function Writing<a class="headerlink" href="#l3-q1-basic-function-writing" title="Permanent link">&para;</a></h2>
+<h2 id="l2-q1-print-and-for-loops">➿ L2 Q1: Print and For Loops<a class="headerlink" href="#l2-q1-print-and-for-loops" title="Permanent link">&para;</a></h2>
+<p>Create a Pyramid Using for loops</p>
 <h3 id="part-a">Part A<a class="headerlink" href="#part-a" title="Permanent link">&para;</a></h3>
-<p>Write a Python function to find the maximum of three numbers</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 A</span>
-<span class="k">def</span> <span class="nf">max_num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span>
-  <span class="k">elif</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">b</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">c</span>
-
-<span class="n">max_num</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>* 
+* * 
+* * * 
+* * * * 
+* * * * * 
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>100
+<div class="codehilite"><pre><span></span><code><span class="c1"># Code Cell for L2 Q1 A</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>* 
+* * 
+* * * 
+* * * * 
+* * * * *
 </code></pre></div>
 
 <h3 id="part-b">Part B<a class="headerlink" href="#part-b" title="Permanent link">&para;</a></h3>
-<p>Write a Python function to multiply all the numbers in a list</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample List : (8, 2, 3, -1, 7)
-Expected Output : -336
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * * 
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 B</span>
-<span class="k">def</span> <span class="nf">mult_list</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="n">val</span> <span class="o">*=</span> <span class="n">i</span>
-  <span class="k">return</span> <span class="n">val</span>
-
-<span class="n">mult_list</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Code Cell for L2 Q1 B</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>-336
+<div class="codehilite"><pre><span></span><code>          * 
+        * * 
+      * * * 
+    * * * * 
+  * * * * *
 </code></pre></div>
 
 <h3 id="part-c">Part C<a class="headerlink" href="#part-c" title="Permanent link">&para;</a></h3>
-<p>Write a Python program to reverse a string</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample String : &quot;1234abcd&quot;
-Expected Output : &quot;dcba4321&quot;
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code>         * 
+        * * 
+       * * * 
+      * * * * 
+     * * * * * 
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 C</span>
-<span class="k">def</span> <span class="nf">rev_string</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">rev_string</span><span class="p">(</span><span class="s2">&quot;1234abcd&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Code Cell for L2 Q1 C</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>&#39;dcba4321&#39;
+<div class="codehilite"><pre><span></span><code>     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * *
 </code></pre></div>
 
-<h2 id="l3-q2-finding-unique-elements">❄️ L3 Q2: Finding Unique Elements<a class="headerlink" href="#l3-q2-finding-unique-elements" title="Permanent link">&para;</a></h2>
-<p>Write a Python function that takes a list and returns a new list with unique elements of the first list</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample List : [1,2,3,3,3,3,4,5]
-Unique List : [1, 2, 3, 4, 5]
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q2</span>
-<span class="k">def</span> <span class="nf">find_unique</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-      <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">b</span>
-
-<span class="n">find_unique</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>[1, 2, 3, 4, 5]
-</code></pre></div>
-
-<h2 id="l3-q3-computing-factorials">❗ L3 Q3: Computing Factorials<a class="headerlink" href="#l3-q3-computing-factorials" title="Permanent link">&para;</a></h2>
-<p>Write a Python function to calculate the factorial of a number (any non-negative integer). The function accepts the number as an argument</p>
-<p>Example: </p>
-<div class="codehilite"><pre><span></span><code>Input: 4                                                       
-Output: 24
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q3</span>
-<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">*=</span> <span class="n">i</span>
-  <span class="k">return</span> <span class="n">b</span>
-
-<span class="n">fact</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>24
-</code></pre></div>
-
-<h2 id="practicing-our-hand-at-functions-by-implementing-recursion">Practicing our hand at functions by implementing recursion<a class="headerlink" href="#practicing-our-hand-at-functions-by-implementing-recursion" title="Permanent link">&para;</a></h2>
-<p>We will practice the last exercise we did yesterday, this time using what we've learned about functions to write a <em>recursive function</em></p>
-<p>A recursive function is a function that makes a call to itself. This is particularly well suited for tasks that would otherwise require a lot of memory to hold intermediary solutions (when they are combined with a strategy called <em>memoization</em> which we will shy away from here). The Fibonnaci sequence is a good place for such a problem. So is a factorial calculation. See here below</p>
-<p>
-<script type="math/tex; mode=display">3! = 3 * 2 * 1</script>
-</p>
-<p>
-<script type="math/tex; mode=display">4! = 4 * 3 * 2 * 1</script>
-</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This is a recursive function</span>
-<span class="sd">    to find the factorial of an integer&quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># one trick to note that is common with recursive functions</span>
-        <span class="c1"># is that the incrementation in the key variable is done</span>
-        <span class="c1"># in the call to the function itself (vs a for loop)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>6
-</code></pre></div>
-
-<p>In the above, we have on lines 5 and 6, what we call the <em>baseline</em> solution. It is the answer to the simplest subset of the problem. When we build a recursive tree, it is useful to think of the smallest problem, and work upwards, providing this <em>leaf</em> solution to nodes further up on the recursive tree. Like so:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 1! = 1</span>
-<span class="c1"># 2! = 2 * 1!</span>
-<span class="c1"># 3! = 3 * 2!</span>
-<span class="c1"># N! = N * (N-1)! ... like ... like so</span>
-</code></pre></div>
-
-<p>This problem is intended to be a fun way to wrap our heads around functions... don't stress. If you want to see a further breakdown of the factorial problem, check out <a href="https://www.programiz.com/python-programming/recursion">this link</a></p>
-<h2 id="l3-q4-recursive-functions">🛺 L3 Q4: Recursive Functions<a class="headerlink" href="#l3-q4-recursive-functions" title="Permanent link">&para;</a></h2>
-<p>Using recursion, complete the Fibonacci sequence up to the 10<sup>th</sup> place using recursion and any or all of the following:
-* <code>if</code> <code>elif</code> <code>else</code>
-* <code>range</code></p>
+<h2 id="l2-q2-conditionals-and-for-loops">🔙 L2 Q2: Conditionals and For Loops<a class="headerlink" href="#l2-q2-conditionals-and-for-loops" title="Permanent link">&para;</a></h2>
+<p>Complete the Fibonacci sequence up to the 10<sup>th</sup> place using any or all of the following:</p>
+<ul>
+<li><code>for</code> </li>
+<li><code>if</code> <code>elif</code> <code>else</code></li>
+<li><code>append</code></li>
+<li><code>range</code></li>
+</ul>
 <p>The Fibonacci sequence with indices:</p>
-<div class="codehilite"><pre><span></span><code>0. 0
-1. 1
-2. 1
-3. 2
-4. 3
-5. 5
-6. 8
-7. etc..
-</code></pre></div>
-
+<ol>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>5</li>
+<li>8</li>
+<li>etc..</li>
+</ol>
 <p>Example input:</p>
 <p><code>index = 9</code></p>
 <p>Example output:</p>
@@ -857,19 +788,325 @@ Output: 24
 Value: 34
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q4</span>
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">return</span> <span class="mi">0</span>
-  <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">return</span> <span class="mi">1</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">fib</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>34
+<div class="codehilite"><pre><span></span><code>[1]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L2 Q2</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>Index: 9
+Value: 34
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+</code></pre></div>
+
+<h2 id="l2-q3-practice-with-collections">🧺 L2 Q3: Practice with Collections<a class="headerlink" href="#l2-q3-practice-with-collections" title="Permanent link">&para;</a></h2>
+<p>concatenate the following dictionaries to create a new one. If you need to, refer to documentation for python dictionaries!</p>
+<p>Input:</p>
+<div class="codehilite"><pre><span></span><code>dict1={1:10, 2:20}
+dict2={3:30, 4:40}
+dict3={5:50, 6:60}
+</code></pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code>new_dict={1:10, 2:20, 3:30, 4:40, 5:50, 6:60}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L2 Q3</span>
+<span class="n">dict1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">dict2</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">40</span><span class="p">}</span>
+<span class="n">dict3</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">60</span><span class="p">}</span>
+
+<span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">new_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+<span class="n">new_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
+<span class="n">new_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">new_dict</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+</code></pre></div>
+
+<h2 id="l2-q4-the-fizzbuzz-task">🐝 L2 Q4 The FizzBuzz task<a class="headerlink" href="#l2-q4-the-fizzbuzz-task" title="Permanent link">&para;</a></h2>
+<p>Let's do this!  <strong>FizzBuzz</strong> is our first task for this session.  <strong>FizzBuzz</strong> is a common toy programming problem that is often used in software engineering job interviews.  Today, we are not after the <em>most compact</em>, <em>most clever</em>, or even the <em>most beautiful</em> solution.  Your goal is to solve the problem using <strong><em>for</em></strong> and <strong><em>if</em></strong> as your primary tools.  You will likely also want to use the <code>%</code> operator.  Before we describe <strong>FizzBuzz</strong>, let's talk about the <strong>moduluo</strong> operation.</p>
+<p>If you recall from session 1, you may have experimented with the <strong><em><a href="https://en.wikipedia.org/wiki/Modulo_operation">modulus</a></em></strong> or <code>%</code> operator.  When used between two <strong><em>integer</em></strong> values, it returns the integer remainder of division. Let's start with a simple example of <code>5</code> <strong>modulo</strong> <code>3</code>:</p>
+<div class="codehilite"><pre><span></span><code>5 % 3
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>2
+</code></pre></div>
+
+<p>Let's do another example... What is the result of the following:</p>
+<div class="codehilite"><pre><span></span><code>10 % 5
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="mi">10</span> <span class="o">%</span> <span class="mi">5</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>0
+</code></pre></div>
+
+<p>Now, on to <strong>FizzBuzz</strong>.  No it isn't the high-test caffeine cola you might need right now.  Instead, it is a challenge to output certain text as the code iterates over elements in a list.  Here is the formal definition of the problem that we will use today.</p>
+<p><em>"Write a program that prints the numbers from 1 to 100. But for multiples of three print <code>Fizz</code> instead of the number and for the multiples of five print <code>Buzz</code>. For numbers which are multiples of both three and five print <code>FizzBuzz</code>."</em></p>
+<p>To get started, you will need a <code>for</code> loop and it will probably use a <code>range</code> list.  Inside of the for loop, you will likely have at least two <code>if</code> statements that use the <code>%</code> operator followed by a <code>print</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L2 Q4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FizzBuzz&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fizz&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Buzz&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+FizzBuzz
+31
+32
+Fizz
+34
+Buzz
+Fizz
+37
+38
+Fizz
+Buzz
+41
+Fizz
+43
+44
+FizzBuzz
+46
+47
+Fizz
+49
+Buzz
+Fizz
+52
+53
+Fizz
+Buzz
+56
+Fizz
+58
+59
+FizzBuzz
+61
+62
+Fizz
+64
+Buzz
+Fizz
+67
+68
+Fizz
+Buzz
+71
+Fizz
+73
+74
+FizzBuzz
+76
+77
+Fizz
+79
+Buzz
+Fizz
+82
+83
+Fizz
+Buzz
+86
+Fizz
+88
+89
+FizzBuzz
+91
+92
+Fizz
+94
+Buzz
+Fizz
+97
+98
+Fizz
+Buzz
+</code></pre></div>
+
+<p>For advanced folks, a hint here is that you might be able to avoid some <code>if</code> statements by using the <code>end</code> parameter to the <code>print</code> function.  Notice how these two cell blocks output differently.</p>
+<div class="codehilite"><pre><span></span><code>print(&quot;Fizz&quot;)
+print(&quot;Buzz&quot;)
+</code></pre></div>
+
+<p>In another cell:</p>
+<div class="codehilite"><pre><span></span><code>print(&quot;Fizz&quot;, end=&quot;&quot;)
+print(&quot;Buzz&quot;, end=&quot;&quot;)
+print()
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Buzz&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+FizzBuzz
+31
+32
+Fizz
+34
+Buzz
+Fizz
+37
+38
+Fizz
+Buzz
+41
+Fizz
+43
+44
+FizzBuzz
+46
+47
+Fizz
+49
+Buzz
+Fizz
+52
+53
+Fizz
+Buzz
+56
+Fizz
+58
+59
+FizzBuzz
+61
+62
+Fizz
+64
+Buzz
+Fizz
+67
+68
+Fizz
+Buzz
+71
+Fizz
+73
+74
+FizzBuzz
+76
+77
+Fizz
+79
+Buzz
+Fizz
+82
+83
+Fizz
+Buzz
+86
+Fizz
+88
+89
+FizzBuzz
+91
+92
+Fizz
+94
+Buzz
+Fizz
+97
+98
+Fizz
+Buzz
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
               

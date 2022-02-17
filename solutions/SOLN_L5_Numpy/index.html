@@ -13,7 +13,7 @@
     
     
       
-        <title>Python Foundations, Lab 5: Practice with Numpy - Python Foundations</title>
+        <title>SOLN L5 Numpy - Python Foundations</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Foundations, Lab 5: Practice with Numpy
+              SOLN L5 Numpy
             
           </span>
         </div>
@@ -707,6 +707,7 @@
               
                 
 
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E5_Numpy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <h1 id="python-foundations-lab-5-practice-with-numpy">Python Foundations, Lab 5: Practice with Numpy<a class="headerlink" href="#python-foundations-lab-5-practice-with-numpy" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
@@ -729,6 +730,21 @@ b = np.array([7,2,10,2,7,4,9,4,9,8])
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q1</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">]))</span>
+
+<span class="c1"># or</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{2, 4}
+
+
+
+
+
+array([2, 4])
 </code></pre></div>
 
 <h2 id="l5-q2">🧮 L5 Q2<a class="headerlink" href="#l5-q2" title="Permanent link">&para;</a></h2>
@@ -740,6 +756,14 @@ b = np.array([7,2,10,2,7,4,9,4,9,8])
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q2</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[1],
+       [3],
+       [5],
+       [7]])
 </code></pre></div>
 
 <h2 id="l5-q3">🧮 L5 Q3<a class="headerlink" href="#l5-q3" title="Permanent link">&para;</a></h2>
@@ -749,33 +773,33 @@ b = np.array([7,2,10,2,7,4,9,4,9,8])
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+<span class="n">b</span><span class="p">[(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([7, 7, 9, 9, 8])
 </code></pre></div>
 
 <h2 id="l5-q4">🧮 L5 Q4<a class="headerlink" href="#l5-q4" title="Permanent link">&para;</a></h2>
-<p>Read the url as a 2D array rather than a 1D array by omitting the <code>species</code> field (the last column; hint: check parameter <code>usecols</code>)</p>
+<p>Read the url as a 2D array rather than a 1D array by omitting the <code>species</code> field</p>
 <div class="codehilite"><pre><span></span><code>url = &#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;
 iris_1d = np.genfromtxt(url, delimiter=&#39;,&#39;, dtype=None)
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q4</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
-<span class="n">iris_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">iris_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">iris_data</span><span class="o">.</span><span class="n">shape</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:3: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-  This is separate from the ipykernel package so we can avoid doing imports until
-
-
-
-
-
-(150,)
+<div class="codehilite"><pre><span></span><code>(150, 4)
 </code></pre></div>
 
 <h2 id="l5-q5">🧮 L5 Q5<a class="headerlink" href="#l5-q5" title="Permanent link">&para;</a></h2>
-<p>Now insert np.nan in 20 random positions in the 2D <code>iris_data</code> using <code>random.randint</code></p>
+<p>Now insert np.nan in 20 random positions the 2D <code>iris_data</code></p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q5</span>
+<span class="n">iris_data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iris_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+          <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iris_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 </code></pre></div>
 
 <h2 id="l5-q6">🧮 L5 Q6<a class="headerlink" href="#l5-q6" title="Permanent link">&para;</a></h2>
@@ -792,38 +816,142 @@ np.nan != np.nan
 </blockquote>
 <p>In order to see which elements of bot are nan, you can use <code>np.isnan()</code> function.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iris_data</span><span class="p">))</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iris_data</span><span class="p">)))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>20
+[[  7   1]
+ [ 39   3]
+ [ 40   0]
+ [ 56   0]
+ [ 56   1]
+ [ 57   3]
+ [ 59   2]
+ [ 63   3]
+ [ 65   3]
+ [ 69   3]
+ [ 75   0]
+ [ 86   0]
+ [ 87   1]
+ [ 95   1]
+ [ 97   2]
+ [113   3]
+ [118   0]
+ [124   0]
+ [127   1]
+ [129   2]]
 </code></pre></div>
 
 <h2 id="l5-q7">🧮 L5 Q7<a class="headerlink" href="#l5-q7" title="Permanent link">&para;</a></h2>
-<p>Filter the rows of <code>iris_data</code> that has <code>petallength (3rd column) &gt; 1.5</code> and <code>sepallength (1st column) &lt; 5.0</code></p>
+<p>Filter the rows of iris_2d that has <code>petallength (3rd column) &gt; 1.5</code> and <code>sepallength (1st column) &lt; 5.0</code></p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q7</span>
+<span class="n">iris_data</span><span class="p">[(</span><span class="n">iris_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">iris_data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[4.8, 3.4, 1.6, 0.2],
+       [4.8, 3.4, 1.9, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [4.9, 2.4, 3.3, nan],
+       [4.9, 2.5, 4.5, 1.7]])
 </code></pre></div>
 
 <h2 id="l5-q8">🧮 L5 Q8<a class="headerlink" href="#l5-q8" title="Permanent link">&para;</a></h2>
 <p>Select the rows of <code>iris_data</code> that do not have any <code>nan</code> values</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q8</span>
+<span class="n">iris_data</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iris_data</span><span class="p">)))]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([[[5.1, 3.5, 1.4, 0.2],
+        [5.1, 3.5, 1.4, 0.2]],
+
+       [[5.1, 3.5, 1.4, 0.2],
+        [4.9, 3. , 1.4, 0.2]],
+
+       [[5.1, 3.5, 1.4, 0.2],
+        [4.7, 3.2, 1.3, 0.2]],
+
+       ...,
+
+       [[5.9, 3. , 5.1, 1.8],
+        [4.9, 3. , 1.4, 0.2]],
+
+       [[5.9, 3. , 5.1, 1.8],
+        [4.7, 3.2, 1.3, 0.2]],
+
+       [[5.9, 3. , 5.1, 1.8],
+        [4.6, 3.1, 1.5, 0.2]]])
 </code></pre></div>
 
 <h2 id="l5-q9">🧮 L5 Q9<a class="headerlink" href="#l5-q9" title="Permanent link">&para;</a></h2>
 <p>compute the mean, median, and standard deviation of <code>sepallength</code></p>
-<p>url = '<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data">https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data</a>'
-iris = np.genfromtxt(url, delimiter=',', dtype='object')
-sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])</p>
+<div class="codehilite"><pre><span></span><code>url = &#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;
+iris = np.genfromtxt(url, delimiter=&#39;,&#39;, dtype=&#39;object&#39;)
+sepallength = np.genfromtxt(url, delimiter=&#39;,&#39;, dtype=&#39;float&#39;, usecols=[0])
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q9</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
 <span class="n">sepallength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sepallength</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">sepallength</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">sepallength</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>5.843333333333334
+5.8
+0.8253012917851409
 </code></pre></div>
 
 <h2 id="l5-q10">🧮 L5 Q10<a class="headerlink" href="#l5-q10" title="Permanent link">&para;</a></h2>
 <p>normalize sepallength so that all values occur between 0 and 1</p>
 <p>(<em>hint: (observation - min / (max - min))</em>)</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q10</span>
+<span class="p">(</span><span class="n">sepallength</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">sepallength</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">sepallength</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">sepallength</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>array([0.22222222, 0.16666667, 0.11111111, 0.08333333, 0.19444444,
+       0.30555556, 0.08333333, 0.19444444, 0.02777778, 0.16666667,
+       0.30555556, 0.13888889, 0.13888889, 0.        , 0.41666667,
+       0.38888889, 0.30555556, 0.22222222, 0.38888889, 0.22222222,
+       0.30555556, 0.22222222, 0.08333333, 0.22222222, 0.13888889,
+       0.19444444, 0.19444444, 0.25      , 0.25      , 0.11111111,
+       0.13888889, 0.30555556, 0.25      , 0.33333333, 0.16666667,
+       0.19444444, 0.33333333, 0.16666667, 0.02777778, 0.22222222,
+       0.19444444, 0.05555556, 0.02777778, 0.19444444, 0.22222222,
+       0.13888889, 0.22222222, 0.08333333, 0.27777778, 0.19444444,
+       0.75      , 0.58333333, 0.72222222, 0.33333333, 0.61111111,
+       0.38888889, 0.55555556, 0.16666667, 0.63888889, 0.25      ,
+       0.19444444, 0.44444444, 0.47222222, 0.5       , 0.36111111,
+       0.66666667, 0.36111111, 0.41666667, 0.52777778, 0.36111111,
+       0.44444444, 0.5       , 0.55555556, 0.5       , 0.58333333,
+       0.63888889, 0.69444444, 0.66666667, 0.47222222, 0.38888889,
+       0.33333333, 0.33333333, 0.41666667, 0.47222222, 0.30555556,
+       0.47222222, 0.66666667, 0.55555556, 0.36111111, 0.33333333,
+       0.33333333, 0.5       , 0.41666667, 0.19444444, 0.36111111,
+       0.38888889, 0.38888889, 0.52777778, 0.22222222, 0.38888889,
+       0.55555556, 0.41666667, 0.77777778, 0.55555556, 0.61111111,
+       0.91666667, 0.16666667, 0.83333333, 0.66666667, 0.80555556,
+       0.61111111, 0.58333333, 0.69444444, 0.38888889, 0.41666667,
+       0.58333333, 0.61111111, 0.94444444, 0.94444444, 0.47222222,
+       0.72222222, 0.36111111, 0.94444444, 0.55555556, 0.66666667,
+       0.80555556, 0.52777778, 0.5       , 0.58333333, 0.80555556,
+       0.86111111, 1.        , 0.58333333, 0.55555556, 0.5       ,
+       0.94444444, 0.55555556, 0.58333333, 0.47222222, 0.72222222,
+       0.66666667, 0.72222222, 0.41666667, 0.69444444, 0.66666667,
+       0.66666667, 0.55555556, 0.61111111, 0.52777778, 0.44444444])
 </code></pre></div>
 
 <h2 id="l5-q11">🧮 L5 Q11<a class="headerlink" href="#l5-q11" title="Permanent link">&para;</a></h2>
 <p>calculate the 95 percentile score of <code>sepallength</code> using <code>np.percentile</code></p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># cell for Q11</span>
+<span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">sepallength</span><span class="p">,</span> <span class="mi">95</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>7.254999999999998
 </code></pre></div>
 
 <p>Complete additional exercises if you wish at <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">machinelearningplus</a></p>

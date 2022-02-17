@@ -13,7 +13,7 @@
     
     
       
-        <title>SOLN E3 Functions - Python Foundations</title>
+        <title>SOLN L1 Python and Jupyter - Python Foundations</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-foundations-lab-3-practice-with-functions" class="md-skip">
+        <a href="#python-foundations-lab-1-practice-with-python-and-jupyter-notebooks" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SOLN E3 Functions
+              SOLN L1 Python and Jupyter
             
           </span>
         </div>
@@ -618,63 +618,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#l3-q1-basic-function-writing" class="md-nav__link">
-    ✍🏽 L3 Q1: Basic Function Writing
-  </a>
-  
-    <nav class="md-nav" aria-label="✍🏽 L3 Q1: Basic Function Writing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-a" class="md-nav__link">
-    Part A
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-b" class="md-nav__link">
-    Part B
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-c" class="md-nav__link">
-    Part C
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l3-q2-finding-unique-elements" class="md-nav__link">
-    ❄️ L3 Q2: Finding Unique Elements
+  <a href="#l1-q1-python-variables" class="md-nav__link">
+    🔠 L1 Q1 Python variables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#l3-q3-computing-factorials" class="md-nav__link">
-    ❗ L3 Q3: Computing Factorials
+  <a href="#l1-q2-practice-with-math-in-python" class="md-nav__link">
+    🧮 L1 Q2 Practice with math in Python
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#practicing-our-hand-at-functions-by-implementing-recursion" class="md-nav__link">
-    Practicing our hand at functions by implementing recursion
+  <a href="#l1-q3-practice-writing-helpful-comments" class="md-nav__link">
+    🤐 L1 Q3 Practice writing helpful comments
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#l3-q4-recursive-functions" class="md-nav__link">
-    🛺 L3 Q4: Recursive Functions
+  <a href="#tm-l1-q4-more-markdown" class="md-nav__link">
+    ™️ L1 Q4 More Markdown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l1-q5-get-familiar-with-the-python-community" class="md-nav__link">
+    🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l1-q6-advanced-understanding-the-switch-from-python-2-to-3" class="md-nav__link">
+    🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l1-q7-advanced-create-your-own-google-colab-notebook" class="md-nav__link">
+    📓 L1 Q7 Advanced - Create your own Google Colab notebook!
   </a>
   
 </li>
@@ -692,185 +679,205 @@
               
                 
 
-<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E3_Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="python-foundations-lab-3-practice-with-functions">Python Foundations, Lab 3: Practice with Functions<a class="headerlink" href="#python-foundations-lab-3-practice-with-functions" title="Permanent link">&para;</a></h1>
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/solutions/SOLN_E1_Python_and_Jupyter.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="python-foundations-lab-1-practice-with-python-and-jupyter-notebooks">Python Foundations, Lab 1: Practice with Python and Jupyter Notebooks<a class="headerlink" href="#python-foundations-lab-1-practice-with-python-and-jupyter-notebooks" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 <br></p>
 <hr />
 <p><br></p>
-<p>In this lab we will continue to practice writing functions</p>
+<p>This first lab assignment will be a review of what we discussed today.</p>
 <p><br></p>
 <hr />
-<h2 id="l3-q1-basic-function-writing">✍🏽 L3 Q1: Basic Function Writing<a class="headerlink" href="#l3-q1-basic-function-writing" title="Permanent link">&para;</a></h2>
-<h3 id="part-a">Part A<a class="headerlink" href="#part-a" title="Permanent link">&para;</a></h3>
-<p>Write a Python function to find the maximum of three numbers</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 A</span>
-<span class="k">def</span> <span class="nf">max_num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span>
-  <span class="k">elif</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">b</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">c</span>
+<h4 id="l1-q1-python-variables">🔠 L1 Q1 Python variables<a class="headerlink" href="#l1-q1-python-variables" title="Permanent link">&para;</a></h4>
+<p>In the empty code cell below, create the following four variables:
+- A string variable named <code>favorite_movie</code> that represents your favorite movie
+- A string variable named <code>national_chain</code> that represents your favorite fast food restaurant
+- An integer variable named <code>streaming_video_hours</code> that represents the whole number of hours you watch any streaming video service (ex. Netflix, Hulu, Disney+) per week.
+- A float variable named <code>headphone_cost</code> that represents the most money you had to pay, in dollar-cent amount (0.00), for headphones. Do not include a '$' symbol.</p>
+<p>Then after they are declared, print each one using the print() function explained in section 1.1.2.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">favorite_movie</span> <span class="o">=</span> <span class="s2">&quot;The King&quot;</span>
+<span class="n">national_chain</span> <span class="o">=</span> <span class="s2">&quot;Chipotle&quot;</span>
+<span class="n">streaming_video_hours</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">headphone_cost</span> <span class="o">=</span> <span class="mi">120</span>
 
-<span class="n">max_num</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">favorite_movie</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">national_chain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">streaming_video_hours</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">headphone_cost</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>100
+<div class="codehilite"><pre><span></span><code>The King
+Chipotle
+14
+120
 </code></pre></div>
 
-<h3 id="part-b">Part B<a class="headerlink" href="#part-b" title="Permanent link">&para;</a></h3>
-<p>Write a Python function to multiply all the numbers in a list</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample List : (8, 2, 3, -1, 7)
-Expected Output : -336
+<p>To check if each variable is the correct data type, use the type() function explained from section 1.1.3, in the empty code cell below. For example, <code>type(favorite_movie)</code> should return the output <code>&lt;class 'str'&gt;</code>, which indicates the string type.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">favorite_movie</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">national_chain</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">streaming_video_hours</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">headphone_cost</span><span class="p">))</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 B</span>
-<span class="k">def</span> <span class="nf">mult_list</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="n">val</span> <span class="o">*=</span> <span class="n">i</span>
-  <span class="k">return</span> <span class="n">val</span>
-
-<span class="n">mult_list</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code>&lt;class &#39;str&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>-336
+<h4 id="l1-q2-practice-with-math-in-python">🧮 L1 Q2 Practice with math in Python<a class="headerlink" href="#l1-q2-practice-with-math-in-python" title="Permanent link">&para;</a></h4>
+<p>Let's start with a few basic operators that was covered in section 1.1.4. Write the expression for multiplying 23 by 31, so that running this cell will correctly output the product of these two numbers.</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">23</span><span class="o">*</span><span class="mi">31</span>
 </code></pre></div>
 
-<h3 id="part-c">Part C<a class="headerlink" href="#part-c" title="Permanent link">&para;</a></h3>
-<p>Write a Python program to reverse a string</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample String : &quot;1234abcd&quot;
-Expected Output : &quot;dcba4321&quot;
+<div class="codehilite"><pre><span></span><code>713
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q1 C</span>
-<span class="k">def</span> <span class="nf">rev_string</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">rev_string</span><span class="p">(</span><span class="s2">&quot;1234abcd&quot;</span><span class="p">)</span>
+<p>Consider the operation written in Python: <code>27 / 3 + 6</code>. Write the same syntax in the empty cell below, and modify it to include parentheses in the right location so that the result/answer of the math is 3.0, rather than 15.0.</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">27</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>&#39;dcba4321&#39;
+<div class="codehilite"><pre><span></span><code>3.0
 </code></pre></div>
 
-<h2 id="l3-q2-finding-unique-elements">❄️ L3 Q2: Finding Unique Elements<a class="headerlink" href="#l3-q2-finding-unique-elements" title="Permanent link">&para;</a></h2>
-<p>Write a Python function that takes a list and returns a new list with unique elements of the first list</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>Sample List : [1,2,3,3,3,3,4,5]
-Unique List : [1, 2, 3, 4, 5]
+<p>Let's learn more operators beyond the ones we covered earlier. Write the line of code <code>3 ** 2</code> in the cell below. From the output, what do you think the double asterisks (<code>**</code>) operator represents in Python?</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># represent to the power of (number after double asterisk)</span>
+<span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q2</span>
-<span class="k">def</span> <span class="nf">find_unique</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-      <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">b</span>
-
-<span class="n">find_unique</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code>9
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>[1, 2, 3, 4, 5]
+<p>Write the line of code <code>28 / 3</code> below. Then just below the line in the same cell, write the code <code>28 // 3</code>. Compare the differences in output between the two. Can you decipher what <code>//</code> means in Python?</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">28</span><span class="o">/</span><span class="mi">3</span>
 </code></pre></div>
 
-<h2 id="l3-q3-computing-factorials">❗ L3 Q3: Computing Factorials<a class="headerlink" href="#l3-q3-computing-factorials" title="Permanent link">&para;</a></h2>
-<p>Write a Python function to calculate the factorial of a number (any non-negative integer). The function accepts the number as an argument</p>
-<p>Example: </p>
-<div class="codehilite"><pre><span></span><code>Input: 4                                                       
-Output: 24
+<div class="codehilite"><pre><span></span><code>9.333333333333334
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q3</span>
-<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">*=</span> <span class="n">i</span>
-  <span class="k">return</span> <span class="n">b</span>
-
-<span class="n">fact</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># // operator returns math.floor(division), aka the floor division</span>
+<span class="mi">28</span><span class="o">//</span><span class="mi">3</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>24
+<div class="codehilite"><pre><span></span><code>9
 </code></pre></div>
 
-<h2 id="practicing-our-hand-at-functions-by-implementing-recursion">Practicing our hand at functions by implementing recursion<a class="headerlink" href="#practicing-our-hand-at-functions-by-implementing-recursion" title="Permanent link">&para;</a></h2>
-<p>We will practice the last exercise we did yesterday, this time using what we've learned about functions to write a <em>recursive function</em></p>
-<p>A recursive function is a function that makes a call to itself. This is particularly well suited for tasks that would otherwise require a lot of memory to hold intermediary solutions (when they are combined with a strategy called <em>memoization</em> which we will shy away from here). The Fibonnaci sequence is a good place for such a problem. So is a factorial calculation. See here below</p>
+<p>Now for more complicated mathematical operations! </p>
+<p>Try to write the Python equivalent of the following:</p>
 <p>
-<script type="math/tex; mode=display">3! = 3 * 2 * 1</script>
+<script type="math/tex; mode=display">\frac{14 + 28}{28 - 14}</script>
 </p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="mi">14</span> <span class="o">+</span> <span class="mi">28</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">28</span> <span class="o">-</span> <span class="mi">14</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>3.0
+</code></pre></div>
+
+<p>Now try this one:</p>
 <p>
-<script type="math/tex; mode=display">4! = 4 * 3 * 2 * 1</script>
+<script type="math/tex; mode=display">\frac{15 + 984}{-(217+4)}</script>
 </p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This is a recursive function</span>
-<span class="sd">    to find the factorial of an integer&quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># one trick to note that is common with recursive functions</span>
-        <span class="c1"># is that the incrementation in the key variable is done</span>
-        <span class="c1"># in the call to the function itself (vs a for loop)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">984</span><span class="p">)</span> <span class="o">/</span> <span class="o">-</span><span class="p">(</span><span class="mi">217</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>-4.520361990950226
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>6
+<p>And finally, write the Python equivalent for this:</p>
+<p>
+<script type="math/tex; mode=display">\frac{-(3655 * 44)}{(8 * 16)^3}</script>
+</p>
+<div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="p">(</span><span class="mi">365</span><span class="o">*</span><span class="mi">44</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">16</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
 </code></pre></div>
 
-<p>In the above, we have on lines 5 and 6, what we call the <em>baseline</em> solution. It is the answer to the simplest subset of the problem. When we build a recursive tree, it is useful to think of the smallest problem, and work upwards, providing this <em>leaf</em> solution to nodes further up on the recursive tree. Like so:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 1! = 1</span>
-<span class="c1"># 2! = 2 * 1!</span>
-<span class="c1"># 3! = 3 * 2!</span>
-<span class="c1"># N! = N * (N-1)! ... like ... like so</span>
+<div class="codehilite"><pre><span></span><code>-0.0076580047607421875
 </code></pre></div>
 
-<p>This problem is intended to be a fun way to wrap our heads around functions... don't stress. If you want to see a further breakdown of the factorial problem, check out <a href="https://www.programiz.com/python-programming/recursion">this link</a></p>
-<h2 id="l3-q4-recursive-functions">🛺 L3 Q4: Recursive Functions<a class="headerlink" href="#l3-q4-recursive-functions" title="Permanent link">&para;</a></h2>
-<p>Using recursion, complete the Fibonacci sequence up to the 10<sup>th</sup> place using recursion and any or all of the following:
-* <code>if</code> <code>elif</code> <code>else</code>
-* <code>range</code></p>
-<p>The Fibonacci sequence with indices:</p>
-<div class="codehilite"><pre><span></span><code>0. 0
-1. 1
-2. 1
-3. 2
-4. 3
-5. 5
-6. 8
-7. etc..
+<h4 id="l1-q3-practice-writing-helpful-comments">🤐 L1 Q3 Practice writing helpful comments<a class="headerlink" href="#l1-q3-practice-writing-helpful-comments" title="Permanent link">&para;</a></h4>
+<p>Consider the following code below. No need to decipher and understand every piece but just be aware of the output when you run the code cell. Based on the output, modify the code cell by adding a code comment at the top of the cell briefly explaining what the code does. This comment can be as many lines as you'd like, and may or may not include direct references to the example print statements below.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">mystery_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Reverses the order of the input</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  x: str</span>
+<span class="sd">    a string of characters</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  y: str</span>
+<span class="sd">    reverse order of x</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;UniversityOfWashington&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;AvocadoToast&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystery_function</span><span class="p">(</span><span class="s2">&quot;RacecaR&quot;</span><span class="p">))</span>
 </code></pre></div>
 
-<p>Example input:</p>
-<p><code>index = 9</code></p>
-<p>Example output:</p>
-<div class="codehilite"><pre><span></span><code>Index: 9
-Value: 34
+<div class="codehilite"><pre><span></span><code>n o t g n i h s a W f O y t i s r e v i n U
+t s a o T o d a c o v A
+R a c e c a R
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for L3 Q4</span>
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">return</span> <span class="mi">0</span>
-  <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">return</span> <span class="mi">1</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">fib</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>34
-</code></pre></div>
+<h4 id="tm-l1-q4-more-markdown">™️ L1 Q4 More Markdown<a class="headerlink" href="#tm-l1-q4-more-markdown" title="Permanent link">&para;</a></h4>
+<p>Consider the vision statement of the Global Innovation Exchange: "Our mission is to build the talent that leverages emerging technologies in new and impactful ways". Type that same statement in a new text cell below, only add a <code>_</code> (underscore) at the beginning and end. What ends up happening to the format of the text as a result?</p>
+<p><em>Our mission is to build the talent that leverages emerging technologies in new and impactful ways</em></p>
+<p>In a new text cell, list all of the potential data science projects you might work on, with each one on its own separate line. Then add a <code>-</code> at the beginning of each line; include a single space between the hyphen and the first letter in your project name! Based on the output, what can you decipher that this <code>-</code> changes in the formatting?</p>
+<p>Projects:</p>
+<ul>
+<li>smart bedside lamp</li>
+<li>workout reminder app</li>
+<li>personal finances dashboard</li>
+</ul>
+<h4 id="l1-q5-get-familiar-with-the-python-community">🧑‍🤝‍🧑 L1 Q5 Get familiar with the Python community<a class="headerlink" href="#l1-q5-get-familiar-with-the-python-community" title="Permanent link">&para;</a></h4>
+<p>Python has strong support from a community of avid developers and computer scientists. The Python Software Foundation (PSF) tries to maintain input and activity through their own website, <a href="https://">python.org</a>. Please explore their community section - <a href="https://www.python.org/community/">https://www.python.org/community/</a> - and answer the following questions in a new text cell just below this one:</p>
+<ul>
+<li>What is the name of the mailing list that the PSF manages for those who have questions about Python code?</li>
+<li>In your own words, what is the goal of their Community Survey?</li>
+<li>According to their most recent annual report, which continent provides the highest proportion of grants to the PSF?</li>
+<li>
+<p>Name at least three ways that the PSF recommends you can get involved with the community.</p>
+</li>
+<li>
+<p>comp.lang.python</p>
+</li>
+<li>Some variation of: "to be open about how they can improve transparency, provide the community with opportunities to interact, and be responsive to raised suggestions"</li>
+<li>Australia</li>
+<li>3 ways to get invovled:<ol>
+<li>Read the FAQ</li>
+<li>Attend a conference</li>
+<li>Read the diversity statement</li>
+</ol>
+</li>
+</ul>
+<h4 id="l1-q6-advanced-understanding-the-switch-from-python-2-to-3">🗞️ L1 Q6 Advanced - Understanding the switch from Python 2 to 3<a class="headerlink" href="#l1-q6-advanced-understanding-the-switch-from-python-2-to-3" title="Permanent link">&para;</a></h4>
+<p>Inside of the following link, <a href="https://www.python.org/doc/">https://www.python.org/doc/</a>, is an article about the Python Software Foundation's decision to end support for Python version 2, and move with support for version 3. From the article, answer the following questions in a new text cell just below this one:</p>
+<ul>
+<li>What official date was Python 2 no longer supported?</li>
+<li>What is the version number of the last supported Python 2?</li>
+<li>
+<p>In your own words, describe why the Python Software Foundation made the decision to stop supporting Python 2.</p>
+</li>
+<li>
+<p>January 1<sup>st</sup> 2020</p>
+</li>
+<li>2.7</li>
+<li>It's costly, man! And it adds to project complexity to be cross-compatible</li>
+</ul>
+<h4 id="l1-q7-advanced-create-your-own-google-colab-notebook">📓 L1 Q7 Advanced - Create your own Google Colab notebook!<a class="headerlink" href="#l1-q7-advanced-create-your-own-google-colab-notebook" title="Permanent link">&para;</a></h4>
+<p>Create your own separate Google Colab notebook with the following rules and content:</p>
+<ul>
+<li>The file name of your notebook should be in the format <strong><em>lastname_python_foundations_notebook.ipynb</em></strong>.</li>
+<li>Include a header (of any size) that lists your first name and last name, followed by "<strong>Python Foundations</strong>".</li>
+<li>Create a short paragraph bio of yourself in a text cell.</li>
+<li>Include/embed an image of the Python logo, which can be found here: <a href="https://www.python.org/community/logos/">https://www.python.org/community/logos/</a>.</li>
+<li>Create a code cell with just the line of code: <code>import this</code></li>
+<li>Take your favorite line from that output and past it in a text cell below, both bolding and italicizing it</li>
+</ul>
 
               
             </article>
