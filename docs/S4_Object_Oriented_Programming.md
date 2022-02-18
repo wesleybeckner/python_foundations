@@ -126,7 +126,7 @@ pokeball1 = Pokeball()
 pokeball1 = Pokeball("Pikachu", "Master ball")
 ```
 
-### 🙋 Question 1
+### 🙋 Question 1: What are the parameters of `Pokeball`?
 
 Note that, were we to run the following cell, we would get an error. Why would we get an error?
 
@@ -181,7 +181,16 @@ print(pokeball.contains)
     picachu
 
 
-### 🏋️ Exercise 1
+###  🙋 Question 2: How does `catch_rate` work?
+How often will `success` print to the output when we run the cell below?
+
+
+```python
+if random.random() < 0.5: # here I've replaced catch_rate with the hardcoded value 0.5
+    print('success')
+```
+
+### 🏋️ Exercise 1: Write a Method
 
 Create a release method for the class Pokeball:
 
@@ -337,7 +346,7 @@ masterball.catch("charmander")
     charmander captured!
 
 
-### 🏋️ Exercise 2
+### 🏋️ Exercise 2: Create a Class
 
 Write another class object called `GreatBall` that inherits the properties of `Pokeball`, has a `catch_rate` of 0.6, and `type_name` of Greatball
 
@@ -350,7 +359,7 @@ Write another class object called `GreatBall` that inherits the properties of `P
 
 As our application becomes more complex, we may have to rethink what methods and attributes are appropriate for our objects to deliver the overall functionality we desire. This is where form and function meet.
 
-### 🏋️ Exercise 3
+### 🏋️ Exercise 3: Interacting with Objects
 
 Write another class object called `Pokemon`. It has the [attributes](https://bulbapedia.bulbagarden.net/wiki/Type):
 
@@ -368,7 +377,7 @@ Now create a class object called `Fastball`, it inherits the properties of `Poke
 # Cell for Exercise 3
 ```
 
-### 🏋️ Exercise 4
+### 🏋️ Exercise 4: Writing Tests
 
 In the above task, did you have to write any code to test that your new classes worked?! We will talk about that more at a later time, but for now, wrap any testing that you did into a new function called `test_classes` in the code cell below
 
