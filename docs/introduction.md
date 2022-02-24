@@ -1,4 +1,5 @@
-# Introduction
+# Python Foundations
+
 Build your foundation in Python, the common language of data science. An intuitive, deep understanding of this language will allow you to build custom tools in data science and machine learning that can be easily deployed, scaled, and repurposed.
 
 The breakdown for this course is as follows:
