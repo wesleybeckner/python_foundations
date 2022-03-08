@@ -36,6 +36,7 @@ nav:
       - Debugging TicTacToe Agents: project/P4_Debugging_TicTacToe_Agents.md
   - Extras:
       - Spotify API: extras/Spotify_API.md
+      - Additional Exercises: extras/X2_Additional_Exercises.md
 markdown_extensions:
   - admonition
   - codehilite:
