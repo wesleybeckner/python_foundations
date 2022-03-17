@@ -25,8 +25,6 @@ A set of additional exercises in Python!
 my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]
 ```
 
-hooshang@amazon.com
-
 
 ```python
 my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]

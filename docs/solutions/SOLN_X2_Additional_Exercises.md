@@ -1,3 +1,5 @@
+<a href="https://colab.research.google.com/github/wesleybeckner/general_applications_of_neural_networks/blob/main/notebooks/solutions/SOLN_X2_Additional_Exercises.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 # Python Foundations <br> X2: Additional Python Exercises
 
 **Instructor**: Wesley Beckner
@@ -22,8 +24,6 @@ A set of additional exercises in Python!
 ```
 my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]
 ```
-
-hooshang@amazon.com
 
 
 ```python
