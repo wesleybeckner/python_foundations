@@ -13,6 +13,8 @@
 
 In this session we will cover computer coding in Python as well as navigating the Jupyter Notebook environment (what we are reading from at this moment). 
 
+[video](https://www.youtube.com/watch?v=MijWgslThVo)
+
 <br>
 
 ---
@@ -325,6 +327,8 @@ print("what about second breakfast???")
     what about second breakfast???
 
 
+> [what about second breakfast](../assets/second_breakfast.PNG)
+
 A float in Python is considered any number with decimal point values. This is the main difference between a float and integer. For floats, some examples below show an arbitrary number of decimal places after the decimal point, and ones where a value less than 1 (such as one representing a percentage value) don't require specifying a `0` left of the decimal point.
 
 
@@ -502,7 +506,7 @@ While that was straightforward, let's modify it to wrap parentheses around `3 + 
 
 
 
-#### 1.1.4.2 **Enrichment**: The difference between 5, 5.0, and "5"
+#### 🍒 **Enrichment**: The difference between 5, 5.0, and "5"
 
 While more complex computations are possible beyond the basics that we just covered, you should first understand how mixing variable types can lead to errors and unexpected output. Consider two variables, `num1 = 5` and `num2 = 5.0`. From what you learned in section 1.1.3, `num1` represents an integer, while `num2` represents a float.
 
