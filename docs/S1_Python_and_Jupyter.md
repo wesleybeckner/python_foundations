@@ -13,7 +13,7 @@
 
 In this session we will cover computer coding in Python as well as navigating the Jupyter Notebook environment (what we are reading from at this moment). 
 
-[video](https://www.youtube.com/watch?v=MijWgslThVo)
+[Video (48 min)](https://www.youtube.com/watch?v=MijWgslThVo)
 
 <br>
 
@@ -319,6 +319,8 @@ type(numbers_of_breakfasts_for_hobbits)
 
 
 
+[what about second breakfast](https://raw.githubusercontent.com/wesleybeckner/python_foundations/main/assets/second_breakfast.PNG)
+
 
 ```python
 print("what about second breakfast???")
@@ -326,8 +328,6 @@ print("what about second breakfast???")
 
     what about second breakfast???
 
-
-> [what about second breakfast](../assets/second_breakfast.PNG)
 
 A float in Python is considered any number with decimal point values. This is the main difference between a float and integer. For floats, some examples below show an arbitrary number of decimal places after the decimal point, and ones where a value less than 1 (such as one representing a percentage value) don't require specifying a `0` left of the decimal point.
 
@@ -742,7 +742,7 @@ plt.show()
 
 
     
-![png](S1_Python_and_Jupyter_files/S1_Python_and_Jupyter_109_0.png)
+![png](S1_Python_and_Jupyter_files/S1_Python_and_Jupyter_110_0.png)
     
 
 
