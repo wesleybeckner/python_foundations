@@ -5,6 +5,8 @@
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
+
+**Recording**: [Video (48 min)](https://www.youtube.com/watch?v=MijWgslThVo)
 <br>
 
 ---
@@ -12,8 +14,6 @@
 <br>
 
 In this session we will cover computer coding in Python as well as navigating the Jupyter Notebook environment (what we are reading from at this moment). 
-
-[Video (48 min)](https://www.youtube.com/watch?v=MijWgslThVo)
 
 <br>
 

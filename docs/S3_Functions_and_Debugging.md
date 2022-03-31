@@ -6,6 +6,8 @@
 
 **Contact**: wesleybeckner@gmail.com
 
+**Recording**: [Video (32 min)](https://www.youtube.com/watch?v=yZEzP7L4KXQ)
+
 <i>special thanks to [David Beck](https://www.cheme.washington.edu/facultyfinder/david-beck) for their contribution to this material</i>
 <br>
 
@@ -13,7 +15,7 @@
 
 <br>
 
-Today, we will discuss **_functions_** in more depth.  We've seen them previously and used them, for example the `.append()` **_function_** for lists, or the even more general `print()` function.  Here, we'll dig into how you can make your own functions to encapsulate code that you will reuse over and over.  
+Today, we will discuss **_functions_** in more depth.  We've seen them previously and used them, for example the `.append()` **_function_** for lists, or the even more general `print()` function.  Here, we'll dig into how you can make your own functions to encapsulate code that you will reuse over and over. 
 
 <br>
 

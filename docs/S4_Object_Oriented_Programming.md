@@ -4,6 +4,9 @@
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
+
+**Recording**: [Video (41 min)](https://www.youtube.com/watch?v=lsf-Q40B2Q8)
+
 <br>
 
 ---
