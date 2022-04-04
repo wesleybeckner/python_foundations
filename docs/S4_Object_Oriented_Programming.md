@@ -5,7 +5,7 @@
 
 **Contact**: wesleybeckner@gmail.com
 
-**Recording**: [Video (41 min)](https://www.youtube.com/watch?v=lsf-Q40B2Q8)
+**Recording**: [Video (41 min)](https://www.youtube.com/watch?v=lsf-Q40B2Q8&list=PLVaoNV0aHKna2L3wY1DVuB9rVvhSG3ity&index=4)
 
 <br>
 

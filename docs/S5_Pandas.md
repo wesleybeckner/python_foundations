@@ -6,7 +6,7 @@
 
 **Contact**: wesleybeckner@gmail.com
 
-**Recording**: [Video (56 min)](https://www.youtube.com/watch?v=NPkhGiL7_zE)
+**Recording**: [Video (56 min)](https://www.youtube.com/watch?v=NPkhGiL7_zE&list=PLVaoNV0aHKna2L3wY1DVuB9rVvhSG3ity&index=5)
 
 <i>special thanks to [David Beck](https://www.cheme.washington.edu/facultyfinder/david-beck) for their contribution to this material</i>
 <br>
@@ -15,7 +15,7 @@
 
 <br>
 
-Today, we will jump into the **Pandas** package.  Packages are collections of related functions.  These are the things we `import`. Pandas is a two dimensional data structure like a spreadsheet in Excel. In fact, we will be importing our first dataset and viewing it, with Pandas!
+Today, we will jump into the **Pandas** package.  Packages are collections of related functions.  These are the things we `import`. Pandas operates around a two dimensional data structure called a DataFrame, much like a spreadsheet in Excel. We will be importing our first dataset and viewing it, with Pandas!
 
 <br>
 

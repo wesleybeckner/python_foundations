@@ -8,6 +8,8 @@
 
 For this workbook we're going to use the [`spotipy`](https://spotipy.readthedocs.io/en/2.19.0/#) library to access the Spotify Web API!
 
+[Solved Notebook](https://wesleybeckner.github.io/python_foundations/solutions/SOLN_X1_Spotify_API/)
+
 <br>
 
 ---

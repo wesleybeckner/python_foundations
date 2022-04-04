@@ -6,7 +6,7 @@
 
 **Contact**: wesleybeckner@gmail.com
 
-**Recording**: [Video (32 min)](https://www.youtube.com/watch?v=yZEzP7L4KXQ)
+**Recording**: [Video (32 min)](https://www.youtube.com/watch?v=yZEzP7L4KXQ&list=PLVaoNV0aHKna2L3wY1DVuB9rVvhSG3ity&index=3)
 
 <i>special thanks to [David Beck](https://www.cheme.washington.edu/facultyfinder/david-beck) for their contribution to this material</i>
 <br>
