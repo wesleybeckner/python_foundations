@@ -1269,13 +1269,13 @@ This section serves as a reference for many other resources to learn more about 
 
 | Type                 | Operators                                              |
 |----------------------|--------------------------------------------------------|
-| Arithmetic operators | +, -, *, /, %, //, **                                  |
-| Comparison operators | >, <, ==, !=, >=, <=                                   |
-| Logical operators    | and, or, not                                           |
-| Bitwise operators    | &, \|, ~, ^, >>, <<                                    |
-| Assignment operators | =, +=, -=, *=, /=, %=, //=, **=, &=, \|=, ^=, >>=, <<= |
-| Identity operators   | is, is not                                             |
-| Membership operators | in, not in                                             |
+| Arithmetic operators | `+, -, *, /, %, //, **`                                  |
+| Comparison operators | `>, <, ==, !=, >=, <=`                                   |
+| Logical operators    | `and, or, not          `                                 |
+| Bitwise operators    | `&, \|, ~, ^, >>, << `                                   |
+| Assignment operators | `=, +=, -=, *=, /=, %=, //=, **=, &=, \|=, ^=, >>=, <<= `|
+| Identity operators   | `is, is not`                                             |
+| Membership operators | `in, not in`                                             |
 
 ### Arithmetic Operators in Python
 
