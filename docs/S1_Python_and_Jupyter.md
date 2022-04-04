@@ -1265,6 +1265,18 @@ This section serves as a reference for many other resources to learn more about 
 - [*Python Data Science Handbook* by Jake VanderPlas (Free!)](https://jakevdp.github.io/PythonDataScienceHandbook/?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks)
 - [Simple Math in Python Notebook Excercises from UW DIRECT](https://github.com/UWDIRECT/UWDIRECT.github.io/blob/master/Wi20_content/SEDS/L2.Simple_Breakout.ipynb)
 
+### Operators in Python
+
+| Type                 | Operators                                              |
+|----------------------|--------------------------------------------------------|
+| Arithmetic operators | +, -, *, /, %, //, **                                  |
+| Comparison operators | >, <, ==, !=, >=, <=                                   |
+| Logical operators    | and, or, not                                           |
+| Bitwise operators    | &, \|, ~, ^, >>, <<                                    |
+| Assignment operators | =, +=, -=, *=, /=, %=, //=, **=, &=, \|=, ^=, >>=, <<= |
+| Identity operators   | is, is not                                             |
+| Membership operators | in, not in                                             |
+
 ### Arithmetic Operators in Python
 
 Below is a reference table for many of the arithmetic operators you can use with Python, some of which we've already went over:
