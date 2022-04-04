@@ -2,6 +2,10 @@
 
 # Python Foundations <br>X1: The Spotify API
 
+**Instructor**: Wesley Beckner
+
+**Contact**: wesleybeckner@gmail.com
+
 ---
 
 <br>
