@@ -1,7 +1,7 @@
 site_name: Python Foundations
 theme:
-  features:
-      - navigation.top
+  # features:
+  #     - navigation.top
   name: "material"
   palette:
     - media: "(prefers-color-scheme: light)" 
@@ -69,9 +69,9 @@ extra:
     property: "UA-114664473-1"
 extra_css: [extra.css, styles.css]
 copyright: Copyright &copy; 2022 Wesley Beckner
-repo_url: https://github.com/wesleybeckner/python_foundations
-repo_name: python_foundations
-edit_uri: ""
+# repo_url: https://github.com/wesleybeckner/python_foundations
+# repo_name: python_foundations
+# edit_uri: ""
 
 # for generating styles.css for codehilite see:
 # https://python-markdown.github.io/extensions/code_hilite/
