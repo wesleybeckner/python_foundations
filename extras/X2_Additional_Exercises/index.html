@@ -748,31 +748,18 @@
 <h1 id="python-foundations-x2-additional-python-exercises">Python Foundations <br> X2: Additional Python Exercises<a class="headerlink" href="#python-foundations-x2-additional-python-exercises" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p><strong>Solved</strong>: <a href="https://wesleybeckner.github.io/python_foundations/solutions/SOLN_X2_Additional_Exercises/">Notebook</a></p>
 <hr />
 <p><br></p>
 <p>A set of additional exercises in Python!</p>
 <p><br></p>
 <hr />
 <h2 id="q1-write-a-function-that-orders-a-list">✍️ Q1: Write a function that orders a list<a class="headerlink" href="#q1-write-a-function-that-orders-a-list" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]
+<div class="codehilite"><pre><span></span><code><span class="c1"># list to order</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ranked</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_list</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="n">ranked</span><span class="p">:</span>
-                <span class="n">new_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-                <span class="k">break</span>
-            <span class="k">elif</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-                <span class="k">break</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">new_list</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q1</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>[30, 10, 5, 5, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -799,47 +786,11 @@
 <span class="s1">female fighter, CHANI, is among them; along with a&#39;</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">punc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">]</span>
-<span class="n">words</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
-    <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">punc</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">break</span>
-    <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="n">words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q2</span>
 </code></pre></div>
 
 <h2 id="q3-use-the-function-you-created-in-q1-to-rank-order-the-appearance-of-words-in-the-corpus">🔀 Q3: Use the function you created in Q1 to rank order the appearance of words in the corpus<a class="headerlink" href="#q3-use-the-function-you-created-in-q1-to-rank-order-the-appearance-of-words-in-the-corpus" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">order_dict</span><span class="p">(</span><span class="n">word_dict</span><span class="p">):</span>
-    <span class="n">my_list</span> <span class="o">=</span> <span class="n">word_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-    <span class="n">my_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">word_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-    <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">new_words</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-            <span class="n">new_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_words</span><span class="p">[</span><span class="n">idx1</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">ranked</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_list</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="n">ranked</span><span class="p">:</span>
-                    <span class="n">new_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx2</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-                    <span class="n">new_words</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx2</span><span class="p">,</span> <span class="n">my_words</span><span class="p">[</span><span class="n">idx1</span><span class="p">])</span>
-                    <span class="k">break</span>
-                <span class="k">elif</span> <span class="n">idx2</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-                    <span class="n">new_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_words</span><span class="p">[</span><span class="n">idx1</span><span class="p">])</span>
-                    <span class="k">break</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">new_words</span><span class="p">,</span> <span class="n">new_list</span><span class="p">))</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">sort</span> <span class="o">=</span> <span class="n">order_dict</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">sort</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Cell for Q3</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>{&#39;a&#39;: 9,
