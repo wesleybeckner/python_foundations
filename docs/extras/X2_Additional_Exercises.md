@@ -6,6 +6,8 @@
 
 **Contact**: wesleybeckner@gmail.com
 
+**Solved**: [Notebook](https://wesleybeckner.github.io/python_foundations/solutions/SOLN_X2_Additional_Exercises/)
+
 ---
 
 <br>
@@ -21,30 +23,15 @@ A set of additional exercises in Python!
 
 ## ✍️ Q1: Write a function that orders a list
 
-```
+
+```python
+# list to order
 my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]
 ```
 
 
 ```python
-my_list = [1, 1, 1, 1, 2, 5, 10, 30, 2, 1, 4, 5, 1, 1, 1]
-new_list = []
-for item in my_list:
-    if len(new_list) == 0:
-        new_list.append(item)
-    else:
-        for idx, ranked in enumerate(new_list):
-            if item > ranked:
-                new_list.insert(idx, item)
-                break
-            elif idx == len(new_list)-1:
-                new_list.append(item)
-                break
-```
-
-
-```python
-new_list
+# Cell for Q1
 ```
 
 
@@ -80,54 +67,14 @@ female fighter, CHANI, is among them; along with a'
 
 
 ```python
-punc = [".", ",", "-", ";", ":"]
-words = {}
-for word in corpus.split(" "):
-    word = word.lower()
-    for p in punc:
-        if len(word.split(p)) == 2:
-            word = word.split(p)[0]
-            break
-    if word not in words:
-        words[word] = 1
-    else:
-        words[word] += 1
+# Cell for Q2
 ```
 
 ## 🔀 Q3: Use the function you created in Q1 to rank order the appearance of words in the corpus
 
 
 ```python
-def order_dict(word_dict):
-    my_list = word_dict.values()
-    my_words = list(word_dict.keys())
-    new_list = []
-    new_words = []
-    for idx1, item in enumerate(my_list):
-        if len(new_list) == 0:
-            new_list.append(item)
-            new_words.append(my_words[idx1])
-        else:
-            for idx2, ranked in enumerate(new_list):
-                if item > ranked:
-                    new_list.insert(idx2, item)
-                    new_words.insert(idx2, my_words[idx1])
-                    break
-                elif idx2 == len(new_list) - 1:
-                    new_list.append(item)
-                    new_words.append(my_words[idx1])
-                    break
-    return dict(zip(new_words, new_list))
-```
-
-
-```python
-sort = order_dict(words)
-```
-
-
-```python
-sort
+# Cell for Q3
 ```
 
 
