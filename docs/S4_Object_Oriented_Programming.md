@@ -369,7 +369,7 @@ Write another class object called `Pokemon`. It has the [attributes](https://bul
 * name
 * weight
 * speed
-* type
+* element
 
 Now create a class object called `Fastball`, it inherits the properties of `Pokeball` but has a new condition on `catch` method: if pokemon.speed > 100 then there is 100% chance of catch success.
 

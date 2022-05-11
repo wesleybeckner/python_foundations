@@ -30,7 +30,8 @@ nav:
       - Practice with Flow Control: labs/L2_Flow_Control.md
       - Practice with Functions: labs/L3_Functions.md
       - Practice with Pandas: labs/L4_Pandas.md
-      - Practice with NumPy: labs/L5_Numpy.md
+      - Practice Data Visualization: labs/L5_Visualization.md
+      - Practice with NumPy: labs/L6_Numpy.md
   - Project: 
       - Building TicTacToe in Python: project/P1_Building_TicTacToe_in_Python.md
       - Object Oriented Programming in Python: project/P2_OOP_in_TicTacToe.md
