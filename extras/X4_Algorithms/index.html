@@ -1,0 +1,1180 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>X4 Algorithms - Python Foundations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+      <link rel="stylesheet" href="../../styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-114664473-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-foundations-x4-algorithms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python Foundations" class="md-header__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Foundations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              X4 Algorithms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python Foundations" class="md-nav__button md-logo" aria-label="Python Foundations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Foundations
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Sessions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sessions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sessions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S1_Python_and_Jupyter/" class="md-nav__link">
+        Introduction to Python and Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S2_Data_Structures_and_Flow/" class="md-nav__link">
+        Data Structures and Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S3_Functions_and_Debugging/" class="md-nav__link">
+        Functions and Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S4_Object_Oriented_Programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S5_Pandas/" class="md-nav__link">
+        Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S6_Matplotlib/" class="md-nav__link">
+        Matplotlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../S7_Numpy/" class="md-nav__link">
+        NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Labs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L1_Python_and_Jupyter/" class="md-nav__link">
+        Practice with Python and Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L2_Flow_Control/" class="md-nav__link">
+        Practice with Flow Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L3_Functions/" class="md-nav__link">
+        Practice with Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L4_Pandas/" class="md-nav__link">
+        Practice with Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L5_Visualization/" class="md-nav__link">
+        Practice Data Visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/L6_Numpy/" class="md-nav__link">
+        Practice with NumPy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P1_Building_TicTacToe_in_Python/" class="md-nav__link">
+        Building TicTacToe in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P2_OOP_in_TicTacToe/" class="md-nav__link">
+        Object Oriented Programming in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P3_Random_TicTacToe_Agents/" class="md-nav__link">
+        Random TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/P4_Debugging_TicTacToe_Agents/" class="md-nav__link">
+        Debugging TicTacToe Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../X1_Spotify_API/" class="md-nav__link">
+        Spotify API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../X2_Additional_Exercises/" class="md-nav__link">
+        Additional Exercises
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#greedy" class="md-nav__link">
+    Greedy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#divide-and-conquer" class="md-nav__link">
+    Divide and Conquer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking" class="md-nav__link">
+    Backtracking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming" class="md-nav__link">
+    Dynamic Programming
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<p><a href="https://colab.research.google.com/github/wesleybeckner/python_foundations/blob/main/notebooks/extras/X4_Algorithms.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="python-foundations-x4-algorithms">Python Foundations <br> X4: Algorithms<a class="headerlink" href="#python-foundations-x4-algorithms" title="Permanent link">&para;</a></h1>
+<p><strong>Instructor</strong>: Wesley Beckner</p>
+<p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<hr />
+<p><br></p>
+<p>This notebook covers common algorithms throughout computer programming</p>
+<p><br></p>
+<hr />
+<h2 id="greedy">Greedy<a class="headerlink" href="#greedy" title="Permanent link">&para;</a></h2>
+<p>You were given a list of jobs with start time and end times. You can only do one job at any time. To complete a job, you have to start it at the start time and work until completion. What is the maximum amount of jobs that can be completed? (Activity Selection)</p>
+<div class="codehilite"><pre><span></span><code><span class="n">data1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">),(</span><span class="mi">12</span><span class="p">,</span><span class="mi">30</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">greedy_get_max</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">jobend</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="n">jobend</span><span class="p">:</span>
+            <span class="n">jobs</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">jobend</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="k">return</span> <span class="n">jobs</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">greedy_get_max</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>4
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">greedy_get_max</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>2
+</code></pre></div>
+
+<p>You have been given n items. The weights and values of these n items are also given. You must fill a knapsack of capacity W
+W
+ in such a way that it contains the maximum value. Items can be added in the knapsack fractionally. If the item’s fraction is added, only that fraction value will be taken in the final value calculation. (Fractional Knapsack)</p>
+<p>Consider these items: [(60,10), (120, 30), (100,20)]. The first item of each tuple is the value of the item. The second item is its weight. We have to fill a knapsack with a capacity of 50.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">60</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">20</span><span class="p">)]</span>
+<span class="n">wtlim</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">greedy_knapsack</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">wtlim</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">totweight</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">totval</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">wt</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">wt</span> <span class="o">+</span> <span class="n">totweight</span> <span class="o">&lt;</span> <span class="n">wtlim</span><span class="p">:</span>
+            <span class="n">totval</span> <span class="o">+=</span> <span class="n">val</span>
+            <span class="n">totweight</span> <span class="o">+=</span> <span class="n">wt</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">frac</span> <span class="o">=</span> <span class="p">(</span><span class="n">wtlim</span> <span class="o">-</span> <span class="n">totweight</span><span class="p">)</span> <span class="o">/</span> <span class="n">wt</span>
+            <span class="n">totval</span> <span class="o">+=</span> <span class="n">frac</span> <span class="o">*</span> <span class="n">val</span>
+            <span class="n">totweight</span> <span class="o">+=</span> <span class="n">frac</span> <span class="o">*</span> <span class="n">wt</span>
+    <span class="k">return</span> <span class="n">totval</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">greedy_knapsack</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">wtlim</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>240.0
+</code></pre></div>
+
+<h2 id="divide-and-conquer">Divide and Conquer<a class="headerlink" href="#divide-and-conquer" title="Permanent link">&para;</a></h2>
+<p>Several other algorithms follow this technique: merge and quick sort, binary search, and matrix multiplication</p>
+<p>We have a list (or array) of sorted numbers, and we must create a function that takes this list and a number. It should return True if the number exists in the list; otherwise, it should return False.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">data</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">13</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">data</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">12</span>
+<span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">13</span>
+<span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>453 ns ± 51.1 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+</code></pre></div>
+
+<p>time complexity: \(O(n)\)</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="n">item</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="n">idx</span><span class="p">],</span> <span class="n">number</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">item</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">data</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">12</span>
+<span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">13</span>
+<span class="n">find_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>1.91 µs ± 309 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</code></pre></div>
+
+<p>time complexity: \(O(logn)\)</p>
+<h2 id="backtracking">Backtracking<a class="headerlink" href="#backtracking" title="Permanent link">&para;</a></h2>
+<p>You have been given N-Queens and a chess dashboard (NxN). You have to place the queens in a way that no queen can attack another. A queen can attack diagonally as well as straight in any direction. If you have four queens, one solution could look like this:</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_</td>
+<td>Q</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+<td>Q</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr>
+<td>_</td>
+<td>_</td>
+<td>Q</td>
+<td>_</td>
+</tr>
+</tbody>
+</table>
+<p>For this solution, we should go row by row, placing a queen. If a solution cannot be found we <em>backtrack</em> to the previous row and move the queen, and proceed again. Let's give it a gander.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># first thing we&#39;re going to do here is play around with</span>
+<span class="c1"># a board representation and a method for looping through</span>
+<span class="c1"># a row</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># build board</span>
+<span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="c1"># initiate current row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Q&#39;</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="k">break</span>
+
+<span class="n">board</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[&#39;Q&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]]
+</code></pre></div>
+
+<p>Now that we have those building blocks, lets add a function that checks for queen on queen conflicts</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">check_conflict</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>       
+    <span class="c1"># check conflict, only need to check above </span>
+    <span class="c1"># because we are building from top down</span>
+    <span class="c1"># to check: left top, right top, top vert</span>
+
+    <span class="c1"># top left</span>
+    <span class="n">irow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">icol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">irow</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">icol</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">irow</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">icol</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c1"># top right</span>
+    <span class="n">irow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">icol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">irow</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">icol</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">irow</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">icol</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># top vert</span>
+    <span class="n">irow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">icol</span> <span class="o">=</span> <span class="n">col</span>
+    <span class="k">while</span> <span class="n">irow</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">irow</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+
+<p>Now that we have our <code>check_conflict</code> function, let's test it!</p>
+<div class="codehilite"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># build board we will go ahead and functionalize as well</span>
+<span class="c1"># since we will be reusing it!</span>
+<span class="k">def</span> <span class="nf">build_board</span><span class="p">(</span><span class="n">Ncol</span><span class="p">,</span> <span class="n">Nrow</span><span class="p">):</span>
+    <span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nrow</span><span class="p">):</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ncol</span><span class="p">):</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">board</span>
+
+<span class="c1"># lets make a board and place a queen</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">build_board</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Q&#39;</span>
+
+<span class="c1"># let&#39;s imagine now that we are on to the next row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">check_conflict</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Q&#39;</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+
+<span class="n">board</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39;Q&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39;X&#39;, &#39;X&#39;, &#39;Q&#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;]]
+</code></pre></div>
+
+<p>Great! Looks like our <code>check_conflict</code> function is working as intended. Now let's package everything into <code>place_queen</code> where we will recursively solve this puzzle.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">place_queen</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">queens</span><span class="p">):</span>
+
+    <span class="c1"># here we search on the row for an open spot that is</span>
+    <span class="c1"># backward (prev row) compatible</span>
+    <span class="n">row_complete</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;X&#39;</span> <span class="ow">and</span> <span class="n">check_conflict</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Q&#39;</span>
+            <span class="n">queens</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">row</span><span class="p">,</span><span class="n">idx</span><span class="p">))</span>
+            <span class="n">row_complete</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+
+    <span class="k">if</span> <span class="n">row_complete</span> <span class="ow">and</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># nice we completed a row!</span>
+        <span class="n">place_queen</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">queens</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">row_complete</span> <span class="ow">and</span> <span class="n">row</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># yay we solved the whole board!</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">board</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># we need to find out how far we must back track</span>
+        <span class="c1"># if the whole row is filled with X or Q, we must</span>
+        <span class="c1"># scrap it!</span>
+        <span class="k">for</span> <span class="n">redo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">board</span><span class="p">[</span><span class="n">redo</span><span class="p">]:</span>
+                <span class="k">break</span>
+            <span class="c1"># and update the queen soln while we are at it</span>
+            <span class="n">queens</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="c1"># the queen on the last OK row is now an X</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">redo</span><span class="p">][</span><span class="n">queens</span><span class="p">[</span><span class="n">redo</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+        <span class="n">queens</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="c1"># and everything below it is swiped</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">redo</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">build_board</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="p">(</span><span class="n">redo</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># and we start forward again</span>
+        <span class="n">place_queen</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">redo</span><span class="p">,</span> <span class="n">queens</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">build_board</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">queens</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">place_queen</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">queens</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[&#39;Q&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39;Q&#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;Q&#39;],
+ [&#39; &#39;, &#39;Q&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;],
+ [&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;Q&#39;, &#39; &#39;]]
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">queens</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[(0, 0), (1, 2), (2, 4), (3, 1), (4, 3)]
+</code></pre></div>
+
+<h2 id="dynamic-programming">Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permanent link">&para;</a></h2>
+<p>Given two sequences, find the length of the largest common subsequence. A sub-sequence should appear in both sequences in the same order, but they do not need to be continuous.</p>
+<p>Here is an example. Consider two strings:‘ASDF’ and ‘ASFS’. The length of the largest common subsequence is 3 (ASF). See more examples below:</p>
+<p>S1 = ‘ABHISHEK’ and S2=’ANKITA’ =&gt; LCS = 2 (AI)</p>
+<p>S1 = 'association' and S2='connection' =&gt; LCS=6(oction)</p>
+<p><strong>the recursive solution:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">lcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">q</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">s1</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="n">s2</span><span class="p">[</span><span class="n">q</span><span class="p">]:</span>
+        <span class="c1"># if the elements are euqal, we are going to take this solution</span>
+        <span class="c1"># and continue searching for its maximum possible end</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">lcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># where things get interesting.. we now search across two paths</span>
+        <span class="c1"># either chomping off (skipping) elements in s1 or s2</span>
+        <span class="c1"># and sending up in the recursive tree that which is maximum</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">lcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="p">),</span> <span class="n">lcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">S1</span> <span class="o">=</span> <span class="s1">&#39;ASDF&#39;</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="s1">&#39;ASEF&#39;</span>
+<span class="n">lcs</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>3
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">S1</span> <span class="o">=</span> <span class="s1">&#39;ABHISHEK&#39;</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="s1">&#39;ANKITA&#39;</span>
+<span class="n">lcs</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>2
+</code></pre></div>
+
+<p><strong>the dynamic solution:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">lcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)):</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="c1"># if the puppies match, add 1 to the previous</span>
+                <span class="c1"># substring value</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># if they dont match, carry over the max value</span>
+                <span class="c1"># from the previous substrings</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">S1</span> <span class="o">=</span> <span class="s1">&#39;ASDFT&#39;</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="s1">&#39;ASEFJ&#39;</span>
+<span class="n">lcs</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[1, 1, 1, 1, 1],
+ [1, 2, 2, 2, 2],
+ [1, 2, 2, 2, 2],
+ [1, 2, 2, 3, 3],
+ [1, 2, 2, 3, 3]]
+
+
+
+
+
+3
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">S1</span> <span class="o">=</span> <span class="s1">&#39;ABHISHEK&#39;</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="s1">&#39;ANKITA&#39;</span>
+<span class="n">lcs</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[[1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 2, 2, 2],
+ [1, 1, 1, 2, 2, 2],
+ [1, 1, 1, 2, 2, 2],
+ [1, 1, 1, 2, 2, 2],
+ [1, 1, 2, 2, 2, 2]]
+
+
+
+
+
+2
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Wesley Beckner
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

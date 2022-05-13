@@ -13,7 +13,7 @@
     
     
       
-        <title>Practice Data Visualization - Python Foundations</title>
+        <title>SOLN L5 Visualization - Python Foundations</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Practice Data Visualization
+              SOLN L5 Visualization
             
           </span>
         </div>
@@ -377,14 +377,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -407,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L1_Python_and_Jupyter/" class="md-nav__link">
+      <a href="../../labs/L1_Python_and_Jupyter/" class="md-nav__link">
         Practice with Python and Jupyter Notebooks
       </a>
     </li>
@@ -421,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L2_Flow_Control/" class="md-nav__link">
+      <a href="../../labs/L2_Flow_Control/" class="md-nav__link">
         Practice with Flow Control
       </a>
     </li>
@@ -435,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L3_Functions/" class="md-nav__link">
+      <a href="../../labs/L3_Functions/" class="md-nav__link">
         Practice with Functions
       </a>
     </li>
@@ -449,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L4_Pandas/" class="md-nav__link">
+      <a href="../../labs/L4_Pandas/" class="md-nav__link">
         Practice with Pandas
       </a>
     </li>
@@ -461,87 +459,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Practice Data Visualization
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../labs/L5_Visualization/" class="md-nav__link">
         Practice Data Visualization
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q1" class="md-nav__link">
-    📊 L5 Q1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q2" class="md-nav__link">
-    📊 L5 Q2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q3" class="md-nav__link">
-    📊 L5 Q3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q4" class="md-nav__link">
-    📊 L5 Q4
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q5" class="md-nav__link">
-    📊 L5 Q5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l5-q6" class="md-nav__link">
-    📊 L5 Q6
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -553,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L6_Numpy/" class="md-nav__link">
+      <a href="../../labs/L6_Numpy/" class="md-nav__link">
         Practice with NumPy
       </a>
     </li>
@@ -804,7 +726,6 @@
 <h1 id="python-foundations-lab-5-practice-visualization">Python Foundations, Lab 5: Practice Visualization<a class="headerlink" href="#python-foundations-lab-5-practice-visualization" title="Permanent link">&para;</a></h1>
 <p><strong>Instructor</strong>: Wesley Beckner</p>
 <p><strong>Contact</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#119;&#101;&#115;&#108;&#101;&#121;&#98;&#101;&#99;&#107;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a><br></p>
-<p><strong>Solved</strong>: <a href="https://wesleybeckner.github.io/python_foundations/solutions/SOLN_L5_Visualization/">notebook</a></p>
 <hr />
 <p><br></p>
 <p>In this lab we will make some nifty data visualizations!</p>
@@ -822,16 +743,28 @@
 <p>Create a bar plot of the following pokemon with their healthpoints</p>
 <div class="codehilite"><pre><span></span><code><span class="n">pokemon</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charmander&#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Squirtle&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">]</span>
 <span class="n">hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">hp</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>&lt;BarContainer object of 4 artists&gt;
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_4_1.png" /></p>
 <h2 id="l5-q2">📊 L5 Q2<a class="headerlink" href="#l5-q2" title="Permanent link">&para;</a></h2>
 <p>Create the same bar plot with error bars using the provided list <code>variance</code></p>
 <div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">pokemon</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charmander&#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Squirtle&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">]</span>
 <span class="n">hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
 <span class="n">variance</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">.25</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">hp</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">variance</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>&lt;BarContainer object of 4 artists&gt;
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_6_1.png" /></p>
 <h2 id="l5-q3">📊 L5 Q3<a class="headerlink" href="#l5-q3" title="Permanent link">&para;</a></h2>
 <p>You have worker shift performance data. Each <code>shift</code> list contains 10 samples of how many kilograms of product were produced in a shift. Create a boxplot of this worker data. Each shift should be a separate block</p>
 <div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -839,8 +772,33 @@
 <span class="n">shift_two</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
 <span class="n">shift_three</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
 <span class="n">shift_four</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">shift_one</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">shift_two</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">shift_three</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">shift_four</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x7f028b025ca0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f028b025f70&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x7f028afb1280&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f028afb1550&gt;],
+ &#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x7f028b0259d0&gt;],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x7f028afb1820&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x7f028afb1af0&gt;],
+ &#39;means&#39;: []}
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_8_1.png" /></p>
+<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">shift_one</span><span class="p">,</span> <span class="n">shift_two</span><span class="p">,</span> <span class="n">shift_three</span><span class="p">,</span> <span class="n">shift_four</span><span class="p">])</span><span class="o">.</span><span class="n">T</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;shift one&#39;</span><span class="p">,</span> <span class="s1">&#39;shift two&#39;</span><span class="p">,</span> <span class="s1">&#39;shift three&#39;</span><span class="p">,</span> <span class="s1">&#39;shift four&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span> <span class="o">=</span> <span class="s1">&#39;shift&#39;</span><span class="p">,</span> <span class="n">value_name</span> <span class="o">=</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;shift&#39;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_9_0.png" /></p>
 <h2 id="l5-q4">📊 L5 Q4<a class="headerlink" href="#l5-q4" title="Permanent link">&para;</a></h2>
 <p>Create a scatter plot of x vs y</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># we can throttle the error rate</span>
@@ -852,8 +810,14 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">err</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7f0288aed5e0&gt;]
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_11_1.png" /></p>
 <h2 id="l5-q5">📊 L5 Q5<a class="headerlink" href="#l5-q5" title="Permanent link">&para;</a></h2>
 <p>Compute the mean and standard deviation of weights grouped by fruit then display the result as a bar chart with error bars</p>
 <div class="codehilite"><pre><span></span><code><span class="n">fruit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot&#39;</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
@@ -863,9 +827,18 @@
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-[&#39;apple&#39;, &#39;carrot&#39;, &#39;banana&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;banana&#39;, &#39;banana&#39;, &#39;carrot&#39;, &#39;banana&#39;]
+[&#39;carrot&#39;, &#39;carrot&#39;, &#39;banana&#39;, &#39;carrot&#39;, &#39;apple&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;apple&#39;, &#39;banana&#39;]
 </code></pre></div>
 
+<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Fruit&#39;</span><span class="p">:</span> <span class="n">fruit</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">:</span> <span class="n">weights</span><span class="p">})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Fruit&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">])</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">yerr</span><span class="o">=</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>&lt;AxesSubplot:xlabel=&#39;Fruit&#39;&gt;
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_14_1.png" /></p>
 <h2 id="l5-q6">📊 L5 Q6<a class="headerlink" href="#l5-q6" title="Permanent link">&para;</a></h2>
 <p>Make a scatter plot of <code>X_train</code> vs <code>y_train</code>. On the same plot, add a dotted line representation of the linear model estimated from <code>X_train</code> and <code>y_train</code> (you can use <code>X_seq</code> and <code>y_seq</code> to do this)</p>
 <div class="codehilite"><pre><span></span><code><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -881,7 +854,16 @@
 <span class="c1"># create some x data to plot our functions</span>
 <span class="n">X_seq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y_seq</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_seq</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_seq</span><span class="p">,</span> <span class="n">y_seq</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7f02808ec370&gt;]
+</code></pre></div>
+
+<p><img alt="png" src="../SOLN_L5_Visualization_files/SOLN_L5_Visualization_16_1.png" /></p>
 
               
             </article>
@@ -891,41 +873,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../L4_Pandas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Practice with Pandas" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Practice with Pandas
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../L6_Numpy/" class="md-footer__link md-footer__link--next" aria-label="Next: Practice with NumPy" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Practice with NumPy
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
