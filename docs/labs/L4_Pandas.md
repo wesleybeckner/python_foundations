@@ -4,7 +4,10 @@
 
 **Instructor**: Wesley Beckner
 
-**Contact**: wesleybeckner@gmail.com<br>
+**Contact**: wesleybeckner@gmail.com
+
+**Solved**: [notebook](https://wesleybeckner.github.io/python_foundations/solutions/SOLN_L4_Pandas/)
+<br>
 
 ---
 

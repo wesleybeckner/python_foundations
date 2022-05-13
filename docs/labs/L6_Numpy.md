@@ -6,6 +6,8 @@
 
 **Contact**: wesleybeckner@gmail.com
 
+**Solved**: [notebook](https://wesleybeckner.github.io/python_foundations/solutions/SOLN_L6_Numpy/)
+
 <br>
 
 ---

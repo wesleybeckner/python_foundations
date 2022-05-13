@@ -5,6 +5,8 @@
 **Instructor**: Wesley Beckner
 
 **Contact**: wesleybeckner@gmail.com
+
+**Solved**: [notebook](https://wesleybeckner.github.io/python_foundations/solutions/SOLN_L3_Functions/)
 <br>
 
 ---
