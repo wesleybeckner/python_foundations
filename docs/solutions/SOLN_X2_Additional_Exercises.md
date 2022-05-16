@@ -238,3 +238,96 @@ sort
      'with': 1}
 
 
+
+## 🏎️ Q4 Write a function that checks if a string input is a palindrome
+
+the function should operate in place and should ignore capitalization and punctuation
+
+
+```python
+# the following should all return true
+str1 = "racecar"
+str2 = "RacEcar"
+str3 = ".Ra.cecar"
+str4 = ".Ra.cecar...:!."
+```
+
+
+```python
+def check_pal(string, verbose=0):
+    punc = ["!", ".", ",", ":", ";"]
+    idx = 0
+    edx = -1
+    estep = 0
+    while True:
+        if (string[idx] not in punc) and (string[edx] not in punc):
+            if string[idx].lower() != string[edx].lower():
+                return False
+        elif string[idx] in punc:
+            if verbose:
+                print(string[idx])
+            idx += 1
+            continue
+        elif string[edx] in punc:
+            if verbose:
+                print(string[edx])
+            edx -= 1
+            continue
+        if verbose:
+            print(string[idx].lower(), string[edx].lower())
+        idx += 1
+        edx -= 1
+        if idx == len(string)-1 or edx == -len(string):
+            break
+    return True
+check_pal(str4)
+```
+
+
+
+
+    True
+
+
+
+## 🧮 Q5: Write a function that returns true if any contiguous numbers in a list sum to the value of K
+
+
+
+```python
+arr1, k1 = [1, 3, 1, 4], 8 # returns True
+arr2, k2 = [1, 3, 1, 4], 7 # returns False
+arr3, k3 = [1, 3, 1, 4, 5, 6, 1, 1, 1], 7 # returns True
+```
+
+
+```python
+def check_sum(arr, k, verbose=0):
+    winsum = arr[0]
+    sdx = 0
+    edx = 1
+    while edx < len(arr)-1:
+        while winsum < k:
+            winsum += arr[edx]
+            if verbose:
+                print(winsum)
+            edx += 1
+        if winsum == k:
+            return True
+        while winsum > k:
+            winsum -= arr[sdx]
+            if verbose:
+                print(winsum)
+            sdx += 1
+        if winsum == k:
+            return True
+    return False
+check_sum(arr3, k3)
+```
+
+
+
+
+    True
+
+

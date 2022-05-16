@@ -185,3 +185,26 @@ female fighter, CHANI, is among them; along with a'
      'with': 1}
 
 
+
+## 🏎️ Q4 Write a function that checks if a string input is a palindrome
+
+the function should operate in place and should ignore capitalization and punctuation
+
+
+```python
+# the following should all return true
+str1 = "racecar"
+str2 = "RacEcar"
+str3 = ".Ra.cecar"
+str4 = ".Ra.cecar...:!."
+```
+
+## 🧮 Q5: Write a function that returns true if any contiguous numbers in a list sum to the value of K
+
+
+
+```python
+arr1, k1 = [1, 3, 1, 4], 8 # returns True
+arr2, k2 = [1, 3, 1, 4], 7 # returns False
+arr3, k3 = [1, 3, 1, 4, 5, 6, 1, 1, 1], 7 # returns True
+```
