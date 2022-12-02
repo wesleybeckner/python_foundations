@@ -1262,6 +1262,7 @@ This section serves as a reference for many other resources to learn more about 
 - [Official Python 3 Tutorial from the Python Software Foundation](https://docs.python.org/3/tutorial/index.html)
 - [*Python Crash Course*, 2nd Edition by Eric Matthes](https://nostarch.com/pythoncrashcourse2e)
 - [*Python From The Very Beginning* by John Whitington](https://www.pythonfromtheverybeginning.com)
+- [*Learn Python Programming*](https://www.scaler.com/topics/python/)
 - [*Python Data Science Handbook* by Jake VanderPlas (Free!)](https://jakevdp.github.io/PythonDataScienceHandbook/?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks)
 - [Simple Math in Python Notebook Excercises from UW DIRECT](https://github.com/UWDIRECT/UWDIRECT.github.io/blob/master/Wi20_content/SEDS/L2.Simple_Breakout.ipynb)
 
